@@ -35,11 +35,11 @@
 \contentsline {subsubsection}{\numberline {2.3.2}Antecedentes Internacionales}{26}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}Artículo Científico}{30}{subsubsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.4}Justificación del proyecto de innovación / mejora / Creatividad}{34}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Justificación Práctica}{34}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Justificación Práctica}{35}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Justificación Tecnológica}{35}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Justificación Legal}{35}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.3}Justificación Legal}{36}{subsubsection.2.4.3}%
 \contentsline {subsubsection}{\numberline {2.4.4}Justificación Económica}{36}{subsubsection.2.4.4}%
-\contentsline {subsubsection}{\numberline {2.4.5}Justificación Personal}{36}{subsubsection.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.4.5}Justificación Personal}{37}{subsubsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.5}Marco Teórico y conceptual}{37}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}Fundamento teórico del proyecto de Innovación / Mejora / Creatividad}{37}{subsubsection.2.5.1}%
 \contentsline {paragraph}{\numberline {2.5.1.1}Sistema web}{37}{paragraph.2.5.1.1}%
@@ -49,10 +49,12 @@
 \contentsline {subsubsection}{\numberline {2.5.2}Conceptos y Términos utilizados}{37}{subsubsection.2.5.2}%
 \contentsline {section}{CAPÍTULO 3: Análisis de la situación actual}{38}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Diagrama del proceso, Mapa de Flujo de Valor y/o Diagrama de Operación actual}{39}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Efecto del problema en el área del trabajo o en los resultados en el trabajo}{39}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Análisi de la causar raíz que genera el problema}{39}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Priorización de causa Raiz}{39}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Lista de causas encuestadas}{39}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Diagrama de Pareto en función al grado de las causas principales}{39}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Análisis cualitativo y cuantitativo}{39}{subsubsection.3.4.3}%
-\contentsline {section}{Referencias}{40}{section*.6}%
+\contentsline {subsection}{\numberline {3.2}Proceso actual de las empresa - sin la intervención del software}{39}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Detalle del subproceso de preparación de documentos y gestión de entregas}{41}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Efecto del problema en el área del trabajo o en los resultados en el trabajo}{43}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Análisi de la causar raíz que genera el problema}{43}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Priorización de causa Raiz}{43}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Lista de causas encuestadas}{43}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Diagrama de Pareto en función al grado de las causas principales}{43}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Análisis cualitativo y cuantitativo}{43}{subsubsection.3.5.3}%
+\contentsline {section}{Referencias}{44}{section*.6}%

@@ -280,6 +280,12 @@ INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquot
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.cfg
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.cfg
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.cfg
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\tools\indentfirst.sty
@@ -567,10 +573,10 @@ INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ts1ntxtlf
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ts1ntxtlf.fd
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\newtx\ts1ntxtlf.fd
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ts1-qtmr.tfm
-INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ts1.enc
 INPUT .\capitulo-2\2.5 Marco Teórico y Conceptual.tex
 INPUT .\capitulo-2\2.5 Marco Teórico y Conceptual.tex
 INPUT capitulo-2\2.5 Marco Teórico y Conceptual.tex
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ts1.enc
 INPUT .\capitulo-3\index.tex
 INPUT .\capitulo-3\index.tex
 INPUT .\capitulo-3\index.tex
@@ -579,6 +585,20 @@ INPUT capitulo-3\index.tex
 INPUT .\capitulo-3\3.1 Diagrama del proceso.tex
 INPUT .\capitulo-3\3.1 Diagrama del proceso.tex
 INPUT capitulo-3\3.1 Diagrama del proceso.tex
+INPUT .\images\diagramaProcesos.png
+INPUT .\images\diagramaProcesos.png
+INPUT .\images\diagramaProcesos.png
+INPUT .\images\diagramaProcesos.png
+INPUT .\images\diagramaProcesos.png
+INPUT .\images\diagramaProcesos.png
+INPUT .\images\diagramaProcesos.png
+INPUT .\images\diagramaSubproceso.png
+INPUT .\images\diagramaSubproceso.png
+INPUT .\images\diagramaSubproceso.png
+INPUT .\images\diagramaSubproceso.png
+INPUT .\images\diagramaSubproceso.png
+INPUT .\images\diagramaSubproceso.png
+INPUT .\images\diagramaSubproceso.png
 INPUT .\capitulo-3\3.2 Efecto del problema en el área del trabajo.tex
 INPUT .\capitulo-3\3.2 Efecto del problema en el área del trabajo.tex
 INPUT capitulo-3\3.2 Efecto del problema en el área del trabajo.tex
