@@ -1,0 +1,58 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{Agradecimiento}{2}{section*.1}%
+\contentsline {section}{Dedicatoria}{3}{section*.2}%
+\contentsline {section}{Introducción}{8}{section*.5}%
+\contentsline {section}{CAPÍTULO 1: GENERALIDADES DE LA EMPRESA}{9}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Datos Generales de la Empresa}{10}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Reseña histórica de la empresa}{10}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Quiénes Somos}{10}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Razón Social}{10}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Logo de la Empresa}{11}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Ubicación de la Empresa}{11}{subsubsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.2}Misión, Visión, Objetivos, Valores de la Empresa}{12}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Misión}{12}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Visión}{12}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Objetivos de la Empresa}{12}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Valores de la Empresa}{13}{subsubsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.3}Producto, Mercado y Cliente}{13}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Producto}{13}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Mercado}{14}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Cliente}{15}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}Organigrama de la Empresa}{16}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Otra información relevante de la empresa donde se desarrolla el proyecto}{17}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Planificación y gestión de la entrevista}{17}{subsubsection.1.5.1}%
+\contentsline {section}{CAPÍTULO 2: Plan del proyecto de innovación / Mejora / Creatividad}{19}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Identificación del problema técnico en la empresa}{20}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Problemática local}{20}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Problemática nacional}{20}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Problemática internacional}{21}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Formulación del Problema}{21}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Objetivo del Proyecto de Innovación}{22}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Objetivo General}{22}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Objetivos Específicos}{22}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Antecedentes del proyecto de innovacion / Mejora / Creatividad}{23}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Antecedentes Nacionales}{23}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Antecedentes Internacionales}{26}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Artículo Científico}{30}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Justificación del proyecto de innovación / mejora / Creatividad}{34}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Justificación Práctica}{34}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Justificación Tecnológica}{35}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Justificación Legal}{35}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Justificación Económica}{36}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Justificación Personal}{36}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Marco Teórico y conceptual}{37}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Fundamento teórico del proyecto de Innovación / Mejora / Creatividad}{37}{subsubsection.2.5.1}%
+\contentsline {paragraph}{\numberline {2.5.1.1}Sistema web}{37}{paragraph.2.5.1.1}%
+\contentsline {paragraph}{\numberline {2.5.1.2}}{37}{paragraph.2.5.1.2}%
+\contentsline {paragraph}{\numberline {2.5.1.3}}{37}{paragraph.2.5.1.3}%
+\contentsline {paragraph}{\numberline {2.5.1.4}}{37}{paragraph.2.5.1.4}%
+\contentsline {subsubsection}{\numberline {2.5.2}Conceptos y Términos utilizados}{37}{subsubsection.2.5.2}%
+\contentsline {section}{CAPÍTULO 3: Análisis de la situación actual}{38}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Diagrama del proceso, Mapa de Flujo de Valor y/o Diagrama de Operación actual}{39}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Efecto del problema en el área del trabajo o en los resultados en el trabajo}{39}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Análisi de la causar raíz que genera el problema}{39}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Priorización de causa Raiz}{39}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Lista de causas encuestadas}{39}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Diagrama de Pareto en función al grado de las causas principales}{39}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Análisis cualitativo y cuantitativo}{39}{subsubsection.3.4.3}%
+\contentsline {section}{Referencias}{40}{section*.6}%

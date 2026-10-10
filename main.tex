@@ -1,0 +1,205 @@
+% ============================
+% Configuración del documento
+% ============================
+\documentclass[stu,12pt,bbm,biblatex]{apa7}
+\addbibresource{referencias.bib}
+
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+% Fuente Times New Roman 12pt
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+% Justificación de texto y Sangría APA 7 (1.27 cm)
+\usepackage{ragged2e} 
+\setlength{\parindent}{1.27cm}
+\makeatletter
+\AtBeginDocument{
+    \justifying
+    \setlength{\parindent}{1.27cm}
+    \renewcommand{\raggedright}{\justifying}
+    \renewcommand{\RaggedRight}{\justifying}
+}
+\makeatother
+
+% ==============================================
+% Configuración y corrección de títulos (Niveles 2, 3 y 4)
+% ==============================================
+\makeatletter
+% Nivel 2: Subsection (2.5. Marco Teórico y conceptual)
+\renewcommand{\subsection}{%
+  \@startsection{subsection}{2}{\z@}%
+  {-2.5ex plus -1ex minus -.2ex}%
+  {1ex plus .2ex}%
+  {\normalfont\normalsize\bfseries}%
+}
+
+% Nivel 3: Subsubsection (2.5.1. Fundamento teórico...)
+\renewcommand{\subsubsection}{%
+  \@startsection{subsubsection}{3}{\z@}%
+  {-1.8ex plus -0.5ex minus -.2ex}%
+  {0.8ex plus .2ex}%
+  {\normalfont\normalsize\bfseries\itshape}%
+}
+
+% Nivel 4: Subsubsubsection / Paragraph (2.5.1.1. Sistema web:)
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{\parindent}% Sangría de 1.27 cm alineada al párrafo
+  {-1.5ex plus -0.5ex minus -.2ex}% Espacio superior
+  {0.8ex plus .2ex}% Espacio inferior (positivo para dar salto de línea)
+  {\normalfont\normalsize\bfseries\itshape}% Negrita y cursiva
+}
+
+% Formato numérico para el nivel 4 (ej. 2.5.1.1)
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+
+% Alias para que puedas usar directamente \subsubsubsection en tu documento
+\newcommand{\subsubsubsection}{\paragraph}
+\makeatother
+
+% IMPORTANTE: Cambiar de 3 a 4 para que LaTeX numere el nivel 2.5.1.1
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% ============================
+% Numeración y encabezados
+% ============================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% ====================
+% Portada de capítulos
+% ====================
+\newcommand{\portadacapitulo}[1]{
+    \clearpage
+    \refstepcounter{section}
+    \thispagestyle{plain}
+    \vspace*{\fill}
+    \begin{center}
+        {\Large\bfseries CAPÍTULO \arabic{section}}\\[0.4cm]
+        {\LARGE\bfseries #1}
+    \end{center}
+    \vspace*{\fill}
+    \addcontentsline{toc}{section}{CAPÍTULO \arabic{section}: #1}
+    \clearpage
+}
+
+\shorttitle{Sistema web de planillas}
+
+\begin{document}
+
+    % ============================
+    % PORTADA INSTITUCIONAL SENATI
+    % ============================
+    \begin{titlepage}
+        \thispagestyle{empty}
+        \centering
+        
+        % Logo ampliado
+        \includegraphics[width=0.72\linewidth]{images/senati_logo.png} 
+        
+        \vspace{0.3cm}
+        {\bfseries\large SERVICIO NACIONAL DE ADIESTRAMIENTO EN TRABAJO INDUSTRIAL} \\[0.25cm]
+        {\bfseries DIRECCIÓN ZONAL: LIMA – CALLAO} \\[0.2cm]
+        {\small ESCUELA DE TECNOLOGÍA DE LA INFORMACIÓN} \\[0.15cm]
+        {\small CFP LUIS CÁCERES GRAZIANI} \\[0.15cm]
+        {\small DESARROLLO DE SOFTWARE} 
+
+        \vfill
+
+        {\normalsize Proyecto de Innovación y/o Mejora} \\[0.15cm]
+        {\normalsize Nivel Profesional Técnico / Técnico Operativo} 
+
+        \vfill
+
+        {\bfseries\large ``Desarrollo e implementación de un sistema web con flujos automatizados\\
+            para la gestión de nóminas y procesos de recursos humanos\\
+            orientado a clientes empresariales de J~\&~P~Periféricos~S.A.C.''\par}
+
+        \vfill
+
+        {\bfseries Autores:} \\[0.15cm]
+        {\normalsize Daniel Enrique Singer Rojas} \\[0.1cm]
+        {\normalsize Rodrigo Alessandro Castillo Del Castillo} \\[0.1cm]
+        {\normalsize Adrian Matias Dueñas Huertas} 
+
+        \vfill
+
+        {\bfseries Asesor:} \\[0.15cm]
+        {\normalsize Mg. Jose Armando Tiznado Ubillus} 
+
+        \vfill
+
+        \textbf{Lima – Perú} \\[0.15cm]
+        \textbf{2026}
+    \end{titlepage}
+    \setcounter{page}{2}
+
+    % ============================
+    % DEDICATORIA Y AGRADECIMIENTOS
+    % ============================
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{section}{Agradecimiento}
+    \noindent{\bfseries\large Agradecimiento} \\[0.5cm]
+    \input{portada/agradecimientos/agradecimiento_daniel}
+    \input{portada/agradecimientos/agradecimiento_rodrigo}
+    \input{portada/agradecimientos/agradecimiento_adrian}
+
+    
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{section}{Dedicatoria}
+    \noindent{\bfseries\large Dedicatoria} \\[0.5cm]
+    \input{portada/Dedicatoria/dedicatoria_daniel}
+    \input{portada/Dedicatoria/dedicatoria_rodrigo}
+    \input{portada/Dedicatoria/dedicatoria_adrian}
+
+    % ============================
+    % ÍNDICES
+    % ============================
+    \clearpage
+    \tableofcontents
+
+    \clearpage
+    \listoffigures
+
+    \clearpage
+
+
+    % ============================
+    % PRELIMINARES
+    % ============================
+    \input{portada/resumen}
+    \input{portada/introduccion}
+
+    % ============================
+    % CAPÍTULOS
+    % ============================
+    \input{capitulo-1/index}
+    \input{capitulo-2/index}
+    \input{capitulo-3/index}
+
+    % ============================
+    % REFERENCIAS BIBLIOGRÁFICAS
+    % ============================
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{section}{Referencias}
+    \printbibliography[title={Referencias}]
+
+\end{document}

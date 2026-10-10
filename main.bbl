@@ -1,0 +1,1633 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{aguilar2022desarrollo}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=1312492c595e9fcad1c92c07fe264729}{%
+           family={Aguilar\bibnamedelima Guizado},
+           familyi={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94cbe1b00b951b7e4c3f947b83044eaf}{%
+           family={Sotelo\bibnamedelima Herrera},
+           familyi={S\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={C.\bibnamedelimi A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Tecnológica del Perú}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{fullhash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{fullhashraw}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{bibnamehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authorbibnamehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authornamehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authorfullhash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authorfullhashraw}{8af30df0c7f604e7a6061a21f7f58d16}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Desarrollo de un sistema web para optimizar el proceso de entrega de boletas de pago de planillas, basado en el marco {Scrum}, en {Sistemas y Fluidos SAC}, 2021}
+      \field{type}{Tesis de licenciatura}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.12867/5530
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.12867/5530
+      \endverb
+    \endentry
+    \entry{ahmed2023web}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=709fe4336d3871d9657faa14714df5f9}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Ayah\bibnamedelima Mohammad},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86a2d2ef1f0d8079ab779f3da0b2f75c}{%
+           family={Mohammed},
+           familyi={M\bibinitperiod},
+           given={Chira\bibnamedelima Nadheel},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcec08382fc3ea74a6aee2325c9b9c6b}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Akeela\bibnamedelima Mustafa},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{22770111313f522741cf23242a52e623}
+      \strng{fullhash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{fullhashraw}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{bibnamehash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{authorbibnamehash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{authornamehash}{22770111313f522741cf23242a52e623}
+      \strng{authorfullhash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{authorfullhashraw}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Electrical Systems and Information Technology}
+      \field{number}{1}
+      \field{title}{Web-based payroll management system: design, implementation, and evaluation}
+      \field{volume}{10}
+      \field{year}{2023}
+      \field{pages}{17}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s43067-023-00082-5
+      \endverb
+    \endentry
+    \entry{arias2026automatizacion}{thesis}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=c3cc4f4124467d17068d790b850b331c}{%
+           family={Arias\bibnamedelima Otalvaro},
+           familyi={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Henry\bibnamedelima Hernan},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c4dfed3903cd7e8e8b68d7c22c834cb}{%
+           family={Ocampo\bibnamedelima Aristizabal},
+           familyi={O\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0df1d0065d048bc2fab895af795f73ab}{%
+           family={Rodríguez\bibnamedelima Marín},
+           familyi={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Mateo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a0b610580f602b4fe8777db9b315b1f5}{%
+           family={Vásquez},
+           familyi={V\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Instituto Tecnológico Metropolitano}%
+      }
+      \list{location}{1}{%
+        {Medellín, Colombia}%
+      }
+      \strng{namehash}{d8891a9d51f239e12b7f3657d6a27fbe}
+      \strng{fullhash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{fullhashraw}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{bibnamehash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{authorbibnamehash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{authornamehash}{d8891a9d51f239e12b7f3657d6a27fbe}
+      \strng{authorfullhash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{authorfullhashraw}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Automatización del {Sistema de Gestión de Nómina de Contratistas del Instituto Tecnológico Metropolitano}}
+      \field{type}{Trabajo de grado de especialización}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://repositorio.itm.edu.co/entities/publication/26903631-f412-4897-9424-8b37664a5743
+      \endverb
+      \verb{url}
+      \verb https://repositorio.itm.edu.co/entities/publication/26903631-f412-4897-9424-8b37664a5743
+      \endverb
+    \endentry
+    \entry{bancomundial2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=081c29fc27b70573aca57b57327d4b03}{%
+           family={{Banco Mundial}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{fullhash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{fullhashraw}{081c29fc27b70573aca57b57327d4b03}
+      \strng{bibnamehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authorbibnamehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authornamehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authorfullhash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authorfullhashraw}{081c29fc27b70573aca57b57327d4b03}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{La digitalización mundial en 10 gráficos}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.bancomundial.org/es/news/immersive-story/2024/03/05/global-digitalization-in-10-charts
+      \endverb
+      \verb{url}
+      \verb https://www.bancomundial.org/es/news/immersive-story/2024/03/05/global-digitalization-in-10-charts
+      \endverb
+    \endentry
+    \entry{basualdo2026sistema}{thesis}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=29b3e36e920c64feac2494fcb6f9d77f}{%
+           family={Basualdo},
+           familyi={B\bibinitperiod},
+           given={Facundo\bibnamedelima Simón},
+           giveni={F\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ddca2892cb99d6e396e8d3db25414a03}{%
+           family={Romero},
+           familyi={R\bibinitperiod},
+           given={Joan\bibnamedelima Manuel},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fd4c3b00959e335434b22998eb067a9}{%
+           family={Santolari},
+           familyi={S\bibinitperiod},
+           given={Matías\bibnamedelima Nicolás},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Tecnológica Nacional, Facultad Regional Rosario}%
+      }
+      \list{location}{1}{%
+        {Rosario, Argentina}%
+      }
+      \strng{namehash}{83a873f8526be9265570db7113d35e7e}
+      \strng{fullhash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{fullhashraw}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{bibnamehash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{authorbibnamehash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{authornamehash}{83a873f8526be9265570db7113d35e7e}
+      \strng{authorfullhash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{authorfullhashraw}{c238c7c049288b88d38e5ecc713089e5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sistema de {Gestión de Recursos Humanos}}
+      \field{type}{Proyecto final}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://ria.utn.edu.ar/handle/20.500.12272/7180
+      \endverb
+      \verb{url}
+      \verb https://ria.utn.edu.ar/handle/20.500.12272/7180
+      \endverb
+    \endentry
+    \entry{beltran2021automatizacion}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8cdf91beb710a46899e7963e251ea95e}{%
+           family={Beltrán\bibnamedelima Penagos},
+           familyi={B\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3f44ae1c73b2c945c81a2536b90e8269}{%
+           family={Correa\bibnamedelima Vera},
+           familyi={C\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Santiago},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad El Bosque}%
+      }
+      \list{location}{1}{%
+        {Bogotá, Colombia}%
+      }
+      \strng{namehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{fullhash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{fullhashraw}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{bibnamehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authorbibnamehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authornamehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authorfullhash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authorfullhashraw}{8f294c56130bcc1b7fccb397161b07d5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Automatización de procesos encargados de gestionar la operación del personal, los clientes y cálculo de nómina de la empresa {E.D.S. San Antonio Cogua} mediante su análisis procesal}
+      \field{type}{Trabajo de grado}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.12495/6763
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.12495/6763
+      \endverb
+    \endentry
+    \entry{chattopadhyay2026ai}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4a5445dd4bd47909ca41027fa6565194}{%
+           family={Chattopadhyay},
+           familyi={C\bibinitperiod},
+           given={Soumya},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IGI Global}%
+      }
+      \strng{namehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{fullhash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{fullhashraw}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{bibnamehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authorbibnamehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authornamehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authorfullhash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authorfullhashraw}{4a5445dd4bd47909ca41027fa6565194}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Cloud Applications and Computing (IJCAC)}
+      \field{number}{1}
+      \field{title}{{AI}-Enhanced Event-Driven Payroll Processing: A Cost-Optimized Framework Using Managed Container Services and Intelligent Automation}
+      \field{volume}{16}
+      \field{year}{2026}
+      \field{pages}{1\bibrangedash 28}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.4018/IJCAC.400973
+      \endverb
+    \endentry
+    \entry{elperuano2026}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6932f45ec3ef1bfc027a207f9f0d35ee}{%
+           family={{El Peruano}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{fullhash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{fullhashraw}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{bibnamehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authorbibnamehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authornamehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authorfullhash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authorfullhashraw}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Errores en planillas afectan motivación y productividad de colaboradores}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://elperuano.pe/noticia/289831-errores-en-planillas-afectan-motivacion
+      \endverb
+      \verb{url}
+      \verb https://elperuano.pe/noticia/289831-errores-en-planillas-afectan-motivacion
+      \endverb
+    \endentry
+    \entry{fernandez2023implementacion}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=36f97f481713738b46cb5aa2c238931e}{%
+           family={Fernández\bibnamedelima Camacho},
+           familyi={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Nelson\bibnamedelimb Aaron\bibnamedelima David},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab2607021b0f3b6b283e578e2fc765fe}{%
+           family={Matute\bibnamedelimb del\bibnamedelima Águila},
+           familyi={M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim Á\bibinitperiod},
+           given={Luis\bibnamedelima Alfonso},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Nacional de la Amazonía Peruana}%
+      }
+      \list{location}{1}{%
+        {Iquitos, Perú}%
+      }
+      \strng{namehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{fullhash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{fullhashraw}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{bibnamehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authorbibnamehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authornamehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authorfullhash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authorfullhashraw}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de un sistema web de remuneraciones para optimizar la elaboración de planillas de la empresa {BIP BIP}, 2023}
+      \field{type}{Tesis de licenciatura}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.12737/10671
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.12737/10671
+      \endverb
+    \endentry
+    \entry{masapanta2025desarrollo}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f3ed3f76a369822191bc2ad91fe5887a}{%
+           family={Masapanta\bibnamedelima Vega},
+           familyi={M\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Lenin\bibnamedelima Ariel},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Escuela Politécnica Nacional}%
+      }
+      \list{location}{1}{%
+        {Quito, Ecuador}%
+      }
+      \strng{namehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{fullhash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{fullhashraw}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{bibnamehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authorbibnamehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authornamehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authorfullhash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authorfullhashraw}{f3ed3f76a369822191bc2ad91fe5887a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Desarrollo de un módulo integral para la gestión de nómina y talento humano en la {Cooperativa de Ahorro y Crédito Politécnica Ltda.} {Sistema} web}
+      \field{type}{Trabajo de integración curricular}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://bibdigital.epn.edu.ec/handle/15000/2543
+      \endverb
+      \verb{url}
+      \verb https://bibdigital.epn.edu.ec/handle/15000/2543
+      \endverb
+    \endentry
+    \entry{pedroza2025propuesta}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=21f3914fd199440b0f6c684a45274897}{%
+           family={Pedroza\bibnamedelima Rivera},
+           familyi={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={María\bibnamedelima Claudia},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad San Ignacio de Loyola}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{fullhash}{21f3914fd199440b0f6c684a45274897}
+      \strng{fullhashraw}{21f3914fd199440b0f6c684a45274897}
+      \strng{bibnamehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authorbibnamehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authornamehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authorfullhash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authorfullhashraw}{21f3914fd199440b0f6c684a45274897}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Propuesta de optimización del sistema de información para la gestión de personas en {PROMPERÚ}, {Lima -- Perú, 2025}}
+      \field{type}{Trabajo de suficiencia profesional}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.14005/15765
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.14005/15765
+      \endverb
+    \endentry
+    \entry{quispe2025implementacion}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=699a52234b19fcce6fcbbd92bb95b33e}{%
+           family={Quispe\bibnamedelima Noa},
+           familyi={Q\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Yessica},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad San Ignacio de Loyola}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{fullhash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{fullhashraw}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{bibnamehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authorbibnamehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authornamehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authorfullhash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authorfullhashraw}{699a52234b19fcce6fcbbd92bb95b33e}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de mejoras tecnológicas en la gestión de planillas de remuneraciones y su control presupuestario en la empresa {Ascensores S.A.} - {Lima, Perú 2024}}
+      \field{type}{Trabajo de suficiencia profesional}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.14005/15685
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.14005/15685
+      \endverb
+    \endentry
+    \entry{someswari2025employee}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=93fd7c4b9ddc26eb6ceb24e47da61668}{%
+           family={Someswari},
+           familyi={S\bibinitperiod},
+           given={Ch.\bibnamedelimi Teja\bibnamedelima Venkata},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7e58fdbfee2d1f6503848c316a26472}{%
+           family={Kiranmai},
+           familyi={K\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e504b2d747d3c9da6a5e03440902944}{%
+           family={Maheswari},
+           familyi={M\bibinitperiod},
+           given={K.\bibnamedelimi Uma\bibnamedelima Durga},
+           giveni={K\bibinitperiod\bibinitdelim U\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5231f9d42ad500bcf38f668c2a99170d}{%
+           family={Moorthy},
+           familyi={M\bibinitperiod},
+           given={T.\bibnamedelimi V.\bibnamedelimi Krishna},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a42ddf944f21c361391eb8f94ddb3533}
+      \strng{fullhash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{fullhashraw}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{bibnamehash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{authorbibnamehash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{authornamehash}{a42ddf944f21c361391eb8f94ddb3533}
+      \strng{authorfullhash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{authorfullhashraw}{29fe613a9bbb5ab757a118b41990db66}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Interpreting Enigma Engineers (IJIEE)}
+      \field{number}{2}
+      \field{title}{Employee Payroll and Management System}
+      \field{volume}{3}
+      \field{year}{2026}
+      \field{pages}{16\bibrangedash 22}
+      \range{pages}{7}
+      \verb{urlraw}
+      \verb https://ejournal.svgacademy.org/index.php/ijiee/article/view/382
+      \endverb
+      \verb{url}
+      \verb https://ejournal.svgacademy.org/index.php/ijiee/article/view/382
+      \endverb
+    \endentry
+    \entry{suarez2025sistema}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=df33ea775fc764e35bcd585817497a33}{%
+           family={Suarez\bibnamedelima Tapia},
+           familyi={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Yuly},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas}%
+      }
+      \list{location}{1}{%
+        {Chachapoyas, Perú}%
+      }
+      \strng{namehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{fullhash}{df33ea775fc764e35bcd585817497a33}
+      \strng{fullhashraw}{df33ea775fc764e35bcd585817497a33}
+      \strng{bibnamehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authorbibnamehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authornamehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authorfullhash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authorfullhashraw}{df33ea775fc764e35bcd585817497a33}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sistema web para optimizar el proceso de gestión de planillas del supermercado {RB} de {Bagua}}
+      \field{type}{Tesis de licenciatura}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.14077/4019
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.14077/4019
+      \endverb
+    \endentry
+    \entry{tandrio2026web}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fee2daa38c028531a78efc60741fa6bd}{%
+           family={Tandrio},
+           familyi={T\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa6fef749e5d814f36e8f3f517dfc599}{%
+           family={Fianty},
+           familyi={F\bibinitperiod},
+           given={Melissa\bibnamedelima Indah},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{fullhash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{fullhashraw}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{bibnamehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authorbibnamehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authornamehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authorfullhash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authorfullhashraw}{4d350061d50b56775b20ff87e41d2ffc}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JTK (Jurnal Ilmu Pengetahuan dan Teknologi Komputer)}
+      \field{number}{3}
+      \field{title}{Web-Based Payroll System Development Using the Prototyping Method and Structured Database Design}
+      \field{volume}{11}
+      \field{year}{2026}
+      \field{pages}{851\bibrangedash 863}
+      \range{pages}{13}
+      \verb{urlraw}
+      \verb https://doi.org/10.33480/jitk.v11i3.7044
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.33480/jitk.v11i3.7044
+      \endverb
+    \endentry
+    \entry{aliya2026design}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=62cc07c4d2752470e5bb5da572b814e1}{%
+           family={Turegeldinova},
+           familyi={T\bibinitperiod},
+           given={Aliya},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d9e9c6cb07cd12395792b09216b65dcf}{%
+           family={Kassenkhan},
+           familyi={K\bibinitperiod},
+           given={Aray},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f59b57df530c33dbbecbe6643b2b8a48}{%
+           family={Amralinova},
+           familyi={A\bibinitperiod},
+           given={Bakytzhan},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=26c2f82ae7ed1a1a1efc38bb59852941}{%
+           family={Sarkambayeva},
+           familyi={S\bibinitperiod},
+           given={Shynara},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d3cb39d4e49c5d1129c95d98d857e8f9}{%
+           family={Nugumanov},
+           familyi={N\bibinitperiod},
+           given={Shyndauyl},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5a10307a8b8e6850ae7121742a73036}{%
+           family={Khamitova},
+           familyi={K\bibinitperiod},
+           given={Zhainagul},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI AG}%
+      }
+      \strng{namehash}{3419e25659370aaf51980ab963d263d1}
+      \strng{fullhash}{d0fea75edfc800f417a93b6007290595}
+      \strng{fullhashraw}{d0fea75edfc800f417a93b6007290595}
+      \strng{bibnamehash}{d0fea75edfc800f417a93b6007290595}
+      \strng{authorbibnamehash}{d0fea75edfc800f417a93b6007290595}
+      \strng{authornamehash}{3419e25659370aaf51980ab963d263d1}
+      \strng{authorfullhash}{d0fea75edfc800f417a93b6007290595}
+      \strng{authorfullhashraw}{d0fea75edfc800f417a93b6007290595}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information}
+      \field{number}{7}
+      \field{title}{Design and Pilot Evaluation of a Traceability-Oriented Enterprise Architecture for Advance Salary Payment Management}
+      \field{volume}{17}
+      \field{year}{2026}
+      \field{pages}{635}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/info17070635
+      \endverb
+    \endentry
+    \entry{valenteneto2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3978ece70c60e376d329e967a40a8ebf}{%
+           family={Valente\bibnamedelima Neto},
+           familyi={V\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Eduardo},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Ernst \& Young}%
+      }
+      \strng{namehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{fullhash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{fullhashraw}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{bibnamehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authorbibnamehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authornamehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authorfullhash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authorfullhashraw}{3978ece70c60e376d329e967a40a8ebf}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{¿{C}ómo navegar la presión competitiva en una región cada vez más dinámica?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.ey.com/es_pe/insights/desafios-tendencias-empresas-latinoamerica
+      \endverb
+      \verb{url}
+      \verb https://www.ey.com/es_pe/insights/desafios-tendencias-empresas-latinoamerica
+      \endverb
+    \endentry
+    \entry{zeballos2022sistema}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=982f0bb332d72aceb69df3e090ac97ee}{%
+           family={Zeballos\bibnamedelima Quispe},
+           familyi={Z\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           given={Eddy},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Pública de El Alto}%
+      }
+      \list{location}{1}{%
+        {El Alto, Bolivia}%
+      }
+      \strng{namehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{fullhash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{fullhashraw}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{bibnamehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authorbibnamehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authornamehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authorfullhash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authorfullhashraw}{982f0bb332d72aceb69df3e090ac97ee}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sistema de información web para el control de acceso y asistencia para el proceso de planillas mediante {RFID}: caso {Anti Money Laundering Consultants}}
+      \field{type}{Proyecto de grado}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://repositorio.upea.bo/handle/123456789/45999
+      \endverb
+      \verb{url}
+      \verb https://repositorio.upea.bo/handle/123456789/45999
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{aguilar2022desarrollo}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=1312492c595e9fcad1c92c07fe264729}{%
+           family={Aguilar\bibnamedelima Guizado},
+           familyi={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94cbe1b00b951b7e4c3f947b83044eaf}{%
+           family={Sotelo\bibnamedelima Herrera},
+           familyi={S\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={C.\bibnamedelimi A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Tecnológica del Perú}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{fullhash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{fullhashraw}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{bibnamehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authorbibnamehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authornamehash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authorfullhash}{8af30df0c7f604e7a6061a21f7f58d16}
+      \strng{authorfullhashraw}{8af30df0c7f604e7a6061a21f7f58d16}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Desarrollo de un sistema web para optimizar el proceso de entrega de boletas de pago de planillas, basado en el marco {Scrum}, en {Sistemas y Fluidos SAC}, 2021}
+      \field{type}{Tesis de licenciatura}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.12867/5530
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.12867/5530
+      \endverb
+    \endentry
+    \entry{ahmed2023web}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=709fe4336d3871d9657faa14714df5f9}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Ayah\bibnamedelima Mohammad},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86a2d2ef1f0d8079ab779f3da0b2f75c}{%
+           family={Mohammed},
+           familyi={M\bibinitperiod},
+           given={Chira\bibnamedelima Nadheel},
+           giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcec08382fc3ea74a6aee2325c9b9c6b}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Akeela\bibnamedelima Mustafa},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{22770111313f522741cf23242a52e623}
+      \strng{fullhash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{fullhashraw}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{bibnamehash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{authorbibnamehash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{authornamehash}{22770111313f522741cf23242a52e623}
+      \strng{authorfullhash}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \strng{authorfullhashraw}{308fc81d98bf1fcaa6fcb3482fa1eec3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Electrical Systems and Information Technology}
+      \field{number}{1}
+      \field{title}{Web-based payroll management system: design, implementation, and evaluation}
+      \field{volume}{10}
+      \field{year}{2023}
+      \field{pages}{17}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s43067-023-00082-5
+      \endverb
+    \endentry
+    \entry{arias2026automatizacion}{thesis}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=c3cc4f4124467d17068d790b850b331c}{%
+           family={Arias\bibnamedelima Otalvaro},
+           familyi={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Henry\bibnamedelima Hernan},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c4dfed3903cd7e8e8b68d7c22c834cb}{%
+           family={Ocampo\bibnamedelima Aristizabal},
+           familyi={O\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0df1d0065d048bc2fab895af795f73ab}{%
+           family={Rodríguez\bibnamedelima Marín},
+           familyi={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Mateo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a0b610580f602b4fe8777db9b315b1f5}{%
+           family={Vásquez},
+           familyi={V\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Instituto Tecnológico Metropolitano}%
+      }
+      \list{location}{1}{%
+        {Medellín, Colombia}%
+      }
+      \strng{namehash}{d8891a9d51f239e12b7f3657d6a27fbe}
+      \strng{fullhash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{fullhashraw}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{bibnamehash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{authorbibnamehash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{authornamehash}{d8891a9d51f239e12b7f3657d6a27fbe}
+      \strng{authorfullhash}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \strng{authorfullhashraw}{7bd7370cb755cf8e198ca7790f3b3b73}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Automatización del {Sistema de Gestión de Nómina de Contratistas del Instituto Tecnológico Metropolitano}}
+      \field{type}{Trabajo de grado de especialización}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://repositorio.itm.edu.co/entities/publication/26903631-f412-4897-9424-8b37664a5743
+      \endverb
+      \verb{url}
+      \verb https://repositorio.itm.edu.co/entities/publication/26903631-f412-4897-9424-8b37664a5743
+      \endverb
+    \endentry
+    \entry{bancomundial2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=081c29fc27b70573aca57b57327d4b03}{%
+           family={{Banco Mundial}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{fullhash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{fullhashraw}{081c29fc27b70573aca57b57327d4b03}
+      \strng{bibnamehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authorbibnamehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authornamehash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authorfullhash}{081c29fc27b70573aca57b57327d4b03}
+      \strng{authorfullhashraw}{081c29fc27b70573aca57b57327d4b03}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{La digitalización mundial en 10 gráficos}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.bancomundial.org/es/news/immersive-story/2024/03/05/global-digitalization-in-10-charts
+      \endverb
+      \verb{url}
+      \verb https://www.bancomundial.org/es/news/immersive-story/2024/03/05/global-digitalization-in-10-charts
+      \endverb
+    \endentry
+    \entry{basualdo2026sistema}{thesis}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=29b3e36e920c64feac2494fcb6f9d77f}{%
+           family={Basualdo},
+           familyi={B\bibinitperiod},
+           given={Facundo\bibnamedelima Simón},
+           giveni={F\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ddca2892cb99d6e396e8d3db25414a03}{%
+           family={Romero},
+           familyi={R\bibinitperiod},
+           given={Joan\bibnamedelima Manuel},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fd4c3b00959e335434b22998eb067a9}{%
+           family={Santolari},
+           familyi={S\bibinitperiod},
+           given={Matías\bibnamedelima Nicolás},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Tecnológica Nacional, Facultad Regional Rosario}%
+      }
+      \list{location}{1}{%
+        {Rosario, Argentina}%
+      }
+      \strng{namehash}{83a873f8526be9265570db7113d35e7e}
+      \strng{fullhash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{fullhashraw}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{bibnamehash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{authorbibnamehash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{authornamehash}{83a873f8526be9265570db7113d35e7e}
+      \strng{authorfullhash}{c238c7c049288b88d38e5ecc713089e5}
+      \strng{authorfullhashraw}{c238c7c049288b88d38e5ecc713089e5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sistema de {Gestión de Recursos Humanos}}
+      \field{type}{Proyecto final}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://ria.utn.edu.ar/handle/20.500.12272/7180
+      \endverb
+      \verb{url}
+      \verb https://ria.utn.edu.ar/handle/20.500.12272/7180
+      \endverb
+    \endentry
+    \entry{beltran2021automatizacion}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8cdf91beb710a46899e7963e251ea95e}{%
+           family={Beltrán\bibnamedelima Penagos},
+           familyi={B\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3f44ae1c73b2c945c81a2536b90e8269}{%
+           family={Correa\bibnamedelima Vera},
+           familyi={C\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Santiago},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad El Bosque}%
+      }
+      \list{location}{1}{%
+        {Bogotá, Colombia}%
+      }
+      \strng{namehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{fullhash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{fullhashraw}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{bibnamehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authorbibnamehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authornamehash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authorfullhash}{8f294c56130bcc1b7fccb397161b07d5}
+      \strng{authorfullhashraw}{8f294c56130bcc1b7fccb397161b07d5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Automatización de procesos encargados de gestionar la operación del personal, los clientes y cálculo de nómina de la empresa {E.D.S. San Antonio Cogua} mediante su análisis procesal}
+      \field{type}{Trabajo de grado}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.12495/6763
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.12495/6763
+      \endverb
+    \endentry
+    \entry{chattopadhyay2026ai}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4a5445dd4bd47909ca41027fa6565194}{%
+           family={Chattopadhyay},
+           familyi={C\bibinitperiod},
+           given={Soumya},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {IGI Global}%
+      }
+      \strng{namehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{fullhash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{fullhashraw}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{bibnamehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authorbibnamehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authornamehash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authorfullhash}{4a5445dd4bd47909ca41027fa6565194}
+      \strng{authorfullhashraw}{4a5445dd4bd47909ca41027fa6565194}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Cloud Applications and Computing (IJCAC)}
+      \field{number}{1}
+      \field{title}{{AI}-Enhanced Event-Driven Payroll Processing: A Cost-Optimized Framework Using Managed Container Services and Intelligent Automation}
+      \field{volume}{16}
+      \field{year}{2026}
+      \field{pages}{1\bibrangedash 28}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.4018/IJCAC.400973
+      \endverb
+    \endentry
+    \entry{elperuano2026}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6932f45ec3ef1bfc027a207f9f0d35ee}{%
+           family={{El Peruano}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{fullhash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{fullhashraw}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{bibnamehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authorbibnamehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authornamehash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authorfullhash}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \strng{authorfullhashraw}{6932f45ec3ef1bfc027a207f9f0d35ee}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Errores en planillas afectan motivación y productividad de colaboradores}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://elperuano.pe/noticia/289831-errores-en-planillas-afectan-motivacion
+      \endverb
+      \verb{url}
+      \verb https://elperuano.pe/noticia/289831-errores-en-planillas-afectan-motivacion
+      \endverb
+    \endentry
+    \entry{fernandez2023implementacion}{thesis}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=36f97f481713738b46cb5aa2c238931e}{%
+           family={Fernández\bibnamedelima Camacho},
+           familyi={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Nelson\bibnamedelimb Aaron\bibnamedelima David},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab2607021b0f3b6b283e578e2fc765fe}{%
+           family={Matute\bibnamedelimb del\bibnamedelima Águila},
+           familyi={M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim Á\bibinitperiod},
+           given={Luis\bibnamedelima Alfonso},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Nacional de la Amazonía Peruana}%
+      }
+      \list{location}{1}{%
+        {Iquitos, Perú}%
+      }
+      \strng{namehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{fullhash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{fullhashraw}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{bibnamehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authorbibnamehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authornamehash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authorfullhash}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \strng{authorfullhashraw}{91aca401cc6eb24cb7abb3dd92cb4e66}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de un sistema web de remuneraciones para optimizar la elaboración de planillas de la empresa {BIP BIP}, 2023}
+      \field{type}{Tesis de licenciatura}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.12737/10671
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.12737/10671
+      \endverb
+    \endentry
+    \entry{masapanta2025desarrollo}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f3ed3f76a369822191bc2ad91fe5887a}{%
+           family={Masapanta\bibnamedelima Vega},
+           familyi={M\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={Lenin\bibnamedelima Ariel},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Escuela Politécnica Nacional}%
+      }
+      \list{location}{1}{%
+        {Quito, Ecuador}%
+      }
+      \strng{namehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{fullhash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{fullhashraw}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{bibnamehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authorbibnamehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authornamehash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authorfullhash}{f3ed3f76a369822191bc2ad91fe5887a}
+      \strng{authorfullhashraw}{f3ed3f76a369822191bc2ad91fe5887a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Desarrollo de un módulo integral para la gestión de nómina y talento humano en la {Cooperativa de Ahorro y Crédito Politécnica Ltda.} {Sistema} web}
+      \field{type}{Trabajo de integración curricular}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://bibdigital.epn.edu.ec/handle/15000/2543
+      \endverb
+      \verb{url}
+      \verb https://bibdigital.epn.edu.ec/handle/15000/2543
+      \endverb
+    \endentry
+    \entry{pedroza2025propuesta}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=21f3914fd199440b0f6c684a45274897}{%
+           family={Pedroza\bibnamedelima Rivera},
+           familyi={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={María\bibnamedelima Claudia},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad San Ignacio de Loyola}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{fullhash}{21f3914fd199440b0f6c684a45274897}
+      \strng{fullhashraw}{21f3914fd199440b0f6c684a45274897}
+      \strng{bibnamehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authorbibnamehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authornamehash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authorfullhash}{21f3914fd199440b0f6c684a45274897}
+      \strng{authorfullhashraw}{21f3914fd199440b0f6c684a45274897}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Propuesta de optimización del sistema de información para la gestión de personas en {PROMPERÚ}, {Lima -- Perú, 2025}}
+      \field{type}{Trabajo de suficiencia profesional}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.14005/15765
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.14005/15765
+      \endverb
+    \endentry
+    \entry{quispe2025implementacion}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=699a52234b19fcce6fcbbd92bb95b33e}{%
+           family={Quispe\bibnamedelima Noa},
+           familyi={Q\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Yessica},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad San Ignacio de Loyola}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{fullhash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{fullhashraw}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{bibnamehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authorbibnamehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authornamehash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authorfullhash}{699a52234b19fcce6fcbbd92bb95b33e}
+      \strng{authorfullhashraw}{699a52234b19fcce6fcbbd92bb95b33e}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de mejoras tecnológicas en la gestión de planillas de remuneraciones y su control presupuestario en la empresa {Ascensores S.A.} - {Lima, Perú 2024}}
+      \field{type}{Trabajo de suficiencia profesional}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.14005/15685
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.14005/15685
+      \endverb
+    \endentry
+    \entry{someswari2025employee}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=93fd7c4b9ddc26eb6ceb24e47da61668}{%
+           family={Someswari},
+           familyi={S\bibinitperiod},
+           given={Ch.\bibnamedelimi Teja\bibnamedelima Venkata},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7e58fdbfee2d1f6503848c316a26472}{%
+           family={Kiranmai},
+           familyi={K\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e504b2d747d3c9da6a5e03440902944}{%
+           family={Maheswari},
+           familyi={M\bibinitperiod},
+           given={K.\bibnamedelimi Uma\bibnamedelima Durga},
+           giveni={K\bibinitperiod\bibinitdelim U\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5231f9d42ad500bcf38f668c2a99170d}{%
+           family={Moorthy},
+           familyi={M\bibinitperiod},
+           given={T.\bibnamedelimi V.\bibnamedelimi Krishna},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a42ddf944f21c361391eb8f94ddb3533}
+      \strng{fullhash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{fullhashraw}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{bibnamehash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{authorbibnamehash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{authornamehash}{a42ddf944f21c361391eb8f94ddb3533}
+      \strng{authorfullhash}{29fe613a9bbb5ab757a118b41990db66}
+      \strng{authorfullhashraw}{29fe613a9bbb5ab757a118b41990db66}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Interpreting Enigma Engineers (IJIEE)}
+      \field{number}{2}
+      \field{title}{Employee Payroll and Management System}
+      \field{volume}{3}
+      \field{year}{2026}
+      \field{pages}{16\bibrangedash 22}
+      \range{pages}{7}
+      \verb{urlraw}
+      \verb https://ejournal.svgacademy.org/index.php/ijiee/article/view/382
+      \endverb
+      \verb{url}
+      \verb https://ejournal.svgacademy.org/index.php/ijiee/article/view/382
+      \endverb
+    \endentry
+    \entry{suarez2025sistema}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=df33ea775fc764e35bcd585817497a33}{%
+           family={Suarez\bibnamedelima Tapia},
+           familyi={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Yuly},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas}%
+      }
+      \list{location}{1}{%
+        {Chachapoyas, Perú}%
+      }
+      \strng{namehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{fullhash}{df33ea775fc764e35bcd585817497a33}
+      \strng{fullhashraw}{df33ea775fc764e35bcd585817497a33}
+      \strng{bibnamehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authorbibnamehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authornamehash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authorfullhash}{df33ea775fc764e35bcd585817497a33}
+      \strng{authorfullhashraw}{df33ea775fc764e35bcd585817497a33}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sistema web para optimizar el proceso de gestión de planillas del supermercado {RB} de {Bagua}}
+      \field{type}{Tesis de licenciatura}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/20.500.14077/4019
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/20.500.14077/4019
+      \endverb
+    \endentry
+    \entry{tandrio2026web}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fee2daa38c028531a78efc60741fa6bd}{%
+           family={Tandrio},
+           familyi={T\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa6fef749e5d814f36e8f3f517dfc599}{%
+           family={Fianty},
+           familyi={F\bibinitperiod},
+           given={Melissa\bibnamedelima Indah},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{fullhash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{fullhashraw}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{bibnamehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authorbibnamehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authornamehash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authorfullhash}{4d350061d50b56775b20ff87e41d2ffc}
+      \strng{authorfullhashraw}{4d350061d50b56775b20ff87e41d2ffc}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JTK (Jurnal Ilmu Pengetahuan dan Teknologi Komputer)}
+      \field{number}{3}
+      \field{title}{Web-Based Payroll System Development Using the Prototyping Method and Structured Database Design}
+      \field{volume}{11}
+      \field{year}{2026}
+      \field{pages}{851\bibrangedash 863}
+      \range{pages}{13}
+      \verb{urlraw}
+      \verb https://doi.org/10.33480/jitk.v11i3.7044
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.33480/jitk.v11i3.7044
+      \endverb
+    \endentry
+    \entry{aliya2026design}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=62cc07c4d2752470e5bb5da572b814e1}{%
+           family={Turegeldinova},
+           familyi={T\bibinitperiod},
+           given={Aliya},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d9e9c6cb07cd12395792b09216b65dcf}{%
+           family={Kassenkhan},
+           familyi={K\bibinitperiod},
+           given={Aray},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f59b57df530c33dbbecbe6643b2b8a48}{%
+           family={Amralinova},
+           familyi={A\bibinitperiod},
+           given={Bakytzhan},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=26c2f82ae7ed1a1a1efc38bb59852941}{%
+           family={Sarkambayeva},
+           familyi={S\bibinitperiod},
+           given={Shynara},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d3cb39d4e49c5d1129c95d98d857e8f9}{%
+           family={Nugumanov},
+           familyi={N\bibinitperiod},
+           given={Shyndauyl},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5a10307a8b8e6850ae7121742a73036}{%
+           family={Khamitova},
+           familyi={K\bibinitperiod},
+           given={Zhainagul},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI AG}%
+      }
+      \strng{namehash}{3419e25659370aaf51980ab963d263d1}
+      \strng{fullhash}{d0fea75edfc800f417a93b6007290595}
+      \strng{fullhashraw}{d0fea75edfc800f417a93b6007290595}
+      \strng{bibnamehash}{d0fea75edfc800f417a93b6007290595}
+      \strng{authorbibnamehash}{d0fea75edfc800f417a93b6007290595}
+      \strng{authornamehash}{3419e25659370aaf51980ab963d263d1}
+      \strng{authorfullhash}{d0fea75edfc800f417a93b6007290595}
+      \strng{authorfullhashraw}{d0fea75edfc800f417a93b6007290595}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information}
+      \field{number}{7}
+      \field{title}{Design and Pilot Evaluation of a Traceability-Oriented Enterprise Architecture for Advance Salary Payment Management}
+      \field{volume}{17}
+      \field{year}{2026}
+      \field{pages}{635}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/info17070635
+      \endverb
+    \endentry
+    \entry{valenteneto2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3978ece70c60e376d329e967a40a8ebf}{%
+           family={Valente\bibnamedelima Neto},
+           familyi={V\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Eduardo},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Ernst \& Young}%
+      }
+      \strng{namehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{fullhash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{fullhashraw}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{bibnamehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authorbibnamehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authornamehash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authorfullhash}{3978ece70c60e376d329e967a40a8ebf}
+      \strng{authorfullhashraw}{3978ece70c60e376d329e967a40a8ebf}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{¿{C}ómo navegar la presión competitiva en una región cada vez más dinámica?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.ey.com/es_pe/insights/desafios-tendencias-empresas-latinoamerica
+      \endverb
+      \verb{url}
+      \verb https://www.ey.com/es_pe/insights/desafios-tendencias-empresas-latinoamerica
+      \endverb
+    \endentry
+    \entry{zeballos2022sistema}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=982f0bb332d72aceb69df3e090ac97ee}{%
+           family={Zeballos\bibnamedelima Quispe},
+           familyi={Z\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           given={Eddy},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Pública de El Alto}%
+      }
+      \list{location}{1}{%
+        {El Alto, Bolivia}%
+      }
+      \strng{namehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{fullhash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{fullhashraw}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{bibnamehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authorbibnamehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authornamehash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authorfullhash}{982f0bb332d72aceb69df3e090ac97ee}
+      \strng{authorfullhashraw}{982f0bb332d72aceb69df3e090ac97ee}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sistema de información web para el control de acceso y asistencia para el proceso de planillas mediante {RFID}: caso {Anti Money Laundering Consultants}}
+      \field{type}{Proyecto de grado}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://repositorio.upea.bo/handle/123456789/45999
+      \endverb
+      \verb{url}
+      \verb https://repositorio.upea.bo/handle/123456789/45999
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

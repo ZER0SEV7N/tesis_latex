@@ -1,0 +1,49 @@
+\subsection{Justificación del proyecto de innovación / mejora / Creatividad}
+
+El desarrollo e implementación del sistema web con flujos automatizados para la gestión de nóminas y recursos humanos en la empresa J\&P Periféricos S.A.C. 
+responde a la necesidad de sustituir el procesamiento manual de haberes por una plataforma robusta, auditable y alineada a las exigencias normativas del sector productivo. 
+El alcance del proyecto se enfoca en los módulos críticos de la organización (autenticación, gestión de legajos, asistencia/incidencias, motor de cálculo salarial, dispersión contable y auditoría), postergando el subsistema de autoservicio del colaborador como una línea de desarrollo futuro. A continuación, se detallan las justificaciones que sustentan la viabilidad y valor de la propuesta:
+
+\subsubsection{Justificación Práctica}
+La utilidad práctica del proyecto consiste en integrar la información administrada por los responsables de Recursos Humanos con las operaciones de revisión y cálculo realizadas por Contabilidad. 
+La solución permitirá gestionar legajos e incidencias, validar datos, revisar resultados y generar documentos dentro de un proceso con responsabilidades diferenciadas. 
+Para J\&P, el desarrollo constituye una base tecnológica para ampliar su portafolio de soluciones empresariales.
+
+\subsubsection{Justificación Tecnológica}
+El proyecto se justifica tecnológicamente por el desarrollo de una plataforma web que integra la información laboral, 
+el procesamiento de nóminas y los controles administrativos en una solución que J\&P Periféricos S.A.C. proyecta ofrecer por suscripción a clientes empresariales. 
+Su arquitectura de monolito modular organiza las funcionalidades de Recursos Humanos, Contabilidad y auditoría en módulos con responsabilidades diferenciadas, facilitando el mantenimiento y la incorporación progresiva de nuevas funciones.
+
+El uso de TypeScript y NestJS permite estructurar la lógica del sistema e implementar validaciones y controles de acceso según las responsabilidades de cada usuario. PostgreSQL, junto con
+Prisma ORM, permite gestionar información relacionada y ejecutar operaciones transaccionales para mantener la consistencia de los registros. La exactitud de los cálculos remunerativos se comprobará
+mediante pruebas con resultados esperados, mientras que el registrode modificaciones permitirá identificar quién realizó cada cambio, cuándo se efectuó y qué datos fueron modificados.
+
+Asimismo, n8n permitirá coordinar flujos automatizados para la preparación de archivos de pago y la distribución de boletas digitales. 
+Redis apoyará el procesamiento de tareas en segundo plano, y Docker facilitará el empaquetado y despliegue de los servicios. 
+Se propone alojar la solución en infraestructura de nube, con una configuración que será definida y validada durante la implementación. 
+Este enfoque constituye una base técnica para la futura prestación del servicio por suscripción, cuya operación requerirá mantenimiento, respaldo y supervisión de los servicios.
+
+\subsubsection{Justificación Legal}
+El desarrollo del sistema está justificado en el plano legal, dado que su funcionamiento permite la automatización de los procesos de cálculo de planillas y, a su vez, asegura el seguimiento del cumplimiento del marco regulatorio del sector laboral privado en el Perú.
+
+Decreto Supremo N.º 054-97-EF: Dictamina la afiliación obligatoria de los empleados al sistema de pensiones (ONP/AFP), además de designar al empleador como agente de retención de los aportes a los regímenes pensionarios.
+
+Decreto Supremo N.º 179-2004-EF: Delega la obligación a la empresa de ser el agente de retención, descontando el Impuesto a la Renta de 5.ª Categoría de los empleados que apliquen a este tramo bajo una escala progresiva.
+
+Decreto Supremo N.º 018-2007-TR: Determina el uso obligatorio de la planilla electrónica.
+
+Ley N.º 29903: Afiliación obligatoria de nuevos trabajadores al régimen de AFP.
+
+Ley N.º 26790: Afiliación obligatoria de los trabajadores a EsSalud, con la aportación del 9\% asumida por el empleador.
+
+Ley N.º 27735: Derecho del trabajador a percibir dos gratificaciones al año (julio y diciembre), equivalentes a un sueldo completo cada una.
+
+Ley N.º 25129: Dictamina el pago de una remuneración extra del 10\% de la RMV (Remuneración Mínima Vital) a los trabajadores que tengan hijos menores de edad o dependientes que cursen estudios superiores
+
+\subsubsection{Justificación Económica}
+Para J\&P Periféricos S.A.C., el proyecto representa una oportunidad de diversificar su portafolio mediante una solución que se proyecta comercializar por suscripción. 
+La evaluación económica considerará los costos de desarrollo, alojamiento, mantenimiento y soporte, frente a escenarios estimados de ingresos. Los precios, la cantidad de suscriptores y los beneficios económicos se identificarán como supuestos de proyección mientras no existan contratos o resultados comerciales verificables.
+
+\subsubsection{Justificación Personal}
+A nivel formativo y profesional, este proyecto de titulación representa la oportunidad de consolidar, aplicar y validar las capacidades tecnicas, arquitectonicas y de gestión adquiridos a lo largo de la formación académica y las prácticas empresarial. 
+El desarrollo integral de una solución empresarial desde cero asumiendo la investigación de los casos de uso, las tecnologias a utilizar y el diseño de la base de datos constituye a un reto tecnico que fortalecera el perfil profesional de los autores como desarrolladores de software.
