@@ -2,13 +2,92 @@
 
 \subsubsection{Fundamento teórico del proyecto de Innovación / Mejora / Creatividad}
 
-\paragraph{Sistema web}
+% Presenta los subniveles en negrita y cursiva con sangría solo en la primera
+% línea; añade dos puntos y continúa la explicación en la misma línea.
+\begingroup
+\newcommand{\fundamentosubnivel}[2]{%
+    \par\noindent\hspace*{\parindent}%
+    \textbf{\textit{#1) #2:}}\enspace\ignorespaces
+}
 
-\paragraph{}
+\paragraph{Sistema web:}
 
-\paragraph{}
+\textcite[p.~44, sección~2.2.1, párr.~1]{aguilar2022desarrollo} describen el sistema web como una interfaz que permite acceder a aplicaciones, bases de datos y sistemas corporativos mediante páginas web utilizadas desde un navegador.
 
-\paragraph{}
+\fundamentosubnivel{A}{Arquitectura de un sistema web} \textcite[36--37]{suarez2025sistema} presenta un diseño que separa la interfaz de usuario, la lógica de negocio y el almacenamiento. La interfaz se comunica con una API y la capa de negocio opera sobre la base de datos.
+
+\textcite[p.~4, sección \enquote{System requirements}]{ahmed2023web} describen un sistema de nóminas que requiere un cliente con navegador y un servidor que ejecuta la aplicación y utiliza una base de datos.
+
+\fundamentosubnivel{A.1}{Gestión e integridad de datos} \textcite[856--858]{tandrio2026web} presentan un diseño de base de datos que identifica claves para las entidades y representa sus relaciones en un modelo entidad-relación. Esta organización permite identificar registros y establecer vínculos entre los datos de nómina.
+
+\textcite[p.~5, sección \enquote{DML transactions}]{ahmed2023web} describen transacciones que agrupan operaciones de modificación: si todas se completan, se confirman; si alguna falla, se revierten.
+
+\fundamentosubnivel{A.1.1}{Control de acceso por roles} \textcite[pp.~4--5, sección \enquote{Users accounts module}]{ahmed2023web} describen un módulo de usuarios que diferencia perfiles y permisos. Por ejemplo, el contador modifica información de las boletas y el auditor puede revisarla sin modificarla.
+
+\fundamentosubnivel{A.1.1.1}{Despliegue mediante contenedores} \textcite[secciones \enquote{The Docker platform} y \enquote{Responsive deployment and scaling}]{dockerOverview} permite empaquetar y ejecutar aplicaciones en contenedores aislados y transportar las cargas entre entornos. Su documentación presenta Docker Compose para aplicaciones compuestas por varios contenedores.
+
+\paragraph{Flujos de trabajo automatizado:}
+
+\textcite[8]{wfmc1999glosario} define el workflow como la automatización completa o parcial de un proceso empresarial, en el cual se transfieren documentos, información o tareas entre los participantes siguiendo reglas de procedimientos.
+
+\textcite[20]{dumas2013fundamentals} explican la automatización de procesos como la configuración e implementación de un sistema informático que da soporte al proceso futuro.
+
+Según \textcite[sección \enquote{Understand workflows}, definición inicial y nota al pie]{n8n}, un workflow consiste en nodos conectados para automatizar un proceso. Su ejecución comienza al cumplirse una condición de activación.
+
+\fundamentosubnivel{A}{Definición del proceso} \textcite[11]{wfmc1999glosario} describe la definición del proceso como la representación de un proceso empresarial de una forma que permita su manipulación automatizada. Consta de una red de actividades y sus relaciones, criterios de inicio y fin del proceso e información de las actividades, como los participantes, las aplicaciones y los datos.
+
+\fundamentosubnivel{A.1}{Secuencia} \textcite[10]{dumas2013fundamentals} describen una secuencia en la que una actividad inicia cuando otra finaliza dentro de un proceso de flujo de trabajo.
+
+\fundamentosubnivel{A.2}{División paralela} \textcite[10]{vanderaalst2003workflow} describen la división de un hilo de control en varios hilos que pueden trabajar en simultáneo o en un orden.
+
+\fundamentosubnivel{A.3}{Sincronización} \textcite[11]{vanderaalst2003workflow} explican que varios hilos paralelos convergen y se sincronizan en uno solo.
+
+\fundamentosubnivel{A.4}{Elección exclusiva} \textcite[11]{vanderaalst2003workflow} describen la selección de una entre varias ramas.
+
+\fundamentosubnivel{A.5}{Unión simple} \textcite[12]{vanderaalst2003workflow} explican que las ramas convergen en una sola sin sincronización, bajo el supuesto de que ninguna se ejecute en paralelo.
+
+\fundamentosubnivel{B}{Patrones básicos de flujo de control} \textcite[10]{vanderaalst2003workflow} señalan que los patrones básicos de flujo de control describen aspectos elementales del control de procesos.
+
+\fundamentosubnivel{C}{Modelado de procesos: BPMN, AS-IS y TO-BE} \textcite[p.~1, sección~1.1]{omg2013bpmn} explica que BPMN tiene como objetivo proporcionar una notación común para representar los procesos de negocios. Su finalidad es que sea fácil de comprender para todos los involucrados en el análisis de los procesos, la implementación tecnológica y la administración de dichos procesos.
+
+\textcite[17--23]{beltran2021automatizacion} distinguen dos representaciones del proceso: el estado actual (AS-IS), que muestra las actividades y el comportamiento antes de la implementación de la solución, y el estado futuro (TO-BE), que representa los procesos después de la implementación de la solución con un resultado esperado.
+
+\fundamentosubnivel{D}{Seguimiento de los flujos de trabajo} \textcite[56]{wfmc1999glosario} define el seguimiento como la capacidad de seguir y reportar sobre los eventos de flujo de trabajo durante su ejecución.
+
+\paragraph{Gestión de nóminas:}
+
+\textcite[p.~55, sección~3.2.1]{quispe2025implementacion} señala que la gestión de nómina abarca el cálculo y la ejecución de pagos por remuneraciones al empleado, incluyendo bonos de acuerdo con la ley, aportaciones y descuentos.
+
+\textcite[p.~25, sección~1.2]{fernandez2023implementacion} explican que el manejo de las planillas demanda una ejecución muy elaborada debido a que estas son el registro de la relación entre el empleado y el empleador.
+
+\fundamentosubnivel{A}{Cálculo de planillas} \textcite[p.~26, sección~1.2]{fernandez2023implementacion} señalan que abarca el cálculo de planillas, remuneraciones y beneficios que la empresa ofrece al empleado.
+
+\textcite[p.~23, sección~3.4]{lima2022implementacion} indica que el cálculo permite a la empresa llevar un registro de las remuneraciones dadas al empleado y otorgarle los beneficios de acuerdo con la ley regulatoria.
+
+\fundamentosubnivel{A.1}{Retenciones y aportes} \textcite[p.~31, sección~1.2]{aguilar2022desarrollo} describen las retenciones y aportaciones como el descuento que se realiza con base en el ingreso del empleado, al realizar el cálculo base para derivar el descuento al régimen de pensiones o al tipo de renta al cual pertenece.
+
+\paragraph{Procesos de recursos humanos:}
+
+\textcite[166]{garcia2009macroprocesos} explica que los procesos de gestión humana comprenden actividades o eventos con un objetivo definido. Además, menciona que dichos procesos se pueden agrupar dependiendo del autor, de su presentación y de la relación entre sí.
+
+\textcite[15]{chiavenato2009talento} explica que la administración de recursos humanos comprende seis procesos dinámicos e interactivos.
+
+\fundamentosubnivel{A}{Registro e información del personal} \textcite[511]{chiavenato2009talento} distingue los registros de personal, puestos y secciones. Estos contienen datos personales de cada trabajador, datos de los ocupantes de los cargos y del personal de cada sección, departamento o división.
+
+\fundamentosubnivel{A.1}{Actualización de la información del personal} \textcite[512]{chiavenato2009talento} señala que el mantenimiento de los datos requiere la participación de los usuarios, especialistas, gerentes y colaboradores. Comprende revisiones de información de domicilio, experiencia, competencias y estado civil.
+
+\fundamentosubnivel{B}{Organización del personal: áreas y cargos} \textcite[202--203]{chiavenato2009talento} explica que los departamentos y divisiones agrupan puestos. Cada puesto se compone de actividades y ocupa un lugar organizacional correspondiente a un nivel jerárquico en un área.
+
+\fundamentosubnivel{C}{Contrato de trabajo} El \textcite[art.~4]{ds0031997} establece que en toda prestación personal de servicios remunerados y subordinados se presume la existencia de un contrato a plazo indeterminado. Asimismo, contempla contratos a tiempo indeterminado, sujetos a modalidad o a tiempo parcial.
+
+\fundamentosubnivel{D}{Suspensión del vínculo laboral} \textcite[2]{delossantos2024suspension} explica que la suspensión permite conservar el vínculo laboral ante la aparición de una causa que impide cumplir las obligaciones sin remuneración. La suspensión se caracteriza por su causalidad y temporalidad; esta última permite distinguirla de la extinción.
+
+\fundamentosubnivel{E}{Control de asistencia} El \textcite[art.~1]{ds0042006} regula un registro permanente en el que los trabajadores consignan personalmente su tiempo de labores.
+
+\fundamentosubnivel{E.1}{Ausentismo} \textcite[90]{chiavenato2009talento} define el ausentismo como la frecuencia o duración del tiempo laboral perdido cuando los colaboradores no se presentan al trabajo, sea por faltas, retrasos u otros motivos.
+
+\par
+\endgroup
 
 \subsubsection{Conceptos y Términos utilizados}
 \paragraph{Gestión de Nóminas}
