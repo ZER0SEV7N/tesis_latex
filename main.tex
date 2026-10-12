@@ -14,6 +14,9 @@
 % Fuente Times New Roman 12pt
 \usepackage[T1]{fontenc}
 \usepackage{newtxtext,newtxmath}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{booktabs}
 
 % Justificación de texto y Sangría APA 7 (1.27 cm)
 \usepackage{ragged2e} 
@@ -101,6 +104,11 @@
 
 \shorttitle{Sistema web de planillas}
 
+% ============================
+% Tablas
+% ============================
+\renewcommand{\listtablename}{Índice de tablas}
+
 \begin{document}
 
     % ============================
@@ -178,6 +186,9 @@
 
     \clearpage
     \listoffigures
+
+    \clearpage
+    \listoftables
 
     \clearpage
 

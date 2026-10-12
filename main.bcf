@@ -3103,6 +3103,9 @@
     <bcf:citekey order="30" intorder="1">someswari2025employee</bcf:citekey>
     <bcf:citekey order="31" intorder="1">chattopadhyay2026ai</bcf:citekey>
     <bcf:citekey order="32" intorder="1">chattopadhyay2026ai</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">quispe2025implementacion</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">lima2022implementacion</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">aguilar2022desarrollo</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

@@ -415,6 +415,46 @@
       \verb https://hdl.handle.net/20.500.12737/10671
       \endverb
     \endentry
+    \entry{lima2022implementacion}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=be3666990f0fbba7c3af74be781003d0}{%
+           family={Lima\bibnamedelima Trujillo},
+           familyi={L\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Mario\bibnamedelima Rodrigo},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Privada del Norte}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{fullhash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{fullhashraw}{be3666990f0fbba7c3af74be781003d0}
+      \strng{bibnamehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authorbibnamehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authornamehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authorfullhash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authorfullhashraw}{be3666990f0fbba7c3af74be781003d0}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de un sistema de planillas para la empresa {Software Enterprise Services S.A.C.}}
+      \field{type}{Trabajo de suficiencia profesional}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/11537/32005
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/11537/32005
+      \endverb
+    \endentry
     \entry{masapanta2025desarrollo}{thesis}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=f3ed3f76a369822191bc2ad91fe5887a}{%
@@ -1218,6 +1258,46 @@
       \endverb
       \verb{url}
       \verb https://hdl.handle.net/20.500.12737/10671
+      \endverb
+    \endentry
+    \entry{lima2022implementacion}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=be3666990f0fbba7c3af74be781003d0}{%
+           family={Lima\bibnamedelima Trujillo},
+           familyi={L\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Mario\bibnamedelima Rodrigo},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidad Privada del Norte}%
+      }
+      \list{location}{1}{%
+        {Lima, Perú}%
+      }
+      \strng{namehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{fullhash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{fullhashraw}{be3666990f0fbba7c3af74be781003d0}
+      \strng{bibnamehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authorbibnamehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authornamehash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authorfullhash}{be3666990f0fbba7c3af74be781003d0}
+      \strng{authorfullhashraw}{be3666990f0fbba7c3af74be781003d0}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Implementación de un sistema de planillas para la empresa {Software Enterprise Services S.A.C.}}
+      \field{type}{Trabajo de suficiencia profesional}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://hdl.handle.net/11537/32005
+      \endverb
+      \verb{url}
+      \verb https://hdl.handle.net/11537/32005
       \endverb
     \endentry
     \entry{masapanta2025desarrollo}{thesis}{}{}

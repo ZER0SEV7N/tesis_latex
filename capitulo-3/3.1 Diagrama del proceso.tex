@@ -1,6 +1,6 @@
 \subsection{Diagrama del proceso, Mapa de Flujo de Valor y/o Diagrama de Operación actual}
 
-\subsection{Proceso actual de las empresa - sin la intervención del software}
+\subsubsection{Proceso actual de las empresa - sin la intervención del software}
 
 El presente apartado describe el proceso de elaboración de nóminas sin la intervención del sistema propuesto. Su representación se elaboró a partir de la información recabada mediante entrevistas a personas con experiencia en Recursos Humanos y Contabilidad, quienes describieron procedimientos similares al flujo presentado. 
 El diagrama organiza las actividades mediante los roles de Contador, Asistente contable y Responsable de Recursos Humanos, y comprende la recopilación de información laboral, la consolidación de incidencias, el cálculo y revisión de la planilla, su aprobación y la preparación de documentos y gestión de entregas. 
@@ -13,25 +13,33 @@ El contador calcula las remuneraciones, descuentos y aportes, y revisa los resul
 Si las observaciones corresponden a fórmulas o parámetros de cálculo, el contador realiza los ajustes y vuelve a calcular y revisar la planilla. Cuando no existen observaciones pendientes, aprueba su versión final.
 Una vez aprobada la planilla, el asistente contable ejecuta el subproceso de preparación de documentos y gestión de entregas. Al finalizar, archiva la planilla, los documentos y las constancias disponibles. La Figura~\ref{fig:proceso_nominas_referencia} presenta el flujo principal; el detalle del subproceso se muestra en la Figura~\ref{fig:subproceso_documentos_nomina}.
 
-\clearpage
-\begin{landscape}
-    \thispagestyle{plain}
-    \refstepcounter{figure}
-    \label{fig:proceso_nominas_referencia}
-    \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}Proceso de referencia de gestión de nóminas}
+\setcounter{figure}{3}
 
-    \noindent\textbf{Figura \thefigure}\par
-    \noindent\textit{Proceso de referencia de gestión de nóminas sin la intervención del sistema propuesto}\par
+\clearpage
+\refstepcounter{figure}
+\label{fig:proceso_nominas_referencia}
+\addcontentsline{lof}{figure}
+    {Figura \thefigure: Proceso de elaboración de nóminas}
+
+\begin{center}
+    {\bfseries Figura \thefigure}\par
+    \vspace{0.1cm}
+
+    {\itshape Proceso de elaboración de nóminas
+    sin la intervención del sistema propuesto}\par
     \vspace{0.25cm}
 
-    \begin{center}
-        \includegraphics[width=\linewidth]{images/diagramaProcesos.png}
-    \end{center}
+    \includegraphics[
+        width=\linewidth,
+        keepaspectratio
+    ]{images/diagramaProcesos.png}\par
 
-    \vspace{0.15cm}
-    \noindent\textit{Nota.} Elaboración propia en Bizagi Modeler.
-\end{landscape}
-\clearpage
+    \vspace{0.25cm}
+    \begin{minipage}{\linewidth}
+        \small
+        \textit{Nota.} Elaboración propia en Bizagi Modeler.
+    \end{minipage}
+\end{center}
 
 \subsubsection{Detalle del subproceso de preparación de documentos y gestión de entregas}
 
@@ -41,22 +49,31 @@ Después del envío, se verifica si todas las boletas fueron entregadas. Si exis
 
 El proceso de referencia permite ubicar actividades relevantes para analizar la problemática: consolidación de archivos, transcripción de incidencias, revisión de cálculos, identificación de la versión aprobada y seguimiento de entregas. Los permisos de acceso y el historial de modificaciones se analizarán como condiciones transversales de control. La existencia de estas actividades no demuestra por sí sola errores, accesos indebidos o pérdidas de información; sus efectos y causas deberán sustentarse en el diagnóstico.
 
-\clearpage
-\begin{landscape}
-    \thispagestyle{plain}
-    \refstepcounter{figure}
-    \label{fig:subproceso_documentos_nomina}
-    \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}Subproceso de preparación de documentos y gestión de entregas}
+\refstepcounter{figure}
+\label{fig:subproceso_documentos_nomina}
+\addcontentsline{lof}{figure}
+    {Figura \thefigure: Preparación de documentos
+    y gestión de entregas}
 
-    \noindent\textbf{Figura \thefigure}\par
-    \noindent\textit{Subproceso de preparación de documentos y gestión de entregas}\par
+\begin{center}
+    {\bfseries Figura \thefigure}\par
+    \vspace{0.1cm}
+
+    {\itshape Subproceso de preparación de documentos
+    y gestión de entregas}\par
     \vspace{0.25cm}
 
-    \begin{center}
-        \includegraphics[width=0.95\linewidth]{images/diagramaSubproceso.png}
-    \end{center}
+    \includegraphics[
+        width=\linewidth,
+        keepaspectratio
+    ]{images/diagramaSubproceso.png}\par
 
-    \vspace{0.15cm}
-    \noindent\textit{Nota.} Elaboración propia en Bizagi Modeler.
-\end{landscape}
-\clearpage
+    \vspace{0.25cm}
+    \begin{minipage}{\linewidth}
+        \small
+        \textit{Nota.} Elaboración propia en Bizagi Modeler.
+        Detalle del subproceso representado en la
+        Figura~\ref{fig:proceso_nominas_referencia}.
+    \end{minipage}
+\end{center}
+

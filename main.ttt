@@ -1,0 +1,80 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H]
+    \centering
+
+    % Numeración automática y referencia de la tabla
+    \refstepcounter{table}
+    \label{tab:causas_nominas}
+    \addcontentsline{lot}{table}{%
+        \protect\numberline{\thetable}Lista de causas identificadas}
+
+    % Título y subtítulo
+    \begin{minipage}{\linewidth}
+        \raggedright
+        {\bfseries Tabla~\thetable}\par
+        \vspace{0.1cm}
+        {\itshape Lista de causas identificadas}\par
+    \end{minipage}
+
+    \vspace{0.2cm}
+
+    \begingroup
+    \small
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\linewidth}{
+        @{}p{0.12\linewidth}
+        >{\raggedright\arraybackslash}X@{}
+    }
+        \toprule
+        \textbf{Código} & \textbf{Identificación de las causas} \\
+        \midrule
+
+        CA1 &
+        Información laboral y remunerativa almacenada en
+        archivos separados entre Recursos Humanos y Contabilidad. \\
+
+        CA2 &
+        Circulación de distintas versiones de los archivos
+        de planilla sin un control definido de actualización. \\
+
+        CA3 &
+        Transcripción manual de asistencias, permisos, horas
+        extras y otras incidencias laborales a la planilla. \\
+
+        CA4 &
+        Modificación manual de fórmulas y parámetros de cálculo
+        sin una validación uniforme. \\
+
+        CA5 &
+        Permisos de consulta y modificación de datos laborales
+        y salariales insuficientemente diferenciados según
+        las responsabilidades del usuario. \\
+
+        CA6 &
+        Registro insuficiente de los cambios realizados sobre
+        los datos laborales y los resultados de la planilla. \\
+
+        CA7 &
+        Preparación separada de información para pagos bancarios
+        y declaraciones, mediante transferencias o registros manuales. \\
+
+        CA8 &
+        Generación y distribución individual de boletas mediante
+        actividades manuales o semimanuales. \\
+
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \vspace{0.2cm}
+
+    \begin{minipage}{\linewidth}
+        \small
+        \raggedright
+        \textit{Nota.} Las causas se presentan mediante códigos
+        de identificación y no según un orden de prioridad.
+        Elaboración propia.
+    \end{minipage}
+\end{table*}

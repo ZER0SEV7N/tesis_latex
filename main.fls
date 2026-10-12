@@ -331,6 +331,12 @@ INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\oberdiek\centernot.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\oberdiek\centernot.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\generic\binhex\binhex.tex
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\ragged2e\ragged2e.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\ragged2e\ragged2e.sty
 INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex\latex\newtx\t1ntxtlf.fd
@@ -493,6 +499,10 @@ INPUT .\main.lof
 INPUT .\main.lof
 INPUT main.lof
 OUTPUT main.lof
+INPUT .\main.lot
+INPUT .\main.lot
+INPUT main.lot
+OUTPUT main.lot
 INPUT .\portada\resumen.tex
 INPUT .\portada\resumen.tex
 INPUT .\portada\resumen.tex
@@ -602,6 +612,40 @@ INPUT .\images\diagramaSubproceso.png
 INPUT .\capitulo-3\3.2 Efecto del problema en el área del trabajo.tex
 INPUT .\capitulo-3\3.2 Efecto del problema en el área del trabajo.tex
 INPUT capitulo-3\3.2 Efecto del problema en el área del trabajo.tex
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Regular-tlf-ot1.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxmi.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxmi7.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxmi5.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsy.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsy7.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsy5.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxexx.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxexx.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxexx.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx10.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx8.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx6.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib10.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib10.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib7.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy7.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxmia.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxmia.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxmia.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsym.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsym.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsym.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsyc.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsyc.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxsyc.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxexa.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxexa.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntxexa.tfm
+INPUT C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\fonts\tfm\public\newtx\ntx-Bold-tlf-t1.tfm
 INPUT .\capitulo-3\3.3 analisis de la causa raiz.tex
 INPUT .\capitulo-3\3.3 analisis de la causa raiz.tex
 INPUT capitulo-3\3.3 analisis de la causa raiz.tex

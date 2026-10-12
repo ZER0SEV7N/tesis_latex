@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.10)  10 OCT 2026 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.10)  12 OCT 2026 01:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1067,33 +1067,59 @@ LaTeX Font Info:    Redeclaring math accent \ddot on input line 992.
 LaTeX Font Info:    Redeclaring math accent \vec on input line 2057.
 LaTeX Info: Redefining \Bbbk on input line 2847.
 LaTeX Info: Redefining \not on input line 2995.
+) (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen321
+\ar@mcellbox=\box69
+\extrarowheight=\dimen322
+\NC@list=\toks45
+\extratabsurround=\skip115
+\backup@length=\skip116
+\ar@cellbox=\box70
+)
+\TX@col@width=\dimen323
+\TX@old@table=\dimen324
+\TX@old@col=\dimen325
+\TX@target=\dimen326
+\TX@delta=\dimen327
+\TX@cols=\count505
+\TX@ftn=\toks46
+) (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count506
+\float@exts=\toks47
+\float@box=\box71
+\@float@everytoks=\toks48
+\@floatcapt=\box72
 ) (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
-\CenteringLeftskip=\skip115
-\RaggedLeftLeftskip=\skip116
-\RaggedRightLeftskip=\skip117
-\CenteringRightskip=\skip118
-\RaggedLeftRightskip=\skip119
-\RaggedRightRightskip=\skip120
-\CenteringParfillskip=\skip121
-\RaggedLeftParfillskip=\skip122
-\RaggedRightParfillskip=\skip123
-\JustifyingParfillskip=\skip124
-\CenteringParindent=\skip125
-\RaggedLeftParindent=\skip126
-\RaggedRightParindent=\skip127
-\JustifyingParindent=\skip128
+\CenteringLeftskip=\skip117
+\RaggedLeftLeftskip=\skip118
+\RaggedRightLeftskip=\skip119
+\CenteringRightskip=\skip120
+\RaggedLeftRightskip=\skip121
+\RaggedRightRightskip=\skip122
+\CenteringParfillskip=\skip123
+\RaggedLeftParfillskip=\skip124
+\RaggedRightParfillskip=\skip125
+\JustifyingParfillskip=\skip126
+\CenteringParindent=\skip127
+\RaggedLeftParindent=\skip128
+\RaggedRightParindent=\skip129
+\JustifyingParindent=\skip130
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 104.
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 112.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 104.
+(Font)              scaled to size 12.0pt on input line 112.
 
 
 LaTeX Warning: Unused global option(s):
@@ -1107,44 +1133,44 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 104.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 104.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 112.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 112.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/newtx\omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 104.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 104.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 112.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 112.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 104.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 104.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 112.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 112.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 104.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 104.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 112.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 112.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/newtx\lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    ... okay on input line 112.
 Package biblatex Info: Trying to load language 'spanish' -> 'spanish-apa'...
 Package biblatex Info: ... file 'spanish-apa.lbx' found.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\spanish-apa.lbx
@@ -1167,8 +1193,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 104.
-Package biblatex Info: Reference segment=0 on input line 104.
+Package biblatex Info: Reference section=0 on input line 112.
+Package biblatex Info: Reference segment=0 on input line 112.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1206,24 +1232,24 @@ Package biblatex Info: Reference segment=0 on input line 104.
 
 (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count505
-\scratchdimen=\dimen321
-\scratchbox=\box69
-\nofMPsegments=\count506
-\nofMParguments=\count507
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count508
-\MPscratchDim=\dimen322
-\MPnumerator=\count509
-\makeMPintoPDFobject=\count510
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count507
+\scratchdimen=\dimen328
+\scratchbox=\box73
+\nofMPsegments=\count508
+\nofMParguments=\count509
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count510
+\MPscratchDim=\dimen329
+\MPnumerator=\count511
+\makeMPintoPDFobject=\count512
+\everyMPtoPDFconversion=\toks50
 ) (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 104.
+Package hyperref Info: Link coloring OFF on input line 112.
  (main.out) (main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -1232,25 +1258,26 @@ Package hyperref Info: Link coloring OFF on input line 104.
 File: APA7spanish.txt 2021/08/08 v1.00 apa7 configuration for Spanish
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \sptext on input line 104.
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
-\c@mv@tabular=\count511
-\c@mv@boldtabular=\count512
-LaTeX Info: Command `\dddot' is already robust on input line 104.
-LaTeX Info: Command `\ddddot' is already robust on input line 104.
-<images/senati_logo.png, id=242, 3854.4pt x 1040.88875pt>
+LaTeX Info: Redefining \sptext on input line 112.
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
+\c@mv@tabular=\count513
+\c@mv@boldtabular=\count514
+LaTeX Info: Command `\dddot' is already robust on input line 112.
+LaTeX Info: Command `\ddddot' is already robust on input line 112.
+<images/senati_logo.png, id=358, 3854.4pt x 1040.88875pt>
 File: images/senati_logo.png Graphic file (type png)
 <use images/senati_logo.png>
-Package pdftex.def Info: images/senati_logo.png  used on input line 114.
+Package pdftex.def Info: images/senati_logo.png  used on input line 122.
 (pdftex.def)             Requested size: 338.22418pt x 91.3253pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 117.
+(Font)              scaled to size 12.0pt on input line 125.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 117.
+(Font)              scaled to size 14.4pt on input line 125.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 119.
+(Font)              scaled to size 10.95pt on input line 127.
  [1
 
 {C:/Users/ZER0SEV7N/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./images/senati_logo.png>] (portada/agradecimientos/agradecimiento_daniel.tex
@@ -1345,11 +1372,11 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 6.6pt on input line 6.
  [4
 
-] [5])
+] [5] [6])
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- [6] (main.lof
+ [7] (main.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1357,14 +1384,24 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
- [7
+ [8
+
+] (main.lot
+LaTeX Info: Redefining \sptext on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@lot=\write10
+\openout10 = `main.lot'.
+
+ [9
 
 ] (portada/resumen.tex) (portada/introduccion.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 17.28pt on input line 5.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 17.28pt on input line 5.
-) (capitulo-1/index.tex [8
+) (capitulo-1/index.tex [10
 
 
 ]
@@ -1372,14 +1409,14 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 20.74pt on input line 4.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 20.74pt on input line 4.
- [9
+ [11
 
 ] (capitulo-1/1.1 datos_generales.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 (Font)              scaled to size 12.0pt on input line 3.
 
 Underfull \hbox (badness 2653) in paragraph at lines 41--43
-[]\T1/ntxtlf/m/n/12 Jr. Emi-lio Fer-n醤-dez 160
+[]|\T1/ntxtlf/m/n/12 Jr. Emi-lio Fer-n醤-dez 160
  []
 
 
@@ -1387,23 +1424,23 @@ Overfull \hbox (7.17952pt too wide) in paragraph at lines 17--44
  [][] 
  []
 
-[10
+[12
 
 ]
-<images/J&P_Logo.png, id=358, 789.95125pt x 390.45876pt>
+<images/J&P_Logo.png, id=514, 789.95125pt x 390.45876pt>
 File: images/J&P_Logo.png Graphic file (type png)
 <use images/J&P_Logo.png>
 Package pdftex.def Info: images/J&P_Logo.png  used on input line 57.
 (pdftex.def)             Requested size: 244.27461pt x 120.7371pt.
-<images/ubicacion_empresa.png, id=359, 829.9005pt x 522.753pt>
+<images/ubicacion_empresa.png, id=515, 829.9005pt x 522.753pt>
 File: images/ubicacion_empresa.png Graphic file (type png)
 <use images/ubicacion_empresa.png>
 Package pdftex.def Info: images/ubicacion_empresa.png  used on input line 82.
 (pdftex.def)             Requested size: 422.78778pt x 170.7143pt.
-) (capitulo-1/1.2 mision_vision.tex [11
+) (capitulo-1/1.2 mision_vision.tex [13
 
- <./images/J&P_Logo.png> <./images/ubicacion_empresa.png>] [12]) (capitulo-1/1.3 productos_mercado.tex [13] [14]) (capitulo-1/1.4 organigrama.tex [15]
-<images/organigrama.png, id=384, 3748.0025pt x 1620.0525pt>
+ <./images/J&P_Logo.png> <./images/ubicacion_empresa.png>] [14]) (capitulo-1/1.3 productos_mercado.tex [15] [16]) (capitulo-1/1.4 organigrama.tex [17]
+<images/organigrama.png, id=540, 3748.0025pt x 1620.0525pt>
 File: images/organigrama.png Graphic file (type png)
 <use images/organigrama.png>
 Package pdftex.def Info: images/organigrama.png  used on input line 13.
@@ -1413,58 +1450,48 @@ Overfull \hbox (1.20001pt too wide) in paragraph at lines 13--13
  [][][] 
  []
 
-) [16
+) [18
 
- <./images/organigrama.png (PNG copy)>] (capitulo-1/1.5 planificacion_entrevista.tex [17
+ <./images/organigrama.png (PNG copy)>] (capitulo-1/1.5 planificacion_entrevista.tex [19
 
-])) (capitulo-2/index.tex [18] [19
+] [20])) (capitulo-2/index.tex [21] [22
 
-] (capitulo-2/2.1 Identificaci贸n del problema t茅cnico de la empresa.tex [20
+] (capitulo-2/2.1 Identificaci贸n del problema t茅cnico de la empresa.tex [23
 
-] [21]) (capitulo-2/2.2 Objetivo del proyecto de Innovacion.tex [22]) (capitulo-2/2.3 Antecedentes de proyecto.tex [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]) (capitulo-2/2.4 Justificaci贸n del proyecto.tex
+] [24]) (capitulo-2/2.2 Objetivo del proyecto de Innovacion.tex [25]) (capitulo-2/2.3 Antecedentes de proyecto.tex [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]) (capitulo-2/2.4 Justificaci贸n del proyecto.tex
 Overfull \hbox (2.12697pt too wide) in paragraph at lines 75--1
 []\T1/ntxtlf/m/n/12 En es-te ar-t韈u-lo de in-ves-ti-ga-ci髇 pu-bli-ca-do por []Chat-to-padh-yay ([]2026[]), ti-tu-la-do ``AI-Enhanced
  []
 
-[33] [34] [35]
+[36] [37] [38]
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 29.
  (C:\Users\ZER0SEV7N\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 29.
-) (capitulo-2/2.5 Marco Te贸rico y Conceptual.tex [36{C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}])) (capitulo-3/index.tex [37] [38
+) (capitulo-2/2.5 Marco Te贸rico y Conceptual.tex [39{C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tex-gyre/q-ts1.enc}] [40] [41] [42] [43])) (capitulo-3/index.tex [44] [45
 
-] (capitulo-3/3.1 Diagrama del proceso.tex [39
+] (capitulo-3/3.1 Diagrama del proceso.tex [46
 
 ]
-<images/diagramaProcesos.png, id=530, 1072.75781pt x 460.72125pt>
+<images/diagramaProcesos.png, id=716, 1251.92719pt x 537.50812pt>
 File: images/diagramaProcesos.png Graphic file (type png)
 <use images/diagramaProcesos.png>
-Package pdftex.def Info: images/diagramaProcesos.png  used on input line 28.
-(pdftex.def)             Requested size: 650.43001pt x 279.33829pt.
- [40
+Package pdftex.def Info: images/diagramaProcesos.png  used on input line 35.
+(pdftex.def)             Requested size: 469.75502pt x 201.68806pt.
+ [47
 
-
- <./images/diagramaProcesos.png>] [41
-
-
-]
-<images/diagramaSubproceso.png, id=540, 825.0825pt x 379.4175pt>
+ <./images/diagramaProcesos.png>]
+<images/diagramaSubproceso.png, id=722, 825.0825pt x 379.4175pt>
 File: images/diagramaSubproceso.png Graphic file (type png)
 <use images/diagramaSubproceso.png>
-Package pdftex.def Info: images/diagramaSubproceso.png  used on input line 56.
-(pdftex.def)             Requested size: 617.90651pt x 284.15137pt.
- [42
+Package pdftex.def Info: images/diagramaSubproceso.png  used on input line 69.
+(pdftex.def)             Requested size: 469.75502pt x 216.02127pt.
+) (capitulo-3/3.2 Efecto del problema en el 谩rea del trabajo.tex) (capitulo-3/3.3 analisis de la causa raiz.tex [48 <./images/diagramaSubproceso.png>]) (capitulo-3/3.4 Priorizaci贸n de causa Ra铆z.tex)) [49] [50
 
 
- <./images/diagramaSubproceso.png>]) (capitulo-3/3.2 Efecto del problema en el 谩rea del trabajo.tex) (capitulo-3/3.3 analisis de la causa raiz.tex) (capitulo-3/3.4 Priorizaci贸n de causa Ra铆z.tex)) [43
-
-
-] [44
-
-
-] [45] AED endfloat: Processing end Figures and Tables [46] (main.aux
+] [51] AED endfloat: Processing end Figures and Tables [52] (main.aux
 LaTeX Info: Redefining \sptext on input line 12.
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
@@ -1474,23 +1501,23 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F5F35BBDDE424AC9E6EB36E7362EB9E5;13201.
+(rerunfilecheck)             Checksum: A347952ACB7C8B0A2AE619908AE15D9A;17078.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37884 strings out of 467871
- 713755 string characters out of 5416439
- 1580218 words of memory out of 5000000
- 65945 multiletter control sequences out of 15000+600000
- 686263 words of font info for 89 fonts, out of 8000000 for 9000
+ 38198 strings out of 467871
+ 719019 string characters out of 5416439
+ 1584417 words of memory out of 5000000
+ 66199 multiletter control sequences out of 15000+600000
+ 711637 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,118p,2490b,2896s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmbi.pfb><C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><C:/Users/ZER0SEV7N/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (46 pages, 1835153 bytes).
+Output written on main.pdf (52 pages, 1878690 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
- 515 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 843 PDF objects out of 1000 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
+ 747 words of extra memory for PDF output out of 10000 (max. 10000000)
 
