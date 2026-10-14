@@ -49,7 +49,14 @@ J\&P Periféricos S.A.C. es una empresa peruana en el rubro de la informática q
 \begin{center}
     \vspace{0.1cm}
     %  Identificador y título en formato APA 7
-    {\bfseries Figura 1}\par\vspace{0.1cm}
+    \refstepcounter{figure}
+    \label{fig:logo_empresa}
+
+    \addcontentsline{lof}{figure}{%
+        Figura~\thefigure. Logotipo institucional de
+        J\&P Periféricos S.A.C.}
+
+    {\bfseries Figura~\thefigure}\par\vspace{0.1cm}
     {\itshape Logotipo institucional de J\&P Periféricos S.A.C.}\par
     \vspace{0.25cm}
 
@@ -64,16 +71,19 @@ J\&P Periféricos S.A.C. es una empresa peruana en el rubro de la informática q
     \end{minipage}
 \end{center}
 
-\addcontentsline{lof}{figure}{Figura 1: Logotipo institucional de J\&P Periféricos S.A.C.}
-\label{fig:logo_empresa}
-
 \subsubsection{Ubicación de la Empresa}
 
 La sede de \textbf{J\&P Periféricos S.A.C.} se encuentra ubicada en el departamento Concepto Urbano Plus, Calle Emilio Fernández 160, Dpto. 1804, distrito de Cercado de Lima (Código Postal 15046). Como referencia de acceso principal, el inmueble se ubica a la altura de la cuadra 8 de la Avenida Arequipa.
 
 \begin{center}
     % Título formato APA 7 (Recto / Sin cursiva)
-    {\bfseries Figura 2}\par
+    \refstepcounter{figure}
+    \label{fig:ubicacion_empresa}
+    \addcontentsline{lof}{figure}{%
+        Figura~\thefigure.
+        Localización y vías de acceso de la empresa}
+
+    {\bfseries Figura~\thefigure}\par
     {\itshape Localización y vías de acceso de la empresa}\par
     \vspace{0.20cm}
 
@@ -88,6 +98,3 @@ La sede de \textbf{J\&P Periféricos S.A.C.} se encuentra ubicada en el departam
         \textit{Nota.} Ubicación geográfica y mapa vial de la sede central. Adaptado de Google Maps.
     \end{minipage}
 \end{center}
-
-\addcontentsline{lof}{figure}{Figura 2: Localización y vías de acceso de la empresa}
-\label{fig:ubicacion_empresa}

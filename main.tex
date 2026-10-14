@@ -74,6 +74,7 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
+
 % ============================
 % Numeración y encabezados
 % ============================
@@ -112,7 +113,59 @@
 % ============================
 % Tablas
 % ============================
-\renewcommand{\listtablename}{Índice de tablas}
+\addto\captionsspanish{%
+    \renewcommand{\tablename}{Tabla}%
+    \renewcommand{\listtablename}{ÍNDICE DE TABLAS}%
+}
+
+\newcommand{\tituloTablaAPA}[2]{%
+    \refstepcounter{table}%
+    \label{#1}%
+    \addcontentsline{lot}{table}{%
+        Tabla~\thetable. #2}%
+
+    {\raggedright
+        {\bfseries Tabla~\thetable}\par
+        \vspace{0.1cm}
+        {\itshape #2}\par
+    }
+    \vspace{0.2cm}
+}
+
+\newcommand{\figuraEnTexto}[4]{%
+    \par\medskip
+    \noindent
+    \begin{minipage}{\linewidth}
+        \refstepcounter{figure}%
+        \label{#1}%
+        \addcontentsline{lof}{figure}{%
+            Figura~\thefigure. #2}%
+
+        {\raggedright
+            {\bfseries Figura~\thefigure}\par
+            \vspace{0.1cm}
+            {\itshape #2}\par
+        }
+
+        \vspace{0.2cm}
+
+        {\centering
+            \includegraphics[
+                width=\linewidth,
+                height=0.65\textheight,
+                keepaspectratio
+            ]{#3}\par
+        }
+
+        \vspace{0.2cm}
+
+        {\small\raggedright
+            \textit{Nota.} #4\par
+        }
+    \end{minipage}
+    \par\medskip
+}
+
 
 \begin{document}
 
@@ -190,10 +243,10 @@
     \tableofcontents
 
     \clearpage
-    \listoffigures
+    \listoftables
 
     \clearpage
-    \listoftables
+    \listoffigures
 
     \clearpage
 

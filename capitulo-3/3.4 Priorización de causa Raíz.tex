@@ -1,7 +1,144 @@
-\subsection{Priorización de causa Raiz}
+\subsection{Priorización de causas raíz}
 
 \subsubsection{Lista de causas encuestadas}
 
+La Tabla~\ref{tab:encuesta_causas_nominas} reúne 15 respuestas para cada una de las ocho causas identificadas en la gestión de nóminas. Las opciones son siempre (4), casi siempre (3), algunas veces (2) y nunca (1). Las 120 respuestas permiten identificar qué causas se presentan con mayor frecuencia y cuáles requieren atención prioritaria.
+
+\par\medskip
+\noindent\begin{minipage}{\linewidth}
+    \refstepcounter{table}\label{tab:encuesta_causas_nominas}
+    \addcontentsline{lot}{table}{%
+        Tabla~\thetable. Distribución de respuestas por causa identificada}
+    {\bfseries Tabla~\thetable}\par
+    \vspace{0.1cm}
+    {\itshape Distribución de respuestas por causa identificada}\par
+    \vspace{0.2cm}
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \small
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\linewidth}{@{}p{0.08\linewidth}>{\raggedright\arraybackslash}X*{4}{>{\centering\arraybackslash}p{0.075\linewidth}}>{\centering\arraybackslash}p{0.07\linewidth}@{}}
+        \toprule
+        \textbf{\footnotesize Código} & \textbf{\footnotesize Identificación de las causas} & \textbf{\footnotesize \shortstack{Siempre\\(4)}} & \textbf{\footnotesize \shortstack{Casi\\siempre\\(3)}} & \textbf{\footnotesize \shortstack{Algunas\\veces\\(2)}} & \textbf{\footnotesize \shortstack{Nunca\\(1)}} & \textbf{\footnotesize \shortstack{Total\\N}} \\
+        \midrule
+        CA1 & ¿Cómo calificas la Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad? & 7 & 5 & 2 & 1 & 15 \\
+        CA2 & ¿Cómo calificas la Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización? & 5 & 5 & 4 & 1 & 15 \\
+        CA3 & ¿Cómo calificas la Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales a la planilla? & 9 & 4 & 2 & 0 & 15 \\
+        CA4 & ¿Cómo calificas la Modificación manual de fórmulas y parámetros de cálculo sin una validación uniforme? & 4 & 5 & 5 & 1 & 15 \\
+        CA5 & ¿Cómo calificas los Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario? & 2 & 4 & 6 & 3 & 15 \\
+        CA6 & ¿Cómo calificas el Registro insuficiente de los cambios realizados sobre los datos laborales y los resultados de la planilla? & 3 & 5 & 5 & 2 & 15 \\
+        CA7 & ¿Cómo calificas la Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales? & 6 & 5 & 3 & 1 & 15 \\
+        CA8 & ¿Cómo calificas la Generación y distribución individual de boletas mediante actividades manuales o semimanuales? & 8 & 4 & 3 & 0 & 15 \\
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+    \vspace{0.2cm}
+    {\small \textit{Nota.} Se muestra en la tabla la lista de causas identificadas según el problema principal.\par}
+\end{minipage}
+\par\medskip
+
 \subsubsection{Diagrama de Pareto en función al grado de las causas principales}
 
+Las respuestas se multiplican por su peso y se suman para obtener el puntaje de cada causa. La Tabla~\ref{tab:pareto_causas_nominas} y la Figura~\ref{fig:pareto_causas_nominas} muestran las causas ordenadas de mayor a menor. Las seis primeras acumulan el 79,21\,\% del puntaje, cercano a la referencia del 80\,\%.
+
+\par\medskip
+\noindent\begin{minipage}{\linewidth}
+    \refstepcounter{table}\label{tab:pareto_causas_nominas}
+
+    \addcontentsline{lot}{table}{%
+        Tabla~\thetable. Priorización de las causas mediante puntajes ponderados}
+
+    {\bfseries Tabla~\thetable}\par
+    \vspace{0.1cm}
+    {\itshape Priorización de las causas mediante puntajes ponderados}\par
+    \vspace{0.2cm}
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \small
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\linewidth}{@{}p{0.08\linewidth}>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.085\linewidth}>{\centering\arraybackslash}p{0.115\linewidth}>{\centering\arraybackslash}p{0.115\linewidth}>{\centering\arraybackslash}p{0.075\linewidth}@{}}
+        \toprule
+        \textbf{\footnotesize Código} & \textbf{\footnotesize Problemas} & \textbf{\footnotesize Puntaje} & \textbf{\footnotesize \shortstack{\%\\acumulado}} & \textbf{\footnotesize \shortstack{Puntaje\\acumulado}} & \textbf{\footnotesize \shortstack{Corte\\80--20}} \\
+        \midrule
+        CA3 & Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales a la planilla. & 52 & 14,61\,\% & 52 & 80\,\% \\
+        CA8 & Generación y distribución individual de boletas mediante actividades manuales o semimanuales. & 50 & 28,65\,\% & 102 & 80\,\% \\
+        CA1 & Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad. & 48 & 42,13\,\% & 150 & 80\,\% \\
+        CA7 & Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales. & 46 & 55,06\,\% & 196 & 80\,\% \\
+        CA2 & Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización. & 44 & 67,42\,\% & 240 & 80\,\% \\
+        CA4 & Modificación manual de fórmulas y parámetros de cálculo sin una validación uniforme. & 42 & 79,21\,\% & 282 & 80\,\% \\
+        CA6 & Registro insuficiente de los cambios realizados sobre los datos laborales y los resultados de la planilla. & 39 & 90,17\,\% & 321 & 80\,\% \\
+        CA5 & Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario. & 35 & 100,00\,\% & 356 & 80\,\% \\
+        \midrule & \textbf{Total} & \textbf{356} & & & \\
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+    \vspace{0.2cm}
+    {\small \textit{Nota.} Se muestra en la tabla la lista de causas identificadas según el problema principal.\par}
+\end{minipage}
+\par\medskip
+
+\par\medskip
+\figuraEnTexto
+    {fig:pareto_causas_nominas}
+    {Diagrama de Pareto de las causas de la gestión de nóminas}
+    {images/pareto-causas-nominas.png}
+    {Las barras representan los puntajes ponderados
+    y la línea muestra el porcentaje acumulado.
+    Elaboración propia.}
+\par\medskip
+
+% Aplica la misma sangría lateral a la figura, su título y su nota.
+\noindent
+\figuraEnTexto
+    {fig:causas_principales_nominas}
+    {Causas seleccionadas para el análisis}
+    {images/causas-principales-nominas.png}
+    {Representación de las causas seleccionadas
+    para su análisis posterior. Elaboración propia.}
+\par\medskip
+
 \subsubsection{Análisis cualitativo y cuantitativo}
+
+\begingroup
+% Evita dividir los párrafos de análisis entre dos páginas.
+\interlinepenalty=10000
+
+\paragraph*{Causa 1 (CA3): Transcripción manual de incidencias}
+
+\textbf{Análisis cualitativo:} El traslado manual de asistencias, permisos y horas extras a la planilla exige revisar que cada dato corresponda al trabajador y al periodo correcto. Una omisión o un error de transcripción puede afectar el cálculo y obligar a corregir la información antes de aprobar la nómina.
+
+\textbf{Análisis cuantitativo:} De 80 incidencias mensuales, se estima que 12 requieren corregirse por omisiones o errores de transcripción, equivalentes al 15\,\%. Esta proporción expresa los registros que necesitan una revisión adicional antes de incorporarse al cálculo de la nómina.
+
+\paragraph*{Causa 2 (CA8): Generación y distribución manual de boletas}
+
+\textbf{Análisis cualitativo:} Preparar y enviar las boletas una por una incorpora tareas repetitivas al cierre de la nómina. El seguimiento de los envíos también depende del registro que mantenga el responsable, por lo que resulta necesario distinguir las boletas enviadas de las pendientes y conservar constancia de los reenvíos.
+
+\textbf{Análisis cuantitativo:} Para las 50 boletas del periodo, se estiman seis reenvíos por errores en los datos de contacto o en la preparación del correo, equivalentes al 12\,\% de las boletas. También se consideran 40 minutos para su generación y distribución manual, que representan el 13,33\,\% de los 300 minutos del proceso completo.
+
+\paragraph*{Causa 3 (CA1): Información separada entre Recursos Humanos y Contabilidad}
+
+\textbf{Análisis cualitativo:} Cuando la información laboral y remunerativa se conserva en archivos separados, ambas áreas deben conciliar sus registros antes de elaborar la planilla. Si los archivos se actualizan en momentos distintos, puede utilizarse información anterior o incompleta, lo que dificulta establecer una base común para el cálculo.
+
+\textbf{Análisis cuantitativo:} Al conciliar los registros de los 50 trabajadores, se estiman diez con diferencias entre Recursos Humanos y Contabilidad. El 20\,\% requeriría corregir o actualizar información laboral y remunerativa antes de elaborar la planilla.
+
+\paragraph*{Causa 4 (CA7): Preparación separada de pagos y declaraciones}
+
+\textbf{Análisis cualitativo:} Preparar por separado la información para pagos bancarios y declaraciones requiere trasladar datos y contrastarlos con la planilla aprobada. Si se modifica alguno de los archivos, el cambio debe revisarse en los demás para mantener la consistencia de los importes y evitar repetir la preparación de documentos.
+
+\textbf{Análisis cuantitativo:} Para dos archivos de 50 registros cada uno, destinados a pagos bancarios y declaraciones, se estiman ocho ajustes al contrastarlos con la planilla aprobada. Estos representan el 8\,\% de los 100 registros preparados y requerirían corrección antes de utilizar los archivos.
+
+\paragraph*{Causa 5 (CA2): Falta de control de versiones de la planilla}
+
+\textbf{Análisis cualitativo:} La circulación de varias copias dificulta reconocer qué archivo contiene las últimas correcciones y cuál fue aprobado. Revisar o continuar el trabajo sobre una versión anterior puede dejar fuera cambios ya realizados. Por ello, es necesario identificar la versión vigente y quién está a cargo de actualizarla.
+
+\textbf{Análisis cuantitativo:} De 30 modificaciones de la planilla, se estima que seis se efectúan sobre copias desactualizadas, equivalentes al 20\,\%. Estos cambios necesitarían revisarse y trasladarse a la versión vigente para evitar omisiones al consolidar el archivo final.
+
+\paragraph*{Causa 6 (CA4): Modificación de fórmulas sin validación uniforme}
+
+\textbf{Análisis cualitativo:} Las fórmulas y los parámetros determinan cómo se calculan los conceptos de la nómina. Modificarlos sin una revisión común puede producir resultados distintos ante datos equivalentes. La validación debe comprobar tanto la regla utilizada como su resultado, para que el cálculo mantenga un criterio uniforme.
+
+\textbf{Análisis cuantitativo:} Para 30 casos de verificación de remuneraciones, descuentos y aportes, se estiman cuatro diferencias frente a los resultados esperados, equivalentes al 13,33\,\%. Estos casos requerirían revisar las fórmulas o los parámetros utilizados antes de aprobar los resultados.
+\par
+\endgroup

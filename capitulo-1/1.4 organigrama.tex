@@ -4,7 +4,13 @@
 \begin{center}
     \vspace{0.3cm}
     % Título formato APA 7
-    {\bfseries Figura 3}\par\vspace{0.1cm}
+    \refstepcounter{figure}
+    \label{fig:organigrama}
+    \addcontentsline{lof}{figure}{%
+        Figura~\thefigure.
+        Estructura orgánica funcional de J\&P Periféricos S.A.C.}
+
+    {\bfseries Figura~\thefigure}\par\vspace{0.1cm}
     {\itshape Estructura orgánica funcional de J\&P Periféricos S.A.C.}\par
     \vspace{0.20cm}
 
@@ -19,6 +25,3 @@
         \textit{Nota.} Representación jerárquica y departamental de las áreas funcionales de la empresa. Elaboración propia.
     \end{minipage}
 \end{center}
-
-\addcontentsline{lof}{figure}{Figura 3: Estructura orgánica funcional de J\&P Periféricos S.A.C.}
-\label{fig:organigrama}
