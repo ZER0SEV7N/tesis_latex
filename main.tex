@@ -4,6 +4,11 @@
 \documentclass[stu,12pt,bbm,biblatex]{apa7}
 \addbibresource{referencias.bib}
 
+% Permite dividir las URL de las referencias entre letras y números para respetar los márgenes.
+\setcounter{biburlnumpenalty}{1000}
+\setcounter{biburlucpenalty}{1000}
+\setcounter{biburllcpenalty}{1000}
+
 \usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{csquotes}
 \usepackage{pdflscape}
@@ -17,7 +22,7 @@
 \usepackage{tabularx}
 \usepackage{float}
 \usepackage{booktabs}
-
+\usepackage{caption}
 % Justificación de texto y Sangría APA 7 (1.27 cm)
 \usepackage{ragged2e} 
 \setlength{\parindent}{1.27cm}
