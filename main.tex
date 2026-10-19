@@ -25,6 +25,7 @@
 \usepackage{caption}
 % Justificación de texto y Sangría APA 7 (1.27 cm)
 \usepackage{ragged2e} 
+\usepackage{amsmath}
 \setlength{\parindent}{1.27cm}
 \makeatletter
 \AtBeginDocument{
@@ -166,6 +167,15 @@
     \par\medskip
 }
 
+% =================================
+% Conceptos y definiciones
+% =================================
+\newcommand{\concepto}[1]{%
+    \par\medskip
+    \noindent\hspace*{1.27cm}\textbf{#1}\par
+    \nobreak
+    \noindent\ignorespaces
+}
 
 \begin{document}
 
