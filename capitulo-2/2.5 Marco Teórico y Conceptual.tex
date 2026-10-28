@@ -12,19 +12,29 @@
 
 \paragraph{Sistema web:}
 
-\textcite[p.~44, sección~2.2.1, párr.~1]{aguilar2022desarrollo} describen el sistema web como una interfaz que permite acceder a aplicaciones, bases de datos y sistemas corporativos mediante páginas web utilizadas desde un navegador.
+    \textcite[p.~44, sección~2.2.1, párr.~1]{aguilar2022desarrollo} 
+    describen el sistema web como una interfaz que permite acceder a aplicaciones, 
+    bases de datos y sistemas corporativos mediante páginas web utilizadas desde un navegador.
 
-\fundamentosubnivel{A}{Arquitectura de un sistema web} \textcite[36--37]{suarez2025sistema} presenta un diseño que separa la interfaz de usuario, la lógica de negocio y el almacenamiento. La interfaz se comunica con una API y la capa de negocio opera sobre la base de datos.
+    \fundamentosubnivel{A}{Arquitectura de un sistema web} 
+    \textcite[36--37]{suarez2025sistema} presenta un diseño que separa la interfaz de usuario, 
+    la lógica de negocio y el almacenamiento. La interfaz se comunica con una API y la capa de negocio opera sobre la base de datos.
 
-\textcite[p.~4, sección \enquote{System requirements}]{ahmed2023web} describen un sistema de nóminas que requiere un cliente con navegador y un servidor que ejecuta la aplicación y utiliza una base de datos.
+    \textcite[p.~4, sección \enquote{System requirements}]{ahmed2023web} 
+    describen un sistema de nóminas que requiere un cliente con navegador y un servidor que ejecuta la aplicación y utiliza una base de datos.
 
-\fundamentosubnivel{A.1}{Gestión e integridad de datos} \textcite[856--858]{tandrio2026web} presentan un diseño de base de datos que identifica claves para las entidades y representa sus relaciones en un modelo entidad-relación. Esta organización permite identificar registros y establecer vínculos entre los datos de nómina.
+    \fundamentosubnivel{A.1}{Gestión e integridad de datos} 
+    \textcite[856--858]{tandrio2026web} 
+    presentan un diseño de base de datos que identifica claves para las entidades y representa sus relaciones en un modelo entidad-relación. 
+    Esta organización permite identificar registros y establecer vínculos entre los datos de nómina.
 
-\textcite[p.~5, sección \enquote{DML transactions}]{ahmed2023web} describen transacciones que agrupan operaciones de modificación: si todas se completan, se confirman; si alguna falla, se revierten.
+    \textcite[p.~5, sección \enquote{DML transactions}]{ahmed2023web} 
+    describen transacciones que agrupan operaciones de modificación: si todas se completan, se confirman; si alguna falla, se revierten.
 
-\fundamentosubnivel{A.1.1}{Control de acceso por roles} \textcite[pp.~4--5, sección \enquote{Users accounts module}]{ahmed2023web} describen un módulo de usuarios que diferencia perfiles y permisos. Por ejemplo, el contador modifica información de las boletas y el auditor puede revisarla sin modificarla.
+    \fundamentosubnivel{A.1.1}{Control de acceso por roles} 
+    \textcite[pp.~4--5, sección \enquote{Users accounts module}]{ahmed2023web} describen un módulo de usuarios que diferencia perfiles y permisos. Por ejemplo, el contador modifica información de las boletas y el auditor puede revisarla sin modificarla.
 
-\fundamentosubnivel{A.1.1.1}{Despliegue mediante contenedores} \textcite[secciones \enquote{The Docker platform} y \enquote{Responsive deployment and scaling}]{dockerOverview} permite empaquetar y ejecutar aplicaciones en contenedores aislados y transportar las cargas entre entornos. Su documentación presenta Docker Compose para aplicaciones compuestas por varios contenedores.
+    \fundamentosubnivel{A.1.1.1}{Despliegue mediante contenedores} \textcite[secciones \enquote{The Docker platform} y \enquote{Responsive deployment and scaling}]{dockerOverview} permite empaquetar y ejecutar aplicaciones en contenedores aislados y transportar las cargas entre entornos. Su documentación presenta Docker Compose para aplicaciones compuestas por varios contenedores.
 
 \paragraph{Flujos de trabajo automatizado:}
 
