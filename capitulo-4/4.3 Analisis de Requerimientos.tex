@@ -72,7 +72,9 @@ En esta tabla se representará la relación de correspondencia entre los requeri
 Seccion de listado de requerimientos agrupados entre funcionales y no funcionales 
 \subsubsubsection{Requerimientos Funcionales}
     \begin{itemize}
+        
         \item Módulo 0: Seguridad, Acceso y Auditoría Transversal
+        
         \begin{itemize}
             \item RF-M0-01: Autenticación y Control de Acceso por Roles (RBAC) - El sistema debe autenticar a los usuarios mediante credenciales (DNI/correo y contraseña) y asignar un token JWT que restrinja el acceso a las vistas y endpoints HTTP según el rol del actor (JYP, ADMIN, CONTADOR, RRHH, ASISTENTE, EMPLEADO).
             \item RF-M0-02: Restablecimiento de Credenciales de Forma Autónoma - El sistema debe permitir a cualquier actor solicitar el restablecimiento de su contraseña mediante el envío de un enlace temporal/token de seguridad de único uso a su correo corporativo verificado.
@@ -102,6 +104,7 @@ Seccion de listado de requerimientos agrupados entre funcionales y no funcionale
             \item RF-M3-01: Parametrización de Variables Estatales de Ley - El sistema debe permitir al Contador actualizar el valor de la UIT, la Remuneración Mínima Vital (RMV) para el recálculo automático de Asignación Familiar, y los factores de recargo por horas extras.
             \item RF-M3-02: Matriz Previsional de AFPs - El sistema debe ofrecer una matriz editable para actualizar mensualmente los porcentajes de las AFPs (Integra, Prima, Profuturo, Hábitat), desglosando: Aporte Obligatorio (10%), Comisión sobre Flujo, Comisión Mixta y Prima de Seguro.
             \item RF-M3-03: Fiscalización y Edición Restringida de Salarios - El sistema debe permitir al Contador auditar el maestro de remuneraciones y corregir manualmente el Salario Básico, manteniendo bloqueados en modo solo lectura todos los demás campos contractuales de RRHH.
+            \item RF-M3-02: Distribución Masiva de Boletas por Correo (n8n) - El sistema debe activar un trigger para que la herramienta n8n envíe por correo electrónico (SMTP) las boletas cifradas a cada trabajador al cerrar la planilla.
         \end{itemize}
 
         \item Módulo 4: Procesamiento de Nómina e Incidencias
@@ -119,22 +122,6 @@ Seccion de listado de requerimientos agrupados entre funcionales y no funcionale
             \item RF-M5-02: Exportación de Estructuras SUNAT (PLAME) y AFP Net - El sistema debe compilar la información de la planilla cerrada y generar los archivos planos exigidos por la SUNAT (formatos .rem y .jor para la PLAME) y las estructuras de texto para AFP Net.
             \item RF-M5-03: Generación del Archivo de Dispersión Bancaria (Telecrédito) - El sistema debe exportar el archivo plano con el formato oficial de Telecrédito para transferencias masivas en bancos comerciales (BCP, BBVA, Interbank).
             \item RF-M5-04: Reportes de Costos por Centro de Costo - El sistema debe exportar resúmenes financieros mensuales en Excel/CSV segmentados por áreas organizacionales.
-        \end{itemize}
-
-        \item Módulo 6: Portal del Empleado (Self-Service)
-        \begin{itemize}
-            \item RF-M6-01: Dashboard Financiero Personal - El sistema debe mostrar al empleado gráficos interactivos con su histórico de sueldos, retenciones de ley e ingresos netos percibidos.
-            \item RF-M6-02: Descarga de Boletas Protegidas con DNI - El sistema debe permitir al empleado descargar sus boletas de pago en PDF cifradas mediante contraseña (utilizando su número de DNI).
-            \item RF-M6-03: Solicitud Digital de Permisos y Vacaciones - El sistema debe incluir un formulario para tramitar vacaciones, licencias o descansos médicos adjuntando comprobantes digitales.
-            \item RF-M6-04: Confirmación y Registro de Asistencia - El sistema debe proveer un componente para que el empleado confirme su marcaje de asistencia diario o mensual.
-        \end{itemize}
-
-        \item Módulo 7 y 8: Automatizaciones e Integración Comercial CRM
-        \begin{itemize}
-            \item RF-M7-01: Sincronización Automática con Reloj Biométrico - El sistema debe ejecutar tareas programadas (Cron Jobs) que extraigan marcajes de relojes biométricos para calcular tardanzas y faltas.
-            \item RF-M7-02: Distribución Masiva de Boletas por Correo (n8n) - El sistema debe activar un trigger para que la herramienta n8n envíe por correo electrónico (SMTP) las boletas cifradas a cada trabajador al cerrar la planilla.
-            \item RF-M8-01: Importación de Comisiones Comerciales desde CRM - El sistema debe realizar peticiones masivas (Bulk Fetch) a la API del CRM "J\&P Facturación" para importar comisiones y bonos de ventas.
-            \item RF-M8-02: Auditoría Cruzada de Contratos Comerciales - El sistema debe presentar una grilla comparativa entre las condiciones comerciales del CRM y los registros del maestro de nómina.
         \end{itemize}
     \end{itemize}
 \subsubsubsection{Requerimientos no Funcionales}
