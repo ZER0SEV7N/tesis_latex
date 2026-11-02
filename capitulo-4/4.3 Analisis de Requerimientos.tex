@@ -11,7 +11,7 @@ En esta tabla se representará la relación de correspondencia entre los requeri
     \textbf{Rama de Causa} &
      \textbf{Causa Raíz} &
       \textbf{Requerimiento(s) Asociado(s)} &
-       \textbf{Módulo} \\ 
+    \\ 
     \midrule
     \endfirsthead
     
@@ -19,8 +19,7 @@ En esta tabla se representará la relación de correspondencia entre los requeri
     \toprule
     \textbf{Rama de Causa} &
      \textbf{Causa Raíz} &
-      \textbf{Requerimiento(s) Asociado(s)} &
-       \textbf{Módulo} \\ 
+      \textbf{Requerimiento(s) Asociado(s)}\\ 
     \midrule
     \endhead
     
@@ -33,108 +32,49 @@ En esta tabla se representará la relación de correspondencia entre los requeri
 
     Seguridad y trazabilidad de modificaciones &
      Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario. &
-      M0-01, M0-03 &
-       Mód. 0 \\
+      M0-01, M0-03,RF-M1 \\
     \midrule
     Gestión de la información &
      Registros insuficientes de los cambios realizados en los datos laborales y resultado de la planilla. &
-      M1-01, M1-02, M0-03, M1-04 &
-       Mód. 0 y 1 \\
+      M1-01, M1-02, M0-03, M1-04  \\
     &
      Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad. &
-      M4-01, M4-02, M1-03 &
-       Mód. 1 y 4 \\
+      M4-01, M4-02, M1-03 \\
     &
      Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización. &
-      M5-04 &
-       Mód. 5 \\
+      M5-04 \\
     \midrule
     Preparación de entrega de documentos &
      Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales de planillas. &
-      M4-01, M4-02, M4-03, M5-04 &
-       Mód. 4 y 5 \\
+      M4-01, M4-02, M4-03, M5-04 \\
     \midrule
     Cálculo e incidencias &
      Modificación manual de fórmulas y parámetros de cálculo sin validación uniforme. &
-      M4-05, M4-04, M3-01, M3-02, M3-03 &
-       Mód. 3 y 4 \\
+      M4-05, M4-04, M3-01, M3-02, M3-03 \\
     &
      Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales. &
-      M1-01, M4-01, M4-03, M4-04 &
-       Mód. 1 y 4 \\
+      M1-01, M4-01, M4-03, M4-04 \\
     &
      Generación y distribución individual de boletas de pago mediante actividades manuales o semimanuales. &
-      M5-01, M7-02 &
-       Mód. 5 y 7 \\
+      M5-01, M3-04 \\
 \end{longtable}
 
 \subsubsection{Requerimientos identificados del proyecto}
-Seccion de listado de requerimientos agrupados entre funcionales y no funcionales 
-\subsubsubsection{Requerimientos Funcionales}
     \begin{itemize}
-        \item Módulo 0: Seguridad, Acceso y Auditoría Transversal
-        \begin{itemize}
-            \item RF-M0-01: Autenticación y Control de Acceso por Roles (RBAC) - El sistema debe autenticar a los usuarios mediante credenciales (DNI/correo y contraseña) y asignar un token JWT que restrinja el acceso a las vistas y endpoints HTTP según el rol del actor (JYP, ADMIN, CONTADOR, RRHH, ASISTENTE, EMPLEADO).
-            \item RF-M0-02: Restablecimiento de Credenciales de Forma Autónoma - El sistema debe permitir a cualquier actor solicitar el restablecimiento de su contraseña mediante el envío de un enlace temporal/token de seguridad de único uso a su correo corporativo verificado.
-            \item RF-M0-03: Bitácora Inmutable de Auditoría (Trail Logs) - El sistema debe registrar automáticamente en la base de datos cada acción crítica (CREATE, UPDATE, DELETE, SELECT\_SENSITIVE) almacenando: ID de usuario, dirección IP de origen, entidad/tabla afectada, timestamp y el diferencial de datos (valores\_antes vs valores\_despues).
-            \item RF-M0-04: Re-autenticación de Seguridad (Step-Up Authentication) - El sistema debe exigir re-confirmar la contraseña actual al usuario antes de ejecutar mutaciones financieras sensibles (edición de salarios, cuentas bancarias o CCI).
-        \end{itemize}
-
-        \item Módulo 1: Gestión de Recursos Humanos y Legajos
-        \begin{itemize}
-            \item RF-M1-01: Registro y Mantenimiento del Legajo de Empleados - El sistema debe permitir gestionar la información maestra del personal (datos personales, régimen pensionario, CUSPP, banco, cuenta sueldo y asignación familiar).
-            \item RF-M1-02: Validación Nativa con API RENIEC - El sistema debe consumir en tiempo real el servicio web de la RENIEC para auto-completar y validar nombres y apellidos a partir del número de DNI ingresado.
-            \item RF-M1-03: Ingesta Masiva de Personal (Two-Step Upload) - El sistema debe permitir la carga masiva de empleados mediante archivos Excel (.xlsx) y CSV (.csv), ejecutando un flujo en dos pasos: 1) Pre-validación con reporte de errores (Dry Run), 2) Confirmación e ingesta asíncrona.
-            \item RF-M1-04: Gestión del Organigrama y Estructura Laboral - El sistema debe proveer interfaces CRUD para administrar Áreas/Departamentos, Cargos/Puestos de Trabajo y Jornadas Laborales (horarios, turnos y tolerancias).
-            \item RF-M1-05: Control de Contratos y Alertas Preventivas de Vencimiento - El sistema debe administrar las modalidades de contratación laboral y generar un panel visual de alertas tempranas para contratos con vencimiento en rangos de 15 y 30 días.
-            \item RF-M1-06: Procesamiento de Desvinculaciones y Ceses - El sistema debe registrar solicitudes de cese/renuncia, calcular la fecha efectiva y programar la revocación automática de accesos al sistema, preservando el histórico inalterable para auditorías.
-        \end{itemize}
-
-        \item Módulo 2: Gestión de Tareas y Colaboración del Asistente
-        \begin{itemize}
-            \item RF-M2-01: Asignación y Monitoreo de Tareas Contables - El sistema debe ofrecer un tablero visual (Kanban/Grilla) para que el Contador asigne tareas operativas al Colaborador/Asistente y monitoree su estado (PENDIENTE, EN\_REVISIÓN, APROBADO, RECHAZADO).
-            \item RF-M2-02: Carga de Archivos Adjuntos y Anotaciones - El sistema debe permitir al Asistente adjuntar sustentos digitales (PDFs, Word, imágenes) y comentarios en las tareas asignadas, así como solicitar prórrogas de entrega.
-            \item RF-M2-03: Flujo Excepcional de Edición de Perfil (Casos Especiales) - El sistema debe habilitar un formulario donde el Asistente proponga modificaciones a los datos maestros de un empleado (ej. cambio de CCI). El cambio quedará en estado PENDIENTE hasta ser visado por Recursos Humanos.
-        \end{itemize}
-
-        \item Módulo 3: Configuración Legal y Fiscalización
-        \begin{itemize}
-            \item RF-M3-01: Parametrización de Variables Estatales de Ley - El sistema debe permitir al Contador actualizar el valor de la UIT, la Remuneración Mínima Vital (RMV) para el recálculo automático de Asignación Familiar, y los factores de recargo por horas extras.
-            \item RF-M3-02: Matriz Previsional de AFPs - El sistema debe ofrecer una matriz editable para actualizar mensualmente los porcentajes de las AFPs (Integra, Prima, Profuturo, Hábitat), desglosando: Aporte Obligatorio (10%), Comisión sobre Flujo, Comisión Mixta y Prima de Seguro.
-            \item RF-M3-03: Fiscalización y Edición Restringida de Salarios - El sistema debe permitir al Contador auditar el maestro de remuneraciones y corregir manualmente el Salario Básico, manteniendo bloqueados en modo solo lectura todos los demás campos contractuales de RRHH.
-        \end{itemize}
-
-        \item Módulo 4: Procesamiento de Nómina e Incidencias
-        \begin{itemize}
-            \item RF-M4-01: Ingesta de Asistencia y Cruce con Vacaciones - El sistema debe permitir cargar días laborados, faltas, tardanzas y descansos médicos, cruzando la información automáticamente con las vacaciones previamente aprobadas por RRHH.
-            \item RF-M4-02: Registro y Visado de Conceptos Variables - El sistema debe permitir ingresar y editar comisiones, bonos, adelantos y horas extras. El Contador debe revisar y cambiar el estado de estos conceptos a APROBADO para habilitar su inclusión en el cálculo.
-            \item RF-M4-03: Motor de Cálculo Masivo de Planilla Regular - El sistema debe ejecutar el cálculo masivo de nómina (general o filtrado por áreas: Oficina, Seguridad, Limpieza), determinando: Remuneración Bruta, retenciones de ley (AFP/ONP, 5ta Categoría), Asignación Familiar, aportes patronales (EsSalud, Vida Ley) y Neto a Pagar.
-            \item RF-M4-04: Cálculo Independiente de Beneficios Sociales - El sistema debe incluir flujos de cálculo aislados para planillas extraordinarias de Gratificaciones (Julio/Diciembre), CTS (Mayo/Noviembre) y Liquidaciones por cese.
-            \item RF-M4-05: Cierre, Congelamiento Inmutable y Reapertura Excepcional - El sistema debe permitir al Contador ejecutar el "Cierre Definitivo" del periodo, congelando la base de datos para impedir mutaciones. Debe proveer un botón de "Reapertura Excepcional" que audite el desbloqueo en los Trail Logs.
-        \end{itemize}
-
-        \item Módulo 5: Portabilidad, Pagos y Cumplimiento Legal
-        \begin{itemize}
-            \item RF-M5-01: Generación de Boletas de Pago en PDF - El sistema debe generar automáticamente las boletas de pago individuales en formato PDF tras el cierre de la planilla y guardarlas en el historial del legajo.
-            \item RF-M5-02: Exportación de Estructuras SUNAT (PLAME) y AFP Net - El sistema debe compilar la información de la planilla cerrada y generar los archivos planos exigidos por la SUNAT (formatos .rem y .jor para la PLAME) y las estructuras de texto para AFP Net.
-            \item RF-M5-03: Generación del Archivo de Dispersión Bancaria (Telecrédito) - El sistema debe exportar el archivo plano con el formato oficial de Telecrédito para transferencias masivas en bancos comerciales (BCP, BBVA, Interbank).
-            \item RF-M5-04: Reportes de Costos por Centro de Costo - El sistema debe exportar resúmenes financieros mensuales en Excel/CSV segmentados por áreas organizacionales.
-        \end{itemize}
-
-        \item Módulo 6: Portal del Empleado (Self-Service)
-        \begin{itemize}
-            \item RF-M6-01: Dashboard Financiero Personal - El sistema debe mostrar al empleado gráficos interactivos con su histórico de sueldos, retenciones de ley e ingresos netos percibidos.
-            \item RF-M6-02: Descarga de Boletas Protegidas con DNI - El sistema debe permitir al empleado descargar sus boletas de pago en PDF cifradas mediante contraseña (utilizando su número de DNI).
-            \item RF-M6-03: Solicitud Digital de Permisos y Vacaciones - El sistema debe incluir un formulario para tramitar vacaciones, licencias o descansos médicos adjuntando comprobantes digitales.
-            \item RF-M6-04: Confirmación y Registro de Asistencia - El sistema debe proveer un componente para que el empleado confirme su marcaje de asistencia diario o mensual.
-        \end{itemize}
-
-        \item Módulo 7 y 8: Automatizaciones e Integración Comercial CRM
-        \begin{itemize}
-            \item RF-M7-01: Sincronización Automática con Reloj Biométrico - El sistema debe ejecutar tareas programadas (Cron Jobs) que extraigan marcajes de relojes biométricos para calcular tardanzas y faltas.
-            \item RF-M7-02: Distribución Masiva de Boletas por Correo (n8n) - El sistema debe activar un trigger para que la herramienta n8n envíe por correo electrónico (SMTP) las boletas cifradas a cada trabajador al cerrar la planilla.
-            \item RF-M8-01: Importación de Comisiones Comerciales desde CRM - El sistema debe realizar peticiones masivas (Bulk Fetch) a la API del CRM "J\&P Facturación" para importar comisiones y bonos de ventas.
-            \item RF-M8-02: Auditoría Cruzada de Contratos Comerciales - El sistema debe presentar una grilla comparativa entre las condiciones comerciales del CRM y los registros del maestro de nómina.
-        \end{itemize}
-    \end{itemize}
+    \item RF-01: Aplicar acceso por Roles - El sistema debe autenticar a los usuarios mediante credenciales y asignar un token JWT, permitiendo al usuario ejecutar acciones segun su rol.
+    \item RF-02: Registrar cambios en bicatora de auditoria - El sistema debe registrar automáticamente en la base de datos las acciones del usuario a nivel avanzado, permitiendo una reconstruccion de los datos.
+    \item RF-03: Administrar legajos de los empleados - El sistema debe permitir gestionar la información maestra de los empleados.
+    \item RF-04: Ingresar informacion de manera masiva - El sistema debe permitir la registrar informacion mediante archivos estructurados.
+    \item RF-05: Gestionar contratos de los empleados - El sistema debe tenen la funcionabilidad de administrar los contratos laborales, notificar sobre el vencimientos, cese o fin de estos.
+    \item RF-06: Gestionar las solicitudes del empleado - El sistema debe permitir hacer seguimiento a las solicitudes de los empleados, estos siendo aprobados o rechazados por el personal encargado de gestionar estos procedimientos. 
+    \item RF-07: Asignar tareas a los usuarios - El sistema debe ofrecer al Contador asignar tareas operativas a los asistentes, monitoreando su estado y aprobar la tarea.
+    \item RF-08: Cargar archivos estructurados y anotaciones - El sistema debe permitir al Asistente adjuntar documentos estructurados y comentarios en las tareas asignadas, así como solicitar prórrogas de entrega.
+    \item RF-09: Modificar la variables ley - El sistema debe permitir al Contador actualizar el valor de las variables relacionadas para el calculo de planillas.
+    \item RF-10: Distribución Masiva de Boletas por Correo - El sistema debe distribuir boletas electronicas a los correos del empleado una vez se haya aprobado el pago de planillas. .
+    \item RF-11: Ingresar insidencias del mes - El sistema debe permitir cargar las incidencias del mes como vacaciones, horas extra, etc.
+    \item RF-12: Generar Cálculo Masivo de Planillas  - El sistema debe ejecutar el cálculo masivo de planillas (general, filtrado o individual), aplicando descuentos, bonos, entre otros.
+    \item RF-13: Cierre, Congelamiento Inmutable y Reapertura Excepcional - El sistema debe permitir al Contador ejecutar el "Cierre Definitivo" del periodo, congelando la base de datos para impedir mutaciones. Debe proveer un botón de "Reapertura Excepcional" que audite el desbloqueo en los Trail Logs.
+    \item RF-14: Generar de Boletas electronicas - El sistema debe generar automáticamente las boletas de pago individuales en formato PDF tras el cierre de la planilla y guardarlas en el historial del legajo.
+    \item RF-15: Reportes de Costos por Centro de Costo - El sistema debe exportar resúmenes financieros mensuales por áreas organizacionales.
+\end{itemize}
 \subsubsubsection{Requerimientos no Funcionales}
