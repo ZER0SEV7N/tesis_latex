@@ -32,35 +32,39 @@ En esta tabla se representará la relación de correspondencia entre los requeri
 
     Seguridad y trazabilidad de modificaciones &
      Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario. &
-      M0-01, M0-03,RF-M1 \\
+      RF-01, RF-02, RF-13 \\
     \midrule
     Gestión de la información &
      Registros insuficientes de los cambios realizados en los datos laborales y resultado de la planilla. &
-      M1-01, M1-02, M0-03, M1-04  \\
+      RF-02, RF-13  \\
+    \midrule
     &
      Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad. &
-      M4-01, M4-02, M1-03 \\
+      RF-03, RF-04 \\
+    \midrule
     &
      Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización. &
-      M5-04 \\
+      RF-05, RF-08 \\
     \midrule
     Preparación de entrega de documentos &
      Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales de planillas. &
-      M4-01, M4-02, M4-03, M5-04 \\
+      RF-04, RF-06, RF-11 \\
     \midrule
     Cálculo e incidencias &
      Modificación manual de fórmulas y parámetros de cálculo sin validación uniforme. &
-      M4-05, M4-04, M3-01, M3-02, M3-03 \\
+      RF-09, RF-12 \\
+    \midrule
     &
      Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales. &
-      M1-01, M4-01, M4-03, M4-04 \\
+      RF-07, RF-08, RF-15 \\
+    \midrule
     &
      Generación y distribución individual de boletas de pago mediante actividades manuales o semimanuales. &
-      M5-01, M3-04 \\
+      RF-10, RF-14 \\
 \end{longtable}
 
-\subsubsection{Requerimientos identificados del proyecto}
-    \begin{itemize}
+\subsubsection{Requerimientos Funcionales del proyecto}
+  \begin{itemize}
     \item RF-01: Aplicar acceso por Roles - El sistema debe autenticar a los usuarios mediante credenciales y asignar un token JWT, permitiendo al usuario ejecutar acciones segun su rol.
     \item RF-02: Registrar cambios en bicatora de auditoria - El sistema debe registrar automáticamente en la base de datos las acciones del usuario a nivel avanzado, permitiendo una reconstruccion de los datos.
     \item RF-03: Administrar legajos de los empleados - El sistema debe permitir gestionar la información maestra de los empleados.
@@ -76,5 +80,16 @@ En esta tabla se representará la relación de correspondencia entre los requeri
     \item RF-13: Cierre, Congelamiento Inmutable y Reapertura Excepcional - El sistema debe permitir al Contador ejecutar el "Cierre Definitivo" del periodo, congelando la base de datos para impedir mutaciones. Debe proveer un botón de "Reapertura Excepcional" que audite el desbloqueo en los Trail Logs.
     \item RF-14: Generar de Boletas electronicas - El sistema debe generar automáticamente las boletas de pago individuales en formato PDF tras el cierre de la planilla y guardarlas en el historial del legajo.
     \item RF-15: Reportes de Costos por Centro de Costo - El sistema debe exportar resúmenes financieros mensuales por áreas organizacionales.
-\end{itemize}
-\subsubsubsection{Requerimientos no Funcionales}
+  \end{itemize}
+\subsubsection{Requerimientos no Funcionales del proyecto}
+  \begin{itemize}
+    \item RNF-01: Tiempo de Respuesta del Motor de Cálculo Masivo - Los procedimientos de cálculo masivo de planillas deben ejecutarse y dar un resultado en un timepo inferior a 10 segundos. 
+    \item RNF-02: Tiempo de Respuesta de los endpoints HTTP - Los enpoinst deben brindar una respuesta en un timepo inferior a 300 milisegundos. 
+    \item RNF-03: Ejecucion de tareas pesadas en segundo plano con respuesta asyncrona no bloqueante - Los procedimientos pesadso dedben ejecutarse en segundo plano mediante colas de memoria. 
+    \item RNF-04: Encryptacion de datos antes de permanencia - Ejecucion de enccriptado mediante antes de hacer pemanencia en la base de datos.
+    \item RNF-05: Enmascaramiento Dinámico de Datos - Los datos financieros deben ocultarse para evitar la exposición directa de estos.
+    \item RNF-06: Seguridad de Archivos PDF (Firma y Cifrado) - El bakend debe implmentar la sanitizacion de los datos ingresados mediante schemas zod.
+    \item RNF-07: Conservacion de datos historicos ley - Los datos historicos relacionados a parametros de ley no deben ser eliminados al momento de reemplazarlos.
+    \item RNF-08: Disponibilidad del Servicio - El sistema debe estar disponible durante los dias operativos.
+    \item RNF-09: Resilencia a ingracion de APIS externar - El sistema debe contar con timepos de espera a consultas de api externas con su manejo de excepciones, para evitar la detencion del sistema ante caida de servicios de terceros. 
+  \end{itemize}
