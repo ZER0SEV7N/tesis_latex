@@ -1,0 +1,73 @@
+\subsection{Stack Tecnológico, Seguridad y Arquitectura del Sistema}
+
+En esta sección se detallará por completo el stack tecnológico, las medidas de seguridad y la arquitectura que se eligieron para el desarrollo del sistema, junto con una breve justificación e implementación de este. 
+\subsubsection{Tecnologías del Backend}
+% Descripción, justificación técnica e implementación del Backend (ej. NestJS)
+\concepto{TypeScript}
+% Lenguaje de programación.
+Se escogió este lenguaje de programación para el backend, cuya principal característica es ser un lenguaje de tipado estático ideal para operaciones clave, donde el tipo de valor no debe variar. 
+\concepto{NestJS}
+% Framework principal de Node.js para la arquitectura modular del servidor.
+Framework basado en el uso de Node.js orientado a servidores backend para la construcción progresiva de aplicaciones de mediano a gran escalado empresarial, ofreciendo una estructura base para proyectos, además de su arquitectura modular que permitirá separar responsabilidades de manera efectiva. A diferencia del framework de Express, que no tiene una estructura definida inicialmente.
+\concepto{Fastify}
+% Adaptador HTTP de alto rendimiento para el manejo de múltiples consultas concurrentes.
+Se optó por usar el motor HTTP de Fastify para mejor tiempo y serialización de respuesta JSON, reemplazando el motor de Express que NestJS usaba por defecto. 
+\concepto{PrismaORM}
+% Capa de persistencia para el mapeo objeto-relacional y gestión de base de datos.
+Librería escogida como puente de comunicación entre la base de datos relacional y el servidor backend para la persistencia y lectura de datos, teniendo gran sinergia con TypeScript; esto asegura la integridad de los datos y protección ante inyecciones SQL.
+\concepto{Argon2}
+% Librería criptográfica para el hash seguro de contraseñas.
+Algoritmo de hash de contraseñas para la autenticación de los empleados que ingresan a la aplicación mediante su usuario, además de la protección extra de la aplicación frente a ataques mediante el uso de hardware. 
+\concepto{JWT y Passport}
+% Módulos de autenticación y autorización mediante JSON Web Tokens.
+Se utilizaron JWT y Passport para el control de sesiones y acceso de las peticiones a la aplicación, permitiendo que la autenticación no dependa de lecturas y solicitudes constantes a la base de datos.
+\concepto{BullMQ e IORedis}
+% Sistema de gestión de colas y procesamiento de tareas en segundo plano.
+Herramientas para la gestión de tareas asincrónicas y procesamiento de tareas pesadas en segundo plano, dando una alta disponibilidad a la aplicación y concurrencia a las peticiones de los usuarios para este tipo de tareas.  
+\concepto{WebSocket}
+% Protocolo de comunicación bidireccional en tiempo real para el envío de notificaciones.
+Protocolo de comunicación usado para el envío de notificaciones de tareas hacia los usuarios, mensajes administrativos o eventos cercanos.
+\concepto{Librerías de Procesamiento y Reportes (pdfmake, ExcelJS, csv-parser)}
+% Herramientas del servidor para la generación de documentos PDF, hojas de cálculo Excel y lectura de archivos CSV.
+Librerías para la lectura y escritura de documentos empresariales para su posterior procesamiento en procesos de alta demanda en el servidor. 
+\concepto{Swagger y OpenAPI}
+% Módulo de documentación interactiva y estandarización de la API REST.
+Para la documentación de la API se usaron estas tecnologías para detallar de manera técnica y automática el contrato de los endpoints establecidos en el sistema.    
+\concepto{Postman}
+% Herramienta de pruebas, depuración y validación de endpoints.
+Herramienta de pruebas y validación de los endpoints, simulando solicitudes HTTP, permitiendo supervisar estados, respuestas y procesos antes de la integración de este con el frontend.  
+\concepto{Jest}
+% Framework de pruebas unitarias e integración para el ecosistema de NestJS.
+Framework de pruebas para garantizar la funcionalidad de los procesos y la lógica de negocio, realizando pruebas aisladas que permiten minimizar regresiones en el código y asegurar que las funciones garanticen una respuesta predecible y acorde a su desarrollo.
+\concepto{Dotenv}
+Librería de manejo de variables de entorno para garantizar la seguridad de llaves de servicios, firmas de encriptado y contraseñas de base de datos.
+\subsubsection{Tecnologías del Frontend}
+% Descripción, justificación técnica e implementación del Frontend (ej. React / Vite)
+
+\subsubsection{Paquete de validación de Schemas compartido}
+Paquete independiente que permite centralizar la validación de schemas, tipos de datos y reglas de estas.
+\concepto{ZOD}
+Librería para validación de datos, perfecta para establecer contratos de entrada a los endpoints de la aplicación.
+\subsubsection{Bases de Datos}
+% Descripción, justificación técnica e implementación de la Base de Datos (ej. PostgreSQL / MongoDB)
+Se escogió usar base de datos para la centralización, manteniendo datos uniformes y legibles.
+\concepto{PostgreSQL}
+% Sistema gestor de base de datos relacional principal del sistema.
+Motor de base de datos relacional elegido por su robustez, ideal para proyectos empresariales garantizando la estructura de guardado de los datos de los usuarios.
+\concepto{Redis}
+% Almacenamiento en memoria utilizado para la gestión de colas con BullMQ y caché.
+Sistema de almacenamiento de datos en memoria, de alto rendimiento en procedimientos de caché y colas, para la concurrencia en el servidor.
+\concepto{UUIDv7}
+% Estándar de identificadores únicos universales basados en tiempo para las entidades.
+Método de identificación a entidades dentro de la base de datos relacional; a diferencia de sus versiones anteriores que generan el identificador de manera aleatoria, este realiza la generación mediante orden cronológico, lo cual ayuda a auditar la creación de registros.
+\subsubsection{Criptografía y Seguridad de Datos}
+% Explicación de algoritmos de hash (bcrypt/SHA-256), cifrado y técnicas de enmascaramiento de datos sensibles
+En esta sección se explicarán los mecanismos internos para garantizar la integridad de los datos del usuario al momento de hacer persistencia y peticiones dentro y fuera de la base de datos.
+\concepto{Enmascaramiento de datos}
+% Técnicas para ocultar o transformar información sensible en respuestas y registros.
+Técnica para la protección de datos de los usuarios en las respuestas JSON de los endpoints, que consiste en que una parte del valor que almacena la variable sea reemplazada por otro carácter. 
+\concepto{Cifrado de datos}
+% Mecanismo de cifrado y hashing seguro de credenciales basado en el paquete argon2.
+Técnica para la protección de datos, consiste en transformar un dato legible a uno ilegible antes de ser enviado a la base de datos para garantizar que, en caso de una fuga de información, los datos no sean capaces de ser leídos por el atacante.
+\subsubsection{Arquitectura de Software}
+% Explicación de la arquitectura del proyecto y diagrama/árbol de directorio del backend

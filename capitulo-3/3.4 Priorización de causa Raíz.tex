@@ -1,28 +1,67 @@
+% Tabla del análisis cuantitativo: texto de 10 pt, ancho completo y reglas superior e inferior.
+\newcommand{\tablaAnalisis}[4]{%
+    \par\medskip
+    \noindent\begin{minipage}{\linewidth}\linespread{1}\selectfont
+        \refstepcounter{table}\label{#1}
+        \addcontentsline{lot}{table}{%
+            Tabla~\thetable. #2}
+        {\footnotesize\bfseries Tabla~\thetable}\par
+        {\footnotesize\itshape #2}\par
+        \begingroup
+        \renewcommand{\baselinestretch}{1}
+        \footnotesize
+        \setlength{\tabcolsep}{3pt}
+        \renewcommand{\arraystretch}{1}
+        #3
+        \endgroup
+        {\linespread{1}\footnotesize\textit{Nota.} #4\par}
+    \end{minipage}
+    \par\medskip}
+
+% Figura con medidas fijas: etiqueta, título, archivo, ancho, alto, sangría izquierda y nota.
+\newcommand{\figuraMedida}[7]{%
+    \par\medskip
+    \noindent\hspace*{#6}%
+    \begin{minipage}{#4}\linespread{1}\selectfont
+        \refstepcounter{figure}\label{#1}
+        \addcontentsline{lof}{figure}{%
+            Figura~\thefigure. #2}
+        {\footnotesize\bfseries Figura~\thefigure}\par
+        {\footnotesize\itshape #2}\par
+        {\centering
+            \includegraphics[width=#4,height=#5,keepaspectratio]{#3}\par}
+        {\linespread{1}\footnotesize\textit{Nota.} #7\par}
+    \end{minipage}
+    \par\medskip}
+
+% Subtítulo de cada causa y rótulos de análisis, alineados al margen izquierdo.
+\newcommand{\causaTitulo}[1]{\par\noindent\textbf{#1}\par\nobreak}
+\newcommand{\rotuloAnalisis}[1]{\par\noindent\textbf{#1}\par\nobreak}
+
 \subsection{Priorización de causas raíz}
 
 \subsubsection{Lista de causas encuestadas}
 
-La Tabla~\ref{tab:encuesta_causas_nominas} reúne 15 respuestas para cada una de las ocho causas identificadas en la gestión de nóminas. 
-Las opciones son siempre (4), casi siempre (3), algunas veces (2) y nunca (1). 
-Las 120 respuestas permiten identificar qué causas se presentan con mayor frecuencia y cuáles requieren atención prioritaria.
+Se encuestó a 15 personas de las áreas de Recursos Humanos y Contabilidad de las empresas A y B: 9 de la Empresa A (5 de Recursos Humanos y 4 de Contabilidad) y 6 de la Empresa B (3 de Recursos Humanos y 3 de Contabilidad).
+
+La Tabla~\ref{tab:encuesta_causas_nominas} reúne 15 respuestas para cada una de las ocho causas identificadas en la gestión de nóminas. Las opciones son siempre (4), casi siempre (3), algunas veces (2) y nunca (1). Las 120 respuestas permiten identificar qué causas se presentan con mayor frecuencia y cuáles requieren atención prioritaria.
 
 \par\medskip
-\noindent\begin{minipage}{\linewidth}
+\noindent\begin{minipage}{\linewidth}\linespread{1}\selectfont
     \refstepcounter{table}\label{tab:encuesta_causas_nominas}
     \addcontentsline{lot}{table}{%
         Tabla~\thetable. Distribución de respuestas por causa identificada}
-    {\bfseries Tabla~\thetable}\par
-    \vspace{0.1cm}
-    {\itshape Distribución de respuestas por causa identificada}\par
+    {\footnotesize\bfseries Tabla~\thetable}\par
+    {\footnotesize\itshape Distribución de respuestas por causa identificada}\par
     \vspace{0.2cm}
     \begingroup
     \renewcommand{\baselinestretch}{1}
-    \small
+    \footnotesize
     \setlength{\tabcolsep}{3pt}
     \renewcommand{\arraystretch}{1.2}
     \begin{tabularx}{\linewidth}{@{}p{0.08\linewidth}>{\raggedright\arraybackslash}X*{4}{>{\centering\arraybackslash}p{0.075\linewidth}}>{\centering\arraybackslash}p{0.07\linewidth}@{}}
         \toprule
-        \textbf{\footnotesize Código} & \textbf{\footnotesize Identificación de las causas} & \textbf{\footnotesize \shortstack{Siempre\\(4)}} & \textbf{\footnotesize \shortstack{Casi\\siempre\\(3)}} & \textbf{\footnotesize \shortstack{Algunas\\veces\\(2)}} & \textbf{\footnotesize \shortstack{Nunca\\(1)}} & \textbf{\footnotesize \shortstack{Total\\N}} \\
+        \textbf{Código} & \textbf{Identificación de las causas} & \textbf{\shortstack{Siempre\\(4)}} & \textbf{\shortstack{Casi\\siempre\\(3)}} & \textbf{\shortstack{Algunas\\veces\\(2)}} & \textbf{\shortstack{Nunca\\(1)}} & \textbf{\shortstack{Total\\N}} \\
         \midrule
         CA1 & ¿Cómo calificas la Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad? & 7 & 5 & 2 & 1 & 15 \\
         CA2 & ¿Cómo calificas la Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización? & 5 & 5 & 4 & 1 & 15 \\
@@ -36,35 +75,32 @@ Las 120 respuestas permiten identificar qué causas se presentan con mayor frecu
     \end{tabularx}
     \endgroup
     \vspace{0.2cm}
-    {\small \textit{Nota.} Se muestra en la tabla la lista de causas identificadas según el problema principal.\par}
+    {\linespread{1}\footnotesize\textit{Nota.} Se muestra en la tabla la lista de causas identificadas según el problema principal.\par}
 \end{minipage}
 \par\medskip
 
 \subsubsection{Diagrama de Pareto en función al grado de las causas principales}
 
-Las respuestas se multiplican por su peso y se suman para obtener el puntaje de cada causa. 
-La Tabla~\ref{tab:pareto_causas_nominas} y la Figura~\ref{fig:pareto_causas_nominas} muestran las causas ordenadas de mayor a menor. 
-Las seis primeras acumulan el 79,21\,\% del puntaje, cercano a la referencia del 80\,\%.
+Las respuestas se multiplican por su peso y se suman para obtener el puntaje de cada causa. La Tabla~\ref{tab:pareto_causas_nominas} y la Figura~\ref{fig:pareto_causas_nominas} muestran las causas ordenadas de mayor a menor. Las seis primeras acumulan el 79,21\,\% del puntaje, cercano a la referencia del 80\,\%.
 
 \par\medskip
-\noindent\begin{minipage}{\linewidth}
+\noindent\begin{minipage}{\linewidth}\linespread{1}\selectfont
     \refstepcounter{table}\label{tab:pareto_causas_nominas}
 
     \addcontentsline{lot}{table}{%
         Tabla~\thetable. Priorización de las causas mediante puntajes ponderados}
 
-    {\bfseries Tabla~\thetable}\par
-    \vspace{0.1cm}
-    {\itshape Priorización de las causas mediante puntajes ponderados}\par
+    {\footnotesize\bfseries Tabla~\thetable}\par
+    {\footnotesize\itshape Priorización de las causas mediante puntajes ponderados}\par
     \vspace{0.2cm}
     \begingroup
     \renewcommand{\baselinestretch}{1}
-    \small
+    \footnotesize
     \setlength{\tabcolsep}{3pt}
     \renewcommand{\arraystretch}{1.2}
     \begin{tabularx}{\linewidth}{@{}p{0.08\linewidth}>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.085\linewidth}>{\centering\arraybackslash}p{0.115\linewidth}>{\centering\arraybackslash}p{0.115\linewidth}>{\centering\arraybackslash}p{0.075\linewidth}@{}}
         \toprule
-        \textbf{\footnotesize Código} & \textbf{\footnotesize Problemas} & \textbf{\footnotesize Puntaje} & \textbf{\footnotesize \shortstack{\%\\acumulado}} & \textbf{\footnotesize \shortstack{Puntaje\\acumulado}} & \textbf{\footnotesize \shortstack{Corte\\80--20}} \\
+        \textbf{Código} & \textbf{Problemas} & \textbf{Puntaje} & \textbf{\shortstack{\%\\acumulado}} & \textbf{\shortstack{Puntaje\\acumulado}} & \textbf{\shortstack{Corte\\80--20}} \\
         \midrule
         CA3 & Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales a la planilla. & 52 & 14,61\,\% & 52 & 80\,\% \\
         CA8 & Generación y distribución individual de boletas mediante actividades manuales o semimanuales. & 50 & 28,65\,\% & 102 & 80\,\% \\
@@ -79,83 +115,175 @@ Las seis primeras acumulan el 79,21\,\% del puntaje, cercano a la referencia del
     \end{tabularx}
     \endgroup
     \vspace{0.2cm}
-    {\small \textit{Nota.} Se muestra en la tabla la lista de causas identificadas según el problema principal.\par}
+    {\linespread{1}\footnotesize\textit{Nota.} Se muestra en la tabla la lista de causas identificadas según el problema principal.\par}
 \end{minipage}
 \par\medskip
 
-\par\medskip
-\figuraEnTexto
+\figuraMedida
     {fig:pareto_causas_nominas}
     {Diagrama de Pareto de las causas de la gestión de nóminas}
     {images/pareto-causas-nominas.png}
+    {14.01cm}{7.05cm}{0cm}
     {Las barras representan los puntajes ponderados
     y la línea muestra el porcentaje acumulado.
     Elaboración propia.}
-\par\medskip
 
-% Aplica la misma sangría lateral a la figura, su título y su nota.
-\noindent
-\figuraEnTexto
+\figuraMedida
     {fig:causas_principales_nominas}
     {Causas seleccionadas para el análisis}
     {images/causas-principales-nominas.png}
+    {9.17cm}{8.08cm}{3.5cm}
     {Representación de las causas seleccionadas
     para su análisis posterior. Elaboración propia.}
-\par\medskip
 
 \subsubsection{Análisis cualitativo y cuantitativo}
 
-\begingroup
-% Evita dividir los párrafos de análisis entre dos páginas.
-\interlinepenalty=10000
+\causaTitulo{Causa 1 (CA3): Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales a la planilla.}
 
-\paragraph*{Causa 1 (CA3): Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales a la planilla.}
+\rotuloAnalisis{Análisis cualitativo:}
 
-    \textbf{Análisis cualitativo:} El traslado manual de asistencias, permisos y horas extras a la planilla exige revisar que cada dato corresponda al trabajador y al periodo correcto. 
-    Una omisión o un error de transcripción puede afectar el cálculo y obligar a corregir la información antes de aprobar la nómina.
+Trasladar a mano las asistencias, los permisos y las horas extras a la planilla obliga a comprobar que cada dato corresponda al trabajador y al periodo correcto. Una omisión o un error al transcribir altera el cálculo y hay que corregirlo antes de aprobar la nómina. La Empresa A traslada más incidencias que la B, así que tiene más ocasiones de equivocarse.
 
-    \textbf{Análisis cuantitativo:} De 80 incidencias mensuales, se estima que 12 requieren corregirse por omisiones o errores de transcripción, equivalentes al 15\,\%. 
-    Esta proporción expresa los registros que necesitan una revisión adicional antes de incorporarse al cálculo de la nómina.
+\rotuloAnalisis{Análisis cuantitativo:}
 
-\paragraph*{Causa 2 (CA8): Generación y distribución individual de boletas mediante actividades manuales o semimanuales.}
+Cada mes se registran 80 incidencias: 48 de la Empresa A y 32 de la B. De ellas, 12 (15,00\,\%) se corrigen por omisiones o errores de transcripción: 7 en la Empresa A (14,58\,\%) y 5 en la B (15,63\,\%). Corregir una incidencia toma 15 minutos. El contador cuesta S/ 0,65 por minuto en la Empresa A y S/ 0,58 en la B. La Tabla~\ref{tab:perdida_ca3} muestra la pérdida de cada empresa, que suma S/ 111,75 al mes y S/ 1\,341,00 al año.
 
-    \textbf{Análisis cualitativo:} Preparar y enviar las boletas una por una incorpora tareas repetitivas al cierre de la nómina. 
-    El seguimiento de los envíos también depende del registro que mantenga el responsable, por lo que resulta necesario distinguir las boletas enviadas de las pendientes y conservar constancia de los reenvíos.
+\tablaAnalisis
+    {tab:perdida_ca3}
+    {Pérdida económica por la transcripción manual de incidencias (CA3)}
+    {\begin{tabularx}{\linewidth}{@{}l*{6}{>{\centering\arraybackslash}X}@{}}
+        \toprule
+        \textbf{Empresa} & \textbf{\shortstack{Incidencias\\corregidas}} & \textbf{\shortstack{Min. por\\incidencia}} & \textbf{\shortstack{Min.\\totales}} & \textbf{\shortstack{Costo por\\min (S/)}} & \textbf{\shortstack{Pérdida\\mensual (S/)}} & \textbf{\shortstack{Pérdida\\anual (S/)}} \\
+        \midrule
+        Empresa A & 7 & 15 & 105 & 0,65 & 68,25 & 819,00 \\
+        Empresa B & 5 & 15 & 75 & 0,58 & 43,50 & 522,00 \\
+        \midrule
+        \textbf{Total} & \textbf{12} & \textbf{15} & \textbf{180} & --- & \textbf{111,75} & \textbf{1\,341,00} \\
+        \bottomrule
+    \end{tabularx}}
+    {Pérdida mensual = incidencias corregidas $\times$ minutos por incidencia $\times$ costo por minuto del contador. Pérdida anual = pérdida mensual $\times$ 12. Elaboración propia.}
 
-    \textbf{Análisis cuantitativo:} Para las 50 boletas del periodo, se estiman seis reenvíos por errores en los datos de contacto o en la preparación del correo, equivalentes al 12\,\% de las boletas. 
-    También se consideran 40 minutos para su generación y distribución manual, que representan el 13,33\,\% de los 300 minutos del proceso completo.
+\causaTitulo{Causa 2 (CA8): Generación y distribución individual de boletas mediante actividades manuales o semimanuales.}
 
-\paragraph*{Causa 3 (CA1): Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad.}
+\rotuloAnalisis{Análisis cualitativo:}
 
-    \textbf{Análisis cualitativo:} Cuando la información laboral y remunerativa se conserva en archivos separados, ambas áreas deben conciliar sus registros antes de elaborar la planilla. 
-    Si los archivos se actualizan en momentos distintos, puede utilizarse información anterior o incompleta, lo que dificulta establecer una base común para el cálculo.
+Preparar y enviar las boletas una por una agrega tareas repetitivas al cierre de la nómina. El responsable debe llevar su propio registro para distinguir las boletas enviadas de las pendientes y dejar constancia de los reenvíos. La Empresa A reparte más boletas que la B, por lo que dedica más tiempo a esta tarea.
 
-    \textbf{Análisis cuantitativo:} Al conciliar los registros de los 50 trabajadores, se estiman diez con diferencias entre Recursos Humanos y Contabilidad. 
-    El 20\,\% requeriría corregir o actualizar información laboral y remunerativa antes de elaborar la planilla.
+\rotuloAnalisis{Análisis cuantitativo:}
 
-\paragraph*{Causa 4 (CA7): Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales.}
+En el periodo se emiten 50 boletas: 30 de la Empresa A y 20 de la B. Hay 6 reenvíos (12,00\,\%) por errores en los datos de contacto o en la preparación del correo: 4 en la Empresa A (13,33\,\%) y 2 en la B (10,00\,\%). La generación y distribución manual ocupa 40 minutos (24 en la Empresa A y 16 en la B), el 13,33\,\% de los 300 minutos que dura el proceso completo (180 y 120 minutos, respectivamente). Cada reenvío toma 10 minutos. El contador cuesta S/ 0,65 por minuto en la Empresa A y S/ 0,58 en la B. La Tabla~\ref{tab:perdida_ca8} suma los reenvíos y el tiempo de generación manual; la pérdida total es de S/ 62,48 al mes y S/ 749,76 al año.
 
-    \textbf{Análisis cualitativo:} Preparar por separado la información para pagos bancarios y declaraciones requiere trasladar datos y contrastarlos con la planilla aprobada. 
-    Si se modifica alguno de los archivos, el cambio debe revisarse en los demás para mantener la consistencia de los importes y evitar repetir la preparación de documentos.
+\tablaAnalisis
+    {tab:perdida_ca8}
+    {Pérdida económica por la generación y distribución manual de boletas (CA8)}
+    {\begin{tabularx}{\linewidth}{@{}l*{7}{>{\centering\arraybackslash}X}@{}}
+        \toprule
+        \textbf{Empresa} & \textbf{Reenvíos} & \textbf{\shortstack{Min. por\\reenvío}} & \textbf{\shortstack{Min. de\\generación}} & \textbf{\shortstack{Min.\\totales}} & \textbf{\shortstack{Costo por\\min (S/)}} & \textbf{\shortstack{Pérdida\\mensual (S/)}} & \textbf{\shortstack{Pérdida\\anual (S/)}} \\
+        \midrule
+        Empresa A & 4 & 10 & 24 & 64 & 0,65 & 41,60 & 499,20 \\
+        Empresa B & 2 & 10 & 16 & 36 & 0,58 & 20,88 & 250,56 \\
+        \midrule
+        \textbf{Total} & \textbf{6} & \textbf{10} & \textbf{40} & \textbf{100} & --- & \textbf{62,48} & \textbf{749,76} \\
+        \bottomrule
+    \end{tabularx}}
+    {Minutos totales = reenvíos $\times$ minutos por reenvío + minutos de generación manual. Pérdida mensual = minutos totales $\times$ costo por minuto del contador. Pérdida anual = pérdida mensual $\times$ 12. Elaboración propia.}
 
-    \textbf{Análisis cuantitativo:} Para dos archivos de 50 registros cada uno, destinados a pagos bancarios y declaraciones, se estiman ocho ajustes al contrastarlos con la planilla aprobada. 
-    Estos representan el 8\,\% de los 100 registros preparados y requerirían corrección antes de utilizar los archivos.
+\causaTitulo{Causa 3 (CA1): Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad.}
 
-\paragraph*{Causa 5 (CA2): Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización.}
+\rotuloAnalisis{Análisis cualitativo:}
 
-    \textbf{Análisis cualitativo:} La circulación de varias copias dificulta reconocer qué archivo contiene las últimas correcciones y cuál fue aprobado. 
-    Revisar o continuar el trabajo sobre una versión anterior puede dejar fuera cambios ya realizados. Por ello, es necesario identificar la versión vigente y quién está a cargo de actualizarla.
+Si la información laboral y remunerativa está en archivos separados, Recursos Humanos y Contabilidad deben conciliarla antes de elaborar la planilla. Cuando cada área actualiza su archivo en un momento distinto, puede usarse información anterior o incompleta y no existe una base común para el cálculo. La Empresa A concilia los datos de más trabajadores que la B.
 
-    \textbf{Análisis cuantitativo:} De 30 modificaciones de la planilla, se estima que seis se efectúan sobre copias desactualizadas, equivalentes al 20\,\%. 
-    Estos cambios necesitarían revisarse y trasladarse a la versión vigente para evitar omisiones al consolidar el archivo final.
+\rotuloAnalisis{Análisis cuantitativo:}
 
-\paragraph*{Causa 6 (CA4): Modificación manual de fórmulas y parámetros de cálculo sin una validación uniforme.}
+Al conciliar los registros de los 50 trabajadores (30 de la Empresa A y 20 de la B), 10 presentan diferencias entre Recursos Humanos y Contabilidad: 6 en la Empresa A y 4 en la B, es decir, el 20,00\,\% en ambas. Su información laboral y remunerativa debe corregirse o actualizarse antes de elaborar la planilla. Conciliar y corregir un caso toma 30 minutos. El contador cuesta S/ 0,65 por minuto en la Empresa A y S/ 0,58 en la B. La Tabla~\ref{tab:perdida_ca1} muestra la pérdida de cada empresa, que suma S/ 186,60 al mes y S/ 2\,239,20 al año.
 
-    \textbf{Análisis cualitativo:} Las fórmulas y los parámetros determinan cómo se calculan los conceptos de la nómina. 
-    Modificarlos sin una revisión común puede producir resultados distintos ante datos equivalentes. 
-    La validación debe comprobar tanto la regla utilizada como su resultado, para que el cálculo mantenga un criterio uniforme.
+\tablaAnalisis
+    {tab:perdida_ca1}
+    {Pérdida económica por la conciliación de archivos separados (CA1)}
+    {\begin{tabularx}{\linewidth}{@{}l*{6}{>{\centering\arraybackslash}X}@{}}
+        \toprule
+        \textbf{Empresa} & \textbf{\shortstack{Trabajadores\\con diferencias}} & \textbf{\shortstack{Min. por\\caso}} & \textbf{\shortstack{Min.\\totales}} & \textbf{\shortstack{Costo por\\min (S/)}} & \textbf{\shortstack{Pérdida\\mensual (S/)}} & \textbf{\shortstack{Pérdida\\anual (S/)}} \\
+        \midrule
+        Empresa A & 6 & 30 & 180 & 0,65 & 117,00 & 1\,404,00 \\
+        Empresa B & 4 & 30 & 120 & 0,58 & 69,60 & 835,20 \\
+        \midrule
+        \textbf{Total} & \textbf{10} & \textbf{30} & \textbf{300} & --- & \textbf{186,60} & \textbf{2\,239,20} \\
+        \bottomrule
+    \end{tabularx}}
+    {Pérdida mensual = trabajadores con diferencias $\times$ minutos por caso $\times$ costo por minuto del contador. Pérdida anual = pérdida mensual $\times$ 12. Elaboración propia.}
 
-    \textbf{Análisis cuantitativo:} Para 30 casos de verificación de remuneraciones, descuentos y aportes, se estiman cuatro diferencias frente a los resultados esperados, 
-    equivalentes al 13,33\,\%. Estos casos requerirían revisar las fórmulas o los parámetros utilizados antes de aprobar los resultados.
-\par
-\endgroup
+\causaTitulo{Causa 4 (CA7): Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales.}
+
+\rotuloAnalisis{Análisis cualitativo:}
+
+Preparar por separado la información para los pagos bancarios y las declaraciones obliga a trasladar datos y compararlos con la planilla aprobada. Si se modifica uno de los archivos, hay que revisar los demás para que los importes coincidan y no repetir la preparación de los documentos. Cada empresa prepara sus propios archivos, así que este trabajo se repite en la Empresa A y en la B.
+
+\rotuloAnalisis{Análisis cuantitativo:}
+
+Cada empresa prepara 2 archivos, uno para pagos bancarios y otro para declaraciones, que suman 100 registros: 60 de la Empresa A y 40 de la B. Al compararlos con la planilla aprobada se encuentran 8 ajustes (8,00\,\%): 5 en la Empresa A (8,33\,\%) y 3 en la B (7,50\,\%), que se corrigen antes de usar los archivos. Cada ajuste toma 15 minutos. El contador cuesta S/ 0,65 por minuto en la Empresa A y S/ 0,58 en la B. La Tabla~\ref{tab:perdida_ca7} muestra la pérdida de cada empresa, que suma S/ 74,85 al mes y S/ 898,20 al año.
+
+\tablaAnalisis
+    {tab:perdida_ca7}
+    {Pérdida económica por la preparación separada de archivos de pago y declaración (CA7)}
+    {\begin{tabularx}{\linewidth}{@{}l*{6}{>{\centering\arraybackslash}X}@{}}
+        \toprule
+        \textbf{Empresa} & \textbf{Ajustes} & \textbf{\shortstack{Min. por\\ajuste}} & \textbf{\shortstack{Min.\\totales}} & \textbf{\shortstack{Costo por\\min (S/)}} & \textbf{\shortstack{Pérdida\\mensual (S/)}} & \textbf{\shortstack{Pérdida\\anual (S/)}} \\
+        \midrule
+        Empresa A & 5 & 15 & 75 & 0,65 & 48,75 & 585,00 \\
+        Empresa B & 3 & 15 & 45 & 0,58 & 26,10 & 313,20 \\
+        \midrule
+        \textbf{Total} & \textbf{8} & \textbf{15} & \textbf{120} & --- & \textbf{74,85} & \textbf{898,20} \\
+        \bottomrule
+    \end{tabularx}}
+    {Pérdida mensual = ajustes $\times$ minutos por ajuste $\times$ costo por minuto del contador. Pérdida anual = pérdida mensual $\times$ 12. Elaboración propia.}
+
+\causaTitulo{Causa 5 (CA2): Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización.}
+
+\rotuloAnalisis{Análisis cualitativo:}
+
+Cuando circulan varias copias de la planilla cuesta saber cuál tiene las últimas correcciones y cuál fue aprobada. Trabajar sobre una versión anterior deja fuera cambios ya hechos, así que hay que identificar la versión vigente y a quién le corresponde actualizarla. La Empresa A hace más modificaciones que la B, por lo que corre más riesgo de usar una copia vieja.
+
+\rotuloAnalisis{Análisis cuantitativo:}
+
+De 30 modificaciones a la planilla (18 de la Empresa A y 12 de la B), 6 (20,00\,\%) se hacen sobre copias desactualizadas: 4 en la Empresa A (22,22\,\%) y 2 en la B (16,67\,\%). Cada una debe revisarse y pasarse a la versión vigente para no perder cambios al consolidar el archivo final, y eso toma 20 minutos. El contador cuesta S/ 0,65 por minuto en la Empresa A y S/ 0,58 en la B. La Tabla~\ref{tab:perdida_ca2} muestra la pérdida de cada empresa, que suma S/ 75,20 al mes y S/ 902,40 al año.
+
+\tablaAnalisis
+    {tab:perdida_ca2}
+    {Pérdida económica por la circulación de versiones desactualizadas (CA2)}
+    {\begin{tabularx}{\linewidth}{@{}l*{6}{>{\centering\arraybackslash}X}@{}}
+        \toprule
+        \textbf{Empresa} & \textbf{\shortstack{Copias\\desactualizadas}} & \textbf{\shortstack{Min. por\\copia}} & \textbf{\shortstack{Min.\\totales}} & \textbf{\shortstack{Costo por\\min (S/)}} & \textbf{\shortstack{Pérdida\\mensual (S/)}} & \textbf{\shortstack{Pérdida\\anual (S/)}} \\
+        \midrule
+        Empresa A & 4 & 20 & 80 & 0,65 & 52,00 & 624,00 \\
+        Empresa B & 2 & 20 & 40 & 0,58 & 23,20 & 278,40 \\
+        \midrule
+        \textbf{Total} & \textbf{6} & \textbf{20} & \textbf{120} & --- & \textbf{75,20} & \textbf{902,40} \\
+        \bottomrule
+    \end{tabularx}}
+    {Pérdida mensual = copias desactualizadas $\times$ minutos por copia $\times$ costo por minuto del contador. Pérdida anual = pérdida mensual $\times$ 12. Elaboración propia.}
+
+\causaTitulo{Causa 6 (CA4): Modificación manual de fórmulas y parámetros de cálculo sin una validación uniforme.}
+
+\rotuloAnalisis{Análisis cualitativo:}
+
+Las fórmulas y los parámetros definen cómo se calculan los conceptos de la nómina. Si se modifican sin una revisión común, datos equivalentes pueden dar resultados distintos. La validación tiene que comprobar la regla aplicada y también su resultado, para mantener un mismo criterio. Cada empresa trabaja con sus propias hojas de cálculo, de modo que un cambio hecho en la Empresa A no llega a la B.
+
+\rotuloAnalisis{Análisis cuantitativo:}
+
+En 30 casos de verificación de remuneraciones, descuentos y aportes (18 de la Empresa A y 12 de la B) se encuentran 4 diferencias frente a los resultados esperados (13,33\,\%): 2 en la Empresa A (11,11\,\%) y 2 en la B (16,67\,\%). Hay que revisar las fórmulas o los parámetros usados antes de aprobar los resultados, y cada caso toma 45 minutos. El contador cuesta S/ 0,65 por minuto en la Empresa A y S/ 0,58 en la B. La Tabla~\ref{tab:perdida_ca4} muestra la pérdida de cada empresa, que suma S/ 110,70 al mes y S/ 1\,328,40 al año.
+
+\tablaAnalisis
+    {tab:perdida_ca4}
+    {Pérdida económica por la modificación manual de fórmulas y parámetros (CA4)}
+    {\begin{tabularx}{\linewidth}{@{}l*{6}{>{\centering\arraybackslash}X}@{}}
+        \toprule
+        \textbf{Empresa} & \textbf{Diferencias} & \textbf{\shortstack{Min. por\\caso}} & \textbf{\shortstack{Min.\\totales}} & \textbf{\shortstack{Costo por\\min (S/)}} & \textbf{\shortstack{Pérdida\\mensual (S/)}} & \textbf{\shortstack{Pérdida\\anual (S/)}} \\
+        \midrule
+        Empresa A & 2 & 45 & 90 & 0,65 & 58,50 & 702,00 \\
+        Empresa B & 2 & 45 & 90 & 0,58 & 52,20 & 626,40 \\
+        \midrule
+        \textbf{Total} & \textbf{4} & \textbf{45} & \textbf{180} & --- & \textbf{110,70} & \textbf{1\,328,40} \\
+        \bottomrule
+    \end{tabularx}}
+    {Pérdida mensual = diferencias $\times$ minutos por caso $\times$ costo por minuto del contador. Pérdida anual = pérdida mensual $\times$ 12. Elaboración propia.}
