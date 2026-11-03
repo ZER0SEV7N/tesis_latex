@@ -1,8 +1,9 @@
-\subsection{Stack Tecnológico, Seguridad y Arquitectura del Sistema}
+\subsection{Consideraciones técnicas, operativa y ambientales para la implementación de la mejora}
 
+\subsubsection{Stack tecnológico y arquitectura del sistema}
 En esta sección se detallará por completo el stack tecnológico, las medidas de seguridad y la arquitectura que se eligieron para el desarrollo del sistema, junto con una breve justificación e implementación de este. 
 
-\subsubsection{Tecnologías del Backend}
+\subsubsubsection{Tecnologías del Backend}
 
 \textbf{TypeScript.} Se escogió este lenguaje de programación para el backend, cuya principal característica es ser un lenguaje de tipado estático ideal para operaciones clave, donde el tipo de valor no debe variar. \par
 
@@ -30,7 +31,7 @@ En esta sección se detallará por completo el stack tecnológico, las medidas d
 
 \textbf{Dotenv.} Librería de manejo de variables de entorno para garantizar la seguridad de llaves de servicios, firmas de encriptado y contraseñas de base de datos.
 
-\subsubsection{Tecnologías del Frontend}
+\subsubsubsection{Tecnologías del Frontend}
 \textbf{React 19.} Librería de JavaScript/TypeScript utilizada para la creación de componentes reutilizables y gestionar el renderizado de estos de manera eficiente.\par
 \textbf{TypeScript 6.} Lenguaje de tipado estático que permite la integridad y asegurar el tipo de valores de los datos, para su posterior envío al backend.\par
 \textbf{Vite 8.} Empaquetador, servidor de desarrollo rápido para la compilación de la aplicación.\par
@@ -43,12 +44,12 @@ En esta sección se detallará por completo el stack tecnológico, las medidas d
 \textbf{React Hook Form 7.} Librería para el manejo de formularios, reduciendo cargas innecesarias al escribir.\par
 \textbf{Zod.} Librería de validación de datos, permite la comparación y estructura del envío de datos al backend.\par
 \textbf{React Router DOM 7.} Sistema de navegación para gestionar distintas páginas de la aplicación web sin recargar la página completa.\par
-\subsubsection{Paquete de validación de Schemas compartido.} 
+\subsubsubsection{Paquete de validación de Schemas compartido.} 
 Paquete independiente que permite centralizar la validación de schemas, tipos de datos y reglas de estas. \par
 
 \textbf{ZOD.} Librería para validación de datos, perfecta para establecer contratos de entrada a los endpoints de la aplicación.
 
-\subsubsection{Bases de Datos}
+\subsubsubsection{Bases de Datos}
 Se escogió usar una base de datos para permanencia de registros historicos, centralizacion, lectura y auditoria de estos.
 
 \textbf{PostgreSQL.} Motor de base de datos relacional elegido por su robustez, ideal para proyectos empresariales garantizando la estructura de guardado de los datos de los usuarios. \par
@@ -57,14 +58,14 @@ Se escogió usar una base de datos para permanencia de registros historicos, cen
 
 \textbf{UUIDv7.} Método de identificación a entidades dentro de la base de datos relacional; a diferencia de sus versiones anteriores que generan el identificador de manera aleatoria, este realiza la generación mediante orden cronológico, lo cual ayuda a auditar la creación de registros.
 
-\subsubsection{Criptografía y Seguridad de Datos}
+\subsubsubsection{Criptografía y Seguridad de Datos}
 En esta sección se explicarán los mecanismos internos para garantizar la integridad de los datos del usuario al momento de hacer persistencia y peticiones dentro y fuera de la base de datos.
 
 \textbf{Enmascaramiento de datos.} Técnica para la protección de datos de los usuarios en las respuestas JSON de los endpoints, que consiste en que una parte del valor que almacena la variable sea reemplazada por otro carácter. \par
 
 \textbf{Cifrado de datos.} Técnica para la protección de datos, consiste en transformar un dato legible a uno ilegible antes de ser enviado a la base de datos para garantizar que, en caso de una fuga de información, los datos no sean capaces de ser leídos por el atacante.
 
-\subsubsection{Diagrama de Arquitectura de Software}
+\subsubsubsection{Diagrama de Arquitectura de Software}
 En el siguiente diagrama se observará la estructura y comportamiento general del sistema, la estructura del proyecto se basa en la arquitectura de un monolito modular combinado con Clean Architecture, donde los controladores, mediante el motor de peticiones de Fastify, procesan y validan las peticiones mediante JWT, además de las tareas de alta demanda (cálculo de planillas) se desarrollan mediante colas usando BullMQ, donde finalmente se designa a PrismaORM para la comunicación con la base de datos que es PostgreSQL.
 \vspace{0.3cm}
 \par\medskip

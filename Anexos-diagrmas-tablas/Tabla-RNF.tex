@@ -1,0 +1,52 @@
+\begin{longtable}{|l|p{4cm}|p{6cm}|l|}
+    \caption{Especificación detallada de requerimientos no funcionales}
+    \label{tab:anexo_especificacion_rnf} \\
+    \hline
+    \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento No Funcional} & \textbf{Prioridad} \\ \hline
+    \endfirsthead
+    \hline
+    \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento No Funcional} & \textbf{Prioridad} \\ \hline
+    \endhead
+    \hline
+    \multicolumn{4}{r}{\textit{(Continúa en la siguiente página)}} \\
+    \endfoot
+    \bottomrule
+    \endlastfoot
+
+    RNF-01 & 
+    Tiempo de Respuesta del Motor de Cálculo Masivo & 
+    El motor de cálculo de planilla para una nómina estándar (hasta 1,000 colaboradores) debe procesarse y renderizar el pool de resultados en un tiempo inferior a 10 segundos.
+    & Alta \\ \hline
+    RNF-02 & 
+    Tiempo de Respuesta de los endpoints HTTP & 
+    Los endpoints de consulta (GET, POST, PUT, PATCH) y transacciones ligeras deben responder con una latencia media inferior a 300 ms.
+    & Alta \\ \hline
+    RNF-03 & 
+    Ejecución de tareas pesadas en segundo plano con respuesta asíncrona no bloqueante & 
+    Las tareas pesadas (envío masivo de boletas, ingesta masiva y exportación de archivos PLAME) deben ejecutarse en segundo plano mediante colas en memoria con BullMQ + Redis, garantizando que el hilo principal del servidor de API (NestJS/Fastify) no se bloquee.
+    & Alta \\ \hline
+    RNF-04 & 
+    Encriptación de datos antes de permanencia & 
+    Los datos financieros sensibles (cuenta_bancaria, cci, nro_cuenta_cts) deben encriptarse criptográficamente en la base de datos mediante el algoritmo simétrico AES-256-GCM en la capa de aplicación.
+    & Alta \\ \hline
+    RNF-05 & 
+    Enmascaramiento Dinámico de Datos & 
+    Las respuestas HTTP REST deben enmascarar los datos bancarios y números de cuenta dejando visibles únicamente los últimos 4 dígitos (ej. 002-191-************-88).
+    & Media \\ \hline
+    RNF-06 & 
+    Seguridad de Archivos PDF (Firma y Cifrado) & 
+    Las boletas de pago generadas en PDF deben cifrarse individualmente utilizando el DNI del trabajador como contraseña de apertura y poseer firma digital para garantizar su validez jurídica.
+    & Alta \\ \hline
+    RNF-07 & 
+    Conservación de datos históricos ley & 
+    El sistema no debe sobrescribir los parámetros pasados de la matriz de AFPs, UIT o RMV; debe guardar un registro histórico por periodo que permita re-calcular o auditar planillas de meses anteriores con las leyes de dicho momento.
+    & Alta \\ \hline
+    RNF-08 & 
+    Disponibilidad del Servicio & 
+    El backend debe garantizar una disponibilidad (Uptime) del 99.5% durante los días operativos de cierre de mes y procesamiento de pagos.
+    & Alta \\ \hline
+    RNF-09 & 
+    Resiliencia a integración de APIs externas & 
+    Las llamadas hacia APIs externas (RENIEC, n8n, CRM) deben contar con un tiempo límite de espera (Timeout) de 5 segundos y manejo de excepciones tipo BadGatewayException o RequestTimeoutException para no detener el sistema ante caídas de terceros.
+    & Media \\ \hline
+\end{longtable}

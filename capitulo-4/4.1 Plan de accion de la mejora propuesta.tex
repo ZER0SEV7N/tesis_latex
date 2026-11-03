@@ -1,6 +1,8 @@
-\subsection{Análisis de Requerimientos}
+\subsection{Plan de acción de la mejora propuesta}
+\subsubsection{Metodología de desarrollo}
+\subsubsection{Análisis de Requerimientos}
 
-\subsubsection{Cuadro de relación de requerimientos y causas raíz}
+\subsubsubsection{Cuadro de relación de requerimientos y causas raíz}
 En esta tabla se representará la relación de correspondencia entre los requerimientos funcionales y no funcionales con las causas raíz.
 
 \begin{longtable}{p{3.5cm} p{4.5cm} p{4cm} p{2cm}}
@@ -63,7 +65,7 @@ En esta tabla se representará la relación de correspondencia entre los requeri
       RF-10, RF-14 \\
 \end{longtable}
 
-\subsubsection{Requerimientos Funcionales del proyecto}
+\subsubsubsection{Requerimientos Funcionales del proyecto}
   \begin{itemize}
     \item RF-01: Aplicar acceso por Roles - El sistema debe autenticar a los usuarios mediante credenciales y asignar un token JWT, permitiendo al usuario ejecutar acciones segun su rol.
     \item RF-02: Registrar cambios en bicatora de auditoria - El sistema debe registrar automáticamente en la base de datos las acciones del usuario a nivel avanzado, permitiendo una reconstruccion de los datos.
@@ -81,7 +83,7 @@ En esta tabla se representará la relación de correspondencia entre los requeri
     \item RF-14: Generar de Boletas electronicas - El sistema debe generar automáticamente las boletas de pago individuales en formato PDF tras el cierre de la planilla y guardarlas en el historial del legajo.
     \item RF-15: Reportes de Costos por Centro de Costo - El sistema debe exportar resúmenes financieros mensuales por áreas organizacionales.
   \end{itemize}
-\subsubsection{Requerimientos no Funcionales del proyecto}
+\subsubsubsection{Requerimientos no Funcionales del proyecto}
   \begin{itemize}
     \item RNF-01: Tiempo de Respuesta del Motor de Cálculo Masivo - Los procedimientos de cálculo masivo de planillas deben ejecutarse y dar un resultado en un timepo inferior a 10 segundos. 
     \item RNF-02: Tiempo de Respuesta de los endpoints HTTP - Los enpoinst deben brindar una respuesta en un timepo inferior a 300 milisegundos. 
