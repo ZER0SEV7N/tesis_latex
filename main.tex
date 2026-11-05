@@ -120,53 +120,73 @@
     \renewcommand{\listtablename}{ÍNDICE DE TABLAS}%
 }
 
+\newcommand{\espacioAntesBloque}{%
+    \par\vspace{\dimexpr\baselineskip-12pt\relax}%
+}
+\newcommand{\finBloqueAPA}{%
+    \par\prevdepth=0pt\relax
+}
+\newcommand{\notaTabla}[1]{%
+    \par\nobreak\vspace{2pt}%
+    {\linespread{1}\footnotesize
+        \noindent\textit{Nota.} #1\par
+    }%
+}
+
 \newcommand{\tituloTablaAPA}[2]{%
+    \espacioAntesBloque
     \refstepcounter{table}%
     \label{#1}%
     \addcontentsline{lot}{table}{%
         Tabla~\thetable. #2}%
-
-    {\raggedright
-        {\bfseries Tabla~\thetable}\par
-        \vspace{0.1cm}
-        {\itshape #2}\par
-    }
-    \vspace{0.2cm}
+    {\linespread{1}\footnotesize
+        \noindent{\bfseries Tabla~\thetable}\par
+        \noindent{\itshape #2}\par
+    }%
+    \nobreak
 }
 
+\newsavebox{\cajaFigura}
+\newlength{\anchoFigura}
 \newcommand{\figuraEnTexto}[4]{%
-    \par\medskip
-    \noindent
-    \begin{minipage}{\linewidth}
-        \refstepcounter{figure}%
-        \label{#1}%
-        \addcontentsline{lof}{figure}{%
-            Figura~\thefigure. #2}%
-
-        {\raggedright
+    \espacioAntesBloque
+    \sbox{\cajaFigura}{\includegraphics[
+        width=\linewidth,
+        height=0.65\textheight,
+        keepaspectratio
+    ]{#3}}%
+    \setlength{\anchoFigura}{\wd\cajaFigura}%
+    \ifdim\anchoFigura<0.5\linewidth
+        \setlength{\anchoFigura}{0.5\linewidth}%
+    \fi
+    \noindent\makebox[\linewidth][c]{%
+        \begin{minipage}{\anchoFigura}
+            \linespread{1}\footnotesize
+            \refstepcounter{figure}%
+            \label{#1}%
+            \addcontentsline{lof}{figure}{%
+                Figura~\thefigure. #2}%
             {\bfseries Figura~\thefigure}\par
-            \vspace{0.1cm}
             {\itshape #2}\par
-        }
-
-        \vspace{0.2cm}
-
-        {\centering
-            \includegraphics[
-                width=\linewidth,
-                height=0.65\textheight,
-                keepaspectratio
-            ]{#3}\par
-        }
-
-        \vspace{0.2cm}
-
-        {\small\raggedright
+            \makebox[\linewidth][c]{\usebox{\cajaFigura}}\par
+            \vspace{2pt}
             \textit{Nota.} #4\par
-        }
-    \end{minipage}
-    \par\medskip
+        \end{minipage}%
+    }%
+    \finBloqueAPA
 }
+
+\DeclareCaptionFont{interlineadoSimple}{\linespread{1}\selectfont}
+\captionsetup[table]{
+    font={footnotesize,interlineadoSimple},
+    labelfont=bf,
+    textfont=it,
+    labelsep=newline,
+    justification=justified,
+    singlelinecheck=false,
+    skip=0pt
+}
+\setlength{\LTcapwidth}{\linewidth}
 
 % =================================
 % Conceptos y definiciones
