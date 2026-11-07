@@ -1,10 +1,31 @@
 \subsection{Plan de acción de la mejora propuesta}
+
+El plan de acción organiza la integración y validación de un sistema web de nóminas y procesos administrativos de Recursos Humanos, 
+orientado a su oferta por J\&P Periféricos S.A.C. a clientes empresariales. 
+La propuesta atiende las causas identificadas en el capítulo anterior mediante información centralizada, 
+controles por rol, registro de modificaciones, cálculo verificable y preparación automatizada de documentos.
+
+El trabajo se concentra en un producto mínimo viable (MVP) para los perfiles de Recursos Humanos y Contador. 
+Se parte de componentes de backend y de un workflow de n8n desarrollados previamente; 
+las actividades programadas comprenden su integración con el frontend, ajustes pendientes, 
+pruebas y preparación de la entrega. La existencia de estos componentes se distinguirá de la validación del recorrido completo del usuario.
+
+
 \subsubsection{Metodología de desarrollo}
-Se escogió la metodología Scrum porque permite construir el sistema por partes y cambiar las prioridades entre un sprint y otro. Al cierre de cada sprint, el Product Owner y el stakeholder revisan lo construido, y el orden del Product Backlog se ajusta según sus observaciones antes de empezar el siguiente.
+Se escogió la metodología Scrum porque permite construir el sistema por partes y cambiar las prioridades entre un sprint y otro. 
+Al cierre de cada sprint, el Product Owner y el stakeholder revisan lo construido, 
+y el orden del Product Backlog se ajusta según sus observaciones antes de empezar el siguiente.
 
 \subsubsubsection{Roles del equipo Scrum}
 
-El Product Owner decide el orden del Product Backlog y acepta o rechaza lo que se entrega al final de cada sprint. Este rol lo ocupa el Gerente General de J\&P Periféricos S.A.C., la empresa que encargó el sistema. Como stakeholder participa el contador de una de las empresas clientes de J\&P, que revisa los avances desde el punto de vista de quien usará el sistema. Ambos fueron entrevistados durante el levantamiento de requerimientos (apartado 1.5). Dentro del equipo, el Scrum Master conduce las reuniones y se encarga de que los bloqueos no frenen el sprint, mientras que los desarrolladores construyen el sistema y uno de ellos asume además las tareas de DevOps. La Tabla~\ref{tab:roles_scrum} muestra quién ocupa cada rol.
+El Product Owner decide el orden del Product Backlog y acepta o rechaza lo que se entrega al final de cada sprint. 
+Este rol lo ocupa el Gerente General de J\&P Periféricos S.A.C. 
+Como stakeholder participa el contador de una de las empresas clientes de J\&P y, 
+que revisa los avances desde el punto de vista de quien usará el sistema. 
+Ambos fueron entrevistados durante el levantamiento de requerimientos (apartado 1.5).
+ Dentro del equipo, el Scrum Master conduce las reuniones y se encarga de que los bloqueos no frenen el sprint, 
+ mientras que los desarrolladores construyen el sistema y uno de ellos asume además las tareas de DevOps. 
+ La Tabla~\ref{tab:roles_scrum} muestra quién ocupa cada rol.
 
 \par
 \noindent
@@ -36,16 +57,22 @@ El Product Owner decide el orden del Product Backlog y acepta o rechaza lo que s
         Product Owner &
         Julio Flores Vicuña\newline
         \textit{(Gerente General de J\&P Periféricos S.A.C.)} &
-        Ordena el Product Backlog, define los criterios de aceptación de las historias y aprueba el incremento de cada sprint. \\
+        Ordena las historias de usuario que se incluyen en el Product Backlog, \newline
+        define los criterios de aceptación de las historias y aprueba el incremento de cada sprint. \\
 
-        Scrum Master &
+        Stakeholder &
         Daniel Roman &
-        Conduce las reuniones del equipo, mantiene al día el tablero en Jira y gestiona los bloqueos. \\
+        Se encarga de validar los avances del proyecto y asegurar que se cumplan los requisitos del cliente. \\
 
         Stakeholder &
         Juan Pablo Alcala Juarez\newline
         \textit{(Contador de una empresa cliente de J\&P)} &
         Revisa los avances y valida que los cálculos y reportes respondan a la práctica contable. \\
+
+        Scrum Master y\newline Developer &
+        Daniel Enrique Singer Rojas &
+        Conduce las reuniones del equipo, mantiene al día el tablero en Jira y gestiona los bloqueos y \newline 
+        desarrolla funciones del backend. \\
 
         Developer &
         Rodrigo Alessandro Castillo Del Castillo &
@@ -56,12 +83,17 @@ El Product Owner decide el orden del Product Backlog y acepta o rechaza lo que s
         Desarrolla las historias y tareas asignadas en el backend. \\
 
         Developer &
-        Dylan Yessid Florez &
-        Desarrolla las tareas asignadas y ejecuta las pruebas de los módulos. \\
+        Julio Vargas &
+        Asistentes encargandos de crear las vistas del frontend. \\
 
-        Developer y\newline DevOps &
-        Daniel Enrique Singer Rojas &
-        Desarrolla funciones del backend y prepara los entornos de ejecución y despliegue. \\
+        Developer &
+        Luis Diego Sipion &
+        Asistentes encargandos de crear las vistas del frontend. \\
+
+        Devops y QA &
+        Dylan Yesid Florez &
+        Se encarga de la implementación y mantenimiento de los entornos de desarrollo y producción, \newline
+        así como de la ejecución de pruebas. \\
 
         \bottomrule
     \end{tabularx}
@@ -74,13 +106,35 @@ El Product Owner decide el orden del Product Backlog y acepta o rechaza lo que s
 
 \subsubsubsection{Eventos de Scrum}
 
-Los sprints duran una semana, por eso el equipo no hace una reunión diaria. En su lugar, se reúne por Google Meet los martes y jueves a las 8:00~p.~m., en sesiones de 15 a 30 minutos. En cada reunión se revisa el tablero de Jira: cada integrante indica qué terminó, en qué está trabajando y si tiene algún bloqueo. Cuando aparece un bloqueo, el Scrum Master lo registra y se acuerda quién lo resolverá antes de la siguiente reunión.
+con una duración fijada de una a dos semanas en función de la densidad técnica de las épicas abordadas. 
+A lo largo del ciclo de desarrollo se llevaron a cabo los siguientes eventos:
+
+\begin{itemize}
+    \item \textbf{Planificación del Sprint (\textit{Sprint Planning}):} Sesión celebrada al inicio de cada ciclo donde el 
+    \textit{Product Owner} presenta las historias de usuario priorizadas del \textit{Product Backlog}. 
+    El equipo de desarrollo desglosa el esfuerzo técnico, estima la capacidad operativa y compromete el alcance del \textit{Sprint Backlog}.
+    \item \textbf{Reunión diaria (\textit{Daily Scrum}):} Sincronizaciones virtuales diarias de 15 a 20 minutos a través de Google Meet. 
+    Cada desarrollador expone el trabajo completado en la jornada previa, las tareas en curso y los impedimentos técnicos identificados, 
+    actualizando el estado de las tarjetas en Jira Software.
+    \item \textbf{Revisión del Sprint (\textit{Sprint Review}):} Evento al culminar el sprint donde se presenta el incremento de software potencialmente desplegable 
+    ante el \textit{Product Owner} y los interesados (\textit{stakeholders}), 
+    validando los criterios de aceptación para su aprobación o retroalimentación.
+    \item \textbf{Retrospectiva del Sprint (\textit{Sprint Retrospective}):} Espacio de inspección interna donde el equipo evalúa el rendimiento del flujo de trabajo, 
+    identifica cuellos de botella e implementa acciones de mejora continua para el siguiente ciclo.
+\end{itemize}
 
 \subsubsubsection{Artefactos y herramienta de gestión}
 
-El equipo trabaja con los tres artefactos de Scrum y los gestiona en Jira Software, dentro del proyecto BELLA PLANILLAS (clave BEL). El Product Backlog reúne las funciones pendientes del sistema, ordenadas por prioridad, y de él se toma el Sprint Backlog, formado por las actividades que el equipo se compromete a terminar en un sprint junto con su objetivo. La versión del sistema que funciona al cierre de cada sprint es el incremento, que se presenta al Product Owner para su aprobación.
+El equipo trabaja con los tres artefactos de Scrum y los gestiona en Jira Software, 
+dentro del proyecto BELLA PLANILLAS (clave BEL). 
+El Product Backlog reúne las funciones pendientes del sistema, ordenadas por prioridad, 
+y de él se toma el Sprint Backlog, formado por las actividades que el equipo se compromete a terminar en un sprint junto con su objetivo. 
+La versión del sistema que funciona al cierre de cada sprint es el incremento, que se presenta al Product Owner para su aprobación.
 
-Cada actividad recibe un código, como BEL-44, que se usa en las tablas de este capítulo. La vista Backlog de Jira muestra los sprints planificados y las actividades que todavía no tienen sprint asignado (Figura~\ref{fig:backlog_jira}). Cuando un sprint empieza, sus actividades pasan al tablero y avanzan por tres columnas: Por hacer, En curso y Listo. Las actividades se agrupan además en épicas, una por cada módulo grande del sistema.
+Cada actividad recibe un código, como BEL-44, que se usa en las tablas de este capítulo. 
+La vista Backlog de Jira muestra los sprints planificados y las actividades que todavía no tienen sprint asignado (Figura~\ref{fig:backlog_jira}). 
+Cuando un sprint empieza, sus actividades pasan al tablero y avanzan por tres columnas: Por hacer, En curso y Listo. 
+Las actividades se agrupan además en épicas, una por cada módulo grande del sistema.
 
 \figuraEnTexto
     {fig:backlog_jira}
@@ -90,7 +144,11 @@ Cada actividad recibe un código, como BEL-44, que se usa en las tablas de este 
 
 \subsubsubsection{Planificación de sprints}
 
-El desarrollo se organizó en cuatro sprints de una semana, programados entre el 1 y el 30 de noviembre de 2026. El orden sigue el recorrido de la información en el proceso de nómina. En el Sprint 1 se registra al personal y se controla quién puede consultar o modificar sus datos. En el Sprint 2 se incorporan las asistencias y las incidencias del periodo. El Sprint 3 completa las funciones de Recursos Humanos, y en el Sprint 4 el contador recibe esa información para preparar el periodo de pago.
+El desarrollo se organizó en cuatro sprints de una semana, programados entre el 1 y el 30 de noviembre de 2026. 
+El orden sigue el recorrido de la información en el proceso de nómina. En el Sprint 1 se registra al personal y se controla quién puede consultar o modificar sus datos. 
+En el Sprint 2 se incorporan las asistencias y las incidencias del periodo. 
+El Sprint 3 completa las funciones de Recursos Humanos, 
+y en el Sprint 4 el contador recibe esa información para preparar el periodo de pago.
 
 Este orden atiende primero dos de las causas priorizadas en el capítulo anterior: la transcripción manual de incidencias (CA3) y la información separada entre áreas (CA1), que ocupan el primer y el tercer lugar del diagrama de Pareto (Tabla~\ref{tab:pareto_causas_nominas}). El cálculo y cierre de la planilla, las boletas y las exportaciones quedan para sprints posteriores, porque necesitan que los datos laborales y las incidencias ya estén centralizados en el sistema. La Tabla~\ref{tab:plan_sprints} muestra la duración, el objetivo y el número de actividades de cada sprint.
 
@@ -241,6 +299,8 @@ Las actividades pertenecen a cuatro épicas. La épica de Gestión operativa de 
     >{\centering\arraybackslash}p{0.07\linewidth}
     @{}
 }
+    % Se neutraliza el incremento automático interno de longtable:
+    \noalign{\addtocounter{table}{-1}}
     \toprule
     \textbf{Código} & \textbf{Actividad} & \textbf{Tipo} & \textbf{Épica} & \textbf{Sprint} \\
     \midrule
@@ -305,102 +365,5 @@ Las actividades pertenecen a cuatro épicas. La épica de Gestión operativa de 
 \end{longtable}
 \endgroup
 
-\notaTabla{Actividades registradas en Jira Software, ordenadas por sprint. \textit{Historia} corresponde a historia de usuario. Elaboración propia.}
+\notaTabla{Actividades registradas en Jira Software, ordenadas por sprint. Elaboración propia.}
 \finBloqueAPA
-
-\subsubsection{Análisis de Requerimientos}
-\subsubsubsection{Cuadro de relación de requerimientos y causas raíz}
-En esta tabla se representará la relación de correspondencia entre los requerimientos funcionales y no funcionales con las causas raíz.
-
-\begin{longtable}{p{3.5cm} p{4.5cm} p{4cm} p{2cm}}
-    \caption{Relación entre los requerimientos y las causas raíz}
-    \label{tab:trazabilidad_requerimientos} \\
-    
-    \toprule
-    \textbf{Rama de Causa} &
-     \textbf{Causa Raíz} &
-      \textbf{Requerimiento(s) Asociado(s)} &
-    \\ 
-    \midrule
-    \endfirsthead
-    
-    \multicolumn{4}{l}{\textit{(Continuación de la tabla anterior)}} \\
-    \toprule
-    \textbf{Rama de Causa} &
-     \textbf{Causa Raíz} &
-      \textbf{Requerimiento(s) Asociado(s)}\\ 
-    \midrule
-    \endhead
-    
-    \midrule
-    \multicolumn{4}{r}{\textit{(Continúa en la siguiente página)}} \\
-    \endfoot
-    
-    \bottomrule
-    \endlastfoot
-
-    Seguridad y trazabilidad de modificaciones &
-     Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario. &
-      RF-01, RF-02, RF-13 \\
-    \midrule
-    Gestión de la información &
-     Registros insuficientes de los cambios realizados en los datos laborales y resultado de la planilla. &
-      RF-02, RF-13  \\
-    \midrule
-    &
-     Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad. &
-      RF-03, RF-04 \\
-    \midrule
-    &
-     Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización. &
-      RF-05, RF-08 \\
-    \midrule
-    Preparación de entrega de documentos &
-     Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales de planillas. &
-      RF-04, RF-06, RF-11 \\
-    \midrule
-    Cálculo e incidencias &
-     Modificación manual de fórmulas y parámetros de cálculo sin validación uniforme. &
-      RF-09, RF-12 \\
-    \midrule
-    &
-     Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales. &
-      RF-07, RF-08, RF-15 \\
-    \midrule
-    &
-     Generación y distribución individual de boletas de pago mediante actividades manuales o semimanuales. &
-      RF-10, RF-14 \\
-\end{longtable}
-
-\subsubsubsection{Requerimientos Funcionales del proyecto}
-
-  \begin{itemize}
-    \item RF-01: Aplicar acceso por Roles - El sistema debe autenticar a los usuarios mediante credenciales y asignar un token JWT, permitiendo al usuario ejecutar acciones segun su rol.
-    \item RF-02: Registrar cambios en bicatora de auditoria - El sistema debe registrar automáticamente en la base de datos las acciones del usuario a nivel avanzado, permitiendo una reconstruccion de los datos.
-    \item RF-03: Administrar legajos de los empleados - El sistema debe permitir gestionar la información maestra de los empleados.
-    \item RF-04: Ingresar informacion de manera masiva - El sistema debe permitir la registrar informacion mediante archivos estructurados.
-    \item RF-05: Gestionar contratos de los empleados - El sistema debe tenen la funcionabilidad de administrar los contratos laborales, notificar sobre el vencimientos, cese o fin de estos.
-    \item RF-06: Gestionar las solicitudes del empleado - El sistema debe permitir hacer seguimiento a las solicitudes de los empleados, estos siendo aprobados o rechazados por el personal encargado de gestionar estos procedimientos. 
-    \item RF-07: Asignar tareas a los usuarios - El sistema debe ofrecer al Contador asignar tareas operativas a los asistentes, monitoreando su estado y aprobar la tarea.
-    \item RF-08: Cargar archivos estructurados y anotaciones - El sistema debe permitir al Asistente adjuntar documentos estructurados y comentarios en las tareas asignadas, así como solicitar prórrogas de entrega.
-    \item RF-09: Modificar la variables ley - El sistema debe permitir al Contador actualizar el valor de las variables relacionadas para el calculo de planillas.
-    \item RF-10: Distribución Masiva de Boletas por Correo - El sistema debe distribuir boletas electronicas a los correos del empleado una vez se haya aprobado el pago de planillas. .
-    \item RF-11: Ingresar insidencias del mes - El sistema debe permitir cargar las incidencias del mes como vacaciones, horas extra, etc.
-    \item RF-12: Generar Cálculo Masivo de Planillas  - El sistema debe ejecutar el cálculo masivo de planillas (general, filtrado o individual), aplicando descuentos, bonos, entre otros.
-    \item RF-13: Cierre, Congelamiento Inmutable y Reapertura Excepcional - El sistema debe permitir al Contador ejecutar el "Cierre Definitivo" del periodo, congelando la base de datos para impedir mutaciones. Debe proveer un botón de "Reapertura Excepcional" que audite el desbloqueo en los Trail Logs.
-    \item RF-14: Generar de Boletas electronicas - El sistema debe generar automáticamente las boletas de pago individuales en formato PDF tras el cierre de la planilla y guardarlas en el historial del legajo.
-    \item RF-15: Reportes de Costos por Centro de Costo - El sistema debe exportar resúmenes financieros mensuales por áreas organizacionales.
-  \end{itemize}
-\subsubsubsection{Requerimientos no Funcionales del proyecto}
-
-  \begin{itemize}
-    \item RNF-01: Tiempo de Respuesta del Motor de Cálculo Masivo - Los procedimientos de cálculo masivo de planillas deben ejecutarse y dar un resultado en un timepo inferior a 10 segundos. 
-    \item RNF-02: Tiempo de Respuesta de los endpoints HTTP - Los enpoinst deben brindar una respuesta en un timepo inferior a 300 milisegundos. 
-    \item RNF-03: Ejecucion de tareas pesadas en segundo plano con respuesta asyncrona no bloqueante - Los procedimientos pesadso dedben ejecutarse en segundo plano mediante colas de memoria. 
-    \item RNF-04: Encryptacion de datos antes de permanencia - Ejecucion de enccriptado mediante antes de hacer pemanencia en la base de datos.
-    \item RNF-05: Enmascaramiento Dinámico de Datos - Los datos financieros deben ocultarse para evitar la exposición directa de estos.
-    \item RNF-06: Seguridad de Archivos PDF (Firma y Cifrado) - El bakend debe implmentar la sanitizacion de los datos ingresados mediante schemas zod.
-    \item RNF-07: Conservacion de datos historicos ley - Los datos historicos relacionados a parametros de ley no deben ser eliminados al momento de reemplazarlos.
-    \item RNF-08: Disponibilidad del Servicio - El sistema debe estar disponible durante los dias operativos.
-    \item RNF-09: Resilencia a ingracion de APIS externar - El sistema debe contar con timepos de espera a consultas de api externas con su manejo de excepciones, para evitar la detencion del sistema ante caida de servicios de terceros. 
-  \end{itemize}

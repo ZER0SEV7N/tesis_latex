@@ -1,0 +1,66 @@
+
+\subsubsection{Análisis de Requerimientos}
+\subsubsubsection{Cuadro de relación de requerimientos y causas raíz}
+
+En la Tabla~\ref{tab:trazabilidad_requerimientos} se presenta la matriz de correspondencia técnica entre las causas raíz identificadas en el diagrama de Ishikawa (Capítulo 3) y los requerimientos del sistema propuesto.
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:trazabilidad_requerimientos}{Relación entre los requerimientos y las causas raíz}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.2}
+
+    \begin{tabularx}{\linewidth}{@{}p{0.28\linewidth}Xp{0.24\linewidth}@{}}
+        \toprule
+        \textbf{Rama de Causa} & \textbf{Causa Raíz} & \textbf{Requerimiento(s)} \\ \midrule
+        Seguridad y trazabilidad & Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario. & RF-01, RF-02, RF-13 \\ \addlinespace
+        Gestión de la información & Registro insuficiente de los cambios realizados en los datos laborales y resultado de la planilla. & RF-02, RF-13 \\ \addlinespace
+        Gestión de la información & Información laboral y remunerativa almacenada en archivos separados entre RRHH y Contabilidad. & RF-03, RF-04 \\ \addlinespace
+        Gestión de la información & Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización. & RF-05, RF-08 \\ \addlinespace
+        Preparación de entrega de documentos & Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales de planillas. & RF-04, RF-06, RF-11 \\ \addlinespace
+        Cálculo e incidencias & Modificación manual de fórmulas y parámetros de cálculo sin validación uniforme. & RF-09, RF-12 \\ \addlinespace
+        Cálculo e incidencias & Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales. & RF-07, RF-08, RF-15 \\ \addlinespace
+        Preparación de entrega de documentos & Generación y distribución individual de boletas de pago mediante actividades manuales o semimanuales. & RF-10, RF-14 \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Correspondencia entre las causas del análisis de causa raíz y los requerimientos funcionales. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
+
+\subsubsubsection{Requerimientos Funcionales del proyecto}
+\begin{itemize}
+    \item \textbf{RF-01: Autenticar usuarios y controlar accesos por roles (RBAC).} Validar credenciales criptográficamente y emitir un token JWT que restrinja vistas y acciones según el rol asignado.
+    \item \textbf{RF-02: Registrar eventos en bitácora inmutable de auditoría.} Registrar automáticamente en la base de datos las transacciones críticas capturando los valores previos y posteriores.
+    \item \textbf{RF-03: Administrar legajos digitales de empleados.} Centralizar la información personal, previsional y bancaria de los trabajadores consumiendo la API de RENIEC.
+    \item \textbf{RF-04: Importar información laboral de forma masiva.} Cargar lotes de trabajadores e incidencias mediante archivos CSV o Excel con validación previa de estructura.
+    \item \textbf{RF-05: Gestionar contratos laborales y alertas de vencimiento.} Registrar modalidades contractuales y alertar de forma visual los vencimientos próximos para su renovación o cese.
+    \item \textbf{RF-06: Gestionar solicitudes y justificaciones del personal.} Tramitar solicitudes de permisos, descansos médicos y vacaciones mediante evaluación digital con archivos adjuntos.
+    \item \textbf{RF-07: Asignar y monitorear tareas operativas.} Permitir al Contador delegar actividades a los asistentes contables, supervisar su avance y visar su cumplimiento.
+    \item \textbf{RF-08: Adjuntar sustentos digitales y notas en tareas.} Subir documentos comprobatorios en formatos estándar y registrar anotaciones de seguimiento en las asignaciones.
+    \item \textbf{RF-09: Parametrizar variables normativas y previsionales.} Actualizar los valores vigentes de UIT, RMV, horas extras y comisiones de las AFP sin alterar periodos históricos.
+    \item \textbf{RF-10: Distribuir boletas de pago masivas por correo.} Despachar de manera asíncrona mediante n8n las boletas cifradas a las casillas de correo de cada trabajador.
+    \item \textbf{RF-11: Consolidar incidencias mensuales de asistencia.} Registrar faltas, tardanzas y horas extras, cruzándolas automáticamente con las vacaciones aprobadas por RR.\,HH.
+    \item \textbf{RF-12: Ejecutar el cálculo masivo de la nómina.} Procesar de forma automática ingresos, descuentos de ley, retenciones y aportes patronales con precisión decimal.
+    \item \textbf{RF-13: Ejecutar el cierre inmutable y reapertura excepcional.} Congelar la nómina aprobada para impedir mutaciones y permitir reaperturas extraordinarias registradas en la auditoría.
+    \item \textbf{RF-14: Generar boletas de pago electrónicas en PDF.} Renderizar las boletas de pago individuales en formato PDF tras el cierre del periodo e integrarlas al legajo digital.
+    \item \textbf{RF-15: Exportar archivos estructurados y reportes de costos.} Generar archivos planos para PLAME (SUNAT), AFP Net, Telecrédito bancario y reportes segmentados por área.
+\end{itemize}
+
+\subsubsubsection{Requerimientos no Funcionales del proyecto}
+\begin{itemize}
+    \item \textbf{RNF-01: Optimizar el tiempo de respuesta del motor de cálculo.} Procesar la nómina completa del personal y retornar los resultados en un tiempo inferior a 10 segundos.
+    \item \textbf{RNF-02: Minimizar la latencia en endpoints transaccionales.} Responder a las peticiones HTTP de consulta y mutaciones ligeras con una latencia media menor a 300 milisegundos.
+    \item \textbf{RNF-03: Procesar tareas intensivas de forma asíncrona.} Encolar tareas de cálculo masivo y exportación en segundo plano usando BullMQ y Redis para no bloquear el servidor.
+    \item \textbf{RNF-04: Cifrar datos financieros sensibles en reposo.} Proteger números de cuenta bancaria y CCI en la base de datos mediante el algoritmo criptográfico simétrico AES-256-GCM.
+    \item \textbf{RNF-05: Enmascarar información financiera en interfaces.} Ocultar dinámicamente los dígitos intermedios de las cuentas bancarias en las respuestas JSON y vistas de usuario.
+    \item \textbf{RNF-06: Cifrar boletas PDF y sanitizar entradas.} Proteger los archivos PDF emitidos con el DNI del trabajador y sanitizar las entradas HTTP mediante esquemas de Zod.
+    \item \textbf{RNF-07: Garantizar la inmutabilidad de parámetros históricos.} Preservar el historial de factores de cálculo y tasas de AFP de periodos pasados para auditorías retroactivas.
+    \item \textbf{RNF-08: Mantener alta disponibilidad durante cierres mensuales.} Garantizar un nivel de servicio continuo y tolerante a fallos durante las jornadas críticas de procesamiento salarial.
+    \item \textbf{RNF-09: Asegurar resiliencia ante caídas de servicios externos.} Configurar límites de espera (\textit{timeouts}) y manejo de excepciones ante fallos de la API de RENIEC o webhooks.
+\end{itemize}

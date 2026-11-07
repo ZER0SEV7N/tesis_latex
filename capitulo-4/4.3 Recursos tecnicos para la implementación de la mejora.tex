@@ -1,28 +1,55 @@
 \subsection{Recursos técnicos para la implementación de la mejora}
 
-Para el desarrollo, codificación y pruebas del sistema de gestión de planillas y recursos humanos, se hizo uso de equipos de cómputo especializados y estaciones de trabajo portátiles de alto rendimiento asignadas a cada integrante del equipo de desarrollo, garantizando así la potencia necesaria para la ejecución de contenedores Docker, compilación y despliegue local.
+Para el desarrollo, codificación, contenedorización y pruebas del sistema web de gestión de nóminas y recursos humanos, 
+se utilizaron estaciones de trabajo portátiles asignadas a cada desarrollador, 
+así como herramientas de software de código abierto y servicios de gestión en la nube. 
+Las Tablas~\ref{tab:recursos_hardware} y~\ref{tab:recursos_software} detallan los recursos empleados.
 
-\begin{longtable}{|p{3cm}|p{5.5cm}|p{5cm}|}
-    \caption{Tabla de distribución de hardware para el desarrollo de la aplicación.}
-    \label{tab:recursos_humanos} \\
-    \hline
-    \textbf{Integrante} & \textbf{Equipo de Cómputo Asignado} & \textbf{Rol} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{Integrante} & \textbf{Equipo de Cómputo Asignado} & \textbf{Rol} \\ \hline
-    \endhead
-    \hline
-    \multicolumn{3}{r}{\textit{(Continúa en la siguiente página)}} \\
-    \endfoot
-    \bottomrule
-    \endlastfoot
-    
-    Adrián Matias Dueñas & ASUS TUF Gaming F16 \newline (Intel Core i5, 16GB RAM, SSD 512GB, RTX 3050) & 
-    Developer \\ \hline
-    
-    Daniel Singuer Enrrique & HP Omen 16-C0501LA \newline (AMD Ryzen 5 5600H, 16GB RAM, SSD 512GB, GTX 1650) & 
-    Developer \\ \hline
-    
-    Rodrigo Castillo & ASUS Vivobook 16-X1605VA \newline (Intel Core i5-13420H, 16GB RAM, SSD 512GB, Intel UHD) & 
-    Developer \\ \hline
-\end{longtable}
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:recursos_hardware}{Distribución de equipos de cómputo para el desarrollo de la aplicación}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.3}
+
+    \begin{tabularx}{\linewidth}{@{}p{4.2cm}Xp{3.2cm}@{}}
+        \toprule
+        \textbf{Integrante} & \textbf{Equipo de cómputo asignado} & \textbf{Rol técnico} \\ \midrule
+        Daniel Enrique Singer Rojas & HP Omen 16-C0501LA (AMD Ryzen 5 5600H, 16~GB RAM, SSD 512~GB, GTX 1650) & Developer y DevOps \\ \addlinespace
+        Rodrigo Alessandro Castillo Del Castillo & ASUS Vivobook 16-X1605VA (Intel Core i5-13420H, 16~GB RAM, SSD 512~GB, Intel UHD) & Frontend Developer \\ \addlinespace
+        Adrian Matias Dueñas Huertas & ASUS TUF Gaming F16 (Intel Core i5, 16~GB RAM, SSD 512~GB, RTX 3050) & Backend Developer \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Equipos utilizados para la programación, ejecución de contenedores Docker y pruebas locales. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:recursos_software}{Recursos de software e infraestructura utilizados en el proyecto}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.3}
+
+    \begin{tabularx}{\linewidth}{@{}p{3.6cm}p{4.2cm}X@{}}
+        \toprule
+        \textbf{Categoría} & \textbf{Herramienta / Tecnología} & \textbf{Uso en el proyecto} \\ \midrule
+        Entorno y contenedores & Docker, Docker Compose, Node.js (v20), pnpm & Contenedorización de servicios (PostgreSQL, Redis, n8n) y gestión de dependencias. \\ \addlinespace
+        Desarrollo Backend & NestJS, Fastify, TypeScript, Prisma ORM, BullMQ & Construcción de API REST, validación de esquemas Zod y colas asíncronas. \\ \addlinespace
+        Desarrollo Frontend & React 19, Vite, Tailwind CSS, Shadcn/ui, TanStack Query & Desarrollo de vistas por rol, consumo de endpoints y formularios reactivos. \\ \addlinespace
+        Gestión y versionado & Git, GitHub, Jira Software, Postman, Jest & Control de versiones, planificación de sprints y pruebas automatizadas. \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Herramientas de software empleadas durante el ciclo de desarrollo e implementación. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
