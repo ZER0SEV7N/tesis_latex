@@ -1,6 +1,312 @@
 \subsection{Plan de acción de la mejora propuesta}
 \subsubsection{Metodología de desarrollo}
-Se escogio la metodologia SCRUM, debido a su flexibilidad y capacidad de adaptación en la gestión de requerimientos, priorización de tareas clave, la definición clara de roles dentro del equipo y el cumplimiento de los objetivos en cada iteración. 
+Se escogió la metodología Scrum porque permite construir el sistema por partes y cambiar las prioridades entre un sprint y otro. Al cierre de cada sprint, el Product Owner y el stakeholder revisan lo construido, y el orden del Product Backlog se ajusta según sus observaciones antes de empezar el siguiente.
+
+\subsubsubsection{Roles del equipo Scrum}
+
+El Product Owner decide el orden del Product Backlog y acepta o rechaza lo que se entrega al final de cada sprint. Este rol lo ocupa el Gerente General de J\&P Periféricos S.A.C., la empresa que encargó el sistema. Como stakeholder participa el contador de una de las empresas clientes de J\&P, que revisa los avances desde el punto de vista de quien usará el sistema. Ambos fueron entrevistados durante el levantamiento de requerimientos (apartado 1.5). Dentro del equipo, el Scrum Master conduce las reuniones y se encarga de que los bloqueos no frenen el sprint, mientras que los desarrolladores construyen el sistema y uno de ellos asume además las tareas de DevOps. La Tabla~\ref{tab:roles_scrum} muestra quién ocupa cada rol.
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+
+    \tituloTablaAPA
+        {tab:roles_scrum}
+        {Roles del equipo Scrum}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.4}
+
+    \begin{tabularx}{\linewidth}{
+        @{}
+        >{\raggedright\arraybackslash}p{0.19\linewidth}
+        >{\raggedright\arraybackslash}p{0.31\linewidth}
+        >{\raggedright\arraybackslash}X
+        @{}
+    }
+        \toprule
+        \textbf{Rol} &
+        \textbf{Integrante} &
+        \textbf{Responsabilidad en el proyecto} \\
+        \midrule
+
+        Product Owner &
+        Julio Flores Vicuña\newline
+        \textit{(Gerente General de J\&P Periféricos S.A.C.)} &
+        Ordena el Product Backlog, define los criterios de aceptación de las historias y aprueba el incremento de cada sprint. \\
+
+        Scrum Master &
+        Daniel Roman &
+        Conduce las reuniones del equipo, mantiene al día el tablero en Jira y gestiona los bloqueos. \\
+
+        Stakeholder &
+        Juan Pablo Alcala Juarez\newline
+        \textit{(Contador de una empresa cliente de J\&P)} &
+        Revisa los avances y valida que los cálculos y reportes respondan a la práctica contable. \\
+
+        Developer &
+        Rodrigo Alessandro Castillo Del Castillo &
+        Desarrolla las historias asignadas en el frontend y su integración con la API. \\
+
+        Developer &
+        Adrian Matias Dueñas Huertas &
+        Desarrolla las historias y tareas asignadas en el backend. \\
+
+        Developer &
+        Dylan Yessid Florez &
+        Desarrolla las tareas asignadas y ejecuta las pruebas de los módulos. \\
+
+        Developer y\newline DevOps &
+        Daniel Enrique Singer Rojas &
+        Desarrolla funciones del backend y prepara los entornos de ejecución y despliegue. \\
+
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Roles asignados en la planificación Scrum del proyecto. Elaboración propia.}
+
+\end{minipage}
+\finBloqueAPA
+
+\subsubsubsection{Eventos de Scrum}
+
+Los sprints duran una semana, por eso el equipo no hace una reunión diaria. En su lugar, se reúne por Google Meet los martes y jueves a las 8:00~p.~m., en sesiones de 15 a 30 minutos. En cada reunión se revisa el tablero de Jira: cada integrante indica qué terminó, en qué está trabajando y si tiene algún bloqueo. Cuando aparece un bloqueo, el Scrum Master lo registra y se acuerda quién lo resolverá antes de la siguiente reunión.
+
+\subsubsubsection{Artefactos y herramienta de gestión}
+
+El equipo trabaja con los tres artefactos de Scrum y los gestiona en Jira Software, dentro del proyecto BELLA PLANILLAS (clave BEL). El Product Backlog reúne las funciones pendientes del sistema, ordenadas por prioridad, y de él se toma el Sprint Backlog, formado por las actividades que el equipo se compromete a terminar en un sprint junto con su objetivo. La versión del sistema que funciona al cierre de cada sprint es el incremento, que se presenta al Product Owner para su aprobación.
+
+Cada actividad recibe un código, como BEL-44, que se usa en las tablas de este capítulo. La vista Backlog de Jira muestra los sprints planificados y las actividades que todavía no tienen sprint asignado (Figura~\ref{fig:backlog_jira}). Cuando un sprint empieza, sus actividades pasan al tablero y avanzan por tres columnas: Por hacer, En curso y Listo. Las actividades se agrupan además en épicas, una por cada módulo grande del sistema.
+
+\figuraEnTexto
+    {fig:backlog_jira}
+    {Vista Backlog del proyecto en Jira Software}
+    {images/jira/backlog-jira.png}
+    {Captura del proyecto BELLA PLANILLAS en Jira Software. Elaboración propia.}
+
+\subsubsubsection{Planificación de sprints}
+
+El desarrollo se organizó en cuatro sprints de una semana, programados entre el 1 y el 30 de noviembre de 2026. El orden sigue el recorrido de la información en el proceso de nómina. En el Sprint 1 se registra al personal y se controla quién puede consultar o modificar sus datos. En el Sprint 2 se incorporan las asistencias y las incidencias del periodo. El Sprint 3 completa las funciones de Recursos Humanos, y en el Sprint 4 el contador recibe esa información para preparar el periodo de pago.
+
+Este orden atiende primero dos de las causas priorizadas en el capítulo anterior: la transcripción manual de incidencias (CA3) y la información separada entre áreas (CA1), que ocupan el primer y el tercer lugar del diagrama de Pareto (Tabla~\ref{tab:pareto_causas_nominas}). El cálculo y cierre de la planilla, las boletas y las exportaciones quedan para sprints posteriores, porque necesitan que los datos laborales y las incidencias ya estén centralizados en el sistema. La Tabla~\ref{tab:plan_sprints} muestra la duración, el objetivo y el número de actividades de cada sprint.
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+
+    \tituloTablaAPA
+        {tab:plan_sprints}
+        {Planificación de los sprints del proyecto}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.4}
+
+    \begin{tabularx}{\linewidth}{
+        @{}
+        >{\raggedright\arraybackslash}p{0.22\linewidth}
+        >{\raggedright\arraybackslash}p{0.17\linewidth}
+        >{\raggedright\arraybackslash}X
+        >{\centering\arraybackslash}p{0.11\linewidth}
+        @{}
+    }
+        \toprule
+        \textbf{Sprint} &
+        \textbf{Duración} &
+        \textbf{Objetivo del sprint} &
+        \textbf{Actividades} \\
+        \midrule
+
+        Sprint 1:\newline Acceso y legajos &
+        01/11 -- 08/11/2026 &
+        Registrar y consultar legajos desde la interfaz, con acceso según el rol de cada usuario. &
+        9 \\
+
+        Sprint 2:\newline Asistencia e incidencias &
+        08/11 -- 15/11/2026 &
+        Obtener las incidencias a partir de las jornadas, marcaciones y asistencia registradas, y dejar los cambios en la vista de auditoría. &
+        16 \\
+
+        Sprint 3:\newline Consolidación RRHH &
+        16/11 -- 23/11/2026 &
+        Completar el mantenimiento de cargos, la navegación, la revisión de solicitudes y el manejo de fechas y periodos laborales antes del flujo contable. &
+        11 \\
+
+        Sprint 4:\newline Preparación contable &
+        23/11 -- 30/11/2026 &
+        Permitir al contador consultar la información laboral, revisar parámetros, preparar incidencias y registrar las novedades del periodo. &
+        7 \\
+
+        \midrule
+        \textbf{Total} & & & \textbf{43} \\
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Fechas y objetivos registrados en Jira Software. Elaboración propia.}
+
+\end{minipage}
+\finBloqueAPA
+
+\subsubsubsection{Product Backlog}
+
+El Product Backlog de los cuatro sprints contiene 43 actividades: 29 historias de usuario, 9 tareas, 2 errores, 2 actividades de documentación y 1 refactorización. Una historia de usuario describe una función que el personal de Recursos Humanos o el contador usa en el sistema. Las tareas, los errores, la documentación y la refactorización son trabajo técnico que esas funciones necesitan para operar bien.
+
+Las actividades pertenecen a cuatro épicas. La épica de Gestión operativa de Recursos Humanos concentra 26 de las 43 actividades, porque los sprints 1 a 3 se dedican a reunir en el sistema la información laboral que antes estaba en archivos separados. La Tabla~\ref{tab:epicas} presenta las épicas y la Tabla~\ref{tab:product_backlog} lista cada actividad con su código en Jira, su tipo, su épica y el sprint en el que se programó.
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+
+    \tituloTablaAPA
+        {tab:epicas}
+        {Épicas del Product Backlog}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.4}
+
+    \begin{tabularx}{\linewidth}{
+        @{}
+        >{\raggedright\arraybackslash}p{0.11\linewidth}
+        >{\raggedright\arraybackslash}p{0.27\linewidth}
+        >{\raggedright\arraybackslash}X
+        >{\centering\arraybackslash}p{0.11\linewidth}
+        @{}
+    }
+        \toprule
+        \textbf{Código} &
+        \textbf{Épica} &
+        \textbf{Propósito} &
+        \textbf{Actividades} \\
+        \midrule
+
+        BEL-101 &
+        Acceso seguro y trazabilidad del MVP &
+        Dar a Recursos Humanos y al contador acceso según su rol, y registrar en la auditoría los cambios sobre los datos laborales. &
+        9 \\
+
+        BEL-102 &
+        Gestión operativa de Recursos Humanos &
+        Centralizar legajos, contratos, jornadas, marcaciones, incidencias y solicitudes. &
+        26 \\
+
+        BEL-103 &
+        Gestión y validación de nóminas &
+        Integrar la preparación, el cálculo, la revisión, el cierre y la consulta de la planilla. &
+        7 \\
+
+        BEL-104 &
+        Automatización y entrega del MVP &
+        Validar n8n, las exportaciones, las pruebas integradas y el despliegue reproducible. &
+        1 \\
+
+        \midrule
+        & \textbf{Total} & & \textbf{43} \\
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Se cuentan solo las actividades programadas en los sprints 1 a 4. Elaboración propia.}
+
+\end{minipage}
+\finBloqueAPA
+
+\tituloTablaAPA
+    {tab:product_backlog}
+    {Product Backlog de los sprints 1 a 4}
+
+\begingroup
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\renewcommand{\baselinestretch}{1}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{longtable}{
+    @{}
+    >{\raggedright\arraybackslash}p{0.10\linewidth}
+    >{\raggedright\arraybackslash}p{0.49\linewidth}
+    >{\raggedright\arraybackslash}p{0.16\linewidth}
+    >{\raggedright\arraybackslash}p{0.10\linewidth}
+    >{\centering\arraybackslash}p{0.07\linewidth}
+    @{}
+}
+    \toprule
+    \textbf{Código} & \textbf{Actividad} & \textbf{Tipo} & \textbf{Épica} & \textbf{Sprint} \\
+    \midrule
+    \endfirsthead
+
+    \multicolumn{5}{@{}l}{\textit{(Continuación de la tabla anterior)}} \\
+    \toprule
+    \textbf{Código} & \textbf{Actividad} & \textbf{Tipo} & \textbf{Épica} & \textbf{Sprint} \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{5}{r@{}}{\textit{(Continúa en la siguiente página)}} \\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    BEL-44 & Acceder al MVP según el rol & Historia & BEL-101 & S1 \\
+    BEL-45 & Consultar y filtrar legajos & Historia & BEL-102 & S1 \\
+    BEL-48 & Implementar shared-contracts, providers y cliente HTTP & Tarea & BEL-101 & S1 \\
+    BEL-50 & Registrar y actualizar empleados & Historia & BEL-102 & S1 \\
+    BEL-51 & Registrar y comprobar persistencia de cambios laborales & Tarea & BEL-101 & S1 \\
+    BEL-71 & Implementar mantenimiento de áreas & Historia & BEL-102 & S1 \\
+    BEL-82 & Importar empleados con prevalidación & Historia & BEL-102 & S1 \\
+    BEL-105 & Consultar y mantener contratos laborales & Historia & BEL-102 & S1 \\
+    BEL-106 & Automatizar pruebas de acceso y empleados & Tarea & BEL-101 & S1 \\
+    BEL-55 & Realizar correcciones en las pruebas del módulo de empleados & Error & BEL-102 & S2 \\
+    BEL-57 & Implementar sistema de marcaciones mediante archivos CSV & Tarea & BEL-102 & S2 \\
+    BEL-62 & Ejecutar regresión de asistencia y solicitudes & Tarea & BEL-102 & S2 \\
+    BEL-65 & Implementar módulo de dashboard & Historia & BEL-102 & S2 \\
+    BEL-73 & Implementar mantenimiento de jornadas & Historia & BEL-102 & S2 \\
+    BEL-74 & Implementar asignación de jornadas a empleados & Historia & BEL-102 & S2 \\
+    BEL-75 & Implementar calendario laboral & Historia & BEL-102 & S2 \\
+    BEL-76 & Implementar listado de marcaciones & Historia & BEL-102 & S2 \\
+    BEL-77 & Implementar marcación web & Historia & BEL-102 & S2 \\
+    BEL-78 & Implementar importación de marcaciones desde Excel & Historia & BEL-102 & S2 \\
+    BEL-79 & Implementar gestión diaria de asistencia & Historia & BEL-102 & S2 \\
+    BEL-80 & Implementar gestión de incidencias & Historia & BEL-102 & S2 \\
+    BEL-81 & Implementar bandeja de solicitudes & Historia & BEL-102 & S2 \\
+    BEL-83 & Implementar vista de auditoría & Historia & BEL-101 & S2 \\
+    BEL-85 & Implementar vista Mi perfil & Historia & BEL-102 & S2 \\
+    BEL-89 & Implementar consulta de asistencia para el contador & Historia & BEL-103 & S2 \\
+    BEL-46 & Implementar navegación inicial del frontend & Historia & BEL-101 & S3 \\
+    BEL-49 & Ajustar rutas del frontend & Tarea & BEL-101 & S3 \\
+    BEL-52 & Separar responsabilidades en los casos de uso de empleados & Refactorización & BEL-102 & S3 \\
+    BEL-53 & Documentar cambios y contratos del MVP & Documentación & BEL-104 & S3 \\
+    BEL-56 & Completar generación de incidencias del periodo & Tarea & BEL-102 & S3 \\
+    BEL-58 & Unificar manejo de fechas y periodos laborales & Tarea & BEL-102 & S3 \\
+    BEL-59 & Verificar fechas, jornadas y límites de periodo & Error & BEL-102 & S3 \\
+    BEL-60 & Documentar API y flujo de asistencia e incidencias & Documentación & BEL-102 & S3 \\
+    BEL-67 & Crear componentes reutilizables para la aplicación & Tarea & BEL-101 & S3 \\
+    BEL-72 & Implementar mantenimiento de cargos & Historia & BEL-102 & S3 \\
+    BEL-107 & Revisar y evaluar solicitudes de RRHH & Historia & BEL-102 & S3 \\
+    BEL-86 & Implementar navegación y permisos por rol & Historia & BEL-101 & S4 \\
+    BEL-87 & Implementar dashboard del contador & Historia & BEL-103 & S4 \\
+    BEL-88 & Implementar consulta de empleados en modo lectura & Historia & BEL-103 & S4 \\
+    BEL-90 & Implementar cierre de incidencias del periodo & Historia & BEL-103 & S4 \\
+    BEL-91 & Implementar novedades de planilla & Historia & BEL-103 & S4 \\
+    BEL-99 & Implementar catálogos de AFP y bancos (lectura) & Historia & BEL-103 & S4 \\
+    BEL-100 & Implementar consulta de solicitudes para el contador & Historia & BEL-103 & S4 \\
+\end{longtable}
+\endgroup
+
+\notaTabla{Actividades registradas en Jira Software, ordenadas por sprint. \textit{Historia} corresponde a historia de usuario. Elaboración propia.}
+\finBloqueAPA
 
 \subsubsection{Análisis de Requerimientos}
 \subsubsubsection{Cuadro de relación de requerimientos y causas raíz}
