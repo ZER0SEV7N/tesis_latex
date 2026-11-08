@@ -85,13 +85,75 @@ y peticiones dentro y fuera de la base de datos.
     a la base de datos para garantizar que, en caso de una fuga de información, los datos no sean capaces de ser leídos por el atacante.
 
 \subsubsubsection{Diagrama de Arquitectura de Software}
-En el siguiente diagrama se observará la estructura y comportamiento general del sistema, la estructura del proyecto se basa en la arquitectura de un monolito modular combinado con Clean Architecture, donde los controladores, mediante el motor de peticiones de Fastify, procesan y validan las peticiones mediante JWT, además de las tareas de alta demanda (cálculo de planillas) se desarrollan mediante colas usando BullMQ, donde finalmente se designa a PrismaORM para la comunicación con la base de datos que es PostgreSQL.
-\vspace{0.3cm}
+
+La solución adopta una arquitectura de \textbf{Monolito Modular desacoplado} 
+regido por los principios de \textit{Clean Architecture}, 
+estructurado en cuatro niveles jerárquicos para garantizar la escalabilidad transaccional, 
+la segregación de responsabilidades y la alta disponibilidad operativa (Figura~\ref{fig:arquitectura_backend}):
+
+\begin{enumerate}[leftmargin=*]
+    
+    \item \textbf{Capa de Presentación y Acceso:} Compuesta por una aplicación de página única (\textit{Single Page Application} - SPA) desarrollada en React 19 y empaquetada con Vite 8. 
+    La interfaz implementa componentes de diseño atómico (Shadcn/ui) y gestiona el estado del servidor mediante TanStack Query v5. 
+    La comunicación hacia el servidor se efectúa mediante solicitudes HTTP asíncronas bajo el estándar REST, 
+    empleando cabeceras de autorización Bearer con tokens JWT firmados criptográficamente. Adicionalmente, 
+    cuenta con un canal bidireccional mediante WebSockets para la emisión de alertas operativas en tiempo real (notificaciones de aprobación de tareas e incidencias).
+    
+    \item \textbf{Capa de Aplicación y Núcleo Transaccional (NestJS Engine):} Utiliza el motor HTTP de alto rendimiento \textbf{Fastify}, optimizado para la serialización rápida de cargas JSON. 
+    Las peticiones entrantes atraviesan un pipeline de seguridad compuesto por:
+    \begin{itemize}
+
+        \item \textit{Guards de Autenticación y Autorización (RBAC):} Verifican la validez del token JWT y contrastan los permisos del usuario contra la matriz de roles corporativos 
+        (Empleado, Recursos Humanos, Asistente de contador, Contador, Administrador, Encargado del sistema JYP).
+
+        \item \textit{Pipes de Validación Global:} Validan y sanitizan la estructura de entrada contra los contratos compartidos de datos mediante esquemas tipados con \textbf{Zod}.
+        
+        \item \textit{Módulos de Dominio Aislados:} El núcleo se segmenta en submódulos especializados: Gestión de Recursos Humanos (legajos, contratos y asistencia), 
+        Gestión Contable (fórmulas de nómina y congelamiento del periodo), Integración Comercial (mapeo de comisiones desde el CRM) y Auditoría Global.
+        
+        \item \textit{Seguridad y Persistencia Criptográfica:} Antes de confirmar transacciones en la base de datos, los datos financieros sensibles 
+        (cuentas sueldo y códigos interbancarios CCI) son encriptados en la capa de servicio con el algoritmo simétrico \textbf{AES-256-GCM},
+        mientras que un interceptor transversal captura los estados anteriores y posteriores (\textit{Before/After}) para persistirlos en la bitácora inmutable de auditoría 
+        (\texttt{audit\_log}) mediante transacciones atómicas de Prisma ORM.
+
+    \end{itemize}
+
+    \item \textbf{Capa de Procesamiento Asíncrono y Orquestación (BullMQ y n8n):} Para prevenir el bloqueo del bucle de eventos (\textit{Event Loop}) de Node.js durante operaciones intensivas, la arquitectura desacopla el trabajo pesado mediante dos mecanismos complementarios:
+    \begin{itemize}
+        \item \textit{Colas en Memoria con BullMQ y Redis:} El cálculo masivo de la nómina se delega a colas de mensajería respaldadas en Redis. 
+        Un grupo de hilos de trabajo (\textit{Workers}) ejecuta los cálculos matemáticos de manera paralela con precisión decimal exacta (\texttt{Decimal.js}), 
+        mitigando el consumo excesivo de memoria RAM mediante consultas agrupadas (\textit{Bulk Fetch}) que eliminan el problema de consulta $N+1$.
+        
+        \item \textit{Orquestador de Flujos n8n:} Actúa como actor máquina asíncrono. 
+        Por un lado, ejecuta tareas programadas (\textit{Cron Jobs}) para extraer y normalizar los registros de marcación desde los terminales biométricos locales, 
+        despachándolos al backend mediante webhooks seguros protegidos por HMAC. 
+        Por otro lado, una vez que el Contador aprueba y congela la planilla, n8n recibe un webhook disparador que compila en paralelo las estructuras planas regulatorias 
+        (archivos \texttt{.rem} y \texttt{.jor} para PLAME de SUNAT, formato AFP Net y archivos de dispersión Telecrédito BCP), 
+        además de generar las boletas de pago en PDF protegidas con el DNI del colaborador y distribuirlas por correo electrónico mediante SMTP.
+    \end{itemize}
+
+    \item \textbf{Capa de Persistencia e Infraestructura Externa:} La persistencia relacional descansa sobre un clúster de \textbf{PostgreSQL 16}, 
+    empleando identificadores universales ordenados cronológicamente (\textbf{UUIDv7}) 
+    para optimizar la indexación de registros de auditoría y asistencia. 
+
+\end{enumerate}
+
+\clearpage
 \par\medskip
 \noindent
-\figuraEnTexto
-    {fig:arquitectura_backend}
-    {Diagrama de arquitectura general y flujo del backend}
-    {images/diagramaFuncionamientoGeneral.png}
-    {Estructura modular y flujo de comunicación del backend. Elaboración propia.}
-\par\medskip
+\begin{minipage}{\linewidth}
+    \linespread{1}\footnotesize
+    \refstepcounter{figure}\label{fig:arquitectura_backend}
+    \addcontentsline{lof}{figure}{Figura~\thefigure. Diagrama de arquitectura general del sistema web de nóminas}
+    {\bfseries Figura~\thefigure}\par
+    {\itshape Diagrama de arquitectura general del sistema web de nóminas}\par
+    \vspace{4pt}
+    \makebox[\linewidth][c]{\includegraphics[
+        width=\linewidth,
+        height=0.76\textheight,
+        keepaspectratio
+    ]{images/diagramaFuncionamientoGeneral.png}}\par
+    \vspace{4pt}
+    \textit{Nota.} Estructura modular en capas, procesamiento asíncrono y automatización con n8n. Elaboración propia; los logotipos, marcas e isotipos integrados son propiedad de sus respectivos titulares y se utilizan únicamente con fines ilustrativos y académicos.\par
+\end{minipage}
+\finBloqueAPA
