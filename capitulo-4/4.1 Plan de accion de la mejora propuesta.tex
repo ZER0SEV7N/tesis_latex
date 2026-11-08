@@ -105,7 +105,7 @@ La Tabla~\ref{tab:roles_scrum} muestra quién ocupa cada rol.
 
 \subsubsubsection{Eventos de Scrum}
 
-con una duración fijada de una a dos semanas en función de la densidad técnica de las épicas abordadas. 
+con una duración fijada de una a dos semanas en función de la densidad de la tareas abordadas. 
 A lo largo del ciclo de desarrollo se llevaron a cabo los siguientes eventos:
 
 \begin{itemize}
@@ -374,3 +374,32 @@ La Tabla~\ref{tab:epicas} presenta las épicas y la Tabla~\ref{tab:product_backl
 
 \notaTabla{Actividades registradas en Jira Software, ordenadas por sprint. Elaboración propia.}
 \finBloqueAPA
+
+\subsubsection{Seguimiento y verificación de la mejora}
+
+\subsubsubsection{Criterios de aceptación y definición de Terminado}
+
+Los criterios de aceptación especifican las condiciones que debe cumplir cada historia para ser considerada aceptable. 
+Como condición común de la entrega, un elemento se considerará Terminado cuando cumpla lo siguiente:
+
+\begin{itemize}[leftmargin=*]
+  \item La historia de usuario funciona integrada en el entorno de prueba y satisface sus criterios de aceptación.
+  \item Las validaciones, los permisos y los registros de auditoría pertinentes se han comprobado.
+  \item El análisis de SonarQube no reporta defectos bloqueantes y la cobertura de pruebas es superior al 80%.
+  \item Las pruebas aplicables tienen resultados reproducibles y no existen defectos bloqueantes para el recorrido comprometido.
+  \item Los cambios y contratos utilizados por otros componentes están documentados y vinculados a la versión revisada.
+  \item Se conservan las evidencias necesarias para demostrar el resultado.
+\end{itemize}
+
+La comparación del cálculo con casos revisados por el experto contable permitirá detectar diferencias antes de la entrega. 
+La revisión de producto aportará observaciones sobre utilidad y alcance. 
+
+
+\subsubsubsection{Evidencias del plan de acción}
+
+Se conservarán capturas reales de las épicas, el backlog y los sprints; 
+historias con sus criterios y responsables; resultados de pruebas; comparación de cálculos; 
+ejecuciones controladas de n8n; y registros de revisión. El seguimiento informará trabajo seleccionado y terminado, 
+defectos pendientes e impedimentos, sin asignar porcentajes arbitrarios a las columnas del tablero.
+
+Los resultados de rendimiento, disponibilidad, cifrado y protección de datos se reportarán únicamente cuando exista una comprobación específica. 

@@ -86,59 +86,75 @@ y peticiones dentro y fuera de la base de datos.
 
 \subsubsubsection{Diagrama de Arquitectura de Software}
 
-La solución adopta una arquitectura de \textbf{Monolito Modular desacoplado} 
-regido por los principios de \textit{Clean Architecture}, 
-estructurado en cuatro niveles jerárquicos para garantizar la escalabilidad transaccional, 
-la segregación de responsabilidades y la alta disponibilidad operativa (Figura~\ref{fig:arquitectura_backend}):
+La solución tecnológica adopta un patrón arquitectónico de \textbf{Monolito Modular orientado a Casos de Uso} (\textit{Use-Case Driven Modular Monolith}), 
+estructurado bajo los principios de separación de responsabilidades y modularidad transversal. 
+Esta disposición técnica organiza la lógica del negocio en dominios delimitados sin incurrir en sobreingeniería de interfaces abstractas, 
+garantizando un mantenimiento ágil, escalabilidad vertical y una estricta coherencia transaccional (Figura~\ref{fig:arquitectura_backend}):
 
 \begin{enumerate}[leftmargin=*]
     
-    \item \textbf{Capa de Presentación y Acceso:} Compuesta por una aplicación de página única (\textit{Single Page Application} - SPA) desarrollada en React 19 y empaquetada con Vite 8. 
-    La interfaz implementa componentes de diseño atómico (Shadcn/ui) y gestiona el estado del servidor mediante TanStack Query v5. 
-    La comunicación hacia el servidor se efectúa mediante solicitudes HTTP asíncronas bajo el estándar REST, 
-    empleando cabeceras de autorización Bearer con tokens JWT firmados criptográficamente. Adicionalmente, 
-    cuenta con un canal bidireccional mediante WebSockets para la emisión de alertas operativas en tiempo real (notificaciones de aprobación de tareas e incidencias).
+    \item \textbf{Capa de Presentación y Acceso (Cliente Web SPA):} Implementada como una aplicación de página única mediante React~19, TypeScript y empaquetada con Vite. 
+    La interfaz de usuario se compone mediante componentes atómicos y accesibles provistos por Shadcn y estilizados con Tailwind CSS. 
+    La sincronización y gestión de la caché del servidor en el navegador recae sobre TanStack Query v5, 
+    mientras que el estado de sesión y navegación se administra de forma reactiva con Zustand. 
+    La comunicación hacia el servidor se efectúa mediante solicitudes HTTP asíncronas bajo el estándar REST con cabeceras de autorización Bearer (tokens JWT en cookies HttpOnly seguras), 
+    complementándose con un canal bidireccional mediante WebSockets/SSE para la emisión de alertas operativas en tiempo real (notificaciones de aprobación de tareas, vencimientos de contratos e incidencias).
     
-    \item \textbf{Capa de Aplicación y Núcleo Transaccional (NestJS Engine):} Utiliza el motor HTTP de alto rendimiento \textbf{Fastify}, optimizado para la serialización rápida de cargas JSON. 
-    Las peticiones entrantes atraviesan un pipeline de seguridad compuesto por:
+    \item \textbf{Capa de Aplicación y Núcleo Transaccional (NestJS Engine):} Utiliza como motor perimetral el adaptador de alto rendimiento \textbf{Fastify~5}, 
+    optimizado para maximizar el \textit{throughput} de peticiones y acelerar la serialización JSON. 
+    El procesamiento HTTP atraviesa un pipeline perimetral estructurado:
+    
     \begin{itemize}
-
-        \item \textit{Guards de Autenticación y Autorización (RBAC):} Verifican la validez del token JWT y contrastan los permisos del usuario contra la matriz de roles corporativos 
-        (Empleado, Recursos Humanos, Asistente de contador, Contador, Administrador, Encargado del sistema JYP).
-
-        \item \textit{Pipes de Validación Global:} Validan y sanitizan la estructura de entrada contra los contratos compartidos de datos mediante esquemas tipados con \textbf{Zod}.
+        \item \textit{Guards de Autenticación y Autorización (RBAC):} Verifican la integridad criptográfica del token JWT y 
+        contrastan los permisos del actor contra la matriz de roles corporativos definida en el sistema (Administrador, RRHH, Contador, Asistente y Colaborador/Empleado).
         
-        \item \textit{Módulos de Dominio Aislados:} El núcleo se segmenta en submódulos especializados: Gestión de Recursos Humanos (legajos, contratos y asistencia), 
-        Gestión Contable (fórmulas de nómina y congelamiento del periodo), Integración Comercial (mapeo de comisiones desde el CRM) y Auditoría Global.
+        \item \textit{Pipes de Validación Just-In-Time (JIT):} Sancionan y sanitizan la estructura de las cargas entrantes
+         contra la fuente única de verdad compartida (\texttt{@jyp/shared-contracts}), 
+         validando esquemas fuertemente tipados mediante \textbf{Zod} antes de comprometer memoria en la capa de negocio. 
+         Las respuestas erróneas se estandarizan bajo la norma \textbf{RFC~7807} (\textit{Problem Details for HTTP APIs}).
         
-        \item \textit{Seguridad y Persistencia Criptográfica:} Antes de confirmar transacciones en la base de datos, los datos financieros sensibles 
-        (cuentas sueldo y códigos interbancarios CCI) son encriptados en la capa de servicio con el algoritmo simétrico \textbf{AES-256-GCM},
-        mientras que un interceptor transversal captura los estados anteriores y posteriores (\textit{Before/After}) para persistirlos en la bitácora inmutable de auditoría 
-        (\texttt{audit\_log}) mediante transacciones atómicas de Prisma ORM.
-
+        \item \textit{Segmentación en Módulos de Dominio y Casos de Uso:} La lógica de negocio abandona los servicios monolíticos extensos 
+        y se estructura en submódulos encapsulados regidos por comandos atómicos (\textit{Use Cases}):
+        
+        \begin{itemize}
+            \item \textbf{Módulo Core:} Centraliza la autenticación (hashing con Argon2id), el ciclo de vida de usuarios, perfiles y la bitácora inmutable de auditoría.
+            \item \textbf{Módulo RR.HH.:} Administra la estructura organizacional (áreas, cargos, empleados y jornadas), 
+                                           el ciclo contractual con alertas de vencimiento, derechohabientes, datos financieros de los empleados, trámites documentarios 
+                                           y la ingesta masiva de legajos con adaptador tolerante a fallos hacia la API de RENIEC.
+            \item \textbf{Módulo Asistencia:} Procesa la lectura y normalización de marcaciones biométricas (ingesta por streaming), 
+                                               la evaluación diaria de ausencias y tardanzas, el cálculo de jornadas laborales y la gestión de incidencias con firmas hash SHA-256.
+            \item \textbf{Módulo Nóminas:} Gobierna los parámetros legales (UIT, RMV, horas extras), la matriz previsional de AFPs/ONP
+                                                     y el cálculo mensual y extraordinario (Gratificaciones, CTS, Liquidaciones), asegurando el congelamiento contable inmutable del periodo.
+            \item \textbf{Módulo Integraciones:} Implementa el patrón \textit{Transactional Outbox} para estructurar solicitudes de exportación legal y habilitar un canal seguro máquina a máquina (M2M) 
+                                                  autenticado mediante firmas HMAC-SHA256.
+        \end{itemize}
+        
+        \item \textit{Seguridad y Persistencia Transaccional:} Los datos financieros altamente sensibles 
+            (cuentas sueldo y códigos interbancarios CCI) son encriptados simétricamente en reposo mediante el algoritmo \textbf{AES-256-GCM} con enmascaramiento dinámico en lecturas. 
+            A nivel de infraestructura, Prisma ORM gestiona transacciones atómicas interactivas (\texttt{\$transaction}) 
+            vinculando el contexto del usuario ejecutor a disparadores (\textit{triggers}) nativos de auditoría en la base de datos.
     \end{itemize}
 
-    \item \textbf{Capa de Procesamiento Asíncrono y Orquestación (BullMQ y n8n):} Para prevenir el bloqueo del bucle de eventos (\textit{Event Loop}) de Node.js durante operaciones intensivas, la arquitectura desacopla el trabajo pesado mediante dos mecanismos complementarios:
+    \item \textbf{Capa de Procesamiento Asíncrono y Orquestación (BullMQ y n8n):} 
+        Para prevenir el bloqueo del bucle de eventos (\textit{Event Loop}) de Node.js durante operaciones intensivas de CPU e I/O, el sistema delega la carga computacional pesada:
     \begin{itemize}
-        \item \textit{Colas en Memoria con BullMQ y Redis:} El cálculo masivo de la nómina se delega a colas de mensajería respaldadas en Redis. 
-        Un grupo de hilos de trabajo (\textit{Workers}) ejecuta los cálculos matemáticos de manera paralela con precisión decimal exacta (\texttt{Decimal.js}), 
-        mitigando el consumo excesivo de memoria RAM mediante consultas agrupadas (\textit{Bulk Fetch}) que eliminan el problema de consulta $N+1$.
+        \item \textit{Colas en Memoria con Redis 7 y Pool de Workers:} El cálculo masivo de planillas y la validación de archivos voluminosos se despachan a colas gestionadas por BullMQ y Redis. 
+                                                                        Un grupo de hilos nativos secundarios (\textit{Worker Threads} vía Piscina) procesa los algoritmos financieros en aislamiento de memoria, 
+                                                                        utilizando aritmética decimal exacta (\texttt{decimal.js}) y optimizaciones de consultas agrupadas (\textit{Bulk Fetch}) 
+                                                                        para erradicar el problema $N+1$.
         
-        \item \textit{Orquestador de Flujos n8n:} Actúa como actor máquina asíncrono. 
-        Por un lado, ejecuta tareas programadas (\textit{Cron Jobs}) para extraer y normalizar los registros de marcación desde los terminales biométricos locales, 
-        despachándolos al backend mediante webhooks seguros protegidos por HMAC. 
-        Por otro lado, una vez que el Contador aprueba y congela la planilla, n8n recibe un webhook disparador que compila en paralelo las estructuras planas regulatorias 
-        (archivos \texttt{.rem} y \texttt{.jor} para PLAME de SUNAT, formato AFP Net y archivos de dispersión Telecrédito BCP), 
-        además de generar las boletas de pago en PDF protegidas con el DNI del colaborador y distribuirlas por correo electrónico mediante SMTP.
+        \item \textit{Orquestador de Automatizaciones n8n:} Desplegado en un contenedor independiente, actúa como ejecutor asíncrono secundario. 
+                                                             Tras la aprobación y congelamiento de la nómina, 
+                                                             n8n recibe un webhook disparador verificado con HMAC-SHA256 para compilar las estructuras posicionales oficiales 
+                                                             (archivos \texttt{.rem} y \texttt{.jor} de la PLAME SUNAT, formato de 141 posiciones de AFPnet y transferencias masivas de Telecrédito BCP), 
+                                                             renderizar las boletas de pago en PDF protegidas con el DNI del trabajador y distribuirlas masivamente vía SMTP.
     \end{itemize}
 
-    \item \textbf{Capa de Persistencia e Infraestructura Externa:} La persistencia relacional descansa sobre un clúster de \textbf{PostgreSQL 16}, 
-    empleando identificadores universales ordenados cronológicamente (\textbf{UUIDv7}) 
-    para optimizar la indexación de registros de auditoría y asistencia. 
-
+    \item \textbf{Capa de Persistencia e Infraestructura Relacional:} Descansa sobre un motor de base de datos relacional \textbf{PostgreSQL~16}, 
+                                                                        utilizando identificadores ordenados cronológicamente (\textbf{UUIDv7}) para garantizar inserciones secuenciales desfragmentadas en los índices B-Tree, 
+                                                                        y disparadores PL/pgSQL que imponen inmutabilidad física sobre las tablas de planillas congeladas y registros de auditoría.
 \end{enumerate}
 
-\clearpage
 \par\medskip
 \noindent
 \begin{minipage}{\linewidth}
@@ -154,6 +170,7 @@ la segregación de responsabilidades y la alta disponibilidad operativa (Figura~
         keepaspectratio
     ]{images/diagramaFuncionamientoGeneral.png}}\par
     \vspace{4pt}
-    \textit{Nota.} Estructura modular en capas, procesamiento asíncrono y automatización con n8n. Elaboración propia; los logotipos, marcas e isotipos integrados son propiedad de sus respectivos titulares y se utilizan únicamente con fines ilustrativos y académicos.\par
+    \textit{Nota.} Estructura modular en capas, procesamiento asíncrono y automatización con n8n. Elaboración propia; los logotipos, 
+    marcas e isotipos integrados son propiedad de sus respectivos titulares y se utilizan únicamente con fines ilustrativos y académicos.\par
 \end{minipage}
 \finBloqueAPA
