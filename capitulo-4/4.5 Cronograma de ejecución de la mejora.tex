@@ -1,32 +1,28 @@
 \subsection{Cronograma de ejecución de la mejora}
 
-La ejecución de la propuesta técnica se organiza en seis fases desarrolladas entre octubre y diciembre de 2026. 
-La Tabla~\ref{tab:cronograma_ejecucion} detalla la programación temporal de cada actividad.
+Para planificar la implementación se usó ProjectLibre, un programa gratuito que abre los mismos archivos que Microsoft Project.
+Ahí se registraron las 50 actividades, el responsable de cada una y el orden en que deben hacerse, y el programa calculó las fechas del diagrama de Gantt de la Figura~\ref{fig:cronograma_gantt}.
+El proyecto va del 12 de mayo al 28 de diciembre de 2026, 156 días laborables sin contar fines de semana ni feriados.
+El análisis ocupó mayo y junio, y el backend se programó de julio a octubre.
+El frontend empezó en septiembre, cuando ya funcionaban el inicio de sesión y el módulo de organización, y las integraciones con n8n avanzaron en paralelo desde octubre.
+El despliegue queda para la segunda quincena de diciembre.
+Cada uno de los cuatro desarrolladores principales tiene 145 de esos días con tareas asignadas, y cada junior, que se sumó en septiembre, 50.
 
-\par
+% Figura en vertical para que quede en la misma página que el texto del 4.5.
+% Si al compilar salta a la página siguiente, baja 0.40 a 0.38 en height.
+\par\vspace{6pt}
 \noindent
 \begin{minipage}{\linewidth}
-    \tituloTablaAPA{tab:cronograma_ejecucion}{Cronograma de ejecución de la propuesta de mejora}
-
-    \begingroup
-    \renewcommand{\baselinestretch}{1}
-    \footnotesize
-    \setlength{\tabcolsep}{4pt}
-    \renewcommand{\arraystretch}{1.3}
-
-    \begin{tabularx}{\linewidth}{@{}p{3.8cm}Xcccccc@{}}
-        \toprule
-        \textbf{Fase / Etapa} & \textbf{Actividades principales} & \textbf{S1} & \textbf{S2} & \textbf{S3} & \textbf{S4} & \textbf{S5} & \textbf{S6} \\ 
-        & & \footnotesize(Oct) & \footnotesize(Nov 1) & \footnotesize(Nov 2) & \footnotesize(Nov 3) & \footnotesize(Nov 4) & \footnotesize(Dic) \\ \midrule
-        Fase 1: Análisis y diseño & Diagnóstico, levantamiento de requerimientos y diseño de base de datos. & X & & & & & \\ \addlinespace
-        Fase 2: Sprint 1 & Autenticación RBAC, contratos compartidos e importación de empleados. & & X & & & & \\ \addlinespace
-        Fase 3: Sprint 2 & Marcación web/CSV/Excel, gestión de asistencias y auditoría. & & & X & & & \\ \addlinespace
-        Fase 4: Sprint 3 & Mantenimiento de cargos, consolidación de incidencias y solicitudes. & & & & X & & \\ \addlinespace
-        Fase 5: Sprint 4 & Dashboard contable, consulta de empleados y novedades de nómina. & & & & & X & \\ \addlinespace
-        Fase 6: Integración y cierre & Flujos n8n (boletas y dispersión), pruebas finales y despliegue. & & & & & & X \\ \bottomrule
-    \end{tabularx}
-    \endgroup
-
-    \notaTabla{S1 a S6 corresponden a las semanas de trabajo programadas. Elaboración propia.}
+    \linespread{1}\footnotesize
+    \refstepcounter{figure}%
+    \label{fig:cronograma_gantt}%
+    \addcontentsline{lof}{figure}{Figura~\thefigure. Diagrama de Gantt de la implementación de la mejora}%
+    {\bfseries Figura~\thefigure}\par
+    {\itshape Diagrama de Gantt de la implementación de la mejora}\par
+    \makebox[\linewidth][c]{\includegraphics[width=\linewidth,height=0.40\textheight,keepaspectratio]{images/cronograma-gantt.png}}\par
+    \vspace{2pt}
+    \textit{Nota.} Elaborado en ProjectLibre. Las barras rojas forman la ruta crítica y la línea punteada marca la fecha de la captura.
+    Iniciales: DS, Daniel Singer; RC, Rodrigo Castillo; AD, Adrian Dueñas; DF, Dylan Florez; JV, Julio Vargas; LS, Luis Diego Sipion; JF, Julio Flores; DR, Daniel Roman; JP, Juan Pablo Alcala.
+    Elaboración propia.\par
 \end{minipage}
 \finBloqueAPA
