@@ -1,4 +1,3 @@
-
 \subsubsection{Análisis de Requerimientos}
 \subsubsubsection{Cuadro de relación de requerimientos y causas raíz}
 
@@ -35,6 +34,10 @@ y los requerimientos del sistema propuesto.
 \finBloqueAPA
 
 \subsubsubsection{Requerimientos Funcionales del proyecto}
+
+A continuación, se presentan los requerimientos funcionales que rigen el comportamiento operativo de la solución tecnológica. 
+La especificación técnica detallada de cada requerimiento funcional, junto con sus criterios de aceptación y nivel de prioridad, se encuentra documentada en el \textbf{Anexo~2}.
+
 \begin{itemize}
     \item \textbf{RF-01: Autenticar usuarios y controlar accesos por roles (RBAC).} Validar credenciales criptográficamente y emitir un token JWT que restrinja vistas y acciones según el rol asignado.
     \item \textbf{RF-02: Registrar eventos en bitácora inmutable de auditoría.} Registrar automáticamente en la base de datos las transacciones críticas capturando los valores previos y posteriores.
@@ -54,6 +57,10 @@ y los requerimientos del sistema propuesto.
 \end{itemize}
 
 \subsubsubsection{Requerimientos no Funcionales del proyecto}
+
+A continuación, se detallan los requerimientos no funcionales orientados a garantizar el rendimiento, 
+la seguridad y la resiliencia de la infraestructura. La descripción exhaustiva de las restricciones de calidad y arquitectura asociadas se encuentra desarrollada en el \textbf{Anexo~3}.
+
 \begin{itemize}
     \item \textbf{RNF-01: Optimizar el tiempo de respuesta del motor de cálculo.} Procesar la nómina completa del personal y retornar los resultados en un tiempo inferior a 10 segundos.
     \item \textbf{RNF-02: Minimizar la latencia en endpoints transaccionales.} Responder a las peticiones HTTP de consulta y mutaciones ligeras con una latencia media menor a 300 milisegundos.

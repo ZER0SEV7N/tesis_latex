@@ -1,42 +1,36 @@
-\subsection{Otros Costo de Implementación de Mejora}
-\subsubsection{El Costo de Servicio de consumo de Luz}
-Se presentara el consumo de energía total que utilizaron los equipos de cómputo durante el tiempo de desarrollo.
+\subsection{Otros Costos de Implementación de la Mejora}
+
+\subsubsection{El Costo de Servicio de Consumo de Luz}
+
+El desarrollo del sistema web generó un consumo de energía eléctrica derivado de la operación continua de los equipos informáticos portátiles durante las jornadas de trabajo. 
+Dicho consumo se calcula a partir de la potencia media del equipo, las horas diarias de programación,
+ los días laborables del mes y el pliego tarifario comercial informado por la empresa J\&P Periféricos S.A.C., 
+ el cual establece un costo de energía de \textbf{S/ 0.65 por kWh}.
+
+Las fórmulas empleadas para la estimación energética son:
+
+\begin{equation}
+    \text{Potencia (kW)} = \frac{\text{Potencia del equipo (W)}}{1000}
+\end{equation}
+
+\begin{equation}
+    \text{Consumo mensual (kWh)} = \text{Potencia (kW)} \times \text{Horas/día} \times \text{Días/mes}
+\end{equation}
+
+\begin{equation}
+    \text{Costo mensual (S/)} = \text{Consumo mensual (kWh)} \times \text{Tarifa por kWh}
+\end{equation}
+
+\begin{equation}
+    \text{Costo por día (S/)} = \frac{\text{Costo mensual}}{\text{Días al mes}}
+\end{equation}
+
+En la Tabla~\ref{tab:consumo_luz_detalle} se presenta el desglose aritmético unitario correspondiente a una estación de trabajo promedio durante la fase de desarrollo.
 
 \par
 \noindent
 \begin{minipage}{\linewidth}
-    \tituloTablaAPA{tab:costo_energia_laptops}{Consumo de energía eléctrica y costo total por equipos de cómputo}
-
-    \begingroup
-    \renewcommand{\baselinestretch}{1}
-    \footnotesize
-    \setlength{\tabcolsep}{3pt}
-    \renewcommand{\arraystretch}{1.25}
-
-    \begin{tabularx}{\linewidth}{@{}p{3.0cm}c c c r r r@{}}
-        \toprule
-        \textbf{Equipo} & \textbf{Potencia} & \textbf{Horas Uso} & \textbf{Consumo} & \textbf{Pago/Mes (S/)} & \textbf{Total (S/)} & \textbf{Dólares (USD)} \\ \midrule
-        Laptop 1 (HP Omen 16) & 65 W & 1,170 h & 76.05 kWh & S/ 7.06 & 49.43 & 14.37 \\ 
-        Laptop 2 (ASUS Vivobook 16) & 65 W & 1,170 h & 76.05 kWh & S/ 7.06 & 49.43 & 14.37 \\ 
-        Laptop 3 (ASUS Vivobook 14) & 65 W & 1,170 h & 76.05 kWh & S/ 7.06 & 49.43 & 14.37 \\ 
-        Laptop 4 (Lenovo ThinkPad X1) & 65 W & 1,170 h & 76.05 kWh & S/ 7.06 & 49.43 & 14.37 \\ 
-        Laptop 5 (Lenovo IdeaPad Slim 3) & 65 W & 402 h & 26.13 kWh & S/ 5.66 & 16.98 & 4.94 \\ 
-        Laptop 6 (ASUS TUF Gaming F16) & 65 W & 402 h & 26.13 kWh & S/ 5.66 & 16.98 & 4.94 \\ \midrule
-        \textbf{Total} & \textbf{390 W} & \textbf{5,484 h} & \textbf{356.46 kWh} & \textbf{--} & \textbf{231.68} & \textbf{67.35} \\ \bottomrule
-    \end{tabularx}
-    \endgroup
-
-    \notaTabla{Cálculo basado en una potencia nominal promedio de trabajo de 65 W por laptop y una tarifa de energía eléctrica de S/ 0.65 por kWh. Se contempla una jornada laboral de 6 horas diarias durante 195 días (7 meses) para las laptops 1 a 4 y 67 días (3 meses) para las laptops 5 y 6. Tipo de cambio referencial: 1 USD = S/ 3.44 (fecha: 09/11/2026). Elaboración propia.}
-\end{minipage}
-\finBloqueAPA
-
-\subsubsection{Lista de gastos adicionales}
-En este apartado se detallara los gastos adicionales a servicios idenpendientes a la empresa, como energia, internet, entre otros.
-
-\par
-\noindent
-\begin{minipage}{\linewidth}
-    \tituloTablaAPA{tab:gastos_adicionales}{Gastos adicionales en energía eléctrica e internet}
+    \tituloTablaAPA{tab:consumo_luz_detalle}{Estimación del costo de consumo energético por estación de trabajo}
 
     \begingroup
     \renewcommand{\baselinestretch}{1}
@@ -44,16 +38,70 @@ En este apartado se detallara los gastos adicionales a servicios idenpendientes 
     \setlength{\tabcolsep}{4pt}
     \renewcommand{\arraystretch}{1.25}
 
-    \begin{tabularx}{\linewidth}{@{}p{4.5cm}c p{3.0cm}r r@{}}
+    \begin{tabularx}{\linewidth}{@{}p{4.8cm}c c c r@{}}
         \toprule
-        \textbf{Descripción} & \textbf{Cantidad} & \textbf{Precio Unitario} & \textbf{Total (S/)} & \textbf{Dólares (USD)} \\ \midrule
-        Servicio de Luz (Laptops 1 - 4) & 7 meses & S/ 7.06 / mes (x4) & S/ 197.68 & \$57.47 \\ 
-        Servicio de Luz (Laptops 5 - 6) & 3 meses & S/ 7.06 / mes (x2) & S/ 42.36 & \$12.31 \\ 
-        Servicio de Internet & 7 meses & S/ 89.90 / mes & S/ 629.30 & \$182.94 \\ \midrule
-        \textbf{Total} & & & \textbf{S/ 869.34} & \textbf{\$252.72} \\ \bottomrule
+        \textbf{Concepto} & \textbf{Valor / Factor} & \textbf{Operación} & \textbf{Base} & \textbf{Resultado} \\ \midrule
+        Potencia promedio del equipo (W) & 65~W & / & 1000 & 0.065~kW \\ 
+        Horas de desarrollo al día & 8~h & & & 8.00~h \\ 
+        Días laborables al mes & 22 días & & & 22 días \\ 
+        Consumo mensual unitario & 0.065~kW & $\times$ 8~h $\times$ 22 días & = & 11.44~kWh \\ 
+        Tarifa eléctrica (J\&P Periféricos) & S/ 0.65 & / kWh & & S/ 0.65 \\ 
+        Costo de energía mensual por laptop & S/ 0.65 & $\times$ 11.44~kWh & = & S/ 7.44 \\ 
+        Costo diario de energía por laptop & S/ 7.44 & / 22 días & = & S/ 0.34 \\ \bottomrule
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Cálculo del gasto de luz basado en un costo mensual por laptop de S/ 7.06 (6 horas diarias a S/ 0.65/kWh). El servicio de internet contempla 7 meses de desarrollo del proyecto. Tipo de cambio referencial: 1 USD = S/ 3.44 (fecha: 09/11/2026). Elaboración propia.}
+    \notaTabla{Cálculo basado en la potencia promedio de las fuentes de poder portátiles y la tarifa real de S/ 0.65 por kWh de la empresa. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
+
+A partir de este costo unitario mensual de S/ 7.44 por equipo, se calcula el consumo total consolidado para el equipo de desarrollo:
+\begin{itemize}
+    \item \textbf{Equipo principal (4 desarrolladores por 7 meses):} $4 \times 7 \text{ meses} \times \text{S/ } 7.44 = \text{\textbf{S/ 208.21}}$.
+    \item \textbf{Equipo de apoyo (2 desarrolladores por 3 meses):} $2 \times 3 \text{ meses} \times \text{S/ } 7.44 = \text{\textbf{S/ 44.62}}$.
+    \item \textbf{Costo total de energía eléctrica del proyecto:} $\text{S/ } 208.21 + \text{S/ } 44.62 = \text{\textbf{S/ 252.83}}$.
+\end{itemize}
+
+\subsubsection{Lista de Gastos Adicionales y Servicio de Internet}
+
+El despliegue de microservicios, la sincronización continua de código en repositorios GitHub, 
+las consultas de verificación de identidad con la API de RENIEC y las pruebas de automatización con n8n requirieron conectividad ininterrumpida a Internet. 
+
+Para justificar este rubro, se toma como referencia el comprobante de pago emitido a la empresa \textbf{J\&P Periféricos S.A.C.} (RUC 20545122520) 
+por la operadora \textbf{Movistar Empresas Fija}, con un cargo mensual facturado de \textbf{S/ 89.90} por servicio de fibra óptica y telefonía fija.
+
+El costo total de telecomunicaciones asignado al proyecto se define mediante la fórmula:
+
+\begin{equation}
+    \text{Costo total de Internet} = \text{Tarifa mensual del plan} \times \text{Meses de desarrollo}
+\end{equation}
+
+\begin{equation*}
+    \text{Costo total de Internet} = \text{S/ } 89.90 \times 7\text{ meses} = \text{\textbf{S/ 629.30}}
+\end{equation*}
+
+En la Tabla~\ref{tab:gastos_servicios_generales} se consolidan los costos de suministros básicos e Internet correspondientes al proyecto.
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:gastos_servicios_generales}{Relación de gastos por servicios generales e Internet durante el desarrollo}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\linewidth}{@{}p{4.6cm}c p{2.6cm}r r@{}}
+        \toprule
+        \textbf{Descripción del servicio} & \textbf{Cantidad} & \textbf{Costo Base} & \textbf{Total (S/)} & \textbf{Dólar (\$)} \\ \midrule
+        Servicio de Energía Eléctrica & 6 laptops & Proporcional kWh & S/ 252.83 & \$73.50 \\ 
+        Servicio de Internet (Movistar Empresas) & 7 meses & S/ 89.90 / mes & S/ 629.30 & \$182.94 \\ \midrule
+        \textbf{Total} & & & \textbf{S/ 882.13} & \textbf{\$256.43} \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{El servicio de Internet corresponde al recibo de Movistar Empresas de J\&P Periféricos S.A.C. Tipo de cambio: 1 USD = S/ 3.44 (fecha: 09/11/2026). Elaboración propia.}
 \end{minipage}
 \finBloqueAPA

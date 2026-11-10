@@ -1,21 +1,39 @@
 \subsection{Costo de Máquinas, Herramientas y Equipos}
 \subsubsection{El Costo de Depreciación de herramientas}
-Se detalla la depreciación del valor de las herramientas asignadas a 
-los desarrolladores de este proyecto, en específico las laptops de trabajo, 
-calculando el valor residual y su depreciación año tras año.
+
+Para el cálculo del desgaste físico y obsolescencia de los equipos de cómputo asignados a los desarrolladores durante la ejecución del proyecto, se aplica el método de \textbf{depreciación lineal}. Bajo este procedimiento contable, el activo pierde valor de manera constante a lo largo de su vida útil estimada, deduciendo previamente su valor residual.
+
+Las ecuaciones matemáticas que rigen este cálculo son las siguientes:
 
 \begin{equation}
     \text{Valor residual} = \frac{\text{Valor inicial}}{\text{Vida útil en años}}
 \end{equation}
 
 \begin{equation}
-    \text{Depreciación} = \frac{\text{Valor inicial} - \text{Valor residual}}{\text{Vida útil en años}}
+    \text{Depreciación anual} = \frac{\text{Valor inicial} - \text{Valor residual}}{\text{Vida útil en años}}
 \end{equation}
+
+A manera de aplicación demostrativa para la estación de trabajo principal del proyecto (Laptop HP Omen 16), cuyo valor de adquisición es de S/ 2,850.00 y posee una vida útil de 6 años:
+
+\begin{equation*}
+    \text{Valor residual} = \frac{\text{S/ } 2,850.00}{6} = \text{S/ } 475.00
+\end{equation*}
+
+\begin{equation*}
+    \text{Depreciación anual} = \frac{\text{S/ } 2,850.00 - \text{S/ } 475.00}{6} = \frac{\text{S/ } 2,375.00}{6} = \text{S/ } 395.83
+\end{equation*}
+
+Según el método de depreciación lineal, el importe depreciable de esta estación asciende a S/ 2,375.00, 
+registrando una pérdida de valor anual constante de S/ 395.83 hasta alcanzar su valor residual contable de S/ 475.00 al sexto año. 
+La memoria de cálculo contable proyectada año tras año para esta estación de trabajo se detalla en el \textbf{Anexo~1}.
+
+Generalizando este procedimiento de cálculo para las seis estaciones de trabajo empleadas por el equipo de desarrollo, se determina el costo de adquisición, 
+el valor residual y la alícuota de depreciación anualizada de cada equipo en la Tabla~\ref{tab:depreciacion_equipos}.
 
 \par
 \noindent
 \begin{minipage}{\linewidth}
-    \tituloTablaAPA{tab:depreciacion_equipos}{Costo, vida útil, valor residual y depreciación de los equipos de cómputo}
+    \tituloTablaAPA{tab:depreciacion_equipos}{Consolidado de valor de adquisición, valor residual y depreciación anual de equipos de cómputo}
 
     \begingroup
     \renewcommand{\baselinestretch}{1}
@@ -23,7 +41,7 @@ calculando el valor residual y su depreciación año tras año.
     \setlength{\tabcolsep}{4pt}
     \renewcommand{\arraystretch}{1.25}
 
-    \begin{tabularx}{\linewidth}{@{}p{3.8cm}r r r r@{}}
+    \begin{tabularx}{\linewidth}{@{}p{4.4cm}r c r r@{}}
         \toprule
         \textbf{Equipo de cómputo} & \textbf{Precio Compra (S/)} & \textbf{Vida Útil} & \textbf{Valor Residual (S/)} & \textbf{Depreciación Anual (S/)} \\ \midrule
         HP Omen 16-C0501LA & S/ 2,850.00 & 6 años & S/ 475.00 & S/ 395.83 \\ 
@@ -32,23 +50,27 @@ calculando el valor residual y su depreciación año tras año.
         Lenovo ThinkPad X1 Yoga & S/ 3,000.00 & 8 años & S/ 500.00 & S/ 312.50 \\ 
         Lenovo IdeaPad Slim 3 & S/ 3,099.00 & 5 años & S/ 516.50 & S/ 516.50 \\ 
         ASUS TUF Gaming F16 & S/ 3,100.00 & 6 años & S/ 516.67 & S/ 430.56 \\ \midrule
-        \textbf{Costo Total} & \textbf{S/ 15,971.96} & \textbf{--} & \textbf{S/ 2,661.99} & \textbf{S/ 2,253.66} \\ \bottomrule
+        \textbf{Total Consolidado} & \textbf{S/ 15,971.96} & \textbf{--} & \textbf{S/ 2,661.99} & \textbf{S/ 2,253.66} \\ \bottomrule
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Resumen consolidado de depreciación lineal de los 6 equipos de cómputo del equipo de desarrollo según precio de adquisición y vida útil asignada. Elaboración propia.}
+    \notaTabla{Resumen consolidado de depreciación lineal de las 6 computadoras del equipo de desarrollo. Elaboración propia.}
 \end{minipage}
 \finBloqueAPA
 
 \subsubsection{El Costo de Licencia de Software y Depreciación}
 
-Se detallará la depreciación de los equipos de cómputo, a 
-excepción de las licencias de software ya que se estarán usando las versiones y distribuciones open source.
+La arquitectura del sistema fue concebida estratégicamente sobre plataformas de código abierto (\textit{open source})
+ para minimizar los costos recurrentes de licenciamiento corporativo. El entorno operativo y los lenguajes de programación no demandan pago de licencias. 
+ No obstante, para los flujos de integración y automatización con n8n, 
+ se contempló el consumo de una API de Inteligencia Artificial mediante créditos de procesamiento para la extracción y formateo de datos.
+
+En la Tabla~\ref{tab:costo_software} se desglosan las licencias utilizadas y se integra la depreciación anualizada de los equipos de cómputo, determinando el costo consolidado de este rubro.
 
 \par
 \noindent
 \begin{minipage}{\linewidth}
-    \tituloTablaAPA{tab:depreciacion_anual_laptops}{Depreciación anual por equipo de cómputo}
+    \tituloTablaAPA{tab:costo_software}{Costo de licencias de software, herramientas tecnológicas y depreciación de equipos}
 
     \begingroup
     \renewcommand{\baselinestretch}{1}
@@ -56,19 +78,24 @@ excepción de las licencias de software ya que se estarán usando las versiones 
     \setlength{\tabcolsep}{4pt}
     \renewcommand{\arraystretch}{1.25}
 
-    \begin{tabularx}{\linewidth}{@{}p{5.5cm}X r@{}}
+    \begin{tabularx}{\linewidth}{@{}p{5.2cm}c r r r@{}}
         \toprule
-        \textbf{Equipo} & \textbf{Modelo de Computadora} & \textbf{Depreciación Anual (S/)} \\ \midrule
-        Laptop 1 & HP Omen 16-C0501LA & S/ 395.83 \\ 
-        Laptop 2 & ASUS Vivobook 16-X1605VA & S/ 320.49 \\ 
-        Laptop 3 & ASUS Vivobook 14 X415JA & S/ 277.78 \\ 
-        Laptop 4 & Lenovo ThinkPad X1 Yoga & S/ 312.50 \\ 
-        Laptop 5 & Lenovo IdeaPad Slim 3 & S/ 516.50 \\ 
-        Laptop 6 & ASUS TUF Gaming F16 & S/ 430.56 \\ \midrule
-        \multicolumn{2}{@{}r}{\textbf{Depreciación Anual Total:}} & \textbf{S/ 2,253.66} \\ \bottomrule
+        \textbf{Descripción de la herramienta} & \textbf{Cantidad} & \textbf{Costo Unitario (S/)} & \textbf{Total (S/)} & \textbf{Dólar (\$)} \\ \midrule
+        Visual Studio Code & 6 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        Git \& GitHub Free Tier & 6 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        Jira (Free Tier) & 1 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        Docker Compose / Engine & 1 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        PostgreSQL 16 Community Edition & 1 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        Redis In-Memory Community & 1 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        n8n Workflow Engine (Self-Hosted) & 1 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        Frameworks (NestJS, React 19, Fastify) & 1 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        Bizagi Modeler (Free Academic) & 1 & S/ 0.00 & S/ 0.00 & \$0.00 \\ 
+        Créditos API IA para Automatización (n8n) & 1 & S/ 150.00 & S/ 150.00 & \$43.60 \\ 
+        Equipos de desarrollo (Depreciación anual) & 6 & S/ 2,253.66 & S/ 2,253.66 & \$655.13 \\ \midrule
+        \textbf{Total} & & & \textbf{S/ 2,403.66} & \textbf{\$698.74} \\ \bottomrule
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Resumen individual de la depreciación anual correspondiente a cada laptop asignada al proyecto. Elaboración propia.}
+    \notaTabla{Herramientas tecnológicas y costo proporcional de desgaste de equipos. Tipo de cambio: 1 USD = S/ 3.44. Elaboración propia.}
 \end{minipage}
 \finBloqueAPA

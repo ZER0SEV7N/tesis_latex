@@ -1,0 +1,63 @@
+\subsection{Beneficio técnico y/o económico esperado de la mejora / Innovación / Creatividad}
+
+La puesta en producción del sistema web con arquitectura modular y flujos automatizados en n8n genera beneficios directos tanto 
+para las empresas clientes usuarias como para la empresa desarrolladora y patrocinadora J\&P Periféricos S.A.C.
+
+\subsubsection{Beneficios técnico-operativos y mitigación de riesgos para las empresas clientes}
+En el diagnóstico previo se identificó que el procesamiento manual de nóminas no solo provocaba horas de retrabajo en el personal contable, 
+sino que mantenía latente el riesgo de sanciones administrativas ante organismos fiscalizadores. La solución implementada aporta las siguientes mejoras tangibles:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Prevención de multas laborales y tributarias:} La generación y entrega automática de boletas de pago cifradas con el 
+    DNI del trabajador suprime el riesgo de sanciones por parte de la SUNAFIL (cuyas multas por infracciones graves vinculadas a la entrega de boletas 
+    y pago oportuno de beneficios oscilan entre 0.26 y 1.57 UIT según el número de trabajadores afectados, D.S. N° 019-2006-TR). 
+    De igual modo, la compilación estructurada de los archivos \texttt{.rem} y \texttt{.jor} previene infracciones tributarias 
+    ante la SUNAT por datos falsos o incompletos en el PDT PLAME (Art. 176 del Código Tributario), 
+    así como recargos por intereses moratorios en la plataforma AFPnet.
+
+    \item \textbf{Cálculo uniforme y eliminación de reprocesos:} La centralización de las fórmulas remunerativas y previsionales en procesos aislados (\textit{Worker Threads}) 
+    con precisión decimal estricta (\texttt{decimal.js}) elimina de raíz los descuadres salariales, 
+    sobrepagos y deducciones erróneas derivados de la manipulación manual de celdas en hojas de cálculo.
+    \item \textbf{Centralización y consistencia en el control de asistencia:} La importación transaccional del archivo de marcaciones biométricas 
+    y el flujo digital de solicitudes (vacaciones, descansos y permisos) 
+    reemplazan el cruce manual de listas físicas, consolidando las incidencias directamente sobre el periodo contable activo.
+    \item \textbf{Trazabilidad y seguridad de la información:} La diferenciación de accesos por roles (RBAC) y el registro inmutable en 
+    \texttt{audit\_log} garantizan el respaldo de cada modificación efectuada, 
+    resguardando los datos sensibles de los colaboradores mediante cifrado simétrico AES-256-GCM.
+
+\end{enumerate}
+
+\subsubsection{Modelo de negocio y viabilidad comercial para J\&P Periféricos S.A.C. (SaaS)}
+Para J\&P Periféricos S.A.C., el sistema se consolida como una solución comercializable bajo la modalidad de suscripción (\textit{Software as a Service} - SaaS) para su cartera de clientes empresariales.
+En el mercado local peruano de gestión de nóminas y recursos humanos, el panorama competitivo se define bajo tres enfoques comerciales distintos:
+
+\begin{itemize}
+    \item \textit{Buk Perú:} Plataforma integral de capital humano orientada al segmento corporativo. 
+    Aplica un modelo de facturación variable basado estrictamente en el número de colaboradores activos, 
+    con tarifas estimadas entre \$3.00 y \$4.50 USD mensuales por usuario, 
+    lo que exige un ticket mínimo de entrada de S/ 600.00 a S/ 1,500.00 mensuales por organización debido a costos base de implementación.
+    \item \textit{Planiweb y Atenea Perú:} Sistemas de gestión contable consolidada orientados a Pymes. 
+    Estructuran su oferta comercial mediante paquetes base con tarifas planas mensuales que oscilan entre S/ 180.00 y S/ 380.00, 
+    lo que reduce la barrera de entrada para microempresas, pero limita la flexibilidad de escalamiento modular.
+    \item \textit{Rapifac Nóminas:} Solución híbrida ERP y transaccional enfocada en la emisión automatizada de boletas electrónicas de remuneración, 
+    con tarifas estables que van de S/ 150.00 a S/ 280.00 al mes según el volumen de procesamiento mensual de documentos autorizados por la SUNAT.
+\end{itemize}
+
+En este contexto, J\&P Periféricos S.A.C. 
+se posiciona de forma competitiva adoptando una estrategia de precios por tramos de colaboradores. 
+Este modelo híbrido elimina la rigidez de los cobros individuales por usuario (estilo \textit{Buk}) y optimiza los costos operativos fijos para las organizaciones en crecimiento:
+
+\begin{itemize}
+    \item \textbf{Plan Emprendedor (hasta 15 trabajadores):} S/ 180.00 / mes (\$52.33 USD). Diseñado para competir directamente con las tarifas minimas de \textit{Planiweb} y \textit{Rapifac}, 
+    ofreciendo capacidades de emisión completas.
+    \item \textbf{Plan Pyme Estándar (hasta 45 trabajadores):} S/ 320.00 / mes (\$93.02 USD). Enfocado en empresas medianas que buscan previsibilidad en su facturación mensual 
+    sin recargos individuales por contratación.
+    \item \textbf{Plan Corporativo (hasta 100 trabajadores):} S/ 520.00 / mes (\$151.16 USD). Una alternativa de alta rentabilidad frente a la suite corporativa de \textit{Buk}, 
+    capturando empresas de mayor envergadura a una fracción de su costo de mercado.
+\end{itemize}
+
+Con una tarifa promedio ponderada de S/ 280.00 mensuales por empresa 
+y una meta comercial conservadora de 20 empresas clientes durante el primer año, 
+J\&P asegura ingresos recurrentes de \textbf{S/ 67,200.00 anuales}. 
+Esta proyección de ingresos recurrentes mensuales (MRR) mitiga de manera directa los costos de soporte e infraestructura en la nube, 
+respaldando la rentabilidad y viabilidad financiera global del producto desde su lanzamiento.
