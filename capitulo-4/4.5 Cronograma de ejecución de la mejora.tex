@@ -1,13 +1,15 @@
 \subsection{Cronograma de ejecución de la mejora}
 
-El cronograma se elaboró en ProjectLibre, un software libre de gestión de proyectos que permite programar las actividades, sus dependencias y los recursos asignados en un diagrama de Gantt.
-La implementación abarca 156 días laborables, del 12 de mayo al 28 de diciembre de 2026, y se organiza en cinco fases:
-análisis (mayo y junio), backend de Recursos Humanos y del contador (julio a octubre), frontend (septiembre a diciembre), integraciones con n8n (octubre a diciembre) y despliegue del MVP (diciembre).
-Las fases de backend, frontend e integraciones se superponen porque cada desarrollador trabaja en su propia área, y el calendario descuenta los fines de semana y los feriados nacionales del periodo.
-La Figura~\ref{fig:cronograma_gantt} muestra las 50 actividades con sus fechas, responsables y porcentaje de avance.
+Para planificar la implementación se usó ProjectLibre, un programa gratuito que abre los mismos archivos que Microsoft Project.
+Ahí se registraron las 50 actividades, el responsable de cada una y el orden en que deben hacerse, y el programa calculó las fechas del diagrama de Gantt de la Figura~\ref{fig:cronograma_gantt}.
+El proyecto va del 12 de mayo al 28 de diciembre de 2026, 156 días laborables sin contar fines de semana ni feriados.
+El análisis ocupó mayo y junio, y el backend se programó de julio a octubre.
+El frontend empezó en septiembre, cuando ya funcionaban el inicio de sesión y el módulo de organización, y las integraciones con n8n avanzaron en paralelo desde octubre.
+El despliegue queda para la segunda quincena de diciembre.
+Cada uno de los cuatro desarrolladores principales tiene 145 de esos días con tareas asignadas, y cada junior, que se sumó en septiembre, 50.
 
 % Figura en vertical para que quede en la misma página que el texto del 4.5.
-% Si al compilar salta a la página siguiente, baja 0.42 a 0.40 en height.
+% Si al compilar salta a la página siguiente, baja 0.40 a 0.38 en height.
 \par\vspace{6pt}
 \noindent
 \begin{minipage}{\linewidth}
@@ -17,7 +19,7 @@ La Figura~\ref{fig:cronograma_gantt} muestra las 50 actividades con sus fechas, 
     \addcontentsline{lof}{figure}{Figura~\thefigure. Diagrama de Gantt de la implementación de la mejora}%
     {\bfseries Figura~\thefigure}\par
     {\itshape Diagrama de Gantt de la implementación de la mejora}\par
-    \makebox[\linewidth][c]{\includegraphics[width=\linewidth,height=0.42\textheight,keepaspectratio]{images/cronograma-gantt.png}}\par
+    \makebox[\linewidth][c]{\includegraphics[width=\linewidth,height=0.40\textheight,keepaspectratio]{images/cronograma-gantt.png}}\par
     \vspace{2pt}
     \textit{Nota.} Elaborado en ProjectLibre. Las barras rojas forman la ruta crítica y la línea punteada marca la fecha de la captura.
     Iniciales: DS, Daniel Singer; RC, Rodrigo Castillo; AD, Adrian Dueñas; DF, Dylan Florez; JV, Julio Vargas; LS, Luis Diego Sipion; JF, Julio Flores; DR, Daniel Roman; JP, Juan Pablo Alcala.

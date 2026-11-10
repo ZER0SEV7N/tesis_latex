@@ -1,4 +1,4 @@
-\subsection{Diagrama del proceso, mapa del flujo de valor y/o diagrama de operación de la situación mejora}
+\subsection{Diagrama del proceso, mapa del flujo de valor y/o diagrama de operación de la situación mejorada}
 
 En este apartado se describe el funcionamiento de los procesos operativos con la intervención del sistema web propuesto
 (escenario \textit{TO-BE}). A diferencia del flujo manual analizado en el Capítulo 3,
@@ -18,20 +18,17 @@ Este flujo reemplaza la transcripción manual de tardanzas, inasistencias y hora
 \begin{enumerate}
     \item \textbf{Registro de la solicitud con sustento:} El colaborador inicia sesión y el sistema valida su token de acceso. Cuando requiere tramitar vacaciones, una licencia o un permiso, registra la solicitud en la bandeja del sistema adjuntando obligatoriamente la evidencia en formato digital (\textbf{RF-06}, \textbf{RF-08}, \textbf{BEL-81}).
     \item \textbf{Evaluación de Recursos Humanos:} El sistema notifica al responsable de Recursos Humanos, quien accede al módulo de evaluación (\textbf{BEL-107}), revisa la validez de los archivos adjuntos y la coherencia de las fechas respecto al periodo laboral activo (\textbf{BEL-58}). Al aprobar o rechazar la solicitud, dictamina su efecto en la asistencia, definiendo si la ausencia es con goce o sin goce de haber; solo las solicitudes aprobadas se incorporan al registro del trabajador (\textbf{BEL-50}, \textbf{BEL-105}).
-    \item \textbf{Captura de marcaciones:} Recursos Humanos importa el archivo Excel exportado por el reloj biométrico (\textbf{BEL-57}, \textbf{BEL-78}) o registra marcaciones manuales (\textbf{BEL-77}); toda marcación manual exige un motivo y una evidencia que la respalde.
+    \item \textbf{Captura de marcaciones:} De forma independiente a las solicitudes, Recursos Humanos importa el archivo Excel exportado por el reloj biométrico (\textbf{BEL-57}, \textbf{BEL-78}) o registra marcaciones manuales (\textbf{BEL-77}); toda marcación manual exige un motivo y una evidencia que la respalde. La importación puede repetirse las veces que sea necesario mientras el periodo esté abierto, y el sistema omite las marcaciones que ya fueron cargadas.
     \item \textbf{Cruce automático de jornadas, marcaciones y solicitudes:} El sistema compara cada marcación con la jornada laboral asignada, su tolerancia (\textbf{BEL-73}, \textbf{BEL-74}) y el calendario laboral (\textbf{BEL-75}), calculando automáticamente los minutos de tardanza o clasificando el día como inasistencia (\textbf{BEL-79}). En el mismo cruce contrasta las inasistencias con las licencias, descansos y vacaciones aprobadas (\textbf{RF-11}), evitando descuentos indebidos por ausencias justificadas.
     \item \textbf{Atención de alertas:} Si el cruce reporta alertas o días pendientes de definición, Recursos Humanos registra la decisión operativa correspondiente con su sustento y el sistema vuelve a ejecutar el cruce hasta que no queden observaciones.
     \item \textbf{Cierre de la asistencia del periodo:} Sin alertas pendientes, Recursos Humanos aprueba y cierra la asistencia del periodo (\textbf{BEL-90}). El sistema cambia su estado a \textit{Aprobada}, consolida las incidencias en el resumen del periodo (\textbf{BEL-56}, \textbf{BEL-80}) y habilita la elaboración de la planilla, dejando la información disponible en modo de consulta para el área contable (\textbf{BEL-89}, \textbf{BEL-91}, \textbf{BEL-100}).
 \end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \caption{Proceso mejorado de gestión de asistencia, incidencias y solicitudes en el sistema web}
-    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{images/diagramas-procesos-mejorados/solicitudesAsistenciaIncidencias.png}
-    \par\vspace{0.2cm}
-    \small \textit{Nota.} Registro y evaluación de solicitudes con sustento, captura de marcaciones, cruce automático con jornadas y cierre de la asistencia del periodo. Elaboración propia.
-    \label{fig:flujo_asistencia_mejorado}
-\end{figure}
+\figuraEnTexto
+    {fig:flujo_asistencia_mejorado}
+    {Proceso mejorado de gestión de asistencia, incidencias y solicitudes en el sistema web}
+    {images/diagramas-procesos-mejorados/solicitudesAsistenciaIncidencias.png}
+    {Registro y evaluación de solicitudes con sustento, captura de marcaciones, cruce automático con jornadas y cierre de la asistencia del periodo. Elaboración propia.}
 
 \subsubsection{Flujo de elaboración y cierre de nóminas}
 
@@ -45,14 +42,11 @@ Este flujo automatiza el cálculo remunerativo y asegura la inmutabilidad de los
     \item \textbf{Exportaciones y distribución automatizada:} Con la planilla congelada se habilita el subproceso automatizado de preparación de documentos y entregas mediante n8n, descrito en el apartado siguiente.
 \end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \caption{Proceso mejorado de elaboración y cierre de nóminas}
-    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{images/diagramas-procesos-mejorados/elaboracion-cierre-nomina.png}
-    \par\vspace{0.2cm}
-    \small \textit{Nota.} Secuencia de cálculo asíncrono, revisión de la pre-planilla, congelamiento del periodo y disparo del subproceso de exportaciones. Elaboración propia.
-    \label{fig:flujo_planilla_mejorado}
-\end{figure}
+\figuraEnTexto
+    {fig:flujo_planilla_mejorado}
+    {Proceso mejorado de elaboración y cierre de nóminas}
+    {images/diagramas-procesos-mejorados/elaboracion-cierre-nomina.png}
+    {Secuencia de cálculo asíncrono, revisión de la pre-planilla, congelamiento del periodo y disparo del subproceso de exportaciones. Elaboración propia.}
 
 \subsubsection{Subproceso automatizado de preparación de documentos y entregas}
 
@@ -63,14 +57,11 @@ Este subproceso delega en el orquestador \textbf{n8n} la generación de los arch
     \item \textbf{Registro y envío del trabajo:} El sistema web registra un trabajo de integración y lo envía al orquestador mediante un \textit{Webhook} firmado con HMAC-SHA256, de modo que n8n solo procesa solicitudes legítimas del backend.
     \item \textbf{Generación de documentos:} n8n valida la firma, obtiene por páginas los datos de la planilla y genera los entregables solicitados: los archivos de declaración para SUNAT PLAME (estructuras \texttt{.rem} y \texttt{.jor}) y AFPnet, el archivo de abono Telecrédito BCP con el reporte CSV de costos, y las boletas de pago en PDF protegidas con el DNI de cada trabajador, que se distribuyen por correo electrónico mediante SMTP.
     \item \textbf{Reporte del resultado:} El orquestador reporta al sistema el manifiesto de archivos generados con su huella SHA-256 y el estado de los envíos de correo. El sistema actualiza el estado del trabajo y lo registra en la auditoría.
-    \item \textbf{Descarga de archivos:} Finalmente, el Contador descarga los archivos generados para su presentación ante las entidades correspondientes.
+    \item \textbf{Descarga de archivos y registro del desembolso:} El Contador descarga los archivos generados para su presentación ante las entidades correspondientes y, una vez realizado el abono, registra el desembolso; la planilla pasa al estado \textit{Pagada}.
 \end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \caption{Subproceso automatizado de preparación de documentos y entregas}
-    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{images/diagramas-procesos-mejorados/subproceso-automatizacion-doc-entregas.png}
-    \par\vspace{0.2cm}
-    \small \textit{Nota.} Generación de archivos PLAME, AFPnet y Telecrédito BCP, y emisión y envío de boletas cifradas mediante n8n a partir de la planilla congelada. Elaboración propia.
-    \label{fig:flujo_exportacion_n8n}
-\end{figure}
+\figuraEnTexto
+    {fig:flujo_exportacion_n8n}
+    {Subproceso automatizado de preparación de documentos y entregas}
+    {images/diagramas-procesos-mejorados/subproceso-automatizacion-doc-entregas.png}
+    {Generación de archivos PLAME, AFPnet y Telecrédito BCP, y emisión y envío de boletas cifradas mediante n8n a partir de la planilla congelada. Elaboración propia.}
