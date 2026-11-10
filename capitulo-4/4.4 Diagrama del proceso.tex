@@ -1,101 +1,76 @@
 \subsection{Diagrama del proceso, mapa del flujo de valor y/o diagrama de operación de la situación mejora}
 
-En este apartado se describe el funcionamiento de los procesos operativos con la intervención del sistema web propuesto 
-(escenario \textit{TO-BE}). A diferencia del flujo manual analizado en el Capítulo 3, 
-la propuesta centraliza los registros en una única base de datos relacional (PostgreSQL), 
-segrega los permisos según el rol del usuario (Recursos Humanos, Asistente Contable, Contador y Administrador) 
+En este apartado se describe el funcionamiento de los procesos operativos con la intervención del sistema web propuesto
+(escenario \textit{TO-BE}). A diferencia del flujo manual analizado en el Capítulo 3,
+la propuesta centraliza los registros en una única base de datos relacional (PostgreSQL),
+segrega los permisos según el rol del usuario (Recursos Humanos, Asistente Contable, Contador y Administrador)
 y delega la generación documental y el envío de correos al orquestador asíncrono \textbf{n8n}.
 
-La mejora operativa se estructura en cuatro flujos principales que atienden directamente las causas raíz identificadas en el diagnóstico: 
-(1) gestión de asistencias e incidencias, 
-(2) gestión y evaluación de solicitudes, 
-(3) generación, cierre y dispersión de planillas, y 
-(4) registro inmutable de auditoría.
+La mejora operativa se estructura en dos flujos principales y un subproceso automatizado que atienden directamente las causas raíz identificadas en el diagnóstico:
+(1) gestión de asistencia, incidencias y solicitudes,
+(2) elaboración y cierre de nóminas, y
+(3) el subproceso automatizado de preparación de documentos y entregas, que se ejecuta una vez congelada la planilla.
 
-\subsubsection{Flujo de sincronización de asistencias y consolidación de incidencias}
+\subsubsection{Flujo de gestión de asistencia, incidencias y solicitudes}
 
-Este flujo reemplaza la transcripción manual de tardanzas, inasistencias y horas extras hacia hojas de cálculo (atendiendo las causas \textbf{CA3} y \textbf{CA1}). El proceso vincula los registros de entrada y salida del personal con las jornadas laborales parametrizadas previamente por Recursos Humanos (\textbf{BEL-73}, \textbf{BEL-74}) y el calendario laboral (\textbf{BEL-75}).
+Este flujo reemplaza la transcripción manual de tardanzas, inasistencias y horas extras hacia hojas de cálculo, y estandariza la comunicación entre los colaboradores y el área de Recursos Humanos, eliminando el traslado informal de documentos físicos o correos aislados (atendiendo las causas \textbf{CA1}, \textbf{CA2}, \textbf{CA3} y \textbf{CA5}). Las solicitudes y la asistencia se modelan en un mismo flujo porque toda solicitud aprobada (vacaciones, licencia o permiso) modifica directamente el cómputo de asistencia del periodo.
 
 \begin{enumerate}
-    \item \textbf{Captura e ingesta de marcaciones:} El sistema incorpora los registros de asistencia a través de tres mecanismos integrados: la marcación directa desde la interfaz web (\textbf{BEL-77}), la importación estructurada mediante archivos CSV o Excel (\textbf{BEL-57}, \textbf{BEL-78}) y la sincronización programada (\textit{Cron Job}) de marcajes biométricos.
-    \item \textbf{Cruce automático con jornadas y tolerancias:} El motor del backend compara la hora registrada de cada colaborador con el horario de su jornada asignada y su margen de tolerancia. Si el marcaje se realiza dentro del rango permitido, se registra como asistencia regular; en caso contrario, el sistema calcula automáticamente los minutos de tardanza o clasifica el registro como inasistencia injustificada (\textbf{BEL-79}).
-    \item \textbf{Cruce con descansos y vacaciones:} Antes de consolidar el tareo del periodo, el sistema contrasta las inasistencias detectadas con las licencias, descansos médicos y vacaciones previamente aprobadas por Recursos Humanos (\textbf{RF-11}), evitando descuentos indebidos por ausencias justificadas.
-    \item \textbf{Consolidación para el cálculo:} Las incidencias validadas se agrupan en el resumen del periodo (\textbf{BEL-56}, \textbf{BEL-80}) y quedan disponibles en modo de consulta para el área contable (\textbf{BEL-89}) hasta que se ejecuta el cierre de incidencias del mes (\textbf{BEL-90}).
+    \item \textbf{Registro de la solicitud con sustento:} El colaborador inicia sesión y el sistema valida su token de acceso. Cuando requiere tramitar vacaciones, una licencia o un permiso, registra la solicitud en la bandeja del sistema adjuntando obligatoriamente la evidencia en formato digital (\textbf{RF-06}, \textbf{RF-08}, \textbf{BEL-81}).
+    \item \textbf{Evaluación de Recursos Humanos:} El sistema notifica al responsable de Recursos Humanos, quien accede al módulo de evaluación (\textbf{BEL-107}), revisa la validez de los archivos adjuntos y la coherencia de las fechas respecto al periodo laboral activo (\textbf{BEL-58}). Al aprobar o rechazar la solicitud, dictamina su efecto en la asistencia, definiendo si la ausencia es con goce o sin goce de haber; solo las solicitudes aprobadas se incorporan al registro del trabajador (\textbf{BEL-50}, \textbf{BEL-105}).
+    \item \textbf{Captura de marcaciones:} Recursos Humanos importa el archivo Excel exportado por el reloj biométrico (\textbf{BEL-57}, \textbf{BEL-78}) o registra marcaciones manuales (\textbf{BEL-77}); toda marcación manual exige un motivo y una evidencia que la respalde.
+    \item \textbf{Cruce automático de jornadas, marcaciones y solicitudes:} El sistema compara cada marcación con la jornada laboral asignada, su tolerancia (\textbf{BEL-73}, \textbf{BEL-74}) y el calendario laboral (\textbf{BEL-75}), calculando automáticamente los minutos de tardanza o clasificando el día como inasistencia (\textbf{BEL-79}). En el mismo cruce contrasta las inasistencias con las licencias, descansos y vacaciones aprobadas (\textbf{RF-11}), evitando descuentos indebidos por ausencias justificadas.
+    \item \textbf{Atención de alertas:} Si el cruce reporta alertas o días pendientes de definición, Recursos Humanos registra la decisión operativa correspondiente con su sustento y el sistema vuelve a ejecutar el cruce hasta que no queden observaciones.
+    \item \textbf{Cierre de la asistencia del periodo:} Sin alertas pendientes, Recursos Humanos aprueba y cierra la asistencia del periodo (\textbf{BEL-90}). El sistema cambia su estado a \textit{Aprobada}, consolida las incidencias en el resumen del periodo (\textbf{BEL-56}, \textbf{BEL-80}) y habilita la elaboración de la planilla, dejando la información disponible en modo de consulta para el área contable (\textbf{BEL-89}, \textbf{BEL-91}, \textbf{BEL-100}).
 \end{enumerate}
 
 \begin{figure}[H]
     \centering
-    \caption{Flujo de sincronización de asistencia y generación automatizada de incidencias}
-    %\includegraphics[width=0.95\textwidth]{images/flujo_asistencia_tareo.png}
+    \caption{Proceso mejorado de gestión de asistencia, incidencias y solicitudes en el sistema web}
+    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{images/diagramas-procesos-mejorados/solicitudesAsistenciaIncidencias.png}
     \par\vspace{0.2cm}
-    \small \textit{Nota.} Representación del cruce entre marcaciones, jornadas laborales e incidencias del periodo. Elaboración propia.
+    \small \textit{Nota.} Registro y evaluación de solicitudes con sustento, captura de marcaciones, cruce automático con jornadas y cierre de la asistencia del periodo. Elaboración propia.
     \label{fig:flujo_asistencia_mejorado}
 \end{figure}
 
-\subsubsection{Flujo de gestión y aprobación de solicitudes administrativas}
+\subsubsection{Flujo de elaboración y cierre de nóminas}
 
-Este flujo estandariza la comunicación entre los colaboradores, el área de Recursos Humanos y el área de Contabilidad, eliminando el traslado informal de documentos físicos o correos aislados y evitando la circulación de versiones desactualizadas de la planilla (atendiendo las causas \textbf{CA1}, \textbf{CA2} y \textbf{CA5}).
+Este flujo automatiza el cálculo remunerativo y asegura la inmutabilidad de los resultados aprobados (atendiendo las causas \textbf{CA4}, \textbf{CA7} y \textbf{CA8}). Se inicia cuando la asistencia del periodo ha sido aprobada.
 
 \begin{enumerate}
-    \item \textbf{Registro de la solicitud y sustento digital:} Cuando se requiere tramitar una licencia, justificación de inasistencia, vacación o actualización excepcional de datos laborales (como cambio de cuenta bancaria o régimen pensionario), la solicitud se registra en la bandeja del sistema adjuntando los documentos sustentatorios en formato digital (\textbf{RF-06}, \textbf{RF-08}, \textbf{BEL-81}).
-    \item \textbf{Bandeja de evaluación de Recursos Humanos:} Las solicitudes ingresan con el estado \textit{Pendiente}. El responsable de Recursos Humanos accede al módulo de evaluación (\textbf{BEL-107}), revisa la validez de los archivos adjuntos y verifica la coherencia de las fechas respecto al periodo laboral activo (\textbf{BEL-58}).
-    \item \textbf{Resolución y actualización transaccional:} El evaluador aprueba o rechaza la solicitud dejando constancia del motivo. Únicamente cuando la solicitud cambia al estado \textit{Aprobado}, el backend actualiza de forma atómica el legajo del trabajador, su contrato o su registro de asistencia (\textbf{BEL-50}, \textbf{BEL-105}), haciendo visible la novedad de manera inmediata en la vista de consulta del Contador (\textbf{BEL-91}, \textbf{BEL-100}).
+    \item \textbf{Verificación de parámetros y novedades:} El Contador o el Asistente Contable se autentica en su panel (\textbf{BEL-87}), revisa en modo lectura la información maestra de los empleados (\textbf{BEL-88}), verifica el cierre de asistencia e incidencias (\textbf{BEL-90}, \textbf{BEL-91}), registra las novedades monetarias del mes y comprueba la vigencia de los parámetros legales (RMV, UIT, tasas de AFP/ONP y tramos de quinta categoría) (\textbf{RF-09}, \textbf{BEL-99}).
+    \item \textbf{Ejecución del cálculo masivo o individual:} Al solicitar el cálculo (\textbf{RF-12}), el backend encola el trabajo en BullMQ y Redis y lo procesa en hilos de trabajo paralelos (\textbf{RNF-03}). El motor aplica de manera uniforme las fórmulas de ingresos, descuentos previsionales, retenciones de quinta categoría, aportes del empleador (EsSalud) y beneficios sociales, utilizando aritmética decimal exacta para evitar errores de redondeo. Cada resultado se persiste como una instantánea del cálculo y queda registrado en la bitácora de auditoría.
+    \item \textbf{Revisión de la pre-planilla:} El Contador revisa la pre-planilla y los montos calculados. Si requiere ajustar alguna novedad monetaria o parámetro legal vigente, realiza el ajuste y vuelve a solicitar el cálculo indicando un motivo auditable.
+    \item \textbf{Aprobación y congelamiento del periodo:} Validados los montos, el Contador aprueba y congela la planilla del periodo (\textbf{RF-13}). El sistema bloquea el periodo mediante disparadores de base de datos que impiden modificaciones posteriores sobre los resultados aprobados y guarda el evento en la auditoría.
+    \item \textbf{Exportaciones y distribución automatizada:} Con la planilla congelada se habilita el subproceso automatizado de preparación de documentos y entregas mediante n8n, descrito en el apartado siguiente.
 \end{enumerate}
 
 \begin{figure}[H]
     \centering
-    \caption{Flujo de evaluación y aprobación de solicitudes entre áreas}
-    %\includegraphics[width=0.92\textwidth]{images/flujo_solicitudes_rrhh.png}
+    \caption{Proceso mejorado de elaboración y cierre de nóminas}
+    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{images/diagramas-procesos-mejorados/elaboracion-cierre-nomina.png}
     \par\vspace{0.2cm}
-    \small \textit{Nota.} Proceso de registro, revisión documental e incorporación de novedades al periodo activo. Elaboración propia.
-    \label{fig:flujo_solicitudes_mejorado}
-\end{figure}
-
-\subsubsection{Flujo de generación, validación y cierre de planillas}
-
-Este flujo automatiza el cálculo remunerativo, la emisión de boletas de pago y la preparación de archivos para bancos y declaraciones tributarias (atendiendo las causas \textbf{CA4}, \textbf{CA7} y \textbf{CA8}).
-
-\begin{enumerate}
-    \item \textbf{Verificación de parámetros y novedades:} El Contador accede a su panel (\textbf{BEL-87}), revisa en modo lectura la información maestra de los empleados (\textbf{BEL-88}), comprueba la vigencia de los parámetros legales (RMV, UIT, tasas de AFP/ONP y tramos de quinta categoría) (\textbf{RF-09}, \textbf{BEL-99}) y verifica el cierre de incidencias y novedades del periodo (\textbf{BEL-90}, \textbf{BEL-91}).
-    \item \textbf{Ejecución del cálculo masivo:} Al iniciar el procesamiento (\textbf{RF-12}), el backend delega la carga pesada a colas de trabajo asíncronas con BullMQ y Redis (\textbf{RNF-03}). El motor aplica de manera uniforme las fórmulas de ingresos, descuentos previsionales, retenciones de quinta categoría, aportes del empleador (EsSalud) y beneficios sociales, utilizando aritmética decimal exacta para evitar errores de redondeo.
-    \item \textbf{Revisión y congelamiento del periodo:} El Contador y el Administrador revisan los totales calculados. Si se detecta alguna observación en las variables del mes, se corrige antes de la aprobación final. Una vez validados los montos, se ejecuta el \textit{Cierre Definitivo} del periodo (\textbf{RF-13}), cambiando su estado a \textit{Congelado} e impidiendo modificaciones posteriores sobre los resultados aprobados.
-    \item \textbf{Orquestación asíncrona con n8n (Boletas y Exportación):} Confirmado el estado \textit{Congelado}, el backend envía un \textit{Webhook} firmado hacia \textbf{n8n}. El orquestador ejecuta en paralelo la generación de los archivos planos de declaración y pago (estructuras \texttt{.rem} y \texttt{.jor} para PLAME, formato AFP Net y archivo de dispersión bancaria Telecrédito) y habilita su descarga para el Contador (\textbf{RF-15}). Simultáneamente, genera las boletas de pago en PDF protegidas con el DNI de cada trabajador y las distribuye por correo electrónico (\textbf{RF-10}, \textbf{RF-14}).
-\end{enumerate}
-
-\begin{figure}[H]
-    \centering
-    \caption{Flujo de procesamiento, validación y cierre de planilla mensual}
-    %\includegraphics[width=0.98\textwidth]{images/flujo_procesamiento_planilla.png}
-    \par\vspace{0.2cm}
-    \small \textit{Nota.} Secuencia de cálculo masivo, congelamiento de periodo y disparo de automatizaciones hacia n8n. Elaboración propia.
+    \small \textit{Nota.} Secuencia de cálculo asíncrono, revisión de la pre-planilla, congelamiento del periodo y disparo del subproceso de exportaciones. Elaboración propia.
     \label{fig:flujo_planilla_mejorado}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \caption{Subproceso de exportación legal y dispersión bancaria mediante n8n}
-    %\includegraphics[width=0.90\textwidth]{images/flujo_exportacion_n8n.png}
-    \par\vspace{0.2cm}
-    \small \textit{Nota.} Compilación paralela de archivos PLAME, AFP Net y Telecrédito tras validar el estado congelado. Elaboración propia.
-    \label{fig:flujo_exportacion_n8n}
-\end{figure}
+\subsubsection{Subproceso automatizado de preparación de documentos y entregas}
 
-\subsubsection{Flujo de control de acceso y auditoría inmutable (Trail Logs)}
-
-Este flujo opera de forma transversal sobre todos los módulos del sistema para garantizar la trazabilidad de las operaciones y la diferenciación de permisos (atendiendo las causas \textbf{CA5} y \textbf{CA6}).
+Este subproceso delega en el orquestador \textbf{n8n} la generación de los archivos de declaración y pago, así como la emisión y entrega de las boletas de pago, liberando al área contable de su elaboración manual (\textbf{RF-10}, \textbf{RF-14}, \textbf{RF-15}).
 
 \begin{enumerate}
-    \item \textbf{Autenticación y control de acceso por rol (RBAC):} Al iniciar sesión (\textbf{RF-01}, \textbf{BEL-44}), el sistema valida las credenciales cifradas con Argon2 y emite un token JWT que define el rol del usuario. Los \textit{Guards} del backend y el enrutador del frontend (\textbf{BEL-86}) restringen las vistas y operaciones: Recursos Humanos administra legajos, contratos y solicitudes, pero no ejecuta el cierre contable; por su parte, el Contador consulta los datos laborales en modo lectura (\textbf{BEL-88}) sin alterar la estructura organizacional ni los datos personales.
-    \item \textbf{Intercepción automática de mutaciones:} Cada vez que un usuario autorizado ejecuta una acción de creación, actualización, eliminación o reapertura excepcional sobre registros críticos (sueldos básicos, parámetros de AFP, contratos, estados de planilla o incidencias), un interceptor en la capa de acceso a datos captura el contexto de la petición HTTP (identificador del usuario, dirección IP y marca de tiempo).
-    \item \textbf{Registro de diferenciales (\textit{Before / After}):} Dentro de la misma transacción de base de datos (\textbf{BEL-51}), el sistema consulta el estado previo del registro, aplica el cambio solicitado e inserta automáticamente una entrada en la tabla de auditoría (\texttt{audit\_log}) almacenando en formato JSON el valor anterior (\texttt{valores\_antes}) y el nuevo valor (\texttt{valores\_despues}) (\textbf{RF-02}).
-    \item \textbf{Inmutabilidad y consulta de la bitácora:} Los registros de auditoría están protegidos contra operaciones de edición o borrado. Los usuarios autorizados pueden inspeccionar el historial de modificaciones a través de la vista de auditoría (\textbf{BEL-83}), filtrando por fecha, usuario, entidad afectada o tipo de operación.
+    \item \textbf{Solicitud de exportación:} A partir de la planilla congelada, el Contador solicita la exportación regulatoria, bancaria o el envío de boletas del periodo.
+    \item \textbf{Registro y envío del trabajo:} El sistema web registra un trabajo de integración y lo envía al orquestador mediante un \textit{Webhook} firmado con HMAC-SHA256, de modo que n8n solo procesa solicitudes legítimas del backend.
+    \item \textbf{Generación de documentos:} n8n valida la firma, obtiene por páginas los datos de la planilla y genera los entregables solicitados: los archivos de declaración para SUNAT PLAME (estructuras \texttt{.rem} y \texttt{.jor}) y AFPnet, el archivo de abono Telecrédito BCP con el reporte CSV de costos, y las boletas de pago en PDF protegidas con el DNI de cada trabajador, que se distribuyen por correo electrónico mediante SMTP.
+    \item \textbf{Reporte del resultado:} El orquestador reporta al sistema el manifiesto de archivos generados con su huella SHA-256 y el estado de los envíos de correo. El sistema actualiza el estado del trabajo y lo registra en la auditoría.
+    \item \textbf{Descarga de archivos:} Finalmente, el Contador descarga los archivos generados para su presentación ante las entidades correspondientes.
 \end{enumerate}
 
 \begin{figure}[H]
     \centering
-    \caption{Flujo transversal de intercepción y registro inmutable en la bitácora de auditoría}
-    %\includegraphics[width=0.92\textwidth]{images/flujo_auditoria_logs.png}
+    \caption{Subproceso automatizado de preparación de documentos y entregas}
+    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{images/diagramas-procesos-mejorados/subproceso-automatizacion-doc-entregas.png}
     \par\vspace{0.2cm}
-    \small \textit{Nota.} Captura transaccional de estados previos y posteriores ante modificaciones en el sistema. Elaboración propia.
-    \label{fig:flujo_auditoria_mejorado}
+    \small \textit{Nota.} Generación de archivos PLAME, AFPnet y Telecrédito BCP, y emisión y envío de boletas cifradas mediante n8n a partir de la planilla congelada. Elaboración propia.
+    \label{fig:flujo_exportacion_n8n}
 \end{figure}
