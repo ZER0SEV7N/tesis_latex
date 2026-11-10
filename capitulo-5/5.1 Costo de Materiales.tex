@@ -1,7 +1,13 @@
 \subsection{Costo de Materiales}
-En esta parte se detallan los costos asociados a los materiales necesarios para la 
-implementación del sistema de planillas, que se desplegará en un servidor 
-local de la empresa.
+
+En esta sección se detallan los costos asociados a los materiales y 
+suministros de infraestructura necesarios para el despliegue e implantación del sistema web 
+en el servidor físico local de la empresa J\&P Periféricos S.A.C. 
+Para asegurar la alta disponibilidad de los contenedores de base de datos (PostgreSQL 16), 
+el broker de mensajería (Redis 7) y el motor de automatizaciones (n8n), 
+se contempla la repotenciación del hardware del servidor mediante la ampliación de memoria RAM 
+y la incorporación de almacenamiento en estado sólido, además de la suscripción al servicio de enrutamiento DNS dinámico para el acceso seguro al aplicativo. 
+Los costos se presentan en moneda nacional (S/) y dólares estadounidenses (USD) en la Tabla~\ref{tab:costo_recursos}.
 
 \par
 \noindent
@@ -14,16 +20,16 @@ local de la empresa.
     \setlength{\tabcolsep}{4pt}
     \renewcommand{\arraystretch}{1.25}
 
-    \begin{tabularx}{\linewidth}{@{}p{2.8cm}p{4.2cm}p{2.8cm}r r@{}}
+    \begin{tabularx}{\linewidth}{@{}p{3.2cm}p{4.2cm}p{2.8cm}r r@{}}
         \toprule
         \textbf{Tipo de servicio} & \textbf{Nombre del material} & \textbf{Tipo de recurso} & \textbf{Soles (S/)} & \textbf{Dólar (\$)} \\ \midrule
-        Servidor Local & Memoria RAM 32 GB & Hardware / Equipo Propio & S/ 599.00 & \$174.13 \\ 
-        Servidor Local & Unidad SSD 120 GB Kingston & Hardware / Equipo Propio & S/ 70.00 & \$20.35 \\ 
-        Hosting / DNS & Servicio DynDNS Pro (Dominio) & Servicio / Infraestructura & S/ 207.00 & \$60.17 \\ \midrule
-        \textbf{Total} & & & \textbf{S/ 876.00} & \textbf{\$254.65} \\ \bottomrule
+        Servidor Local & Memoria RAM 32~GB (2x16~GB DDR4) & Hardware / Equipo Propio & S/ 599.00 & \$174.13 \\ 
+        Servidor Local & Unidad SSD 240~GB Kingston A400 & Hardware / Equipo Propio & S/ 115.00 & \$33.43 \\ 
+        Hosting / DNS & Servicio DynDNS Pro (1 año) & Servicio / Infraestructura & S/ 207.00 & \$60.17 \\ \midrule
+        \textbf{Total} & & & \textbf{S/ 921.00} & \textbf{\$267.73} \\ \bottomrule
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Valores monetarios expresados en soles (S/) y dólares estadounidenses (\$) calculados al tipo de cambio de S/ 3.44 por dólar con fecha del 9 de noviembre de 2026. Elaboración propia.}
+    \notaTabla{Valores monetarios expresados en soles (S/) y dólares estadounidenses (\$) calculados al tipo de cambio referencial de S/ 3.44 por dólar (fecha: 09/11/2026). Elaboración propia.}
 \end{minipage}
 \finBloqueAPA

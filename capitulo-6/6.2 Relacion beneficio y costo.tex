@@ -1,0 +1,146 @@
+\subsection{Relación de beneficio / costo}
+
+\subsubsection{Identificación de la Pérdida Económica}
+
+La Tabla~\ref{tab:perdidas_consolidadas} sintetiza el impacto financiero originado por las causas raíz evaluadas en el levantamiento inicial, 
+considerando el tiempo dedicado por el personal contable a corregir inconsistencias y los costos por minuto asociados a dichas tareas.
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:perdidas_consolidadas}{Pérdida económica mensual y anual estimada por causa raíz identificada}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\linewidth}{@{}p{1.4cm}X p{3.4cm}r r@{}}
+        \toprule
+        \textbf{Código} & \textbf{Descripción de la Causa Raíz} & \textbf{Tipo de Pérdida} & \textbf{Mensual (S/)} & \textbf{Anual (S/)} \\ \midrule
+        CA1 & Información laboral almacenada en archivos separados & Conciliación manual de legajos & S/ 186.60 & S/ 2,239.20 \\ \addlinespace
+        CA2 & Circulación de versiones de planilla sin control & Revisión de copias desactualizadas & S/ 75.20 & S/ 902.40 \\ \addlinespace
+        CA3 & Transcripción manual de asistencias e incidencias & Corrección de omisiones y tareo & S/ 111.75 & S/ 1,341.00 \\ \addlinespace
+        CA4 & Modificación manual de fórmulas y parámetros & Revisión de diferencias de cálculo & S/ 110.70 & S/ 1,328.40 \\ \addlinespace
+        CA7 & Preparación separada de archivos de pago y PLAME & Ajustes en transferencias y SUNAT & S/ 74.85 & S/ 898.20 \\ \addlinespace
+        CA8 & Generación y distribución individual de boletas & Tiempo de envío manual y reenvíos & S/ 62.48 & S/ 749.76 \\ \midrule
+        \textbf{Total} & & & \textbf{S/ 621.58} & \textbf{S/ 7,458.96} \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Pérdida mensual calculada sobre los minutos de corrección y el costo horario del personal. Pérdida anual computada a 12 meses. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
+
+La pérdida anual de \textbf{S/ 7,458.96} representa el costo de ineficiencia operativa medido estrictamente en horas de retrabajo del personal 
+contable durante el levantamiento del proceso. No incluye el impacto económico potencial de sanciones o multas inspectivas que el sistema previene de manera sistemática.
+
+\subsubsection{Identificación de los Beneficios del Sistema}
+
+Al estandarizar los flujos de trabajo e incorporar reglas de validación automáticas en el software, se establece una tasa conservadora del 
+\textbf{85.0\,\% de eficiencia de recuperación} sobre las pérdidas operativas detectadas (Tabla~\ref{tab:eficiencia_recuperacion}).
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:eficiencia_recuperacion}{Evaluación de la eficiencia de recuperación de pérdidas mediante el sistema web}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\linewidth}{@{}r c r c@{}}
+        \toprule
+        \textbf{Pérdidas Anuales (S/)} & \textbf{Representan \%} & \textbf{Costo de Inversión (S/)} & \textbf{\% Eficiencia de Recuperación} \\ \midrule
+        S/ 7,458.96 & 100.0\,\% & S/ 60,906.79 & 85.0\,\% \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Porcentaje de mitigación operativa esperado tras la automatización de los procesos. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
+
+Aplicando dicho factor del 85.0\,\%, se determina el ahorro económico anual directo generado por el aplicativo (Tabla~\ref{tab:total_ahorro_beneficio}):
+
+\begin{equation}
+    \text{Ahorro Anual (Beneficio Operativo)} = \text{Pérdidas Anuales} \times \text{Eficiencia de Recuperación}
+\end{equation}
+
+\begin{equation*}
+    \text{Ahorro Anual (Beneficio Operativo)} = \text{S/ } 7,458.96 \times 0.85 = \text{\textbf{S/ 6,340.12}}
+\end{equation*}
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:total_ahorro_beneficio}{Cálculo del beneficio económico anual neto por ahorro operativo}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\linewidth}{@{}X r@{}}
+        \toprule
+        \textbf{Concepto} & \textbf{Monto (S/)} \\ \midrule
+        Pérdidas anuales en el proceso manual previo & S/ 7,458.96 \\ 
+        Sobrecosto residual proyectado tras la mejora (15\,\%) & S/ 1,118.84 \\ \midrule
+        \textbf{TOTAL AHORRO ANUAL (BENEFICIO OPERATIVO)} & \textbf{S/ 6,340.12} \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Beneficio económico derivado de la reducción de tiempos muertos y reprocesos contables. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
+
+\subsubsection{Relación Beneficio / Costo (B/C)}
+
+Dado que el desarrollo fue concebido para enriquecer el portafolio comercial de J\&P Periféricos S.A.C., 
+el análisis financiero evalúa el beneficio global del proyecto: integra el ahorro operativo generado en las operaciones de prueba (S/ 6,340.12) 
+y los ingresos anuales proyectados por la suscripción al servicio SaaS de 20 clientes empresariales ($20 \times \text{S/ } 280.00 \times 12 = \text{S/ } 67,200.00$),
+alcanzando un beneficio anual consolidado de \textbf{S/ 73,540.12}.
+
+Contrastando este beneficio frente al costo total de la inversión calculado en el Capítulo~5 (S/ 60,906.79):
+
+\begin{equation}
+    \text{Relación } B/C = \frac{\text{Beneficio Anual Total}}{\text{Costo Total de Inversión}}
+\end{equation}
+
+\begin{equation*}
+    \text{Relación } B/C = \frac{\text{S/ } 73,540.12}{\text{S/ } 60,906.79} = \mathbf{1.21}
+\end{equation*}
+
+\noindent
+\textbf{Interpretación:} Al ser la relación Beneficio/Costo mayor a la unidad ($B/C = 1.21 > 1.00$), 
+se demuestra que el proyecto es \textbf{financieramente viable y rentable}. Por cada sol (S/ 1.00) invertido en el desarrollo e implantación del sistema,
+ se recupera el capital inicial y se genera un retorno neto adicional de S/ 0.21.
+
+\subsubsection{Periodo de Recuperación de la Inversión}
+
+El tiempo necesario para amortizar la totalidad de los recursos invertidos se calcula mediante la siguiente relación:
+
+\begin{equation}
+    \text{Periodo de Recuperación} = \frac{\text{Costo Total de Inversión}}{\text{Beneficio Anual Total}}
+\end{equation}
+
+\begin{equation*}
+    \text{Periodo de Recuperación} = \frac{\text{S/ } 60,906.79}{\text{S/ } 73,540.12} = 0.8282\text{ años}
+\end{equation*}
+
+Transformando el resultado a meses y días:
+
+\begin{equation*}
+    0.8282\text{ años} \times 12\text{ meses/año} = 9.94\text{ meses} \longrightarrow \mathbf{9\text{ meses}}
+\end{equation*}
+
+\begin{equation*}
+    0.94\text{ meses} \times 30\text{ días/mes} = 28.2\text{ días} \longrightarrow \mathbf{28\text{ días}}
+\end{equation*}
+
+\noindent
+\textbf{Interpretación:} La inversión realizada se recupera íntegramente en un periodo de \textbf{9 meses y 28 días}.
+ Este plazo confirma que el proyecto se amortiza en menos de un año fiscal, respaldando la solidez de la propuesta tecnológica y garantizando su sostenibilidad en el tiempo.

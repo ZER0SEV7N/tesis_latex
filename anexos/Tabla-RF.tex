@@ -1,76 +1,102 @@
-\begin{longtable}{|l|p{4cm}|p{6cm}|l|}
-    \caption{Especificación detallada de requerimientos funcionales}
-    \label{tab:anexo_especificacion_rf} \\
-    \hline
-    \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento Funcional} & \textbf{Prioridad} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento Funcional} & \textbf{Prioridad} \\ \hline
-    \endhead
-    \hline
-    \multicolumn{4}{r}{\textit{(Continúa en la siguiente página)}} \\
-    \endfoot
-    \bottomrule
-    \endlastfoot
+\anexoItem{Especificación detallada de requerimientos funcionales}{
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.2}
 
-    RF-01 & 
-    Aplicar acceso por Roles &
-    El sistema debe autenticar a los usuarios mediante credenciales (DNI/correo y contraseña) y asignar un token JWT que restrinja el acceso a las vistas y endpoints HTTP según el rol del actor (CONTADOR, RRHH).&
-    Alta \\ \hline
-    RF-02 & 
-    Registrar cambios en bitácora de auditoría & 
-    El sistema debe registrar automáticamente en la base de datos cada acción crítica (CREATE, UPDATE, DELETE, SELECT_SENSITIVE) almacenando: ID de usuario, dirección IP de origen, entidad/tabla afectada, timestamp y el diferencial de datos (valores_antes vs valores_despues).
-    & Alta \\ \hline
-    RF-03 &
-    Administrar legajos de los empleados & 
-    El sistema debe permitir gestionar la información maestra del personal (datos personales, régimen pensionario, CUSPP, banco, cuenta sueldo y asignación familiar).
-    & Alta \\ \hline
-    RF-04 & 
-    Ingresar información de manera masiva & 
-    El sistema debe permitir la carga masiva de empleados mediante archivos Excel (.xlsx) y CSV (.csv), ejecutando un flujo pasos, primero se hace una pre validacion con reporte de errores y confirmacion asyncrona.
-    & Media \\ \hline
-    RF-05 & 
-    Gestionar contratos de los empleados & 
-    El sistema debe administrar las modalidades de contratación laboral y generar un panel visual de alertas tempranas para contratos con vencimiento en rangos de 15 y 30 días.
-    & Alta \\ \hline
-    RF-06 &
-    Gestionar las solicitudes del empleado & 
-    El sistema debe permitir hacer seguimiento a las solicitudes de los empleados, siendo estas aprobadas o rechazadas por el personal encargado de gestionar estos procedimientos, los cules van de adelantos de sueldo, solicitud de vacaiones, siendo estas alamcenadas en la base de datos con valores especificos deacuerdo al tipo de solicitud que se crea. 
-    & Media \\ \hline
-    RF-07 & 
-    Asignar tareas a los usuarios & 
-    El sistema debe permitir que el Contador asigne tareas operativas al Colaborador/Asistente y monitoree su estado (PENDIENTE, EN_REVISIÓN, APROBADO, RECHAZADO).
-    & Media \\ \hline
-    RF-08 & 
-    Cargar archivos estructurados y anotaciones & 
-    El sistema debe permitir al Asistente adjuntar sustentos digitales (PDFs, Word, imágenes). & 
-    Media \\ \hline
-    RF-09 & 
-    Modificar las variables ley & 
-    El sistema debe permitir al Contador actualizar el valor de la UIT, la Remuneración Mínima Vital (RMV) para el recálculo automático de Asignación Familiar, y los factores de recargo por horas extras.
-    & Alta \\ \hline
-    RF-10 & 
-    Distribución Masiva de Boletas por Correo & 
-    El sistema debe activar un trigger para que la herramienta n8n envíe por correo electrónico (SMTP) las boletas cifradas a cada trabajador al cerrar la planilla.
-    & Media \\ \hline
-    RF-11 & 
-    Ingresar incidencias del mes & 
-    El sistema debe permitir cargar y calcular las incidencias del mes como vacaciones, horas extra, etc. 
-    & Alta \\ \hline
-    RF-12 & 
-    Generar Cálculo Masivo de Planillas & 
-    El sistema debe ejecutar el cálculo masivo de nómina (general o filtrado por áreas: Oficina, Seguridad, Limpieza), determinando: Remuneración Bruta, retenciones de ley (AFP/ONP, 5ta Categoría), Asignación Familiar, aportes patronales (EsSalud, Vida Ley) y Neto a Pagar.
-    & Alta \\ \hline
-    RF-13 & 
-    Cierre, Congelamiento Inmutable y Reapertura Excepcional & 
-    El sistema debe permitir al Contador ejecutar el "Cierre Definitivo" del periodo, congelando la base de datos para impedir mutaciones. Debe proveer un botón de "Reapertura Excepcional" que audite el desbloqueo en los Trail Logs.
-    & Alta \\ \hline
-    RF-14 & 
-    Generación de Boletas Electrónicas & 
-    El sistema debe generar automáticamente las boletas de pago individuales en formato PDF tras el cierre de la planilla y guardarlas en el historial del legajo.
-    & Alta \\ \hline
-    RF-15 & 
-    Reportes de Costos por Centro de Costo & 
-    El sistema debe exportar resúmenes financieros mensuales en Excel/CSV segmentados por áreas organizacionales.
-    & Baja \\ \hline
-\end{longtable}
+    \begin{longtable}{@{}p{1.6cm}p{3.8cm}p{8.5cm}c@{}}
+        \caption{Especificación detallada de requerimientos funcionales}
+        \label{tab:anexo_especificacion_rf} \\
+        \toprule
+        \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento Funcional} & \textbf{Prioridad} \\ \midrule
+        \endfirsthead
+        
+        \toprule
+        \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento Funcional} & \textbf{Prioridad} \\ \midrule
+        \endhead
+        
+        \midrule
+        \multicolumn{4}{r}{\textit{(Continúa en la siguiente página)}} \\
+        \endfoot
+        
+        \bottomrule
+        \endlastfoot
+
+        RF-01 & 
+        Autenticar usuarios y controlar accesos por roles (RBAC) &
+        Autenticar a los usuarios mediante credenciales seguras (DNI/correo y contraseña con Argon2id) y emitir un token JWT que restrinja el acceso a las vistas y endpoints según el rol asignado (ADMIN, RRHH, CONTADOR, ASISTENTE, EMPLEADO). &
+        Alta \\ \addlinespace
+
+        RF-02 & 
+        Registrar cambios en bitácora inmutable de auditoría & 
+        Registrar automáticamente en la base de datos cada acción transaccional crítica (CREATE, UPDATE, DELETE) almacenando: ID del usuario, dirección IP de origen, tabla afectada, timestamp y el diferencial de datos (valores previos vs. valores posteriores). &
+        Alta \\ \addlinespace
+
+        RF-03 &
+        Administrar legajos digitales de los colaboradores & 
+        Gestionar la información maestra del personal: datos de filiación validados con RENIEC, régimen pensionario (ONP o AFP con CUSPP), entidad bancaria de abono para cuenta sueldo, cuenta CTS y condición de asignación familiar. &
+        Alta \\ \addlinespace
+
+        RF-04 & 
+        Importar información laboral de forma masiva & 
+        Permitir la carga masiva de colaboradores mediante archivos estructurados Excel (.xlsx) y CSV (.csv) ejecutando un flujo de dos fases: prevalidación en memoria con reporte de errores y confirmación asíncrona mediante BullMQ. &
+        Media \\ \addlinespace
+
+        RF-05 & 
+        Gestionar contratos laborales y alertas de vencimiento & 
+        Administrar las modalidades de contratación laboral y generar un panel visual de alertas tempranas para contratos con vencimiento en rangos de 15, 30 y 60 días. &
+        Alta \\ \addlinespace
+
+        RF-06 &
+        Gestionar solicitudes y justificaciones del personal & 
+        Tramitar y dar seguimiento a las solicitudes de los trabajadores (adelantos, vacaciones, licencias y descansos médicos), adjuntando sustentos digitales y permitiendo su evaluación para reflejar su efecto en el tareo de asistencia. &
+        Media \\ \addlinespace
+
+        RF-07 & 
+        Asignar y monitorear tareas operativas & 
+        Permitir al Contador o Administrador delegar tareas a los asistentes contables o colaboradores y supervisar su ciclo de vida (PENDIENTE, EN\_REVISIÓN, APROBADO, RECHAZADO, AUDITADO). &
+        Media \\ \addlinespace
+
+        RF-08 & 
+        Adjuntar sustentos digitales y notas en tareas & 
+        Permitir adjuntar archivos probatorios digitalizados (PDFs, Word, imágenes) con validación de extensión y registrar anotaciones de seguimiento en las asignaciones de trabajo. &
+        Media \\ \addlinespace
+
+        RF-09 & 
+        Parametrizar y actualizar variables normativas de ley & 
+        Actualizar los valores de la UIT, la Remuneración Mínima Vital (RMV), sobretasas de horas extras y comisiones de las AFP preservando la vigencia histórica de periodos pasados. &
+        Alta \\ \addlinespace
+
+        RF-10 & 
+        Distribuir masivamente boletas de pago por correo & 
+        Integrar flujos con el orquestador n8n para enviar por correo electrónico (SMTP) las boletas cifradas con el DNI de cada trabajador de forma simultánea al cerrar la nómina. &
+        Media \\ \addlinespace
+
+        RF-11 & 
+        Consolidar incidencias mensuales de asistencia & 
+        Cargar y procesar las marcaciones del reloj biométrico consolidando tardanzas, faltas injustificadas, horas extras y días no laborados cruzados con las solicitudes aprobadas. &
+        Alta \\ \addlinespace
+
+        RF-12 & 
+        Ejecutar el cálculo masivo de la nómina & 
+        Procesar de forma automática en Worker Threads la remuneración bruta, asignación familiar, horas extras (25\,\% y 35\,\%), retenciones (AFP/ONP, 5ta Categoría) y aportes patronales (EsSalud, Vida Ley) con precisión decimal. &
+        Alta \\ \addlinespace
+
+        RF-13 & 
+        Ejecutar el cierre inmutable y reapertura excepcional & 
+        Ejecutar el congelamiento definitivo del periodo de planilla para impedir mutaciones en base de datos mediante triggers SQL, proveyendo un mecanismo de reapertura auditable ante contingencias. &
+        Alta \\ \addlinespace
+
+        RF-14 & 
+        Generar boletas de pago electrónicas en formato PDF & 
+        Renderizar automáticamente las boletas de pago individuales en PDF a partir del snapshot inmutable de cálculo tras el cierre de la nómina y archivarlas en el legajo. &
+        Alta \\ \addlinespace
+
+        RF-15 & 
+        Exportar archivos estructurados y reportes de costos & 
+        Compilar y exportar estructuras oficiales para SUNAT PLAME (\texttt{.rem} y \texttt{.jor}), AFPnet (141 posiciones), dispersión bancaria Telecrédito BCP y reportes de costos en CSV. &
+        Alta \\
+    \end{longtable}
+    \endgroup
+}

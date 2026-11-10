@@ -14,6 +14,7 @@
 \usepackage{placeins}
 \usepackage{pdflscape}
 \usepackage{graphicx}
+\usepackage{titletoc}
 \usepackage{setspace}
 \usepackage{array}
 \usepackage{enumitem}
@@ -201,6 +202,39 @@
     \noindent\ignorespaces
 }
 
+% ==============================================
+% Configuración del Índice de Anexos
+% =============================================
+\makeatletter
+% Comando para registrar cada Anexo (solo va al índice de anexos)
+\newcommand{\anexoItem}[2]{%
+  \refstepcounter{section}%
+  \clearpage
+  \phantomsection
+  \addcontentsline{anx}{anexo}{Anexo \arabic{section}: #1}%
+  {\noindent\Large\bfseries Anexo \arabic{section}}\par
+  {\noindent\large\itshape #1}\par\vspace{12pt}%
+  #2%
+}
+
+% Índice exclusivo de Anexos (se muestra en los preliminares)
+\newcommand{\listofappendices}{%
+  \clearpage
+  \phantomsection
+  \addcontentsline{toc}{section}{ÍNDICE DE ANEXOS}%
+  \begin{center}%
+    {\bfseries\large ÍNDICE DE ANEXOS\par}%
+  \end{center}%
+  \vspace{12pt}%
+  \@starttoc{anx}%
+}
+
+% Formato visual de cada línea en el Índice de Anexos
+\newcommand{\l@anexo}[2]{%
+  \par\noindent\textbf{#1}\dotfill #2\par
+}
+\makeatother
+
 \begin{document}
 
     % ============================
@@ -283,6 +317,7 @@
     \listoffigures
 
     \clearpage
+    \listofappendices
 
 
     % ============================
@@ -300,6 +335,7 @@
     
     \input{capitulo-4/index}
     \input{capitulo-5/index}
+    \input{capitulo-6/index}
     % ============================
     % REFERENCIAS BIBLIOGRÁFICAS
     % ============================
@@ -307,5 +343,12 @@
     \phantomsection
     \addcontentsline{toc}{section}{Referencias}
     \printbibliography[title={Referencias}]
+    % ============================
+    % ANEXOS
+    % ============================
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{section}{ANEXOS} % Solo esta entrada aparecerá en el índice general
+    \input{anexos/index}
 
 \end{document}
