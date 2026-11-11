@@ -41,6 +41,7 @@
 }
 \makeatother
 
+
 % ==============================================
 % Configuración y corrección de títulos (Niveles 2, 3 y 4)
 % ==============================================
@@ -121,7 +122,7 @@
 % ============================
 \addto\captionsspanish{%
     \renewcommand{\tablename}{Tabla}%
-    \renewcommand{\listtablename}{ÍNDICE DE TABLAS}%
+    \renewcommand{\listtablename}{Índice de Tablas}%
 }
 
 \newcommand{\espacioAntesBloque}{%
@@ -192,6 +193,30 @@
 }
 \setlength{\LTcapwidth}{\linewidth}
 
+\makeatletter
+\def\LT@c@ption[#1]#2{%
+  \LT@makecaption#1\relax{#2}%
+  \def\@tempa{#2}%
+  \ifx\@tempa\@empty\else
+     {\let\\\space
+     \addcontentsline{lot}{table}{Tabla~\thetable. #1}}%
+  \fi}
+\makeatother
+
+\captionsetup[longtable]{
+    font={footnotesize,interlineadoSimple},
+    labelfont=bf,
+    textfont=it,
+    labelsep=newline,
+    justification=raggedright,
+    singlelinecheck=false,
+    indention=0pt,
+    parindent=0pt,
+    skip=4pt
+}
+\setlength{\LTcapwidth}{\linewidth}
+
+
 % =================================
 % Conceptos y definiciones
 % =================================
@@ -221,9 +246,8 @@
 \newcommand{\listofappendices}{%
   \clearpage
   \phantomsection
-  \addcontentsline{toc}{section}{ÍNDICE DE ANEXOS}%
   \begin{center}%
-    {\bfseries\large ÍNDICE DE ANEXOS\par}%
+    {\bfseries\large Índice de Anexos\par}%
   \end{center}%
   \vspace{12pt}%
   \@starttoc{anx}%
@@ -348,7 +372,7 @@
     % ============================
     \clearpage
     \phantomsection
-    \addcontentsline{toc}{section}{ANEXOS} % Solo esta entrada aparecerá en el índice general
+    \addcontentsline{toc}{section}{Anexos} % Solo esta entrada aparecerá en el índice general
     \input{anexos/index}
 
 \end{document}

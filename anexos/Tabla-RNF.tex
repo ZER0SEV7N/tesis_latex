@@ -5,8 +5,9 @@
     \setlength{\tabcolsep}{4pt}
     \renewcommand{\arraystretch}{1.2}
 
-    \begin{longtable}{@{}p{1.6cm}p{3.8cm}p{8.5cm}c@{}}
-        \caption{Especificación detallada de requerimientos no funcionales}
+    \begin{longtable}{@{}p{1.4cm}p{4.4cm}p{8.2cm}c@{}}
+        \caption[]{Especificación detallada de requerimientos no funcionales}%
+        \addcontentsline{lot}{table}{Tabla~\thetable. Especificación detallada de requerimientos no funcionales}%
         \label{tab:anexo_especificacion_rnf} \\
         \toprule
         \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento No Funcional} & \textbf{Prioridad} \\ \midrule
@@ -21,10 +22,11 @@
         \endfoot
         
         \bottomrule
+        \multicolumn{4}{@{}p{\linewidth}@{}}{\vspace{3pt}\textit{Nota.} Criterios de calidad, seguridad, rendimiento y arquitectura de la solución tecnológica. Elaboración propia.}
         \endlastfoot
 
         RNF-01 & 
-        Optimizar el tiempo de respuesta del motor de cálculo masivo & 
+        Optimizar el tiempo de respuesta del motor de cálculo & 
         Procesar la nómina completa y generar los snapshots de resultados para un volumen de hasta 1,000 colaboradores en un tiempo inferior a 10 segundos utilizando Worker Threads (Piscina). &
         Alta \\ \addlinespace
 
