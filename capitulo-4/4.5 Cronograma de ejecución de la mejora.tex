@@ -1,28 +1,53 @@
 \subsection{Cronograma de ejecución de la mejora}
 
 Para planificar la implementación se usó ProjectLibre, un programa gratuito que abre los mismos archivos que Microsoft Project.
-Ahí se registraron las 50 actividades, el responsable de cada una y el orden en que deben hacerse, y el programa calculó las fechas del diagrama de Gantt de la Figura~\ref{fig:cronograma_gantt}.
-El proyecto va del 12 de mayo al 28 de diciembre de 2026, 156 días laborables sin contar fines de semana ni feriados.
+Ahí se registraron las 50 actividades, el responsable de cada una y el orden en que deben hacerse, y el programa calculó sus fechas.
+El proyecto va del 12 de mayo al 28 de diciembre de 2026, 154 días laborables sin contar fines de semana, feriados, el 22 de diciembre (día de la presentación de la tesis) ni el 24 de diciembre.
 El análisis ocupó mayo y junio, y el backend se programó de julio a octubre.
 El frontend empezó en septiembre, cuando ya funcionaban el inicio de sesión y el módulo de organización, y las integraciones con n8n avanzaron en paralelo desde octubre.
 El despliegue queda para la segunda quincena de diciembre.
-Cada uno de los cuatro desarrolladores principales tiene 145 de esos días con tareas asignadas, y cada junior, que se sumó en septiembre, 50.
+Los cuatro desarrolladores principales trabajan los 154 días, y cada junior, que se sumó en septiembre, 77.
 
-% Figura en vertical para que quede en la misma página que el texto del 4.5.
-% Si al compilar salta a la página siguiente, baja 0.40 a 0.38 en height.
-\par\vspace{6pt}
-\noindent
-\begin{minipage}{\linewidth}
-    \linespread{1}\footnotesize
-    \refstepcounter{figure}%
-    \label{fig:cronograma_gantt}%
-    \addcontentsline{lof}{figure}{Figura~\thefigure. Diagrama de Gantt de la implementación de la mejora}%
-    {\bfseries Figura~\thefigure}\par
-    {\itshape Diagrama de Gantt de la implementación de la mejora}\par
-    \makebox[\linewidth][c]{\includegraphics[width=\linewidth,height=0.40\textheight,keepaspectratio]{images/cronograma-gantt.png}}\par
-    \vspace{2pt}
-    \textit{Nota.} Elaborado en ProjectLibre. Las barras rojas forman la ruta crítica y la línea punteada marca la fecha de la captura.
+Las Figuras~\ref{fig:gantt_f1_tabla} a~\ref{fig:gantt_f345_diagrama} presentan el cronograma por fases.
+Para cada grupo se muestra primero la lista de actividades con su duración, fechas y porcentaje de avance, y después su diagrama de Gantt.
+
+% ---------------- Fase 1 ----------------
+\figuraEnTexto
+    {fig:gantt_f1_tabla}
+    {Actividades de la Fase 1: Análisis}
+    {images/cronograma/fase1-tabla.png}
+    {Elaborado en ProjectLibre. La primera fila resume el proyecto completo: 154 días, del 12/05/2026 al 28/12/2026. Elaboración propia.}
+
+\figuraEnTexto
+    {fig:gantt_f1_diagrama}
+    {Diagrama de Gantt de la Fase 1: Análisis}
+    {images/cronograma/fase1-diagrama.png}
+    {Elaborado en ProjectLibre. Las barras rojas forman la ruta crítica y las azules tienen holgura; la línea negra dentro de cada barra indica el avance.
     Iniciales: DS, Daniel Singer; RC, Rodrigo Castillo; AD, Adrian Dueñas; DF, Dylan Florez; JV, Julio Vargas; LS, Luis Diego Sipion; JF, Julio Flores; DR, Daniel Roman; JP, Juan Pablo Alcala.
-    Elaboración propia.\par
-\end{minipage}
-\finBloqueAPA
+    Elaboración propia.}
+
+% ---------------- Fase 2 ----------------
+\figuraEnTexto
+    {fig:gantt_f2_tabla}
+    {Actividades de la Fase 2: Backend de Recursos Humanos y del contador}
+    {images/cronograma/fase2-tabla.png}
+    {Elaborado en ProjectLibre. Elaboración propia.}
+
+\figuraEnTexto
+    {fig:gantt_f2_diagrama}
+    {Diagrama de Gantt de la Fase 2: Backend de Recursos Humanos y del contador}
+    {images/cronograma/fase2-diagrama.png}
+    {Elaborado en ProjectLibre. La línea vertical punteada marca la fecha de corte del avance (10/11/2026). Iniciales como en la Figura~\ref{fig:gantt_f1_diagrama}. Elaboración propia.}
+
+% ---------------- Fases 3, 4 y 5 ----------------
+\figuraEnTexto
+    {fig:gantt_f345_tabla}
+    {Actividades de las Fases 3, 4 y 5: frontend, integraciones con n8n y despliegue}
+    {images/cronograma/fase3-4-5-tabla.png}
+    {Elaborado en ProjectLibre. Las actividades al 0\,\% corresponden al trabajo pendiente para completar el MVP. Elaboración propia.}
+
+\figuraEnTexto
+    {fig:gantt_f345_diagrama}
+    {Diagrama de Gantt de las Fases 3, 4 y 5: frontend, integraciones con n8n y despliegue}
+    {images/cronograma/fase3-4-5-diagrama.png}
+    {Elaborado en ProjectLibre. La línea vertical punteada marca la fecha de corte del avance (10/11/2026). Iniciales como en la Figura~\ref{fig:gantt_f1_diagrama}. Elaboración propia.}
