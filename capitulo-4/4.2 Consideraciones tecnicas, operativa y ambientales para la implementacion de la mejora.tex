@@ -1,5 +1,5 @@
 \clearpage
-\subsection{Consideraciones técnicas, operativa y ambientales para la implementación de la mejora}
+\subsection{Consideraciones técnicas, operativas y ambientales para la implementación de la mejora}
 
 \subsubsection{Stack tecnológico y arquitectura del sistema}
 En esta sección se detallará por completo el stack tecnológico, las medidas de seguridad y la arquitectura que se eligieron para el desarrollo del sistema, 
@@ -10,14 +10,14 @@ junto con una breve justificación e implementación de este.
 \textbf{TypeScript.} Se escogió este lenguaje de programación para el backend, cuya principal característica es ser un lenguaje de tipado estático ideal para operaciones clave, 
     donde el tipo de valor no debe variar. \par
 
-\textbf{NestJS.} Framework de Node.js orientado a servidores backend para la construcción progresiva de aplicaciones de mediano a gran escalado empresarial, 
+\textbf{NestJS.} Framework de Node.js orientado a servidores backend para la construcción progresiva de aplicaciones de mediana a gran escala empresarial, 
     ofreciendo una estructura base para proyectos, además de su arquitectura modular que permitirá separar responsabilidades de manera efectiva. 
     A diferencia del framework de Express, que no tiene una estructura definida inicialmente. \par
 
 \textbf{Fastify.} Se optó por usar el motor HTTP de Fastify para mejor tiempo y serialización de respuesta JSON, 
     reemplazando el motor de Express que NestJS usaba por defecto. \par
 
-\textbf{PrismaORM.} Librería escogida como puente de comunicación entre la base de datos relacional y el servidor backend para la persistencia y lectura de datos, 
+\textbf{Prisma ORM.} Librería escogida como puente de comunicación entre la base de datos relacional y el servidor backend para la persistencia y lectura de datos, 
     teniendo gran sinergia con TypeScript; esto asegura la integridad de los datos y protección ante inyecciones SQL. \par
 
 \textbf{Argon2 y AES-256-GCM.} Algoritmos de hash y cifrado utilizados para la protección de contraseñas y datos sensibles, respectivamente. \par
@@ -59,10 +59,10 @@ junto con una breve justificación e implementación de este.
 \subsubsubsection{Paquete de validación de Schemas compartido.} 
 Paquete independiente que permite centralizar la validación de schemas, tipos de datos y reglas de estas. \par
 
-\textbf{ZOD.} Librería para validación de datos, perfecta para establecer contratos de entrada a los endpoints de la aplicación.
+\textbf{Zod.} Librería para validación de datos, perfecta para establecer contratos de entrada a los endpoints de la aplicación.
 
 \subsubsubsection{Bases de Datos}
-Se escogió usar una base de datos para permanencia de registros historicos, centralizacion, lectura y auditoria de estos.
+Se escogió usar una base de datos para permanencia de registros históricos, centralización, lectura y auditoría de estos.
 
 \textbf{PostgreSQL.} Motor de base de datos relacional elegido por su robustez, 
     ideal para proyectos empresariales garantizando la estructura de guardado de los datos de los usuarios. \par
@@ -70,7 +70,7 @@ Se escogió usar una base de datos para permanencia de registros historicos, cen
 \textbf{Redis.} Sistema de almacenamiento de datos en memoria, 
     de alto rendimiento en procedimientos de caché y colas, para la concurrencia en el servidor. \par
 
-\textbf{UUIDv7.} Método de identificación a entidades dentro de la base de datos relacional; 
+\textbf{UUIDv7.} Método de identificación de entidades dentro de la base de datos relacional; 
     a diferencia de sus versiones anteriores que generan el identificador de manera aleatoria, 
     este realiza la generación mediante orden cronológico, lo cual ayuda a auditar la creación de registros. \par
 
@@ -108,7 +108,7 @@ garantizando un mantenimiento ágil, escalabilidad vertical y una estricta coher
         \item \textbf{Guards de Autenticación y Autorización (RBAC):} Verifican la integridad criptográfica del token JWT y 
         contrastan los permisos del actor contra la matriz de roles corporativos definida en el sistema (Administrador, RRHH, Contador, Asistente y Colaborador/Empleado).
         
-        \item \textbf{Pipes de Validación Just-In-Time (JIT):} Sancionan y sanitizan la estructura de las cargas entrantes
+        \item \textbf{Pipes de Validación Just-In-Time (JIT):} Validan y sanitizan la estructura de las cargas entrantes
          contra la fuente única de verdad compartida (\texttt{@jyp/shared-contracts}), 
          validando esquemas fuertemente tipados mediante \textbf{Zod} antes de comprometer memoria en la capa de negocio. 
          Las respuestas erróneas se estandarizan bajo la norma \textbf{RFC~7807} (\textit{Problem Details for HTTP APIs}).
