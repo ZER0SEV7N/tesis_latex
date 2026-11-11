@@ -143,16 +143,14 @@ Las actividades se agrupan además en épicas, una por cada módulo grande del s
 
 \subsubsubsection{Planificación de sprints}
 
-El desarrollo se organizó en cuatro sprints de una semana, programados entre el 1 y el 30 de noviembre de 2026. 
+El desarrollo se organizó en siete sprints, programados entre el 1 de noviembre y el 21 de diciembre de 2026. 
 El orden sigue el recorrido de la información en el proceso de nómina. En el Sprint 1 se registra al personal y se controla quién puede consultar o modificar sus datos. 
 En el Sprint 2 se incorporan las asistencias y las incidencias del periodo. 
 El Sprint 3 completa las funciones de Recursos Humanos, 
-y en el Sprint 4 el contador recibe esa información para preparar el periodo de pago.
+y en los sprints siguientes el contador recibe esa información para preparar, calcular y cerrar el periodo de pago, exportando los soportes y boletas.
 
 Este orden atiende primero dos de las causas priorizadas en el capítulo anterior: la transcripción manual de incidencias (CA3) y la información separada entre áreas (CA1), 
 que ocupan el primer y el tercer lugar del diagrama de Pareto (Tabla~\ref{tab:pareto_causas_nominas}). 
-El cálculo y cierre de la planilla, las boletas y las exportaciones quedan para sprints posteriores, 
-porque necesitan que los datos laborales y las incidencias ya estén centralizados en el sistema. 
 La Tabla~\ref{tab:plan_sprints} muestra la duración, el objetivo y el número de actividades de cada sprint.
 
 \par
@@ -203,9 +201,24 @@ La Tabla~\ref{tab:plan_sprints} muestra la duración, el objetivo y el número d
         23/11 -- 30/11/2026 &
         Permitir al contador consultar la información laboral, revisar parámetros, preparar incidencias y registrar las novedades del periodo. &
         7 \\
+        
+        Sprint 5:\newline Cálculo y cierre &
+        30/11 -- 07/12/2026 &
+        Permitir al contador consultar la generación de planillas, ademas de gestionar y verificar el resultado final. &
+        4 \\
+
+        Sprint 6:\newline Boletas y exportaciones &
+        07/12 -- 14/12/2026 &
+        Obtener boletas y archivos de salida conciliados con la planilla aprobada, y registrar referencias de desembolso sin confundirlas con ejecución bancaria. &
+        4 \\
+
+        Sprint 7:\newline Automatización y workflow &
+        14/12 -- 21/12/2026 &
+        Validar el workflow n8n existente y disponer de una instalación reproducible del sistema integrado. &
+        2 \\
 
         \midrule
-        \textbf{Total} & & & \textbf{43} \\
+        \textbf{Total} & & & \textbf{53} \\
         \bottomrule
     \end{tabularx}
     \endgroup
@@ -217,12 +230,12 @@ La Tabla~\ref{tab:plan_sprints} muestra la duración, el objetivo y el número d
 
 \subsubsubsection{Product Backlog}
 
-El Product Backlog de los cuatro sprints contiene 43 actividades: 29 historias de usuario, 9 tareas, 2 errores, 2 actividades de documentación y 1 refactorización. 
+El Product Backlog completo de los siete sprints contiene 53 actividades: historias de usuario, tareas, errores, documentación y refactorización. 
 Una historia de usuario describe una función que el personal de Recursos Humanos o el contador usa en el sistema. 
 Las tareas, los errores, la documentación y la refactorización son trabajo técnico que esas funciones necesitan para operar bien.
 
-Las actividades pertenecen a cuatro épicas. La épica de Gestión operativa de Recursos Humanos concentra 26 de las 43 actividades, 
-porque los sprints 1 a 3 se dedican a reunir en el sistema la información laboral que antes estaba en archivos separados. 
+Las actividades pertenecen a cuatro épicas. La épica de Gestión operativa de Recursos Humanos concentra la mayor parte de las actividades, 
+porque los primeros sprints se dedican a reunir en el sistema la información laboral que antes estaba en archivos separados. 
 La Tabla~\ref{tab:epicas} presenta las épicas y la Tabla~\ref{tab:product_backlog} lista cada actividad con su código en Jira, su tipo, su épica y el sprint en el que se programó.
 
 \par
@@ -267,27 +280,27 @@ La Tabla~\ref{tab:epicas} presenta las épicas y la Tabla~\ref{tab:product_backl
         BEL-103 &
         Gestión y validación de nóminas &
         Integrar la preparación, el cálculo, la revisión, el cierre y la consulta de la planilla. &
-        7 \\
+        14 \\
 
         BEL-104 &
         Automatización y entrega del MVP &
         Validar n8n, las exportaciones, las pruebas integradas y el despliegue reproducible. &
-        1 \\
+        4 \\
 
         \midrule
-        & \textbf{Total} & & \textbf{43} \\
+        & \textbf{Total} & & \textbf{53} \\
         \bottomrule
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Se cuentan solo las actividades programadas en los sprints 1 a 4. Elaboración propia.}
+    \notaTabla{Se cuentan todas las actividades programadas en los sprints 1 a 7. Elaboración propia.}
 
 \end{minipage}
 \finBloqueAPA
 
 \tituloTablaAPA
     {tab:product_backlog}
-    {Product Backlog de los sprints 1 a 4}
+    {Product Backlog de los sprints 1 al 7}
 
 \begingroup
 \setlength{\LTpre}{0pt}
@@ -331,10 +344,20 @@ La Tabla~\ref{tab:epicas} presenta las épicas y la Tabla~\ref{tab:product_backl
     BEL-48 & Implementar shared-contracts, providers y cliente HTTP & Tarea & BEL-101 & S1 \\
     BEL-50 & Registrar y actualizar empleados & Historia & BEL-102 & S1 \\
     BEL-51 & Registrar y comprobar persistencia de cambios laborales & Tarea & BEL-101 & S1 \\
+    BEL-61 & Contrastar cálculo y cierre con casos contables & Tarea & BEL-103 & S5 \\
     BEL-71 & Implementar mantenimiento de áreas & Historia & BEL-102 & S1 \\
     BEL-82 & Importar empleados con prevalidación & Historia & BEL-102 & S1 \\
+    BEL-92 & Implementar generación de planilla con seguimiento & Historia & BEL-103 & S5 \\
+    BEL-93 & Implementar listado y detalle de planillas & Historia & BEL-103 & S5 \\
+    BEL-94 & Implementar visualización y descarga de boletas & Historia & BEL-103 & S6 \\
+    BEL-95 & Implementar congelamiento de planilla & Historia & BEL-103 & S5 \\
+    BEL-96 & Implementar registro de desembolsos & Historia & BEL-103 & S6 \\
+    BEL-97 & Implementar exportaciones (PLAME, AFPnet, banco) & Historia & BEL-104 & S6 \\
     BEL-105 & Consultar y mantener contratos laborales & Historia & BEL-102 & S1 \\
     BEL-106 & Automatizar pruebas de acceso y empleados & Tarea & BEL-101 & S1 \\
+    BEL-108 & Consultar resumen de costos de planilla & Historia & BEL-103 & S6 \\
+    BEL-109 & Validar envío de boletas con n8n & Historia & BEL-104 & S7 \\
+    BEL-110 & Preparar despliegue reproducible del MVP & Tarea & BEL-104 & S7 \\
     BEL-55 & Realizar correcciones en las pruebas del módulo de empleados & Error & BEL-102 & S2 \\
     BEL-57 & Implementar sistema de marcaciones mediante archivos CSV & Tarea & BEL-102 & S2 \\
     BEL-62 & Ejecutar regresión de asistencia y solicitudes & Tarea & BEL-102 & S2 \\
@@ -402,4 +425,4 @@ historias con sus criterios y responsables; resultados de pruebas; comparación 
 ejecuciones controladas de n8n; y registros de revisión. El seguimiento informará trabajo seleccionado y terminado, 
 defectos pendientes e impedimentos, sin asignar porcentajes arbitrarios a las columnas del tablero.
 
-Los resultados de rendimiento, disponibilidad, cifrado y protección de datos se reportarán únicamente cuando exista una comprobación específica. 
+Los resultados de rendimiento, disponibilidad, cifrado y protección de datos se reportarán únicamente cuando exista una comprobación específica.
