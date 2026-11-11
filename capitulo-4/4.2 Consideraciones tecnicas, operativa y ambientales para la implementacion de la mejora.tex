@@ -105,15 +105,15 @@ garantizando un mantenimiento ágil, escalabilidad vertical y una estricta coher
     El procesamiento HTTP atraviesa un pipeline perimetral estructurado:
     
     \begin{itemize}
-        \item \textit{Guards de Autenticación y Autorización (RBAC):} Verifican la integridad criptográfica del token JWT y 
+        \item \textbf{Guards de Autenticación y Autorización (RBAC):} Verifican la integridad criptográfica del token JWT y 
         contrastan los permisos del actor contra la matriz de roles corporativos definida en el sistema (Administrador, RRHH, Contador, Asistente y Colaborador/Empleado).
         
-        \item \textit{Pipes de Validación Just-In-Time (JIT):} Sancionan y sanitizan la estructura de las cargas entrantes
+        \item \textbf{Pipes de Validación Just-In-Time (JIT):} Sancionan y sanitizan la estructura de las cargas entrantes
          contra la fuente única de verdad compartida (\texttt{@jyp/shared-contracts}), 
          validando esquemas fuertemente tipados mediante \textbf{Zod} antes de comprometer memoria en la capa de negocio. 
          Las respuestas erróneas se estandarizan bajo la norma \textbf{RFC~7807} (\textit{Problem Details for HTTP APIs}).
         
-        \item \textit{Segmentación en Módulos de Dominio y Casos de Uso:} La lógica de negocio abandona los servicios monolíticos extensos 
+        \item \textbf{Segmentación en Módulos de Dominio y Casos de Uso:} La lógica de negocio abandona los servicios monolíticos extensos 
         y se estructura en submódulos encapsulados regidos por comandos atómicos (\textit{Use Cases}):
         
         \begin{itemize}
@@ -129,7 +129,7 @@ garantizando un mantenimiento ágil, escalabilidad vertical y una estricta coher
                                                   autenticado mediante firmas HMAC-SHA256.
         \end{itemize}
         
-        \item \textit{Seguridad y Persistencia Transaccional:} Los datos financieros altamente sensibles 
+        \item \textbf{Seguridad y Persistencia Transaccional:} Los datos financieros altamente sensibles 
             (cuentas sueldo y códigos interbancarios CCI) son encriptados simétricamente en reposo mediante el algoritmo \textbf{AES-256-GCM} con enmascaramiento dinámico en lecturas. 
             A nivel de infraestructura, Prisma ORM gestiona transacciones atómicas interactivas (\texttt{\$transaction}) 
             vinculando el contexto del usuario ejecutor a disparadores (\textit{triggers}) nativos de auditoría en la base de datos.
@@ -138,12 +138,12 @@ garantizando un mantenimiento ágil, escalabilidad vertical y una estricta coher
     \item \textbf{Capa de Procesamiento Asíncrono y Orquestación (BullMQ y n8n):} 
         Para prevenir el bloqueo del bucle de eventos (\textit{Event Loop}) de Node.js durante operaciones intensivas de CPU e I/O, el sistema delega la carga computacional pesada:
     \begin{itemize}
-        \item \textit{Colas en Memoria con Redis 7 y Pool de Workers:} El cálculo masivo de planillas y la validación de archivos voluminosos se despachan a colas gestionadas por BullMQ y Redis. 
+        \item \textbf{Colas en Memoria con Redis 7 y Pool de Workers:} El cálculo masivo de planillas y la validación de archivos voluminosos se despachan a colas gestionadas por BullMQ y Redis. 
                                                                         Un grupo de hilos nativos secundarios (\textit{Worker Threads} vía Piscina) procesa los algoritmos financieros en aislamiento de memoria, 
                                                                         utilizando aritmética decimal exacta (\texttt{decimal.js}) y optimizaciones de consultas agrupadas (\textit{Bulk Fetch}) 
                                                                         para erradicar el problema $N+1$.
         
-        \item \textit{Orquestador de Automatizaciones n8n:} Desplegado en un contenedor independiente, actúa como ejecutor asíncrono secundario. 
+        \item \textbf{Orquestador de Automatizaciones n8n:} Desplegado en un contenedor independiente, actúa como ejecutor asíncrono secundario. 
                                                              Tras la aprobación y congelamiento de la nómina, 
                                                              n8n recibe un webhook disparador verificado con HMAC-SHA256 para compilar las estructuras posicionales oficiales 
                                                              (archivos \texttt{.rem} y \texttt{.jor} de la PLAME SUNAT, formato de 141 posiciones de AFPnet y transferencias masivas de Telecrédito BCP), 

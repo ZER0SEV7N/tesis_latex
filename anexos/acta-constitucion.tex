@@ -3,11 +3,12 @@
     \renewcommand{\baselinestretch}{1}
     \footnotesize
     \setlength{\tabcolsep}{4pt}
-    \renewcommand{\arraystretch}{1.2}
+    \renewcommand{\arraystretch}{1.25}
 
     % Primera tabla: Información General
-    \begin{longtable}{@{}p{3.5cm}p{11.5cm}@{}}
-        \caption{Acta de Constitución del Proyecto - Información General}
+    \begin{longtable}{@{}p{3.8cm}p{11.7cm}@{}}
+        \caption[]{Acta de Constitución del Proyecto -- Información General}%
+        \addcontentsline{lot}{table}{Tabla~\thetable. Acta de Constitución del Proyecto -- Información General}%
         \label{tab:anexo_acta_constitucion_general} \\
         \toprule
         \textbf{Componente} & \textbf{Detalle del Proyecto} \\ \midrule
@@ -22,59 +23,61 @@
         \endfoot
         
         \bottomrule
+        \multicolumn{2}{@{}p{\linewidth}@{}}{\vspace{3pt}\textit{Nota.} Datos generales y alcance formalizados en el Acta de Constitución del Proyecto. Elaboración propia.}
         \endlastfoot
 
         \textbf{Nombre del Proyecto} & 
         Desarrollo e implementación de un sistema web con flujos automatizados para la gestión de nóminas y procesos de recursos humanos orientado a clientes empresariales de J\&P Periféricos S.A.C. \\ \addlinespace
 
         \textbf{Breve descripción} & 
-        Solución web modular construida con TypeScript, NestJS, Fastify, React 19 y PostgreSQL, integrada con el orquestador n8n, centraliza el legajo del personal, valida la asistencia biométrica, automatiza el cálculo masivo de planillas (horas extras, retenciones de ONP/AFP, quinta categoría, aportes de EsSalud) y genera de forma asíncrona archivos regulatorios (SUNAT PLAME, AFPnet, Telecrédito BCP) con boletas de pago electrónicas en PDF cifradas con el DNI del trabajador. \\ \addlinespace
+        Solución web modular construida con TypeScript, NestJS, Fastify, React 19 y PostgreSQL 16, integrada con el orquestador n8n. Centraliza el legajo del personal, valida la asistencia biométrica, automatiza el cálculo masivo de planillas (horas extras, retenciones de ONP/AFP, quinta categoría, aportes de EsSalud) y genera de forma asíncrona archivos regulatorios (SUNAT PLAME, AFPnet, Telecrédito BCP) junto con boletas de pago electrónicas en PDF cifradas con el DNI del trabajador. \\ \addlinespace
 
         \textbf{Propósito del Proyecto} & 
-        Erradicar la dependencia de hojas de cálculo descentralizadas y tareas manuales propensas a errores en las empresas clientes atendidas por J\&P Periféricos S.A.C., mitigando el riesgo de multas y contingencias ante SUNAT y SUNAFIL. Asimismo, dotar a la empresa patrocinadora de un activo tecnológico escalable para su comercialización bajo el modelo de suscripción en la nube (Software as a Service - SaaS). \\ \addlinespace
+        Erradicar la dependencia de hojas de cálculo descentralizadas y tareas manuales propensas a errores en las empresas clientes atendidas por J\&P Periféricos S.A.C., mitigando el riesgo de multas y contingencias laborales ante SUNAFIL y SUNAT. Asimismo, dotar a la empresa patrocinadora de un activo tecnológico escalable para comercializar bajo el modelo de suscripción en la nube (\textit{Software as a Service} -- SaaS). \\ \addlinespace
 
         \textbf{Objetivos del Proyecto} & 
-        \begin{minipage}[t]{11.2cm}
-        \begin{itemize}[nosep, leftmargin=*]
-            \item Desarrollar una plataforma web centralizada para la administración de legajos, jornadas laborales y solicitudes del personal.
-            \item Automatizar el cálculo masivo y periódico de nóminas aplicando las fórmulas laborales peruanas con precisión decimal exacta.
-            \item Implementar flujos asíncronos con n8n para la generación de estructuras oficiales (PLAME, AFPnet, bancos) y distribución de boletas por correo.
-            \item Garantizar la seguridad, trazabilidad e inmutabilidad de la información salarial mediante control de acceso por roles (RBAC) y bitácora de auditoría (audit log).
-        \end{itemize}
+        \begin{minipage}[t]{\linewidth}
+            \begin{itemize}[nosep, leftmargin=1.2em]
+                \item Desarrollar una plataforma web centralizada para la administración de legajos, jornadas laborales y solicitudes del personal.
+                \item Automatizar el cálculo masivo y periódico de nóminas aplicando las fórmulas laborales peruanas con precisión decimal exacta.
+                \item Implementar flujos asíncronos con n8n para la generación de estructuras oficiales (PLAME, AFPnet, bancos) y distribución de boletas por correo.
+                \item Garantizar la seguridad, trazabilidad e inmutabilidad de la información salarial mediante control de acceso por roles (RBAC) y bitácora de auditoría (\textit{audit log}).
+            \end{itemize}
         \end{minipage} \\ \addlinespace
 
         \textbf{Alcance del Proyecto} & 
-        \begin{minipage}[t]{11.2cm}
-        \begin{itemize}[nosep, leftmargin=*]
-            \item Análisis de procesos y levantamiento formal de requerimientos (Scrum).
-            \item Diseño de arquitectura de software (monolito modular) y modelo de datos relacional.
-            \item Desarrollo del backend (NestJS/Fastify) y frontend interactivo (React 19 / Tailwind CSS / Shadcn).
-            \item Integración de colas en memoria (BullMQ / Redis) y flujos M2M con n8n (firma HMAC-SHA256).
-            \item Pruebas funcionales, unitarias (Jest), de integración y validación con usuarios clave.
-            \item Despliegue en servidor físico local con Docker Compose y capacitación operativa.
-        \end{itemize}
+        \begin{minipage}[t]{\linewidth}
+            \begin{itemize}[nosep, leftmargin=1.2em]
+                \item Análisis de procesos y levantamiento formal de requerimientos (Scrum).
+                \item Diseño de arquitectura de software (monolito modular) y modelo de datos relacional.
+                \item Desarrollo del backend (NestJS/Fastify) y frontend interactivo (React 19 / Tailwind CSS / Shadcn/ui).
+                \item Integración de colas en memoria (BullMQ/Redis 7) y flujos M2M con n8n (firma HMAC-SHA256).
+                \item Pruebas funcionales, unitarias (Jest), de integración y validación con usuarios clave.
+                \item Despliegue en servidor físico local con Docker Compose y capacitación operativa.
+            \end{itemize}
         \end{minipage} \\ \addlinespace
 
         \textbf{Justificación del Proyecto} & 
-        J\&P Periféricos S.A.C. requiere modernizar y unificar la gestión laboral que ofrece a sus clientes empresariales, ventilando hojas de cálculo dispersas que generan demoras, reprocesos y riesgo de sanciones inspectivas. La implementación del sistema automatizado minimiza el tiempo de liquidación manual, garantiza la exactitud en retenciones de ley y amplía el portafolio comercial de la empresa mediante un servicio SaaS recurrente. \\ \addlinespace
+        J\&P Periféricos S.A.C. requiere modernizar y unificar la gestión laboral que ofrece a sus clientes empresariales, sustituyendo hojas de cálculo dispersas que generan demoras, reprocesos y riesgo de sanciones inspectivas. La implementación del sistema automatizado minimiza el tiempo de liquidación mensual, garantiza la exactitud en retenciones de ley y amplía el portafolio comercial de la empresa mediante un servicio SaaS recurrente. \\ \addlinespace
 
         \textbf{Fecha de Emisión} & Martes, 12 de mayo de 2026 \\ \addlinespace
-        \textbf{Patrocinador (Sponsor)} & Julio Florez Vicuña -- Gerente General de J\&P Periféricos S.A.C. \\ \addlinespace
-        \textbf{Gerente del Proyecto} & Mg. José Armando Tisnado Utallán \\
+        \textbf{Patrocinador (Sponsor)} & Julio Flores Vicuña -- Gerente General de J\&P Periféricos S.A.C. \\ \addlinespace
+        \textbf{Gerente del Proyecto} & Mg. Jose Armando Tiznado Ubillus \\
     \end{longtable}
 
-    \vspace{1em}
+    \vspace{1.5em}
 
     % Segunda tabla: Equipo responsable
-    \begin{longtable}{@{}p{1.2cm}p{5.0cm}p{6.8cm}c@{}}
-        \caption{Equipo responsable del proyecto}
+    \begin{longtable}{@{}p{1.6cm}p{5.0cm}p{7.1cm}r@{}}
+        \caption[]{Equipo responsable del proyecto}%
+        \addcontentsline{lot}{table}{Tabla~\thetable. Equipo responsable del proyecto}%
         \label{tab:anexo_acta_equipo} \\
         \toprule
-        \textbf{Código} & \textbf{Nombre} & \textbf{Cargo} & \textbf{Horas} \\ \midrule
+        \textbf{Código} & \textbf{Nombre} & \textbf{Cargo} & \textbf{Horas/Día} \\ \midrule
         \endfirsthead
         
         \toprule
-        \textbf{Código} & \textbf{Nombre} & \textbf{Cargo} & \textbf{Horas} \\ \midrule
+        \textbf{Código} & \textbf{Nombre} & \textbf{Cargo} & \textbf{Horas/Día} \\ \midrule
         \endhead
         
         \midrule
@@ -82,24 +85,26 @@
         \endfoot
         
         \bottomrule
+        \multicolumn{4}{@{}p{\linewidth}@{}}{\vspace{3pt}\textit{Nota.} Distribución de roles técnicos y dedicación horaria del equipo del proyecto. Elaboración propia.}
         \endlastfoot
 
-        PO1 & Julio Florez Vicuña & PRODUCT OWNER & 4 \\
-        S1 & Juan Pablo Alcala & STAKEHOLDER & 2 \\
-        S2 & Daniel Roman & STAKEHOLDER & 4 \\
+        PO1 & Julio Flores Vicuña & PRODUCT OWNER / GERENTE GENERAL & 4 \\
+        S1  & Juan Pablo Alcalá & STAKEHOLDER / REPRESENTANTE CLIENTES & 2 \\
+        S2  & Daniel Román & STAKEHOLDER / ASESOR COMERCIAL & 4 \\
         SC1 & Daniel Singer & SCRUM MASTER \& BACKEND LEAD & 8 \\
-        T1 & Rodrigo Castillo & FRONTEND LEAD \& UI ENGINEER & 8 \\
-        T2 & Dylan Florez & DEVOPS \& QA ENGINEER & 8 \\
-        T3 & Adrian Dueñas & FULL STACK DEVELOPER & 8 \\
-        T4 & Julio Vargas & JUNIOR DEVELOPER & 6 \\
-        T5 & Luis Olazo Sisniegas & JUNIOR DEVELOPER & 6 \\
+        T1  & Rodrigo Castillo & FRONTEND LEAD \& UI ENGINEER & 8 \\
+        T2  & Dylan Florez & DEVOPS \& QA ENGINEER & 8 \\
+        T3  & Adrian Dueñas & FULL STACK DEVELOPER & 8 \\
+        T4  & Julio Vargas & JUNIOR DEVELOPER (SOPORTE Y PRUEBAS) & 6 \\
+        T5  & Luis Diego Sipion & JUNIOR DEVELOPER (SOPORTE Y PRUEBAS) & 6 \\
     \end{longtable}
 
-    \vspace{1em}
+    \vspace{1.5em}
 
-    % Tercera tabla: Requerimientos a alto nivel (Márgenes corregidos)
-    \begin{longtable}{@{}p{1.1cm}p{3.2cm}p{6.2cm}p{2.8cm}@{}}
-        \caption{Requisitos del Proyecto a Alto Nivel}
+    % Tercera tabla: Requerimientos a alto nivel
+    \begin{longtable}{@{}p{1.5cm}p{3.8cm}p{7.1cm}p{2.8cm}@{}}
+        \caption[]{Requisitos del Proyecto a Alto Nivel}%
+        \addcontentsline{lot}{table}{Tabla~\thetable. Requisitos del Proyecto a Alto Nivel}%
         \label{tab:anexo_acta_requisitos} \\
         \toprule
         \textbf{Código} & \textbf{Nombre} & \textbf{Descripción} & \textbf{Rol} \\ \midrule
@@ -114,30 +119,32 @@
         \endfoot
         
         \bottomrule
+        \multicolumn{4}{@{}p{\linewidth}@{}}{\vspace{3pt}\textit{Nota.} Catálogo de requerimientos iniciales aprobados para el desarrollo del sistema web. Elaboración propia.}
         \endlastfoot
 
-        RF-01 & Control accesos por roles (RBAC) & Autenticar usuarios con credenciales y emitir tokens JWT que restrinjan vistas y operaciones según el rol del usuario. & Personal de RRHH, Contador, Admin \\ \addlinespace
-        RF-02 & Registrar eventos en bitácora de auditoría & Registrar automáticamente cada una de las críticas en base de datos capturando usuario, IP, tabla y diferencial (SOV). & Personal de RRHH, Contador, Admin \\ \addlinespace
-        RF-03 & Administrar legajos digitales de empleados & Gestionar la información maestra del personal, régimen previsional, entidad bancaria, CCI y asignación familiar. & Personal de RRHH, Contador \\ \addlinespace
-        RF-04 & Importar información laboral de forma masiva & Cargar lotes de colaboradores en dos pasos: prevalidación en memoria con reporte de errores y confirmación asíncrona. & Personal de RRHH, Asistente, Contador \\ \addlinespace
-        RF-05 & Gestionar contratos y alertas de vencimiento & Administrar modalidades contractuales y alertas de forma visual de los vencimientos en rangos de 15, 30 y 60 días. & Personal de RRHH \\ \addlinespace
-        RF-06 & Gestionar solicitudes y permisos del personal & Tramitar solicitudes con sustento digital (vacaciones, licencias) y determinar su efecto remunerativo en la asistencia. & Personal de RRHH, Empleado \\ \addlinespace
-        RF-07 & Asignar y monitorear tareas operativas & Permitir al contador delegar tareas operativas al Asistente y auxiliar sus estados de revisión y aprobación. & Contador, Asistente Contable \\ \addlinespace
-        RF-08 & Cargar archivos probatorios y notas en tareas & Permitir adjuntar sustentos digitales en PDF o imágenes y registrar anotaciones de seguimiento en las asignaciones. & Personal de RRHH, Asistente, Contador \\ \addlinespace
-        RF-09 & Parametrizar variables normativas de ley & Actualizar valores vigentes de UIT, RMV, horas extras y comisiones de AFP preservando la vigencia histórica. & Contador, Asistente Contable \\ \addlinespace
-        RF-10 & Distribuir masivamente boletas por correo & Integrar flujos en n8n para despachar vía SMTP los boletas de pago cifradas a las casillas de correo de cada trabajador. & Personal de RRHH, Asistente, Contador \\ \addlinespace
-        RF-11 & Consolidar incidencias mensuales de asistencia & Importar marcaciones del reloj biométrico y cruzar faltas, tardanzas y sobretiempos con las solicitudes aprobadas. & Personal de RRHH, Asistente, Contador \\ \addlinespace
-        RF-12 & Ejecutar cálculo masivo de nóminas & Procesar en hilos secundarios las remuneraciones brutas, retenciones (ONP/AFP, 5ta Cat.) y aportes de EsSalud con precisión decimal. & Contador, Asistente Contable \\ \addlinespace
-        RF-13 & Ejecutar cierre inmutable y reapertura excepcional & Congelar la planilla aprobada mediante triggers SQL para impedir mutaciones, permitiendo reaperturas auditadas. & Contador \\ \addlinespace
-        RF-14 & Generar boletas electrónicas en formato PDF & Renderizar automáticamente las boletas individuales en PDF a partir del snapshot inmutable de cálculo al cerrar el periodo. & Personal de RRHH, Asistente del Contador \\ \addlinespace
-        RF-15 & Exportar archivos estructurados y soportes & Compilar estructuras oficiales para PDF PLAME (\texttt{.rem}, \texttt{.jor}), AFPnet, Telecrédito BCP y reportes de costos en CSV. & Contador, Asistente del Contador \\
+        RF-01 & Control accesos por roles (RBAC) & Autenticar usuarios con credenciales seguras y emitir tokens JWT que restrinjan vistas y operaciones según el rol. & Personal de RRHH, Contador, Admin \\ \addlinespace
+        RF-02 & Registrar eventos en auditoría & Registrar automáticamente cada acción crítica en base de datos capturando usuario, IP, tabla y diferencial JSON. & Personal de RRHH, Contador, Admin \\ \addlinespace
+        RF-03 & Administrar legajos de empleados & Gestionar la información maestra del personal, régimen previsional, entidad bancaria, CCI y asignación familiar. & Personal de RRHH, Contador \\ \addlinespace
+        RF-04 & Importar información masiva & Cargar lotes de colaboradores en dos pasos: prevalidación en memoria con reporte de errores y confirmación asíncrona. & Personal de RRHH, Asistente, Contador \\ \addlinespace
+        RF-05 & Gestionar contratos y vencimientos & Administrar modalidades contractuales y generar alertas visuales de vencimientos próximos en rangos de 15, 30 y 60 días. & Personal de RRHH \\ \addlinespace
+        RF-06 & Gestionar solicitudes del personal & Tramitar solicitudes con sustento digital (vacaciones, licencias) y dictaminar su efecto remunerativo en la asistencia. & Personal de RRHH, Empleado \\ \addlinespace
+        RF-07 & Asignar y monitorear tareas & Permitir al Contador delegar tareas operativas al Asistente y supervisar sus estados de revisión y aprobación. & Contador, Asistente Contable \\ \addlinespace
+        RF-08 & Cargar archivos probatorios & Permitir adjuntar sustentos digitales en PDF o imágenes y registrar anotaciones de seguimiento en las asignaciones. & Personal de RRHH, Asistente, Contador \\ \addlinespace
+        RF-09 & Parametrizar variables de ley & Actualizar valores vigentes de UIT, RMV, horas extras y comisiones de AFP preservando la vigencia histórica. & Contador, Asistente Contable \\ \addlinespace
+        RF-10 & Distribuir boletas por correo & Disparar flujos en n8n para despachar vía SMTP las boletas de pago cifradas a las casillas de correo de cada trabajador. & Personal de RRHH, Asistente, Contador \\ \addlinespace
+        RF-11 & Consolidar incidencias de asistencia & Importar marcaciones del reloj biométrico y cruzar faltas, tardanzas y sobretiempos con las solicitudes aprobadas. & Personal de RRHH, Asistente, Contador \\ \addlinespace
+        RF-12 & Ejecutar cálculo masivo de nóminas & Procesar en hilos secundarios remuneraciones brutas, retenciones (ONP/AFP, 5ta Cat.) y aportes de EsSalud con precisión decimal. & Contador, Asistente Contable \\ \addlinespace
+        RF-13 & Cierre y congelamiento inmutable & Congelar la planilla aprobada mediante triggers SQL para impedir mutaciones, permitiendo reaperturas auditadas. & Contador \\ \addlinespace
+        RF-14 & Generar boletas electrónicas PDF & Renderizar automáticamente boletas individuales en PDF a partir del snapshot inmutable de cálculo al cerrar el periodo. & Personal de RRHH, Asistente Contable \\ \addlinespace
+        RF-15 & Exportar estructuras y reportes & Compilar estructuras oficiales para PDT PLAME (\texttt{.rem}, \texttt{.jor}), AFPnet, Telecrédito BCP y reportes de costos en CSV. & Contador, Asistente Contable \\
     \end{longtable}
 
-    \vspace{1em}
+    \vspace{1.5em}
 
     % Cuarta tabla: Recursos Financieros y Presupuesto
-    \begin{longtable}{@{}p{0.8cm}p{3.2cm}p{6.4cm}r@{}}
-        \caption{Recursos Financieros y Presupuesto del Proyecto}
+    \begin{longtable}{@{}p{0.8cm}p{3.8cm}p{7.8cm}r@{}}
+        \caption[]{Recursos Financieros y Presupuesto del Proyecto}%
+        \addcontentsline{lot}{table}{Tabla~\thetable. Recursos Financieros y Presupuesto del Proyecto}%
         \label{tab:anexo_acta_presupuesto} \\
         \toprule
         \textbf{N\textdegree} & \textbf{Descripción} & \textbf{Concepto} & \textbf{Monto} \\ \midrule
@@ -152,29 +159,68 @@
         \endfoot
         
         \bottomrule
+        \multicolumn{4}{@{}p{\linewidth}@{}}{\vspace{3pt}\textit{Nota.} Presupuesto consolidado de inversión asignado para el desarrollo y despliegue del sistema web. Elaboración propia.}
         \endlastfoot
 
-        1 & Personal & Equipo de Desarrollo Core (4 desarrolladores Mid-Level S/ 12,600 c/u) & S/ 50,400.00 \\
-        2 & Personal & Equipo de Desarrollo Junior / Soporte (2 desarrolladores S/ 3,150 c/u) & S/ 6,300.00 \\
-        3 & Material & Memoria RAM 32 GB DDR4 para Servidor Local & S/ 399.00 \\
-        4 & Material & Unidad SSD Kingston A400 de 240 GB para Servidor Local & S/ 135.00 \\
-        5 & Equipos / Software & Servicio de dominio y enrutamiento DynDNS Pro (1 año) & S/ 200.00 \\
-        6 & Equipos / Software & Depreciación contable anual de 6 equipos de cómputo portátiles & S/ 2,253.66 \\
-        7 & Otros Costos & Créditos de procesamiento API Inteligencia Artificial (Lora) & S/ 150.00 \\
-        8 & Otros Costos & Servicios de internet y electricidad durante el desarrollo & S/ 750.00 \\
-        9 & Otros Costos & Capacidad de interna en herramientas nuevas (si aplica) & S/ 625.00 \\ \midrule
-        \multicolumn{3}{r}{\textbf{Total}} & \textbf{S/ 60,006.79} \\
+        1 & Mano de Obra Core & 4 desarrolladores Mid-Level (154 días a S/ 81.82/día c/u) & S/ 50,400.00 \\
+        2 & Mano de Obra Soporte & 2 desarrolladores Junior (77 días a S/ 40.91/día c/u) & S/ 6,300.00 \\
+        3 & Material / Servidor & Memoria RAM 32 GB DDR4 (2x16 GB) para Servidor Local & S/ 599.00 \\
+        4 & Material / Servidor & Unidad SSD Kingston A400 de 240 GB SATA & S/ 115.00 \\
+        5 & Material / DNS & Suscripción anual al servicio DynDNS Pro & S/ 207.00 \\
+        6 & Equipos / Hardware & Depreciación anual de 6 estaciones portátiles de desarrollo & S/ 2,253.66 \\
+        7 & Software / Integraciones & Créditos de procesamiento API Inteligencia Artificial (n8n) & S/ 150.00 \\
+        8 & Servicios Básicos & Consumo proporcional de energía eléctrica (S/ 0.65/kWh) & S/ 252.83 \\
+        9 & Servicios Básicos & Servicio de Internet comercial fibra óptica (Movistar Empresas) & S/ 629.30 \\ \midrule
+        \multicolumn{3}{r}{\textbf{Presupuesto Total de Inversión}} & \textbf{S/ 60,906.79} \\
     \end{longtable}
 
-    \vspace{0.5cm}
+    \vspace{0.8em}
 
-    \begin{itemize}[leftmargin=*]
-        \item \textbf{Cronograma Estimado del Proyecto:} Duración: 156 días laborables (12/05 al 29/12/2026).
-        \item \textbf{Presupuesto Estimado del Proyecto:} S/ 60,006.79 (Aprox. \$17,705.45 USD).
+    \begin{itemize}[leftmargin=1.5em]
+        \item \textbf{Cronograma Estimado del Proyecto:} Duración: 156 días laborables (12 de mayo al 28 de diciembre de 2026).
+        \item \textbf{Presupuesto Estimado del Proyecto:} S/ 60,906.79 (equivalente a \$17,705.46 USD al tipo de cambio de S/ 3.44).
     \end{itemize}
 
-    \vspace{0.5cm}
-    \textbf{Aprobación del Proyecto:} \\
+    \vspace{0.8em}
+    \noindent\textbf{Aprobación del Proyecto:} \\
     Se autoriza formalmente el inicio del proyecto de innovación y mejora. El equipo del proyecto cuenta con la autoridad técnica para aplicar los recursos asignados y coordinar con los representantes de las áreas de Recursos Humanos y Contabilidad de J\&P Periféricos S.A.C.
+
+    \vspace{1.2cm}
+
+    % ==============================================
+    % BLOQUE DE FIRMAS (Conforme al Excel del Acta)
+    % ==============================================
+    \noindent
+    \begin{minipage}{\linewidth}
+        \centering
+        \begin{minipage}[t]{0.45\linewidth}
+            \centering
+            {\bfseries J\&P PERIFÉRICOS S.A.C.}\par
+            \vspace{0.2cm}
+            \includegraphics[height=1.5cm,keepaspectratio]{images/firma_patrocinador.png}\par
+            \vspace{-0.1cm}
+            \makebox[5.5cm]{\dotfill}\par
+            \vspace{2pt}
+            {\bfseries Firma}\par
+            {\itshape Patrocinador del Proyecto}\par
+            {\footnotesize Julio Flores Vicuña}\par
+            {\footnotesize Gerente General}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.45\linewidth}
+            \centering
+            {\bfseries J\&P PERIFÉRICOS S.A.C.}\par
+            \vspace{0.2cm}
+            \includegraphics[height=1.5cm,keepaspectratio]{images/firma_jefe_proyecto.png}\par
+            \vspace{-0.1cm}
+            \makebox[5.5cm]{\dotfill}\par
+            \vspace{2pt}
+            {\bfseries Firma}\par
+            {\itshape Jefe de Proyecto}\par
+            {\footnotesize Mg. Jose Armando Tiznado Ubillus}\par
+            {\footnotesize Asesor de Proyecto}
+        \end{minipage}
+    \end{minipage}
+
     \endgroup
 }

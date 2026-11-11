@@ -3,9 +3,8 @@
 \subsubsection{El Costo de Servicio de Consumo de Luz}
 
 El desarrollo del sistema web generó un consumo de energía eléctrica derivado de la operación continua de los equipos informáticos portátiles durante las jornadas de trabajo. 
-Dicho consumo se calcula a partir de la potencia media del equipo, las horas diarias de programación,
- los días laborables del mes y el pliego tarifario comercial informado por la empresa J\&P Periféricos S.A.C., 
- el cual establece un costo de energía de \textbf{S/ 0.65 por kWh}.
+Dicho consumo se calcula a partir de la potencia media del equipo, las horas diarias de programación, 
+los días laborables del mes y el pliego tarifario comercial informado por la empresa J\&P Periféricos S.A.C., el cual establece un costo de energía de \textbf{S/ 0.65 por kWh}.
 
 Las fórmulas empleadas para la estimación energética son:
 
@@ -55,10 +54,13 @@ En la Tabla~\ref{tab:consumo_luz_detalle} se presenta el desglose aritmético un
 \end{minipage}
 \finBloqueAPA
 
-A partir de este costo unitario mensual de S/ 7.44 por equipo, se calcula el consumo total consolidado para el equipo de desarrollo:
+A partir de este costo unitario mensual de S/ 7.44 por equipo, y considerando que el periodo comprendido entre el 12 de mayo y 
+el 28 de diciembre de 2026 representa 7 meses netos acumulados de facturación de servicios (medio mes de mayo, seis meses completos de junio a noviembre y medio mes de diciembre), 
+se calcula el consumo total consolidado:
+
 \begin{itemize}
-    \item \textbf{Equipo principal (4 desarrolladores por 7 meses):} $4 \times 7 \text{ meses} \times \text{S/ } 7.44 = \text{\textbf{S/ 208.21}}$.
-    \item \textbf{Equipo de apoyo (2 desarrolladores por 3 meses):} $2 \times 3 \text{ meses} \times \text{S/ } 7.44 = \text{\textbf{S/ 44.62}}$.
+    \item \textbf{Equipo principal (4 desarrolladores por 7 meses netos):} $4 \times 7 \text{ meses} \times \text{S/ } 7.44 = \text{\textbf{S/ 208.21}}$.
+    \item \textbf{Equipo de apoyo (2 desarrolladores por 3 meses netos):} $2 \times 3 \text{ meses} \times \text{S/ } 7.44 = \text{\textbf{S/ 44.62}}$.
     \item \textbf{Costo total de energía eléctrica del proyecto:} $\text{S/ } 208.21 + \text{S/ } 44.62 = \text{\textbf{S/ 252.83}}$.
 \end{itemize}
 
@@ -73,7 +75,7 @@ por la operadora \textbf{Movistar Empresas Fija}, con un cargo mensual facturado
 El costo total de telecomunicaciones asignado al proyecto se define mediante la fórmula:
 
 \begin{equation}
-    \text{Costo total de Internet} = \text{Tarifa mensual del plan} \times \text{Meses de desarrollo}
+    \text{Costo total de Internet} = \text{Tarifa mensual del plan} \times \text{Meses netos de desarrollo}
 \end{equation}
 
 \begin{equation*}
@@ -97,7 +99,7 @@ En la Tabla~\ref{tab:gastos_servicios_generales} se consolidan los costos de sum
         \toprule
         \textbf{Descripción del servicio} & \textbf{Cantidad} & \textbf{Costo Base} & \textbf{Total (S/)} & \textbf{Dólar (\$)} \\ \midrule
         Servicio de Energía Eléctrica & 6 laptops & Proporcional kWh & S/ 252.83 & \$73.50 \\ 
-        Servicio de Internet (Movistar Empresas) & 7 meses & S/ 89.90 / mes & S/ 629.30 & \$182.94 \\ \midrule
+        Servicio de Internet (Movistar Empresas) & 7 meses netos & S/ 89.90 / mes & S/ 629.30 & \$182.94 \\ \midrule
         \textbf{Total} & & & \textbf{S/ 882.13} & \textbf{\$256.43} \\ \bottomrule
     \end{tabularx}
     \endgroup

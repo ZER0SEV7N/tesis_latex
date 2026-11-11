@@ -5,8 +5,9 @@
     \setlength{\tabcolsep}{4pt}
     \renewcommand{\arraystretch}{1.2}
 
-    \begin{longtable}{@{}p{1.6cm}p{3.8cm}p{8.5cm}c@{}}
-        \caption{Especificación detallada de requerimientos funcionales}
+    \begin{longtable}{@{}p{1.4cm}p{4.4cm}p{8.2cm}c@{}}
+        \caption[]{Especificación detallada de requerimientos funcionales}%
+        \addcontentsline{lot}{table}{Tabla~\thetable. Especificación detallada de requerimientos funcionales}%
         \label{tab:anexo_especificacion_rf} \\
         \toprule
         \textbf{Código} & \textbf{Nombre del Requerimiento} & \textbf{Descripción del Requerimiento Funcional} & \textbf{Prioridad} \\ \midrule
@@ -21,6 +22,7 @@
         \endfoot
         
         \bottomrule
+        \multicolumn{4}{@{}p{\linewidth}@{}}{\vspace{3pt}\textit{Nota.} Matriz detallada de requerimientos funcionales del sistema web de nóminas y recursos humanos. Elaboración propia.}
         \endlastfoot
 
         RF-01 & 
