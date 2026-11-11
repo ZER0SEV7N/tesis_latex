@@ -143,11 +143,11 @@ Las actividades se agrupan además en épicas, una por cada módulo grande del s
 
 \subsubsubsection{Planificación de sprints}
 
-El desarrollo se organizó en siete sprints, programados entre el 1 de noviembre y el 21 de diciembre de 2026. 
+El desarrollo se organizó en ocho sprints, programados entre el 1 de noviembre y el 28 de diciembre de 2026. 
 El orden sigue el recorrido de la información en el proceso de nómina. En el Sprint 1 se registra al personal y se controla quién puede consultar o modificar sus datos. 
 En el Sprint 2 se incorporan las asistencias y las incidencias del periodo. 
 El Sprint 3 completa las funciones de Recursos Humanos, 
-y en los sprints siguientes el contador recibe esa información para preparar, calcular y cerrar el periodo de pago, exportando los soportes y boletas.
+y en los sprints del 4 al 7 el contador recibe esa información para preparar, calcular y cerrar el periodo de pago, exportando los soportes y boletas, en el spring 8 se entrega en el MVP.
 
 Este orden atiende primero dos de las causas priorizadas en el capítulo anterior: la transcripción manual de incidencias (CA3) y la información separada entre áreas (CA1), 
 que ocupan el primer y el tercer lugar del diagrama de Pareto (Tabla~\ref{tab:pareto_causas_nominas}). 
@@ -217,8 +217,13 @@ La Tabla~\ref{tab:plan_sprints} muestra la duración, el objetivo y el número d
         Validar el workflow n8n existente y disponer de una instalación reproducible del sistema integrado. &
         2 \\
 
+        Sprint 8:\newline Validación y entrega &
+        21/12 -- 28/12/2026 &
+        Verificar el recorrido RRHH–Contador–n8n, resolver bloqueos y documentar la revisión y entrega con evidencias reales. &
+        2 \\
+
         \midrule
-        \textbf{Total} & & & \textbf{53} \\
+        \textbf{Total} & & & \textbf{55} \\
         \bottomrule
     \end{tabularx}
     \endgroup
@@ -230,7 +235,7 @@ La Tabla~\ref{tab:plan_sprints} muestra la duración, el objetivo y el número d
 
 \subsubsubsection{Product Backlog}
 
-El Product Backlog completo de los siete sprints contiene 53 actividades: historias de usuario, tareas, errores, documentación y refactorización. 
+El Product Backlog completo de los ocho sprints contiene 55 actividades: historias de usuario, tareas, errores, documentación y refactorización. 
 Una historia de usuario describe una función que el personal de Recursos Humanos o el contador usa en el sistema. 
 Las tareas, los errores, la documentación y la refactorización son trabajo técnico que esas funciones necesitan para operar bien.
 
@@ -285,22 +290,22 @@ La Tabla~\ref{tab:epicas} presenta las épicas y la Tabla~\ref{tab:product_backl
         BEL-104 &
         Automatización y entrega del MVP &
         Validar n8n, las exportaciones, las pruebas integradas y el despliegue reproducible. &
-        4 \\
+        6 \\
 
         \midrule
-        & \textbf{Total} & & \textbf{53} \\
+        & \textbf{Total} & & \textbf{55} \\
         \bottomrule
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Se cuentan todas las actividades programadas en los sprints 1 a 7. Elaboración propia.}
+    \notaTabla{Se cuentan todas las actividades programadas en los sprints 1 a 8. Elaboración propia.}
 
 \end{minipage}
 \finBloqueAPA
 
 \tituloTablaAPA
     {tab:product_backlog}
-    {Product Backlog de los sprints 1 al 7}
+    {Product Backlog de los sprints 1 al 8}
 
 \begingroup
 \setlength{\LTpre}{0pt}
@@ -358,6 +363,8 @@ La Tabla~\ref{tab:epicas} presenta las épicas y la Tabla~\ref{tab:product_backl
     BEL-108 & Consultar resumen de costos de planilla & Historia & BEL-103 & S6 \\
     BEL-109 & Validar envío de boletas con n8n & Historia & BEL-104 & S7 \\
     BEL-110 & Preparar despliegue reproducible del MVP & Tarea & BEL-104 & S7 \\
+    BEL-111 & Verificar recorrido integral y seguridad del MVP & Tarea & BEL-104 & S8 \\
+    BEL-112 & Documentar revisión y entrega del MVP & Tarea & BEL-104 & S8 \\
     BEL-55 & Realizar correcciones en las pruebas del módulo de empleados & Error & BEL-102 & S2 \\
     BEL-57 & Implementar sistema de marcaciones mediante archivos CSV & Tarea & BEL-102 & S2 \\
     BEL-62 & Ejecutar regresión de asistencia y solicitudes & Tarea & BEL-102 & S2 \\
