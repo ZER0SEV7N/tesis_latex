@@ -10,7 +10,24 @@ Según la entrevista realizada al Gerente General, las necesidades consideradas 
 la actualización de la información del personal y la integración tecnológica de los procesos. Estas observaciones orientan el levantamiento de requisitos de la solución. 
 El proyecto no presupone que todas las empresas de la cartera presenten las mismas dificultades ni atribuye a J\&P Periféricos S.A.C. incidentes internos de pago que no hayan sido documentados.
 
-Para una descripción más rigurosa y técnica, a continuación se enlistan las dificultades y causas recurrentes identificadas en la encuesta y diagnóstico previos: a) \textit{Almacenamiento de información laboral:} Información laboral y remunerativa almacenada en archivos separados entre Recursos Humanos y Contabilidad; b) \textit{Control de versiones de archivos:} Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización; c) \textit{Transcripción de información:} Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales a la planilla; d) \textit{Modificación de fórmulas de cálculo:} Modificación manual de fórmulas y parámetros de cálculo sin una validación uniforme; e) \textit{Roles con permisos de usuario:} Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario; f) \textit{Registro de auditoría:} Registro insuficiente de los cambios realizados sobre los datos laborales y los resultados de la planilla; g) \textit{Preparación de pagos y declaraciones:} Preparación separada de información para pagos bancarios y declaraciones, mediante transferencias o registros manuales; h) \textit{Generación y distribución de documentos:} Generación y distribución individual de boletas mediante actividades manuales o semimanuales.
+Para una descripción más rigurosa y técnica, a continuación se detallan en el diagnóstico previo las ocho causas recurrentes identificadas en el proceso actual: 
+a) \textit{Almacenamiento de información laboral:} Información laboral y remunerativa almacenada en archivos separados entre Recursos Humanos y Contabilidad, 
+lo que genera fragmentación operativa y falta de una fuente única de datos, tal como advierten \textcite{quispe2025implementacion} y \textcite{aliya2026design}; 
+b) \textit{Control de versiones de archivos:} Circulación de distintas versiones de los archivos de planilla sin un control definido de actualización, 
+provocando reprocesos al trabajar sobre copias desactualizadas según señalan \textcite{tandrio2026web}; 
+c) \textit{Transcripción de información:} Transcripción manual de asistencias, permisos, horas extras y otras incidencias laborales hacia la planilla, 
+actividad propensa a omisiones humanas conforme documentan \textcite{zeballos2022sistema} y \textcite{suarez2025sistema}; 
+d) \textit{Modificación de fórmulas de cálculo:} Modificación manual de fórmulas y parámetros de cálculo sin una validación uniforme, 
+exponiendo las remuneraciones y descuentos a errores aritméticos como explican \textcite{mandu2026errores} y \textcite{grupoono2026errores}; 
+e) \textit{Roles con permisos de usuario:} Permisos de consulta y modificación de datos laborales y salariales insuficientemente diferenciados según las responsabilidades del usuario, 
+vulnerando la confidencialidad descrita por \textcite{ahmed2023web}; 
+f) \textit{Registro de auditoría:} Registro insuficiente de los cambios realizados sobre los datos laborales y los resultados de la planilla, 
+lo que impide determinar responsables ante modificaciones según señala \textcite{basualdo2026sistema}; 
+g) \textit{Preparación de pagos y declaraciones:} Preparación separada de información para pagos bancarios y declaraciones tributarias mediante transferencias o registros manuales, 
+incrementando el riesgo de inconsistencias reportado por \textcite{chattopadhyay2026ai}; y 
+h) \textit{Generación y distribución de documentos:} Generación y distribución individual de boletas de pago mediante actividades manuales o semimanuales, 
+ocasionando demoras administrativas conforme evidencian \textcite{aguilar2022desarrollo}.
+
 \subsubsection{Problemática nacional}
 
 En el ámbito peruano, diversas organizaciones enfrentan serias complicaciones en la administración de su capital humano y nóminas debido a la persistente dependencia 
@@ -52,10 +69,10 @@ Asimismo, implementar este tipo de soluciones digitales conlleva también el mon
 evitando errores que pueden llevar a pérdidas relacionadas al pago de multas por el incumplimiento o errores en el cálculo de las remuneraciones; 
 uno de los orígenes de estos problemas es la migración de una gran cantidad de procedimientos manuales, según \textcite{mandu2026errores}.
 
-A su vez, las empresas deben cumplir con la protección de los datos personales y 
-financieros de los empleados; un ejemplo de esto es el reglamento RGPD de la Unión Europea. 
-La aplicación de esta normativa representa una de las principales complicaciones que 
-enfrentan las organizaciones en su área de recursos humanos, tal como lo señala la publicación de \textcite{bizneo2026problemas}.
+A su vez, las empresas deben cumplir con la protección de los datos personales y financieros de los empleados, 
+como ocurre con el reglamento RGPD de la Unión Europea. 
+Según \textcite{bizneo2026problemas}, la aplicación de esta normativa representa una de las principales complicaciones que enfrentan las organizaciones en su área de Recursos Humanos 
+para garantizar la integridad de la información laboral.
 \subsubsection{Formulación del Problema}
 
 \noindent\textbf{Problema General:}
