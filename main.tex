@@ -125,12 +125,17 @@
     \renewcommand{\listtablename}{Índice de Tablas}%
 }
 
+% Comando para agregar espacio antes de tablas y figuras
 \newcommand{\espacioAntesBloque}{%
     \par\vspace{\dimexpr\baselineskip-12pt\relax}%
 }
+
+% Fin del bloque de tablas y figuras
 \newcommand{\finBloqueAPA}{%
     \par\prevdepth=0pt\relax
 }
+
+% Comando para agregar notas a las tablas
 \newcommand{\notaTabla}[1]{%
     \par\nobreak\vspace{2pt}%
     {\linespread{1}\footnotesize
@@ -138,6 +143,7 @@
     }%
 }
 
+% Comando para agregar títulos a las tablas en formato APA
 \newcommand{\tituloTablaAPA}[2]{%
     \espacioAntesBloque
     \refstepcounter{table}%
@@ -151,6 +157,9 @@
     \nobreak
 }
 
+% ============================
+% Figuras
+% ============================
 \newsavebox{\cajaFigura}
 \newlength{\anchoFigura}
 \newcommand{\figuraEnTexto}[4]{%
@@ -228,10 +237,13 @@
 }
 
 % ==============================================
-% Configuración del Índice de Anexos
-% =============================================
+% Configuración unificada de Índices (Tablas, Figuras y Anexos) con titletoc
+% ==============================================
+\titlecontents{table}[0pt]{\addvspace{2pt}}{\contentslabel{0pt}}{}{\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{figure}[0pt]{\addvspace{2pt}}{\contentslabel{0pt}}{}{\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{anexo}[0pt]{\addvspace{2pt}}{\contentslabel{0pt}}{}{\titlerule*[0.5pc]{.}\contentspage}
+
 \makeatletter
-% Comando para registrar cada Anexo (solo va al índice de anexos)
 \newcommand{\anexoItem}[2]{%
   \refstepcounter{section}%
   \clearpage
@@ -242,7 +254,6 @@
   #2%
 }
 
-% Índice exclusivo de Anexos (se muestra en los preliminares)
 \newcommand{\listofappendices}{%
   \clearpage
   \phantomsection
@@ -251,11 +262,6 @@
   \end{center}%
   \vspace{12pt}%
   \@starttoc{anx}%
-}
-
-% Formato visual de cada línea en el Índice de Anexos
-\newcommand{\l@anexo}[2]{%
-  \par\noindent\textbf{#1}\dotfill #2\par
 }
 \makeatother
 
@@ -331,6 +337,10 @@
     % ============================
     % ÍNDICES
     % ============================
+    \begingroup
+    \let\justifying\relax
+    \renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 1fil \parfillskip=0pt}
+
     \clearpage
     \tableofcontents
 
@@ -342,6 +352,7 @@
 
     \clearpage
     \listofappendices
+    \endgroup
 
 
     % ============================
@@ -360,6 +371,8 @@
     \input{capitulo-4/index}
     \input{capitulo-5/index}
     \input{capitulo-6/index}
+    \input{capitulo-7/index}
+    \input{capitulo-8/index}
     % ============================
     % REFERENCIAS BIBLIOGRÁFICAS
     % ============================

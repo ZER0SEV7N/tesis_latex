@@ -1,0 +1,21 @@
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Resumen}
+
+\noindent{\bfseries\large Resumen} \\[0.5cm]
+
+El presente proyecto de innovación y mejora tuvo como objetivo principal desarrollar e implementar un sistema web con flujos automatizados 
+para la gestión de nóminas y procesos de recursos humanos orientado a los clientes empresariales de J\&P~Periféricos~S.A.C. 
+En el diagnóstico de la situación inicial, se evidenció que el procesamiento mensual de planillas en las organizaciones atendidas dependía de hojas de cálculo dispersas, 
+consolidación manual de asistencias y validaciones repetitivas, lo que ocasionaba demoras prolongadas en los cierres de pago, errores en el cálculo de horas extras, 
+bonificaciones y retenciones de ley (ONP, AFP y quinta categoría), así como riesgos de incumplimiento normativo y filtración de información financiera sensible.
+
+Para resolver esta problemática, el proyecto se ejecutó bajo el marco de trabajo ágil Scrum, 
+estructurando el desarrollo en iteraciones incrementales alineadas con los requerimientos funcionales y no funcionales del negocio. 
+A nivel tecnológico, se diseñó una arquitectura monolítica modular desacoplada, empleando TypeScript, NestJS y Fastify en el backend, 
+React en el frontend y PostgreSQL como motor de base de datos relacional normalizado. Asimismo, se integró la plataforma de orquestación \textbf{n8n} 
+para ejecutar flujos de trabajo asíncronos encargados de generar automáticamente los archivos planos y estructuras regulatorias exigidas 
+por SUNAT PLAME, AFPnet y las entidades bancarias (telecrédito), además de emitir y distribuir por correo electrónico las boletas de pago 
+en formato PDF protegidas mediante cifrado individual con el número de documento de identidad de cada trabajador. En materia de seguridad de la información, 
+el sistema implementó control de acceso basado en roles (RBAC), cifrado simétrico \textbf{AES-256-GCM} 
+para atributos financieros críticos y un módulo de auditoría inmutable para garantizar la trazabilidad integral de las operaciones.

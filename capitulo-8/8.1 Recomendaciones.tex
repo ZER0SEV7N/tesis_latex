@@ -1,0 +1,36 @@
+\subsection{Recomendaciones para la empresa del Proyecto de Mejora / Innovación / Creatividad}
+
+\subsubsection{Recomendaciones}
+Para garantizar la continuidad operativa, seguridad y correcto funcionamiento del sistema en entornos productivos, se establecen las siguientes recomendaciones:
+\begin{enumerate}
+    \item \textbf{Respaldo y mantenimiento preventivo de la base de datos:} Programar copias de seguridad automatizadas diarias de la base de datos PostgreSQL en almacenamiento externo cifrado,
+    acompañadas de políticas de retención acordes con la legislación laboral vigente.
+    \item \textbf{Monitoreo de flujos asíncronos:} Supervisar periódicamente los registros de ejecución de los flujos de trabajo en n8n 
+    y configurar alertas ante fallos en el envío de correos electrónicos o en la generación de lotes de boletas de pago.
+    \item \textbf{Gestión de credenciales y control de accesos:} Aplicar políticas de rotación periódica de claves de acceso, 
+    certificados TLS y secretos de integración, manteniendo el principio de menor privilegio en la asignación de roles dentro de cada empresa cliente.
+    \item \textbf{Actualización normativa periódica:} Mantener actualizados los parámetros tributarios y laborales del sistema 
+    (como el valor de la UIT, tasas de aportación a AFP/ONP y tramos del impuesto a la renta de quinta categoría) ante cualquier modificación emitida por el Ministerio de Trabajo o la SUNAT.
+\end{enumerate}
+
+\subsubsection{Trabajo Futuro}
+Dado que la solución actual constituye un Producto Mínimo Viable (MVP) funcional orientado a validar 
+la propuesta de valor y realizar demostraciones comerciales a potenciales compradores, 
+se proyectan las siguientes líneas de evolución técnica y funcional:
+
+\begin{enumerate}
+    \item \textbf{Habilitación del rol corporativo J\&P y gestión comercial multiempresa:} Incorporar un rol administrativo superior exclusivo para J\&P Periféricos S.A.C., 
+    encargado de la distribución comercial del software bajo el modelo \textit{Software as a Service} (SaaS). 
+    Este módulo permitirá registrar nuevas empresas clientes, configurar planes de suscripción (según cantidad de trabajadores o módulos habilitados), 
+    gestionar vigencias de licencias y aprovisionar accesos administrativos de forma automatizada.
+    \item \textbf{Ampliación del esquema de base de datos:} Extender el modelo entidad-relación para soportar entidades comerciales y de suscripción 
+    (organizaciones clientes, planes tarifarios, historial de facturación del servicio y límites de capacidad), 
+    asegurando el aislamiento lógico de datos por inquilino (\textit{multi-tenancy}).
+    \item \textbf{Desarrollo del portal de autoservicio para el empleado:} Implementar un módulo dedicado exclusivamente a los colaboradores de cada empresa cliente, 
+    donde puedan iniciar sesión para consultar y descargar su historial de boletas de pago, registrar solicitudes de vacaciones, permisos o licencias, 
+    actualizar datos personales y visualizar paneles analíticos (\textit{dashboards}) con el resumen de sus asistencias, horas extras y beneficios acumulados.
+    \item \textbf{Refactorización y migración progresiva a arquitectura de microservicios:} Conforme crezca la cartera de clientes empresariales y 
+    la concurrencia en los cierres mensuales de planilla, se plantea desacoplar los dominios críticos del monolito modular actual 
+    (cálculo de nóminas, generación de reportes regulatorios, gestión de asistencias y notificaciones) hacia microservicios independientes 
+    orquestados mediante contenedores, mejorando la tolerancia a fallos y la escalabilidad horizontal.
+\end{enumerate}

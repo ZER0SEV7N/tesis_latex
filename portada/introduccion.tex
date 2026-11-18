@@ -2,11 +2,25 @@
 \phantomsection
 \addcontentsline{toc}{section}{Introducción}
 
-{\centering\Large\bfseries INTRODUCCIÓN\par}
-\vspace{0.8cm}
+\noindent{\bfseries\large Introducción} \\[0.5cm]
 
-En el entorno empresarial contemporáneo, la administración de los empleados y el procesamiento de compensaciones constituyen procesos críticos para la continuidad operativa. No obstante, una gran parte de las organizaciones continúa gestionando sus planillas mediante hojas de cálculo convencionales. Este enfoque tradicional demanda una inversión desmedida de tiempo en la validación manual de asistencias, permisos, bonificaciones y deducciones de ley, lo que incrementa sustancialmente el margen de error humano en el cálculo de la planilla, generando retrasos en la dispersión de fondos, pagos inexactos y potenciales contingencias laborales. Asimismo, el almacenamiento de información financiera en archivos planos o locales expone a las organizaciones a graves riesgos de fuga de datos o accesos no autorizados.
+En el entorno empresarial contemporáneo, la administración del capital humano y el procesamiento de remuneraciones 
+constituyen procesos críticos para la continuidad operativa y el cumplimiento legal de cualquier organización. No obstante, 
+una proporción significativa de pequeñas y medianas empresas continúa gestionando sus planillas mediante hojas de cálculo descentralizadas y procedimientos manuales. 
+Este enfoque tradicional demanda una inversión desmedida de tiempo en la validación de asistencias, jornadas laborales, horas extras, beneficios sociales y deducciones de ley, 
+lo que incrementa el margen de error aritmético, provoca retrasos en el abono de haberes y expone a las empresas a contingencias administrativas y 
+multas ante entidades fiscalizadoras como SUNAFIL y SUNAT. Asimismo, 
+el almacenamiento de información salarial en archivos locales sin controles de acceso expone los datos personales y financieros a riesgos de alteración o filtración.
 
-Frente a este escenario, el presente proyecto de innovación propone el diseño e implementación de un sistema web integral bajo una arquitectura de despliegue monolítica modular, orientado a centralizar la gestión de personal y automatizar el cálculo sistemático de planillas. Para optimizar el ciclo operativo, la plataforma se integra con la herramienta de orquestación y automatización de flujos \textbf{n8n}, la cual procesa la dispersión de pagos y gestiona el envío automatizado de las boletas de pago digitales a las casillas de correo electrónico de cada colaborador.
+Frente a esta problemática, el presente proyecto de innovación y mejora desarrolla e implementa un sistema web integral orientado 
+a los clientes empresariales de J\&P~Periféricos~S.A.C., diseñado bajo una arquitectura monolítica modular con TypeScript, NestJS, Fastify, React y PostgreSQL. 
+La plataforma centraliza el legajo del personal, el control de asistencias, la gestión de incidencias 
+y el motor de cálculo salarial conforme a la normativa laboral peruana vigente. Para optimizar el cierre operativo, 
+el sistema se integra con el orquestador de flujos asíncronos \textbf{n8n}, 
+automatizando la generación de archivos regulatorios (SUNAT PLAME, AFPnet y telecrédito bancario),
+ así como la emisión y envío masivo de boletas de pago electrónicas en formato PDF cifradas con el documento de identidad de cada colaborador.
 
-Con el fin de garantizar la confidencialidad, integridad y disponibilidad de los datos sensibles, el sistema incorpora un modelo riguroso de control de acceso basado en roles (RBAC), mecanismos de cifrado \textbf{AES-256-GCM} para los registros financieros sensibles y un módulo de auditoría continua que registra la trazabilidad completa de cada transacción y cambio de estado ejecutado en la plataforma.
+Con el propósito de garantizar la confidencialidad, 
+integridad y disponibilidad de la información, 
+la solución incorpora autenticación segura, control de acceso basado en roles (RBAC), cifrado \textbf{AES-256-GCM} 
+para datos financieros sensibles y una bitácora de auditoría continua (\textit{audit log}) que registra la trazabilidad completa de cada operación y cambio de estado en el sistema.
