@@ -3,7 +3,7 @@
 \subsubsection{Resultados}
 Tras una serie de evaluaciones del sistema web mediante pruebas funcionales en las áreas de recursos humanos y planillas, se obtuvieron métricas de eficacia y eficiencia que permitieron realizar una comparativa de desempeño antes y después de la implementación de la solución tecnológica.
 
-A continuaicon se presentara una tabla comparativa de los procedidmientos antes y despues de la implementacion. 
+A continuación, se presentarán las cifras comparativas de los procedimientos evaluados antes y después de la implementación.
 
 \par
 \noindent
@@ -33,9 +33,10 @@ A continuaicon se presentara una tabla comparativa de los procedidmientos antes 
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Comparativa de indicadores operativos obtenida a partir de pruebas funcionales y registros previos en el área de recursos humanos y planillas. Elaboración propia.}
+    \notaTabla{Los resultados obtenidos en estas métricas se dieron en condiciones favorables, sin interrupciones ni casos excepcionales. Elaboración propia.}
 \end{minipage}
 \finBloqueAPA
+
 \subsubsection{Discusión}
 Los resultados operativos visualizados en la tabla comparativa anterior evidencian una considerable reducción de tiempo en los procedimientos cotidianos y excepcionales, alcanzando un promedio de reducción del 91.4 \% tras la implementación del software. Asimismo, a diferencia de los procedimientos manuales que suelen apoyarse en fuentes de información físicas y descentralizadas, la solución técnica emplea una fuente de información centralizada; esta conclusión se ve respaldada por el trabajo de suficiencia profesional de la Universidad San Ignacio de Loyola, sustentado por \textcite{pedroza2025propuesta}, donde, al unificar las fuentes de información y automatizar los procesos, se obtuvo una reducción de tiempo del 87.5 \% en las operaciones diarias de recursos humanos y en la generación de nómina, evitando en gran medida los errores humanos frecuentes en las hojas de Excel y Word convencionales.
 
@@ -48,3 +49,10 @@ A pesar de que la solución (\textit{MVP}) no ha pasado por una certificación e
 Para la implementación de la solución se emplearon Node.js, Fastify, NestJS y Prisma ORM en el \textit{backend} bajo una arquitectura limpia (\textit{Clean Architecture}) y modular, junto con el motor de base de datos PostgreSQL. En esta misma línea, \textcite{masapanta2025desarrollo}, en su proyecto \textit{Desarrollo de un módulo integral para la gestión de nómina y talento humano en la Cooperativa de Ahorro y Crédito Politécnica Ltda.}, concluye que este tipo de soluciones elimina los errores de tipeo y fortalece la seguridad interna de la organización. Como complemento adicional, el sistema se encuentra alineado con el régimen regulatorio laboral y tributario vigente en el Perú, lo que aporta pertinencia contextual para su aplicación local.
 
 \subsubsection{Conclusiones}
+El sistema web cumplió con reemplazar los procedimientos manuales por flujos centralizados y automatizados, consolidando una base de datos unificada y habilitando la auditoría de los cambios realizados dentro del sistema para brindar trazabilidad a las operaciones. Este enfoque permitió alcanzar un cumplimiento del 100 \% en la centralización, la parametrización de reglas vigentes y el registro de auditoría, junto con una reducción promedio del 91.4 \% en el tiempo de los procesos operativos evaluados.
+
+Asimismo, la solución automatizó tareas clave de la gestión diaria, entre las que destacan las operaciones de gestión de empleados, la administración de áreas y cargos, el control de asistencias mediante la carga de archivos de Excel por parte del personal responsable y la gestión continua de contratos para mantener un registro vigente de la relación laboral de los trabajadores.
+
+En el plano técnico, el desarrollo se implementó bajo los criterios de referencia de la norma ISO/IEC 25010 señalados anteriormente, estructurándose como un monolito modular bajo una arquitectura limpia (\textit{Clean Architecture}) con el \textit{framework} NestJS, el motor Fastify y Prisma ORM como capa de comunicación entre el \textit{backend} y la base de datos.
+
+Finalmente, a pesar de tratarse de una versión inicial (\textit{MVP}), el sistema fue construido siguiendo criterios orientados a la seguridad, la mantenibilidad y las futuras actualizaciones, respaldado por su correspondiente documentación técnica.
