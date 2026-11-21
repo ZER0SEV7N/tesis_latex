@@ -1,7 +1,50 @@
 \subsection{Conclusiones respecto a objetivos del Proyecto de Mejora / Innovación / Creatividad}
 
 \subsubsection{Resultados}
+Tras una serie de evaluaciones del sistema web mediante pruebas funcionales en las áreas de recursos humanos y planillas, se obtuvieron métricas de eficacia y eficiencia que permitieron realizar una comparativa de desempeño antes y después de la implementación de la solución tecnológica.
 
+A continuaicon se presentara una tabla comparativa de los procedidmientos antes y despues de la implementacion. 
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+    \tituloTablaAPA{tab:comparativa_actividades_criticas}{Comparación de métricas operativas antes y después de la implementación del sistema}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.25}
+
+    \begin{tabularx}{\linewidth}{@{}p{4.6cm}p{2.9cm}p{2.9cm}p{2.8cm}@{}}
+        \toprule
+        \textbf{Actividad crítica evaluada} & \textbf{Antes del software} & \textbf{Después del software} & \textbf{Variación / Cumplimiento} \\ \midrule
+        Base de datos unificada de RR. HH. y planillas & Archivos dispersos, susceptibles a errores humanos & Base centralizada y única, con menos errores & 100 \% / Cumplido \\
+        Administración de parámetros de ley vigentes & Edición manual & Parametrización centralizada & 100 \% / Cumplido \\
+        Gestión de empleados (operaciones CRUD) & 10 min / tareas relacionadas & 2 min / tareas relacionadas & -80.0 \% / Cumplido \\
+        Administración de contratos de empleado & 15 min / contrato & 2 min / contrato & -86.7 \% / Cumplido \\
+        Asignación de jornada & 20 min / programación & 2 min / programación & -90.0 \% / Cumplido \\
+        Gestión de asistencias & 50 min / área y periodo & 4 min / área y periodo & -92.0 \% / Cumplido \\
+        Gestión de solicitudes de empleados & 180 min / trámite & 10 min / trámite & -94.4 \% / Cumplido \\
+        Cálculo de planillas (por área y por empleado) & 120 min / lote & 3 min / lote & -97.5 \% / Cumplido \\
+        Generación de boletas electrónicas & 45 min / lote & 2 min / lote & -95.6 \% / Cumplido \\
+        Distribución de boletas electrónicas & 60 min / envío por lote & 3 min / envío por lote & -95.0 \% / Cumplido \\
+        Auditoría de cambios realizados por empleados & Registro parcial o casi nulo & Bitácora completa de cambios & 100 \% / Cumplido \\ \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Comparativa de indicadores operativos obtenida a partir de pruebas funcionales y registros previos en el área de recursos humanos y planillas. Elaboración propia.}
+\end{minipage}
+\finBloqueAPA
 \subsubsection{Discusión}
+Los resultados operativos visualizados en la tabla comparativa anterior evidencian una considerable reducción de tiempo en los procedimientos cotidianos y excepcionales, alcanzando un promedio de reducción del 91.4 \% tras la implementación del software. Asimismo, a diferencia de los procedimientos manuales que suelen apoyarse en fuentes de información físicas y descentralizadas, la solución técnica emplea una fuente de información centralizada; esta conclusión se ve respaldada por el trabajo de suficiencia profesional de la Universidad San Ignacio de Loyola, sustentado por \textcite{pedroza2025propuesta}, donde, al unificar las fuentes de información y automatizar los procesos, se obtuvo una reducción de tiempo del 87.5 \% en las operaciones diarias de recursos humanos y en la generación de nómina, evitando en gran medida los errores humanos frecuentes en las hojas de Excel y Word convencionales.
+
+Una tendencia recurrente en los antecedentes de este tipo de proyectos es el empleo de una base de datos relacional (SQL), independientemente del motor utilizado, debido a que en estos sistemas las variables y entidades presentan valores definidos o relaciones estructuradas entre sí.
+
+En la generación y el envío de boletas se observan mejoras considerables en la reducción del tiempo, lo que constituye un factor determinante para la satisfacción de los usuarios del software y facilita su auditoría y validación. Un resultado similar se reporta en la tesis de \textcite{aguilar2022desarrollo}, donde se alcanzó una satisfacción general del 92.4 \% a partir de una reducción promedio del 58 \% en el tiempo de generación de boletas y de la disminución de los costos de generación y distribución, que pasaron de un rango de S/ 33.72 a S/ 44.22 a S/ 0.00 al adoptarse la generación y distribución digital.
+
+A pesar de que la solución (\textit{MVP}) no ha pasado por una certificación externa, alinearse con la norma ISO/IEC 25010 ofrece un criterio de referencia fiable y funcional para su posterior comercialización, fortaleciendo su calidad, fiabilidad y usabilidad de forma coherente con lo señalado por \textcite{zeballos2022sistema}, cuyo trabajo fue evaluado y certificado bajo este mismo criterio.
+
+Para la implementación de la solución se emplearon Node.js, Fastify, NestJS y Prisma ORM en el \textit{backend} bajo una arquitectura limpia (\textit{Clean Architecture}) y modular, junto con el motor de base de datos PostgreSQL. En esta misma línea, \textcite{masapanta2025desarrollo}, en su proyecto \textit{Desarrollo de un módulo integral para la gestión de nómina y talento humano en la Cooperativa de Ahorro y Crédito Politécnica Ltda.}, concluye que este tipo de soluciones elimina los errores de tipeo y fortalece la seguridad interna de la organización. Como complemento adicional, el sistema se encuentra alineado con el régimen regulatorio laboral y tributario vigente en el Perú, lo que aporta pertinencia contextual para su aplicación local.
 
 \subsubsection{Conclusiones}
