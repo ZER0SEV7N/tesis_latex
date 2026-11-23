@@ -1,0 +1,42 @@
+\anexoItem{Memoria de cálculo de la proyección comercial SaaS (20 clientes y tarifa promedio ponderada)}{
+    \par\noindent
+    En concordancia con la estructura tarifaria definida en el apartado~6.1, la proyección de ingresos recurrentes anuales de \textbf{S/ 67,200.00} no parte de un monto arbitrario, sino de una tarifa promedio ponderada sobre los tres tramos comerciales de la plataforma y una meta conservadora de 20 clientes empresariales durante el primer año de operación comercial, orientada a la cartera B2B activa de J\&P Periféricos S.A.C. en Lima Metropolitana (apartado~1.3).
+
+    \par\medskip
+    \noindent\textbf{Fórmula de la tarifa promedio ponderada y del ingreso anual proyectado:}\par
+    Sean $n_i$ la cantidad de clientes estimados en cada tramo y $P_i$ su tarifa mensual en soles:
+    \[
+        \text{MRR} = \sum_{i=1}^{3} (n_i \times P_i) = (10 \times 180.00) + (7 \times 320.00) + (3 \times 520.00) = \text{S/ } 5{,}600.00
+    \]
+    \[
+        \bar{P}_{\text{pond}} = \frac{\text{MRR}}{N} = \frac{5{,}600.00}{20} = \text{S/ } 280.00\text{ / mes por empresa}
+    \]
+    \[
+        \text{Ingreso Anual Proyectado (ARR)} = N \times \bar{P}_{\text{pond}} \times 12 = 20 \times 280.00 \times 12 = \text{S/ } 67{,}200.00
+    \]
+
+    \par\medskip
+    \noindent
+    \begin{minipage}{\linewidth}
+        \tituloTablaAPA{tab:anexo_proyeccion_saas}{Distribución ponderada de clientes empresariales por plan tarifario SaaS (Año 1)}
+
+        \begingroup
+        \renewcommand{\baselinestretch}{1}
+        \footnotesize
+        \setlength{\tabcolsep}{4pt}
+        \renewcommand{\arraystretch}{1.25}
+
+        \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash\hsize=1.3\hsize}X>{\centering\arraybackslash\hsize=0.7\hsize}X>{\centering\arraybackslash\hsize=0.8\hsize}X>{\raggedleft\arraybackslash\hsize=1.0\hsize}X>{\raggedleft\arraybackslash\hsize=1.1\hsize}X>{\raggedleft\arraybackslash\hsize=1.1\hsize}X@{}}
+            \toprule
+            \textbf{Plan comercial (Cap. 6.1)} & \textbf{Clientes ($n_i$)} & \textbf{Peso (\%)} & \textbf{Tarifa mensual (S/)} & \textbf{Ingreso mensual (S/)} & \textbf{Ingreso anual (S/)} \\ \midrule
+            Plan Emprendedor (hasta 15 trab.) & 10 & 50.0 \% & 180.00 & 1,800.00 & 21,600.00 \\
+            Plan Pyme Estándar (hasta 45 trab.) & 7 & 35.0 \% & 320.00 & 2,240.00 & 26,880.00 \\
+            Plan Corporativo (hasta 100 trab.) & 3 & 15.0 \% & 520.00 & 1,560.00 & 18,720.00 \\ \midrule
+            \textbf{Total / Promedio ponderado} & \textbf{20} & \textbf{100.0 \%} & \textbf{280.00} & \textbf{5,600.00} & \textbf{67,200.00} \\ \bottomrule
+        \end{tabularx}
+        \endgroup
+
+        \notaTabla{La distribución asume un enfoque comercial conservador (50 \% microempresas, 35 \% pequeñas y medianas empresas, y 15 \% empresas corporativas) equivalente a una captación promedio inferior a dos clientes mensuales sobre la cartera B2B existente. Elaboración propia.}
+    \end{minipage}
+    \finBloqueAPA
+}

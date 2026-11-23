@@ -33,12 +33,12 @@
         RNF-02 & 
         Minimizar la latencia en endpoints transaccionales HTTP & 
         Responder a las solicitudes HTTP de consulta y mutaciones ligeras a través del motor Fastify 5 con una latencia media menor a 300 milisegundos en condiciones operativas estándar. &
-        Alta \\ \addlinespace
+        Media \\ \addlinespace
 
         RNF-03 & 
         Procesar tareas intensivas en segundo plano de forma asíncrona & 
         Delegar operaciones pesadas (cálculo de nómina, validación de archivos masivos de más de 5,000 filas y renderizado de boletas) a colas en memoria con BullMQ y Redis 7 sin bloquear el Event Loop de Node.js. &
-        Alta \\ \addlinespace
+        Media \\ \addlinespace
 
         RNF-04 & 
         Cifrar datos financieros sensibles en reposo & 
@@ -68,7 +68,7 @@
         RNF-09 & 
         Asegurar la resiliencia ante caídas de servicios externos & 
         Implementar límites de espera (Timeout de 5 segundos) y manejo de excepciones ante fallos de la API de RENIEC o webhooks de n8n, garantizando que el sistema no interrumpa su operación. &
-        Media \\
+        baja \\
     \end{longtable}
     \endgroup
 }

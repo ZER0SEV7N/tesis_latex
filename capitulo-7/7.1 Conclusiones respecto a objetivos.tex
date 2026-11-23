@@ -1,11 +1,11 @@
 \subsection{Conclusiones respecto a objetivos del Proyecto de Mejora / Innovación / Creatividad}
 
 \subsubsection{Resultados}
-Tras una serie de evaluaciones del sistema web mediante pruebas funcionales en las áreas de recursos humanos y planillas, 
-se obtuvieron métricas de eficacia y eficiencia que permitieron realizar una comparativa de desempeño antes y
- después de la implementación de la solución tecnológica.
+Tras la ejecución de pruebas funcionales en entorno controlado sobre los módulos de recursos humanos, 
+asistencia, nómina e integraciones, se obtuvieron métricas de eficacia y eficiencia que permitieron comparar el desempeño operativo antes y 
+después de la implementación del sistema web respecto a la línea base levantada en el Capítulo~3.
 
-A continuación, se presentarán las cifras comparativas de los procedimientos evaluados antes y después de la implementación.
+La Tabla~\ref{tab:comparativa_actividades_criticas} presenta la comparativa de los once criterios y procedimientos críticos evaluados.
 
 \par
 \noindent
@@ -18,43 +18,146 @@ A continuación, se presentarán las cifras comparativas de los procedimientos e
     \setlength{\tabcolsep}{4pt}
     \renewcommand{\arraystretch}{1.25}
 
-    \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{2.8cm}@{}}
-        \toprule
+    \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash\hsize=1.35\hsize}X>{\raggedright\arraybackslash\hsize=0.95\hsize}X>{\raggedright\arraybackslash\hsize=0.95\hsize}X>{\raggedright\arraybackslash\hsize=0.75\hsize}X@{}}        \toprule
         \textbf{Actividad crítica evaluada} & \textbf{Antes del software} & \textbf{Después del software} & \textbf{Variación / Cumplimiento} \\ \midrule
-        Base de datos unificada de RR. HH. y planillas & Archivos dispersos, susceptibles a errores humanos & Base centralizada y única, con menos errores & 100 \% / Cumplido \\
-        Administración de parámetros de ley vigentes & Edición manual & Parametrización centralizada & 100 \% / Cumplido \\
-        Gestión de empleados (operaciones CRUD) & 10 min / tareas relacionadas & 2 min / tareas relacionadas & -80.0 \% / Cumplido \\
-        Administración de contratos de empleado & 15 min / contrato & 2 min / contrato & -86.7 \% / Cumplido \\
-        Asignación de jornada & 20 min / programación & 2 min / programación & -90.0 \% / Cumplido \\
-        Gestión de asistencias & 50 min / área y periodo & 4 min / área y periodo & -92.0 \% / Cumplido \\
-        Gestión de solicitudes de empleados & 180 min / trámite & 10 min / trámite & -94.4 \% / Cumplido \\
-        Cálculo de planillas (por área y por empleado) & 120 min / lote & 3 min / lote & -97.5 \% / Cumplido \\
-        Generación de boletas electrónicas & 45 min / lote & 2 min / lote & -95.6 \% / Cumplido \\
-        Distribución de boletas electrónicas & 60 min / envío por lote & 3 min / envío por lote & -95.0 \% / Cumplido \\
-        Auditoría de cambios realizados por empleados & Registro parcial o casi nulo & Bitácora completa de cambios & 100 \% / Cumplido \\ \bottomrule
+        Base de datos unificada de RR.~HH. y planillas & 
+        Archivos dispersos, susceptibles a errores humanos & 
+        Base centralizada en PostgreSQL con validación Zod y unicidad & 
+        100\% / Cumplido \\
+
+        Administración de parámetros de ley vigentes & 
+        Edición manual en hojas de cálculo & 
+        Parametrización centralizada por vigencia & 
+        100\% / Cumplido \\
+        
+        Gestión de empleados (operaciones CRUD y carga) & 
+        10 min / tarea & 
+        2 min / tarea & 
+        -80.0\% / Cumplido \\
+
+        Administración de contratos de empleado & 
+        15 min / contrato & 
+        2 min / contrato & 
+        -86.7\% / Cumplido \\
+
+        Asignación de jornada & 
+        20 min / programación & 
+        2 min / programación & 
+        -90.0\% / Cumplido \\
+
+        Gestión de asistencias & 
+        50 min / área y periodo & 
+        4 min / área y periodo & 
+        -92.0\% / Cumplido \\
+
+        Gestión de solicitudes de empleados & 
+        180 min / trámite & 
+        10 min / trámite & 
+        -94.4\% / Cumplido \\
+
+        Cálculo de planillas (por área y periodo) & 
+        120 min / lote & 
+        3 min / lote & 
+        -97.5\% / Cumplido \\
+
+        Generación de boletas electrónicas (PDF) & 
+        45 min / lote & 
+        2 min / lote & 
+        -95.6\% / Cumplido \\
+
+        Distribución de boletas electrónicas & 
+        60 min / envío manual & 
+        3 min / despacho vía n8n y portal & 
+        -95.0\% / Cumplido \\
+        Auditoría de cambios realizados por usuarios & 
+        Registro parcial o casi nulo & 
+        Bitácora inmutable (usuario, IP y deltas) & 
+        100\% / Cumplido \\ \bottomrule
     \end{tabularx}
     \endgroup
 
-    \notaTabla{Los resultados obtenidos en estas métricas se dieron en condiciones favorables, sin interrupciones ni casos excepcionales. Elaboración propia.}
+    \notaTabla{Mediciones obtenidas en entorno controlado de pruebas funcionales sobre lotes representativos, en comparación con la línea base documentada en el Capítulo~3. Elaboración propia.}
 \end{minipage}
 \finBloqueAPA
 
+La reproducibilidad y exactitud de estas métricas se respaldaron técnicamente mediante la ejecución de 180 archivos de prueba automatizada en Jest 
+(unitarias y de integración sobre reglas laborales peruanas y disparadores SQL), 
+la verificación de contratos HTTP en OpenAPI~3.0.3 y el procesamiento desacoplado por colas BullMQ en Redis 
+y \textit{Worker Threads}, lo que permitió sostener tiempos de respuesta estables sin comprometer la integridad transaccional.
+
+Asimismo, en el plano económico-financiero evaluado en los Capítulos~5 y~6, 
+frente a una inversión total de S/ 60,906.79, 
+la solución genera un ahorro operativo anual de S/ 6,340.12 (equivalente al 85 \% de los S/ 7,458.96 de pérdidas anuales diagnosticadas en el Capítulo~3) 
+y una proyección de ingresos SaaS de S/ 67,200.00 (20 clientes empresariales),
+alcanzando un beneficio anual total de S/ 73,540.12, una relación beneficio-costo de 1.21 y un periodo de recuperación de 9 meses y 28 días.
+
 \subsubsection{Discusión}
-Los resultados operativos visualizados en la tabla comparativa anterior evidencian una considerable reducción de tiempo en los procedimientos cotidianos y excepcionales, alcanzando un promedio de reducción del 91.4 \% tras la implementación del software. Asimismo, a diferencia de los procedimientos manuales que suelen apoyarse en fuentes de información físicas y descentralizadas, la solución técnica emplea una fuente de información centralizada; esta conclusión se ve respaldada por el trabajo de suficiencia profesional de la Universidad San Ignacio de Loyola, sustentado por \textcite{pedroza2025propuesta}, donde, al unificar las fuentes de información y automatizar los procesos, se obtuvo una reducción de tiempo del 87.5 \% en las operaciones diarias de recursos humanos y en la generación de nómina, evitando en gran medida los errores humanos frecuentes en las hojas de Excel y Word convencionales.
+Los resultados de la Tabla~\ref{tab:comparativa_actividades_criticas} evidencian una reducción promedio simple del 91.4 
+\% en los ocho procedimientos cronometrados, destacando la caída en el cálculo de planillas (de 120 a 3 minutos; $-97.5$ \%) 
+y en la gestión de solicitudes internas (de 180 a 10 minutos; $-94.4$ \%) respecto a la línea base del Capítulo~3. 
+Esta tendencia coincide con lo reportado por \textcite{pedroza2025propuesta}, quien obtuvo una reducción del 87.5 \% 
+en atención de solicitudes y del 92.3 \% en emisión de boletas tras unificar 14 fuentes fragmentadas; 
+por \textcite{fernandez2023implementacion}, quien alcanzó disminuciones del 99.83 \% 
+en elaboración de planillas y del 99.80 \% en boletas mediante sistematización web 
+($p = 0,001 < 0,05$); y por \textcite{beltran2021automatizacion}, 
+con una mejora promedio del 79 \% en eficiencia operativa (95 \% en cálculo de nómina).
 
-Una tendencia recurrente en los antecedentes de este tipo de proyectos es el empleo de una base de datos relacional (SQL), independientemente del motor utilizado, debido a que en estos sistemas las variables y entidades presentan valores definidos o relaciones estructuradas entre sí.
+Desde el enfoque de arquitectura y trazabilidad, el uso de PostgreSQL con aislamiento \texttt{Serializable}, 
+bloqueos asesores (\texttt{transaccionAuditada}), identificadores UUIDv7 y bitácora inmutable en \texttt{audit\_log} 
+responde a la necesidad de evitar inconsistencias concurrentes y pérdida de rastro contable. 
+Este diseño concuerda con \textcite{aliya2026design}, quien demostró que las arquitecturas orientadas a la trazabilidad 
+con identificadores GUID y registro inmutable alcanzan una valoración de 4.81/5 en auditabilidad y 
+suprimen transferencias manuales entre áreas; asimismo, se alinea con \textcite{chattopadhyay2026ai}, 
+donde la orquestación asíncrona orientada a eventos redujo el tiempo medio de procesamiento de nómina en un 90.1 \% y 
+elevó la precisión salarial al 99.7 \% mediante pistas de auditoría y validaciones previas.
 
-En la generación y el envío de boletas se observan mejoras considerables en la reducción del tiempo, lo que constituye un factor determinante para la satisfacción de los usuarios del software y facilita su auditoría y validación. Un resultado similar se reporta en la tesis de \textcite{aguilar2022desarrollo}, donde se alcanzó una satisfacción general del 92.4 \% a partir de una reducción promedio del 58 \% en el tiempo de generación de boletas y de la disminución de los costos de generación y distribución, que pasaron de un rango de S/ 33.72 a S/ 44.22 a S/ 0.00 al adoptarse la generación y distribución digital.
+En cuanto a la emisión y entrega de boletas electrónicas, la reducción del 95.6 \% en generación de PDF y del 95.0 \% 
+en distribución vía n8n y portal de autoservicio concuerda con \textcite{aguilar2022desarrollo}, quien reportó un 92.4 \% 
+de satisfacción general tras digitalizar la entrega de boletas y reducir a S/ 0.00 los costos de impresión física, 
+así como con \textcite{someswari2025employee}, quien evidenció que integrar la asistencia con un portal de autoservicio 
+reduce en torno al 50 \% la carga de nómina y alcanza un 95 \% de satisfacción del usuario.
 
-A pesar de que la solución (\textit{MVP}) no ha pasado por una certificación externa, alinearse con la norma ISO/IEC 25010 ofrece un criterio de referencia fiable y funcional para su posterior comercialización, fortaleciendo su calidad, fiabilidad y usabilidad de forma coherente con lo señalado por \textcite{zeballos2022sistema}, cuyo trabajo fue evaluado y certificado bajo este mismo criterio.
-
-Para la implementación de la solución se emplearon Node.js, Fastify, NestJS y Prisma ORM en el \textit{backend} bajo una arquitectura limpia (\textit{Clean Architecture}) y modular, junto con el motor de base de datos PostgreSQL. En esta misma línea, \textcite{masapanta2025desarrollo}, en su proyecto \textit{Desarrollo de un módulo integral para la gestión de nómina y talento humano en la Cooperativa de Ahorro y Crédito Politécnica Ltda.}, concluye que este tipo de soluciones elimina los errores de tipeo y fortalece la seguridad interna de la organización. Como complemento adicional, el sistema se encuentra alineado con el régimen regulatorio laboral y tributario vigente en el Perú, lo que aporta pertinencia contextual para su aplicación local.
+Aunque este producto mínimo viable (\textit{MVP}) no ha sido sometido aún a una certificación externa, 
+su diseño adoptó como referencia los atributos de adecuación funcional, 
+seguridad y mantenibilidad de la norma ISO/IEC~25010 aplicados por \textcite{zeballos2022sistema} 
+(88.80 \% de calidad global certificada). De igual forma, la estructura de monolito modular pragmático en NestJS~11, 
+Fastify~5, Prisma ORM y PostgreSQL, adaptada al régimen laboral peruano con cifrado AES-256-GCM y 
+control RBAC, respalda las conclusiones de \textcite{masapanta2025desarrollo} sobre la reducción de errores de tipeo mediante parametrización normativa, 
+mientras que la viabilidad económica obtenida (B/C de 1.21) se corresponde con los hallazgos de \textcite{basualdo2026sistema} 
+sobre la rentabilidad del modelo SaaS multiempresa en gestión de capital humano.
 
 \subsubsection{Conclusiones}
-El sistema web cumplió con reemplazar los procedimientos manuales por flujos centralizados y automatizados, consolidando una base de datos unificada y habilitando la auditoría de los cambios realizados dentro del sistema para brindar trazabilidad a las operaciones. Este enfoque permitió alcanzar un cumplimiento del 100 \% en la centralización, la parametrización de reglas vigentes y el registro de auditoría, junto con una reducción promedio del 91.4 \% en el tiempo de los procesos operativos evaluados.
+En correspondencia con el objetivo general y los seis objetivos específicos planteados en el apartado~2.2, se concluye lo siguiente:
 
-Asimismo, la solución automatizó tareas clave de la gestión diaria, entre las que destacan las operaciones de gestión de empleados, la administración de áreas y cargos, el control de asistencias mediante la carga de archivos de Excel por parte del personal responsable y la gestión continua de contratos para mantener un registro vigente de la relación laboral de los trabajadores.
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Centralización de la información laboral:} Se consolidaron los datos personales, contractuales, 
+    financieros y de derechohabientes en una base de datos relacional única en PostgreSQL, 
+    alcanzando un cumplimiento del 100 \% en centralización y reduciendo en un 80.0 \% y 86.7 \% 
+    los tiempos de gestión de colaboradores y contratos, respectivamente.
 
-En el plano técnico, el desarrollo se implementó bajo los criterios de referencia de la norma ISO/IEC 25010 señalados anteriormente, estructurándose como un monolito modular bajo una arquitectura limpia (\textit{Clean Architecture}) con el \textit{framework} NestJS, el motor Fastify y Prisma ORM como capa de comunicación entre el \textit{backend} y la base de datos.
+    \item \textbf{Agilización mediante cargas masivas validadas:} La incorporación de validaciones con Zod y procesamiento asíncrono mediante BullMQ 
+    permitió automatizar la importación masiva de colaboradores y marcaciones desde Excel, 
+    evitando registros duplicados y errores de formato sin bloquear la interfaz de usuario.
 
-Finalmente, a pesar de tratarse de una versión inicial (\textit{MVP}), el sistema fue construido siguiendo criterios orientados a la seguridad, la mantenibilidad y las futuras actualizaciones, respaldado por su correspondiente documentación técnica.
+    \item \textbf{Automatización del cálculo masivo de planillas:} El motor de nómina centralizó los parámetros legales vigentes y 
+    automatizó el cómputo paralelo de remuneraciones, horas extras, tardanzas, inasistencias, descuentos previsionales, 
+    renta de quinta categoría y aportes, logrando una reducción del 97.5 \% en el tiempo de cálculo por lote.
+
+    \item \textbf{Control de acceso y auditoría administrativa:} Se implementó autenticación JWT, autorización por roles
+     (\texttt{ADMIN}, \texttt{RRHH}, \texttt{CONTADOR} y colaborador), 
+     cifrado AES-256-GCM para cuentas bancarias y una estrategia dual de auditoría en \texttt{audit\_log}, 
+     alcanzando un 100 \% de trazabilidad sobre quién realizó cada modificación, 
+     desde qué dirección IP y qué valores fueron alterados.
+
+    \item \textbf{Integración con n8n y exportaciones normativas:} El sistema integró la generación de archivos normativos y 
+    bancarios (PLAME, AFPnet y BCP Haberes) junto con flujos firmados en n8n para despachar boletas electrónicas en PDF y 
+    notificaciones operativas, reduciendo en un 95.0 \% el tiempo de distribución por lote.
+
+    \item \textbf{Base técnica escalable para la etapa comercial:} El sistema se estructuró como un monolito modular pragmático sobre NestJS~11, 
+    Fastify~5 y Prisma ORM bajo los criterios de referencia de la norma ISO/IEC~25010, alcanzando una reducción promedio simple del 91.4 \% 
+    en las actividades cronometradas. Al haber dejado definidos y validados en este \textit{MVP} los núcleos de mayor complejidad técnica y 
+    carga de desarrollo —el cálculo de nómina, el control de asistencias y la gestión de solicitudes—, 
+    la incorporación de futuras actualizaciones resulta considerablemente más ágil, 
+    reduciendo el esfuerzo previo a la comercialización a completar las vistas, \textit{endpoints} y reglas de negocio complementarias.
+    
+\end{enumerate}
