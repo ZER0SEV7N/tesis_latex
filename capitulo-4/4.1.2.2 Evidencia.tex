@@ -1,0 +1,159 @@
+\par\medskip
+\noindent\textbf{Evidencias de la Fase 1: Análisis, prototipado y modelado de datos (mayo – junio de 2026)}
+\par\nobreak
+A partir de las entrevistas realizadas al Gerente General y al Contador, 
+se evaluaron soluciones comerciales del mercado peruano (Buk Perú, Atenea Perú y Rapifac Nóminas) 
+tomando a Rapifac como referencia operativa principal por la disponibilidad de flujos demostrativos completos. 
+Este análisis permitió delimitar los 15 requerimientos funcionales (Anexo~2) y 9 no funcionales (Anexo~3) del MVP para los perfiles de RR.HH. y Contador, 
+postergando el portal de autoservicio del trabajador como línea de evolución futura (Tabla~\ref{tab:comparativa_referentes}).
+
+\par
+\noindent
+\begin{minipage}{\linewidth}
+
+    \tituloTablaAPA
+        {tab:comparativa_referentes}
+        {Análisis comparativo de sistemas de referencia y aportes del MVP propuesto}
+
+    \begingroup
+    \renewcommand{\baselinestretch}{1}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.35}
+
+    \begin{tabularx}{\linewidth}{
+        @{}
+        >{\raggedright\arraybackslash}p{0.20\linewidth}
+        >{\raggedright\arraybackslash}p{0.26\linewidth}
+        >{\raggedright\arraybackslash}p{0.26\linewidth}
+        >{\raggedright\arraybackslash}X
+        @{}
+    }
+        \toprule
+        \textbf{Sistema evaluado} &
+        \textbf{Fortalezas observadas} &
+        \textbf{Limitaciones para el caso} &
+        \textbf{Aporte en el MVP de J\&P} \\
+        \midrule
+
+        Buk Perú &
+        Suite integral corporativa de capital humano y nóminas. &
+        Tarificación por colaborador activo y costo elevado para pymes. &
+        Modelo por tramos con arquitectura modular escalable. \\
+
+        Atenea Perú / Planiweb &
+        Paquetes planos accesibles orientados a contabilidad pyme. &
+        Menor flexibilidad en cruce de asistencia y flujos de aprobación. &
+        Cruce automático de jornadas, marcaciones y solicitudes con sustento. \\
+
+        Rapifac Nóminas &
+        Cobertura normativa local (PLAME, AFPnet, CTS, gratificaciones, 5ta). &
+        Alta carga manual en boletas individuales y formularios extensos. &
+        Wizard de registro con RENIEC, carga masiva en dos pasos y envíos con n8n. \\
+
+        \bottomrule
+    \end{tabularx}
+    \endgroup
+
+    \notaTabla{Síntesis del levantamiento comparativo ejecutado en la Fase~1 de análisis. Elaboración propia.}
+
+\end{minipage}
+\finBloqueAPA
+
+Como parte del diseño temprano de interfaz (actividad registrada en el cronograma de la Fase~1), 
+se elaboraron prototipos exploratorios en Google Stitch para validar la disposición de indicadores, 
+alertas contractuales y formularios de ingreso de personal antes de iniciar la codificación 
+(Figuras~\ref{fig:stitch_dashboard_rrhh} a~\ref{fig:stitch_wizard_empleado}).
+
+\figuraEnTexto
+    {fig:stitch_dashboard_rrhh}
+    {Prototipo inicial del panel de gestión de Recursos Humanos en Google Stitch}
+    {images/evidencias/fase1/dashboard-rrhh.png}
+    {Prototipo exploratorio generado con Google Stitch mediante el \textit{prompt}: 
+    ``Panel administrativo de RR.HH. para J\&P Planillas usando componentes Shadcn y color primario \#150AB4, con tarjetas de empleados totales, solicitudes activas, documentos pendientes, alertas tempranas de contratos, gráfico por área y próximos cumpleaños''.}
+
+\figuraEnTexto
+    {fig:stitch_dashboard_planillas}
+    {Prototipo inicial del panel de control de nóminas en Google Stitch}
+    {images/evidencias/fase1/dashboard-planillas.png}
+    {Prototipo exploratorio con datos referenciales generado con Google Stitch mediante el \textit{prompt}: ``Dashboard de planillas con estilo moderno en \#150AB4, cuatro tarjetas KPI superiores (total nómina, empleados, pendientes, retenciones), gráfico de cumplimiento de pago circular, alertas activas de PLAME/DNI/horas extras y barra de progreso mensual''.}
+
+\figuraEnTexto
+    {fig:stitch_wizard_empleado}
+    {Prototipo del formulario en pasos para registro de colaboradores con consulta RENIEC}
+    {images/evidencias/fase1/wizard-1.png}
+    {Prototipo exploratorio generado con Google Stitch mediante el \textit{prompt}: ``Modal tipo asistente (\textit{wizard}) de tres pasos para registro de trabajador (Datos Personales, Información Laboral, Pago y Pensiones) con búsqueda automática de DNI en RENIEC''.}
+
+Asimismo, el modelado relacional de la base de datos en PostgreSQL 
+se estructuró por dominios funcionales para garantizar la integridad referencial, 
+la inmutabilidad de los cierres contables y la trazabilidad en auditoría. Las Figuras~\ref{fig:erd_organizacion_legajos} 
+a~\ref{fig:erd_seguridad} presentan las 23 tablas operativas del MVP agrupadas en cuatro diagramas modulares 
+(conservando adicionalmente 7 tablas previstas para evolución futura de vínculos históricos, vacaciones y liquidaciones).
+
+\figuraEnTexto
+    {fig:erd_organizacion_legajos}
+    {Modelo relacional del módulo de organización, legajos y contratos}
+    {images/evidencias/fase1/ERD_1_organizacion_legajos.png}
+    {Entidades que sostienen la estructura organizacional y el legajo del colaborador. PK = clave primaria; FK = clave foránea; UQ = valor único. 
+    \texttt{solicitud.responsable\_id} referencia a \texttt{usuarios} (Figura~\ref{fig:erd_seguridad}). Elaboración propia.}
+
+\figuraEnTexto
+    {fig:erd_asistencia}
+    {Modelo relacional del módulo de asistencia e incidencias}
+    {images/evidencias/fase1/ERD_2_asistencia.png}
+    {Registro de marcaciones, vigencias de jornada, decisiones operativas, calendario laboral y consolidado mensual. 
+    \texttt{empleados} y \texttt{jornada} actúan como tablas puente; \texttt{usuario\_id} y \texttt{aprobado\_por} referencian a \texttt{usuarios} (Figura~\ref{fig:erd_seguridad}). Elaboración propia.}
+
+\figuraEnTexto
+    {fig:erd_nomina_parametros}
+    {Modelo relacional del módulo de nómina, parámetros y datos financieros}
+    {images/evidencias/fase1/ERD_3_nomina_parametros.png}
+    {Datos bancarios y previsionales, catálogos de bancos y AFP, parámetros legales, novedades, adelantos y resultados de planilla. 
+    \texttt{parametro\_legal} no posee clave foránea al ser consultada por código y vigencia desde el motor de cálculo. Elaboración propia.}
+
+\figuraEnTexto
+    {fig:erd_seguridad}
+    {Modelo relacional del módulo de seguridad y operación}
+    {images/evidencias/fase1/ERD_4_seguridad.png}
+    {Cuentas de usuario vinculadas al legajo, tokens de seguridad, bitácora de auditoría, tareas operativas y trabajos de carga masiva. 
+    \texttt{asignado\_a} y \texttt{asignado\_por} referencian a \texttt{usuarios}. Elaboración propia.}
+
+\par\medskip
+\noindent\textbf{Evidencias de la Fase 2: Construcción y validación del \textit{backend} (julio – octubre de 2026)}\par
+\nobreak
+Durante la Fase~2 se implementó el núcleo transaccional en NestJS~11, Fastify~5 y Prisma ORM sobre PostgreSQL, junto con los hilos paralelos de cálculo (\textit{Worker Threads}) y los disparadores SQL de inmutabilidad y auditoría. La evidencia de esta etapa se sustenta en cuatro artefactos técnicos verificables del repositorio \texttt{bella-jyp-backend}:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Trazabilidad de código y migraciones:} Historial de confirmaciones en GitHub entre julio y octubre de 2026 y registro de migraciones en Prisma (entre ellas \texttt{20261001...\_refactor\_schema\_afp\_planillas\_estados} y \texttt{20261015...\_asistencia\_payroll\_estable}), acreditando la evolución incremental de los cinco módulos de dominio (\texttt{core}, \texttt{RRHH}, \texttt{asistencia}, \texttt{nomina} e \texttt{integraciones}) (Figura~\ref{fig:evidencia_git_backend}).
+    \item \textbf{Contratos de interfaz y pruebas de \textit{endpoints}:} Especificación formal \texttt{openapi.yml} (versión~1.2.0) publicada en Swagger UI y colecciones de Postman (\textit{Bella J\&P — Avance backend} y \textit{Planilla}), validando códigos de respuesta, esquemas Zod y manejo de errores bajo RFC~7807 (Figuras~\ref{fig:evidencia_swagger} y~\ref{fig:evidencia_postman}).
+    \item \textbf{Pruebas automatizadas y análisis estático:} Ejecución de 180 archivos de prueba unitaria y de integración (\texttt{.spec.ts} y \texttt{.e2e-spec.ts}) en Jest sobre las reglas laborales y disparadores SQL, complementada con el análisis de calidad en SonarQube (\texttt{bella-planillas-backend}) conforme a la definición de Terminado (Figura~\ref{fig:evidencia_jest_sonar}).
+\end{itemize}
+
+%\figuraEnTexto
+%    {fig:evidencia_git_backend}
+%    {Historial de actividad y migraciones del repositorio \textit{backend}}
+%    {images/evidencias/fase2/github-commits-backend.png}
+%    {Registro de confirmaciones en el repositorio \texttt{bella-jyp-backend} correspondientes al desarrollo del núcleo transaccional (julio – octubre de 2026). Elaboración propia.}
+
+%\figuraEnTexto
+%    {fig:evidencia_swagger}
+%    {Documentación interactiva de contratos API en Swagger UI (OpenAPI 3.0.3)}
+%    {images/evidencias/fase2/swagger-openapi.png}
+%    {Endpoints agrupados por dominio funcional a partir de la especificación \texttt{openapi.yml} v1.2.0. Elaboración propia.}
+
+%\figuraEnTexto
+%    {fig:evidencia_postman}
+%    {Validación funcional de \textit{endpoints} de nómina en Postman}
+%    {images/evidencias/fase2/postman-planilla.png}
+%    {Ejecución de prueba de integración sobre la colección del \textit{backend} verificando respuesta JSON estructurada y códigos de estado HTTP. Elaboración propia.}
+
+%\figuraEnTexto
+%    {fig:evidencia_jest_sonar}
+%    {Resultados de pruebas automatizadas en Jest y análisis en SonarQube}
+%    {images/evidencias/fase2/jest-sonarqube.png}
+%    {Verificación de cobertura de pruebas unitarias e integración y ausencia de defectos bloqueantes en el proyecto \texttt{bella-planillas-backend}. Elaboración propia.}
+
+
+\par\medskip
+\noindent\textbf{Evidencias de las Fases 3, 4 y 5: Integración \textit{frontend}, automatización con n8n y despliegue (noviembre – diciembre de 2026)}\par
+\nobreak
