@@ -70,19 +70,24 @@ alertas contractuales y formularios de ingreso de personal antes de iniciar la c
     {Prototipo inicial del panel de gestión de Recursos Humanos en Google Stitch}
     {images/evidencias/fase1/dashboard-rrhh.png}
     {Prototipo exploratorio generado con Google Stitch mediante el \textit{prompt}: 
-    ``Panel administrativo de RR.HH. para J\&P Planillas usando componentes Shadcn y color primario \#150AB4, con tarjetas de empleados totales, solicitudes activas, documentos pendientes, alertas tempranas de contratos, gráfico por área y próximos cumpleaños''.}
+    ``Panel administrativo de RR.HH. para J\&P Planillas usando componentes Shadcn y color primario \#150AB4, 
+    con tarjetas de empleados totales, solicitudes activas, documentos pendientes, alertas tempranas de contratos, gráfico por área y próximos cumpleaños''.}
 
 \figuraEnTexto
     {fig:stitch_dashboard_planillas}
     {Prototipo inicial del panel de control de nóminas en Google Stitch}
     {images/evidencias/fase1/dashboard-planillas.png}
-    {Prototipo exploratorio con datos referenciales generado con Google Stitch mediante el \textit{prompt}: ``Dashboard de planillas con estilo moderno en \#150AB4, cuatro tarjetas KPI superiores (total nómina, empleados, pendientes, retenciones), gráfico de cumplimiento de pago circular, alertas activas de PLAME/DNI/horas extras y barra de progreso mensual''.}
+    {Prototipo exploratorio con datos referenciales generado con Google Stitch mediante el \textit{prompt}: 
+    ``Dashboard de planillas con estilo moderno en \#150AB4, cuatro tarjetas KPI superiores (total nómina, empleados, pendientes, retenciones), 
+    gráfico de cumplimiento de pago circular, alertas activas de PLAME/DNI/horas extras y barra de progreso mensual''.}
 
 \figuraEnTexto
     {fig:stitch_wizard_empleado}
     {Prototipo del formulario en pasos para registro de colaboradores con consulta RENIEC}
     {images/evidencias/fase1/wizard-1.png}
-    {Prototipo exploratorio generado con Google Stitch mediante el \textit{prompt}: ``Modal tipo asistente (\textit{wizard}) de tres pasos para registro de trabajador (Datos Personales, Información Laboral, Pago y Pensiones) con búsqueda automática de DNI en RENIEC''.}
+    {Prototipo exploratorio generado con Google Stitch mediante el \textit{prompt}: 
+    ``Modal tipo asistente (\textit{wizard}) de tres pasos para registro de trabajador (Datos Personales, Información Laboral, Pago y Pensiones) 
+    con búsqueda automática de DNI en RENIEC''.}
 
 Asimismo, el modelado relacional de la base de datos en PostgreSQL 
 se estructuró por dominios funcionales para garantizar la integridad referencial, 
@@ -119,40 +124,86 @@ a~\ref{fig:erd_seguridad} presentan las 23 tablas operativas del MVP agrupadas e
     \texttt{asignado\_a} y \texttt{asignado\_por} referencian a \texttt{usuarios}. Elaboración propia.}
 
 \par\medskip
-\noindent\textbf{Evidencias de la Fase 2: Construcción y validación del \textit{backend} (julio – octubre de 2026)}\par
+\noindent\textbf{Fase 2: Construcción y validación del \textit{backend} (julio – octubre de 2026)}\par
 \nobreak
-Durante la Fase~2 se implementó el núcleo transaccional en NestJS~11, Fastify~5 y Prisma ORM sobre PostgreSQL, junto con los hilos paralelos de cálculo (\textit{Worker Threads}) y los disparadores SQL de inmutabilidad y auditoría. La evidencia de esta etapa se sustenta en cuatro artefactos técnicos verificables del repositorio \texttt{bella-jyp-backend}:
+Durante la Fase~2 se implementó el núcleo transaccional del sistema en el repositorio 
+\texttt{bella-jyp-backend} bajo una arquitectura de monolito modular pragmático sobre NestJS~11, 
+Fastify~5 y Prisma ORM con PostgreSQL. 
+Para mantener la separación de responsabilidades y evitar el acoplamiento entre reglas de negocio e infraestructura, 
+el código fuente se organizó en una capa transversal (\texttt{src/common/}), 
+cinco módulos de dominio (\texttt{src/modules/}) y un plano de procesamiento asíncrono (\texttt{src/workers/}).
 
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Trazabilidad de código y migraciones:} Historial de confirmaciones en GitHub entre julio y octubre de 2026 y registro de migraciones en Prisma (entre ellas \texttt{20261001...\_refactor\_schema\_afp\_planillas\_estados} y \texttt{20261015...\_asistencia\_payroll\_estable}), acreditando la evolución incremental de los cinco módulos de dominio (\texttt{core}, \texttt{RRHH}, \texttt{asistencia}, \texttt{nomina} e \texttt{integraciones}) (Figura~\ref{fig:evidencia_git_backend}).
-    \item \textbf{Contratos de interfaz y pruebas de \textit{endpoints}:} Especificación formal \texttt{openapi.yml} (versión~1.2.0) publicada en Swagger UI y colecciones de Postman (\textit{Bella J\&P — Avance backend} y \textit{Planilla}), validando códigos de respuesta, esquemas Zod y manejo de errores bajo RFC~7807 (Figuras~\ref{fig:evidencia_swagger} y~\ref{fig:evidencia_postman}).
-    \item \textbf{Pruebas automatizadas y análisis estático:} Ejecución de 180 archivos de prueba unitaria y de integración (\texttt{.spec.ts} y \texttt{.e2e-spec.ts}) en Jest sobre las reglas laborales y disparadores SQL, complementada con el análisis de calidad en SonarQube (\texttt{bella-planillas-backend}) conforme a la definición de Terminado (Figura~\ref{fig:evidencia_jest_sonar}).
-\end{itemize}
+En primer lugar, se construyó la capa transversal 
+\texttt{src/common/} (Figura~\ref{fig:evidencia_common_estructura}), sin lógica de negocio e importable desde cualquier módulo. 
+En ella se centralizaron la propagación de contexto por petición mediante \textit{Continuation-Local Storage} (\texttt{cls/}); 
+la validación de variables de entorno y caché de catálogos en Redis (\texttt{config/}); 
+los decoradores de autorización y contrato (\texttt{decorators/}); 
+el filtro global de excepciones bajo el estándar RFC~7807 (\texttt{filters/}); 
+los guardias de autenticación JWT, roles, firma máquina a máquina para n8n y control de intentos (\texttt{guards/}); 
+los interceptores de auditoría y respuesta uniforme (\texttt{interceptors/}); 
+las alertas programadas y en tiempo real por WebSocket (\texttt{notificaciones/}); 
+la validación de DTOs con Zod (\texttt{pipes/}); el cliente global de Prisma ORM (\texttt{prisma/}); 
+y las utilidades compartidas de cifrado AES-256-GCM, UUIDv7, fechas, archivos y transacciones auditadas (\texttt{utils/}).
 
-%\figuraEnTexto
-%    {fig:evidencia_git_backend}
-%    {Historial de actividad y migraciones del repositorio \textit{backend}}
-%    {images/evidencias/fase2/github-commits-backend.png}
-%    {Registro de confirmaciones en el repositorio \texttt{bella-jyp-backend} correspondientes al desarrollo del núcleo transaccional (julio – octubre de 2026). Elaboración propia.}
+\figuraEnTexto
+    {fig:evidencia_common_estructura}
+    {Estructura de la capa transversal \texttt{src/common/} en \texttt{bella-jyp-backend}}
+    {images/evidencias/fase2/Estructura_1_common.png}
+    {Organización de los componentes de infraestructura compartida sin acoplamiento a los módulos de dominio. Elaboración propia.}
 
-%\figuraEnTexto
-%    {fig:evidencia_swagger}
-%    {Documentación interactiva de contratos API en Swagger UI (OpenAPI 3.0.3)}
-%    {images/evidencias/fase2/swagger-openapi.png}
-%    {Endpoints agrupados por dominio funcional a partir de la especificación \texttt{openapi.yml} v1.2.0. Elaboración propia.}
+Sobre esta base se implementaron cinco módulos de dominio en \texttt{src/modules/} (Figura~\ref{fig:evidencia_modules_estructura}): 
+\texttt{core} (autenticación, bitácora de auditoría y gestión de usuarios), 
+\texttt{RRHH} (organización, carga masiva de colaboradores, contratos, datos financieros, solicitudes y tareas), 
+\texttt{nomina} (parámetros legales, catálogos de AFP y bancos, cálculo de planillas, boletas y desembolsos), 
+\texttt{asistencia} (marcaciones, jornadas e incidencias mensuales) e 
+\texttt{integraciones} (exportaciones normativas PLAME/bancos y despacho hacia n8n).
 
-%\figuraEnTexto
-%    {fig:evidencia_postman}
-%    {Validación funcional de \textit{endpoints} de nómina en Postman}
-%    {images/evidencias/fase2/postman-planilla.png}
-%    {Ejecución de prueba de integración sobre la colección del \textit{backend} verificando respuesta JSON estructurada y códigos de estado HTTP. Elaboración propia.}
+\figuraEnTexto
+    {fig:evidencia_modules_estructura}
+    {Módulos de dominio y procesos en segundo plano en \texttt{src/}}
+    {images/evidencias/fase2/Estructura_2_modules.png}
+    {Distribución funcional de los módulos de negocio en \texttt{src/modules/} y del plano de colas asíncronas en \texttt{src/workers/}. Elaboración propia.}
 
-%\figuraEnTexto
-%    {fig:evidencia_jest_sonar}
-%    {Resultados de pruebas automatizadas en Jest y análisis en SonarQube}
-%    {images/evidencias/fase2/jest-sonarqube.png}
-%    {Verificación de cobertura de pruebas unitarias e integración y ausencia de defectos bloqueantes en el proyecto \texttt{bella-planillas-backend}. Elaboración propia.}
+Internamente, cada submódulo sigue un patrón homogéneo por capas (Figura~\ref{fig:evidencia_submodules_estructura}): 
+la petición atraviesa los guardias, \textit{pipes} e interceptores globales de \texttt{src/common/} antes de ingresar al controlador, 
+delega la orquestación al caso de uso correspondiente (\texttt{use-cases/}) 
+y apoya las reglas puras de cálculo en \texttt{domain/}, \texttt{helpers/} y \texttt{services/} antes de persistir en Prisma.
 
+\figuraEnTexto
+    {fig:evidencia_submodules_estructura}
+    {Patrón interno de capas y flujo de ejecución por submódulo}
+    {images/evidencias/fase2/Estructura_3_submodules.png}
+    {Organización estándar de carpetas dentro de cada submódulo y secuencia de procesamiento desde la petición HTTP hasta Prisma ORM. Elaboración propia.}
+
+Para resguardar la integridad contable y el rendimiento operativo, 
+las operaciones críticas de asistencia, solicitudes y planillas se ejecutan mediante transacciones auditadas bajo aislamiento 
+\texttt{Serializable} con inyección del usuario e IP hacia disparadores SQL en PostgreSQL, 
+mientras que la importación masiva desde Excel y el cálculo paralelo de nómina se procesan en segundo plano mediante colas 
+BullMQ sobre Redis en \texttt{src/workers/}.
+
+Finalmente, la trazabilidad del desarrollo entre junio y octubre de 
+2026 quedó acreditada en el historial de confirmaciones del repositorio \texttt{bella-jyp-backend} (Figura~\ref{fig:evidencia_git_backend}), 
+y la especificación formal de sus contratos HTTP y reglas laborales peruanas se documentó en OpenAPI~3.0.3 (Figura~\ref{fig:evidencia_swagger}).
+
+\figuraEnTexto
+    {fig:evidencia_git_backend}
+    {Historial de actividad de confirmaciones en el repositorio \texttt{bella-jyp-backend}}
+    {images/evidencias/fase2/github-commits-backend.png}
+    {Frecuencia semanal de confirmaciones en la rama \texttt{master} (30 de mayo al 21 de noviembre de 2026, 
+    excluyendo \textit{merge commits}). Captura obtenida de GitHub Insights.}
+
+\figuraEnTexto
+    {fig:evidencia_swagger}
+    {Especificación OpenAPI 3.0.3 del \textit{backend} en Swagger UI}
+    {images/evidencias/fase2/swagger-openapi-general.png}
+    {Encabezado de la especificación propia \texttt{openapi.yml} v1.2.0 con el marco normativo laboral peruano, 
+    autenticación JWT y agrupación de \textit{endpoints}, visualizado en Swagger UI.}
+
+\figuraEnTexto
+    {fig:evidencia_swagger_contrato}
+    {Ejemplo de contrato de respuesta y control de roles en OpenAPI 3.0.3}
+    {images/evidencias/fase2/swagger-openapi-contrato.png}
+    {Estructura estandarizada de respuesta (\texttt{statusCode}, \texttt{data}, \texttt{meta}), códigos de estado HTTP y extensión \texttt{x-roles} en el \textit{endpoint} de auditoría, visualizado en Swagger UI.}
 
 \par\medskip
 \noindent\textbf{Evidencias de las Fases 3, 4 y 5: Integración \textit{frontend}, automatización con n8n y despliegue (noviembre – diciembre de 2026)}\par
