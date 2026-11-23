@@ -4,27 +4,30 @@
 
 \noindent{\bfseries\large Resumen} \\[0.5cm]
 
-El presente proyecto de innovación y mejora tuvo como objetivo principal desarrollar e implementar un sistema web con flujos automatizados 
-para la gestión de nóminas y procesos de recursos humanos orientado a los clientes empresariales de J\&P~Periféricos~S.A.C. 
-En el diagnóstico de la situación inicial, se evidenció que el procesamiento mensual de planillas en las organizaciones atendidas dependía de hojas de cálculo dispersas, 
-consolidación manual de asistencias y validaciones repetitivas, lo que ocasionaba demoras prolongadas en los cierres de pago, errores en el cálculo de horas extras, 
-bonificaciones y retenciones de ley (ONP, AFP y quinta categoría), así como riesgos de incumplimiento normativo y filtración de información financiera sensible.
+El presente proyecto de innovación y mejora tuvo como objetivo principal desarrollar e implementar 
+un sistema web con flujos automatizados para la gestión de nóminas y procesos de recursos humanos orientado 
+a los clientes empresariales de J\&P~Periféricos~S.A.C. En el diagnóstico inicial se evidenció que el procesamiento mensual 
+de planillas dependía de hojas de cálculo dispersas, consolidación manual de asistencias y validaciones repetitivas, 
+lo que ocasionaba demoras prolongadas en los cierres de pago, errores en el cálculo de horas extras, bonificaciones y 
+retenciones de ley (ONP, AFP y quinta categoría), así como riesgos de incumplimiento normativo y 
+filtración de información financiera sensible.
 
-Para resolver esta problemática, el proyecto se ejecutó bajo el marco de trabajo ágil Scrum, 
-estructurando el desarrollo en iteraciones incrementales alineadas con los requerimientos funcionales y no funcionales del negocio. 
-A nivel tecnológico, se diseñó una arquitectura monolítica modular desacoplada, empleando TypeScript, NestJS y Fastify en el backend, 
-React en el frontend y PostgreSQL como motor de base de datos relacional normalizado. Asimismo, se integró la plataforma de orquestación \textbf{n8n} 
-para ejecutar flujos de trabajo asíncronos encargados de generar automáticamente los archivos planos y estructuras regulatorias exigidas 
-por SUNAT PLAME, AFPnet y las entidades bancarias (telecrédito), además de emitir y distribuir por correo electrónico las boletas de pago 
-en formato PDF protegidas mediante cifrado individual con el número de documento de identidad de cada trabajador. En materia de seguridad de la información, 
-el sistema implementó control de acceso basado en roles (RBAC), cifrado simétrico \textbf{AES-256-GCM} 
-para atributos financieros críticos y un módulo de auditoría inmutable para garantizar la trazabilidad integral de las operaciones.
+Para resolver esta problemática, el proyecto se ejecutó bajo el marco ágil Scrum en iteraciones incrementales 
+alineadas con los requerimientos del negocio. A nivel tecnológico, se diseñó un monolito modular pragmático 
+por capas empleando TypeScript, NestJS~11 y Fastify~5 en el \textit{backend}, React~19 en el \textit{frontend}, 
+Prisma ORM sobre PostgreSQL como base de datos relacional y colas BullMQ en Redis para cargas masivas y 
+cálculo paralelo de nómina. Asimismo, se integró la plataforma \textbf{n8n} para ejecutar flujos asíncronos encargados de 
+generar archivos regulatorios (SUNAT PLAME, AFPnet y bancos) y distribuir automáticamente las boletas de pago en PDF. 
+En materia de seguridad, se implementó control de acceso basado en roles (RBAC), cifrado simétrico \textbf{AES-256-GCM} 
+para datos financieros y una estrategia dual de auditoría inmutable para garantizar la trazabilidad integral de las operaciones.
 
-En cuanto a su organización,
- el documento se estructura en ocho capítulos: 
- el Capítulo~1 describe las generalidades de J\&P~Periféricos~S.A.C. y el levantamiento inicial mediante entrevistas; 
- el Capítulo~2 plantea la problemática, los objetivos, los antecedentes, la justificación y el marco teórico-normativo; 
- el Capítulo~3 analiza la situación actual (\textit{AS-IS}) mediante diagramas de procesos, Ishikawa y priorización de Pareto; 
- el Capítulo~4 detalla el plan de acción bajo Scrum, los requerimientos, la arquitectura, los procesos mejorados (\textit{TO-BE}) y el cronograma; 
- los Capítulos~5 y 6 desarrollan la estructura de costos y la evaluación técnico-económica; 
- finalmente, los Capítulos~7 y 8 presentan los resultados, la discusión, las conclusiones y las recomendaciones para la puesta en producción y evolución futura del producto.
+El documento se estructura en ocho capítulos. Los Capítulos~1 al~4 abarcan las generalidades de la empresa, 
+el planteamiento de objetivos y marco teórico-normativo, el diagnóstico de la situación actual
+mediante diagramas de procesos, Ishikawa y Pareto, y el diseño e implementación de la mejora bajo Scrum. 
+En los Capítulos~5 y~6 se desarrolla la estructura de costos, con una inversión total de S/ 60,906.79, y 
+la evaluación técnico-económica, demostrando su viabilidad mediante un ahorro operativo anual de S/ 6,340.12 e 
+ingresos proyectados bajo modelo SaaS de S/ 67,200.00 (20 clientes), alcanzando un beneficio total de S/ 73,540.12, 
+una relación beneficio-costo de 1.21 y un periodo de recuperación de 9 meses y 28 días. Finalmente, los Capítulos~7 y~8 
+presentan los resultados de validación en entorno controlado, donde se logró una reducción promedio del 91.4 \% 
+en los tiempos operativos cronometrados y un 100 \% de cumplimiento en centralización, parametrización y auditoría, 
+junto con las recomendaciones de mantenimiento y las líneas de trabajo futuro hacia su despliegue comercial multiempresa.

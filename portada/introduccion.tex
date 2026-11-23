@@ -4,25 +4,27 @@
 
 \noindent{\bfseries\large Introducción} \\[0.5cm]
 
-En el entorno empresarial contemporáneo, la administración del capital humano y el procesamiento de remuneraciones 
-constituyen procesos críticos para la continuidad operativa y el cumplimiento legal de cualquier organización. No obstante, 
-una proporción significativa de pequeñas y medianas empresas continúa gestionando sus planillas mediante hojas de cálculo descentralizadas y procedimientos manuales. 
-Este enfoque tradicional demanda una inversión desmedida de tiempo en la validación de asistencias, jornadas laborales, horas extras, beneficios sociales y deducciones de ley, 
-lo que incrementa el margen de error aritmético, provoca retrasos en el abono de haberes y expone a las empresas a contingencias administrativas y 
-multas ante entidades fiscalizadoras como SUNAFIL y SUNAT. Asimismo, 
-el almacenamiento de información salarial en archivos locales sin controles de acceso expone los datos personales y financieros a riesgos de alteración o filtración.
+En el entorno empresarial contemporáneo, la administración del capital humano y el procesamiento de remuneraciones constituyen 
+procesos críticos para la continuidad operativa y el cumplimiento legal de cualquier organización. No obstante, 
+una proporción significativa de pequeñas y medianas empresas continúa gestionando sus planillas mediante hojas de 
+cálculo descentralizadas y procedimientos manuales. Este enfoque tradicional demanda una inversión desmedida de tiempo 
+en la validación de asistencias, jornadas laborales, horas extras, beneficios sociales y deducciones de ley, 
+lo que incrementa el margen de error aritmético, provoca retrasos en el abono de haberes y expone a las empresas a 
+contingencias administrativas y multas ante entidades fiscalizadoras como SUNAFIL y SUNAT. Asimismo, el almacenamiento de 
+información salarial en archivos locales sin controles de acceso expone los datos personales y financieros a riesgos de alteración o filtración.
 
-Frente a esta problemática, el presente proyecto de innovación y mejora desarrolla e implementa un sistema web integral orientado 
-a los clientes empresariales de J\&P~Periféricos~S.A.C., diseñado bajo una arquitectura monolítica modular con TypeScript, NestJS, Fastify, React y PostgreSQL. 
-La plataforma centraliza el legajo del personal, el control de asistencias, la gestión de incidencias 
-y el motor de cálculo salarial conforme a la normativa laboral peruana vigente. Para optimizar el cierre operativo, 
-el sistema se integra con el orquestador de flujos asíncronos \textbf{n8n}, 
-automatizando la generación de archivos regulatorios (SUNAT PLAME, AFPnet y telecrédito bancario),
-así como la emisión y envío masivo de boletas de pago electrónicas en formato PDF cifradas con el documento de identidad de cada colaborador.
+Frente a esta problemática, el presente proyecto de innovación y mejora desarrolla e implementa, 
+bajo el marco de trabajo ágil Scrum, un Producto Mínimo Viable (MVP) web orientado a los clientes 
+empresariales de J\&P~Periféricos~S.A.C. y enfocado en los perfiles de Recursos Humanos y Contador. 
+La solución está diseñada como un monolito modular pragmático con TypeScript, NestJS~11, Fastify~5, React~19, Prisma ORM sobre PostgreSQL 
+y colas BullMQ en Redis, centralizando el legajo del personal, el control de asistencias, la gestión de incidencias y 
+el motor de cálculo salarial conforme a la normativa laboral peruana vigente. Para optimizar el cierre operativo, 
+el sistema se integra con el orquestador de flujos asíncronos \textbf{n8n}, automatizando la generación de archivos regulatorios 
+(SUNAT PLAME, AFPnet y telecrédito bancario), así como la emisión y el envío masivo de boletas de pago electrónicas 
+en formato PDF al correo de cada colaborador.
 
-Con el propósito de garantizar la confidencialidad, 
-integridad y disponibilidad de la información, 
-la solución incorpora autenticación segura, control de acceso basado en roles (RBAC), cifrado \textbf{AES-256-GCM} 
-para datos financieros sensibles y una bitácora de auditoría continua (\textit{audit log}) que registra la trazabilidad completa de cada operación 
-y cambio de estado en el sistema.
-
+Con el propósito de garantizar la confidencialidad, integridad y disponibilidad de la información, 
+la solución incorpora autenticación segura mediante JWT, control de acceso basado en roles (RBAC), 
+cifrado simétrico \textbf{AES-256-GCM} para datos financieros sensibles y una estrategia de auditoría continua 
+(\textit{audit log}) que registra la trazabilidad completa de cada operación y cambio de estado en el sistema, 
+sentando las bases técnicas para su posterior comercialización bajo modalidad SaaS.
