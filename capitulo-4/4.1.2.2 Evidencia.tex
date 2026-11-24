@@ -206,5 +206,356 @@ y la especificación formal de sus contratos HTTP y reglas laborales peruanas se
     {Estructura estandarizada de respuesta (\texttt{statusCode}, \texttt{data}, \texttt{meta}), códigos de estado HTTP y extensión \texttt{x-roles} en el \textit{endpoint} de auditoría, visualizado en Swagger UI.}
 
 \par\medskip
-\noindent\textbf{Evidencias de las Fases 3, 4 y 5: Integración \textit{frontend}, automatización con n8n y despliegue (noviembre – diciembre de 2026)}\par
+\noindent\textbf{Fase 3: Construcción del \textit{frontend} de RRHH y Contador (septiembre – diciembre de 2026)}\par
+\nobreak
+En la Fase~3 se construyó la interfaz web del sistema en el repositorio \texttt{bella-planillas-frontend}, 
+con React~19, Vite y TypeScript. Las pantallas se armaron con Tailwind~CSS~4 y una librería propia de componentes base. 
+La navegación se resuelve con React Router; las consultas a la API, con TanStack Query sobre Axios; 
+las tablas, con TanStack Table; y los formularios, con React Hook Form y Zod.
+Las notificaciones llegan en tiempo real por WebSocket mediante Socket.IO.
+El \textit{frontend} importa los mismos esquemas Zod que el \textit{backend} desde el paquete \texttt{@jyp/shared-contracts},
+de modo que un dato que el formulario acepta también pasa la validación de la API.
+
+El código fuente se organizó en seis carpetas dentro de \texttt{src/} (Figura~\ref{fig:evidencia_frontend_estructura}).
+\texttt{app/} contiene la configuración, los \textit{layouts}, los \textit{providers} y las rutas protegidas por rol;
+\texttt{components/} reúne las piezas compartidas (tabla de datos, filtros, formularios, asistente por pasos y componentes de interfaz);
+\texttt{features/} tiene una carpeta por módulo de negocio, como empleados, contratos, asistencia, jornadas, solicitudes, auditoría y \textit{dashboard};
+\texttt{hooks/} guarda la paginación, los catálogos y las mutaciones con aviso al usuario;
+\texttt{lib/} contiene los clientes HTTP público y protegido, las claves de caché y las utilidades de fechas, periodos y formato; 
+y \texttt{pages/} arma la página de cada ruta con las vistas de \texttt{features/}.
+Cada módulo de \texttt{features/} agrupa sus componentes, esquemas, servicios de API, \textit{hooks} de consulta y tipos.
+
+\figuraEvidencia
+    {fig:evidencia_frontend_estructura}
+    {Estructura de carpetas del \texttt{src/} en \texttt{bella-planillas-frontend}}
+    {images/evidencias/fase3/estructura/estructura-frontend.png}
+    {Organización del código en configuración de la aplicación, componentes compartidos, módulos de negocio, \textit{hooks}, utilidades y páginas. Elaboración propia.}
+
+El trabajo de septiembre y octubre preparó la base antes de los \textit{sprints}.
+El proyecto se creó el 5 de septiembre; en las semanas siguientes se añadieron la navegación,
+el cliente HTTP, los \textit{providers} y las rutas, y el 13 de octubre, el inicio de sesión con la gestión de la sesión del usuario.
+Buena parte de estas semanas se dedicó a mejorar la primera versión de las vistas, hecha a partir del prototipo en Stitch. 
+Entre las vistas ajustadas están los paneles de Recursos Humanos y del Contador y el registro de empleados 
+(Figuras~\ref{fig:evidencia_stitch_mejora_1} a~\ref{fig:evidencia_stitch_mejora_3}).
+El 7 de octubre el Gerente General y los clientes revisaron el diseño,
+y sus observaciones se aplicaron en las vistas de legajos: listado con filtros, registro, importación y ficha del empleado,
+primero con datos de prueba y desde fines de octubre conectadas a la API.
+
+\figuraEvidencia
+    {fig:evidencia_stitch_mejora_1}
+    {Versión mejorada del prototipo en Google Stitch: \textit{dashboard} de Recursos Humanos}
+    {images/evidencias/fase3/stitch/dashboard-rrhh.png}
+    {Prototipo ajustado con Google Stitch mediante el \textit{prompt}: 
+    ``\textit{Dashboard} de Recursos Humanos con estilo limpio y color primario \#150AB4, selector de periodo y buscador de empleados en la cabecera, 
+    cuatro tarjetas KPI (colaboradores activos, ingresos, ceses y rotación de personal) con su variación frente al mes anterior, 
+    gráfico de barras de la asistencia de la semana por día (puntual, tardanza y falta), distribución de colaboradores por área con barras de progreso, 
+    próximos cumpleaños y solicitudes pendientes por revisar''.}
+
+\figuraEvidencia
+    {fig:evidencia_stitch_mejora_2}
+    {Versión mejorada del prototipo en Google Stitch: \textit{dashboard} del Contador}
+    {images/evidencias/fase3/stitch/dashboard-contador.png}
+    {Prototipo ajustado con Google Stitch mediante el \textit{prompt}: 
+    ``\textit{Dashboard} de nómina para el contador en \#150AB4, con accesos rápidos para generar planilla, registrar novedad, registrar desembolso y crear una exportación, 
+    cuatro tarjetas KPI (neto total a pagar, planillas generadas, planillas congeladas e incidencias aprobadas), 
+    tarjeta de avance del periodo con los pasos cierre de incidencias, generación, congelamiento y exportación, 
+    gráfico circular del estado de las planillas y composición del periodo con ingresos, descuentos y neto a pagar''.}
+
+\figuraEvidencia
+    {fig:evidencia_stitch_mejora_3}
+    {Versión mejorada del prototipo en Google Stitch: registro de empleado}
+    {images/evidencias/fase3/stitch/registro-empleado.png}
+    {Prototipo ajustado con Google Stitch mediante el \textit{prompt}: 
+    ``Formulario de registro de nuevo empleado en cinco pasos (datos del empleado, datos financieros, contrato, derechohabientes y resumen) 
+    con indicador de progreso superior, secciones de identificación y datos personales, contacto y domicilio con departamento, provincia, distrito y ubigeo, 
+    y asignación laboral y previsional, con los botones Cancelar y Guardar y continuar''.}
+
+Desde noviembre el trabajo se gestionó en \textit{sprints} de una semana en Jira Software,
+según la planificación de la Tabla~\ref{tab:plan_sprints}.
+Los tres primeros cubrieron el perfil de Recursos Humanos.
+Los \textit{sprints} también incluyeron actividades del \textit{backend}, que se presentan en la Fase~4; 
+aquí se describen las del \textit{frontend}, cada una con su evidencia: 
+una captura de la vista o, cuando la actividad es técnica, una captura del código. 
+Las capturas de pantalla usan datos de demostración.
+
+\par\medskip
+\noindent\textbf{\textit{Sprint 1: Acceso y legajos (1 al 8 de noviembre de 2026)}}\par
+\nobreak
+Se completaron las nueve actividades comprometidas; siete corresponden al \textit{frontend}.
+
+\par\smallskip
+\noindent\textit{BEL-44: Acceder al MVP según el rol.}
+Para cada ruta se indica qué roles pueden abrirla, y una ruta sin configurar queda cerrada para todos (Figura~\ref{fig:evidencia_bel44_codigo}).
+Al entrar, Recursos Humanos solo ve los módulos que su rol puede abrir (Figura~\ref{fig:evidencia_bel44_menu_rrhh}).
+
+\figuraEvidencia
+    {fig:evidencia_bel44_codigo}
+    {Control de acceso a las rutas según el rol}
+    {images/evidencias/fase3/sprint1/codigo-bel44-acceso-por-rol.png}
+    {Captura de \texttt{routeAccess.config.ts} y \texttt{RoleRoute.tsx} en \texttt{bella-planillas-frontend}. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel44_menu_rrhh}
+    {Menú de la aplicación para el rol de Recursos Humanos}
+    {images/evidencias/fase3/sprint1/menu-rrhh.png}
+    {Módulos disponibles al ingresar con una cuenta de Recursos Humanos. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-45: Consultar y filtrar legajos.}
+Recursos Humanos busca y filtra a los colaboradores (Figura~\ref{fig:evidencia_bel45_listado})
+y abre la ficha de cada uno, que reúne en pestañas sus contratos, datos financieros, derechohabientes y asistencia
+(Figura~\ref{fig:evidencia_bel45_ficha}).
+
+\figuraEvidencia
+    {fig:evidencia_bel45_listado}
+    {Listado de empleados con filtros}
+    {images/evidencias/fase3/sprint1/empleados-listado.png}
+    {Listado paginado de colaboradores con un filtro aplicado. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel45_ficha}
+    {Ficha del empleado}
+    {images/evidencias/fase3/sprint1/ficha-empleado.png}
+    {Datos del colaborador y pestañas de contratos, datos financieros, derechohabientes y asistencia. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-48: Implementar shared-contracts, providers y cliente HTTP.}
+Todas las consultas a la API pasan por un cliente HTTP que agrega el token de la sesión.
+Si el \textit{backend} responde 401, el cliente renueva el token una sola vez y repite la petición;
+si la renovación también falla, cierra la sesión (Figura~\ref{fig:evidencia_bel48_codigo}).
+
+\figuraEvidencia
+    {fig:evidencia_bel48_codigo}
+    {Cliente HTTP con renovación del token de sesión}
+    {images/evidencias/fase3/sprint1/codigo-bel48-cliente-http.png}
+    {Captura de \texttt{protectedHttpClient.ts} en \texttt{bella-planillas-frontend}. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-50: Registrar y actualizar empleados.}
+El registro de un colaborador (Figura~\ref{fig:evidencia_bel50_registro}) y su edición posterior
+(Figura~\ref{fig:evidencia_bel50_edicion}) validan los datos antes de enviarlos a la API.
+
+\figuraEvidencia
+    {fig:evidencia_bel50_registro}
+    {Formulario de registro de un empleado}
+    {images/evidencias/fase3/sprint1/empleado-registro.png}
+    {Formulario de nuevo colaborador con datos de ejemplo. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel50_edicion}
+    {Formulario de edición de un empleado}
+    {images/evidencias/fase3/sprint1/empleado-edicion.png}
+    {Edición de los datos de un colaborador existente. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-71: Implementar mantenimiento de áreas.}
+Recursos Humanos registra, edita y desactiva las áreas de la empresa (Figura~\ref{fig:evidencia_bel71_areas}).
+
+\figuraEvidencia
+    {fig:evidencia_bel71_areas}
+    {Mantenimiento de áreas}
+    {images/evidencias/fase3/sprint1/areas.png}
+    {Listado de áreas con sus acciones. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-82: Importar empleados con prevalidación.}
+Al cargar un archivo Excel o CSV, el sistema revisa cada fila y marca los errores antes de registrar a los colaboradores,
+de modo que Recursos Humanos corrige el archivo sin dejar registros a medias (Figura~\ref{fig:evidencia_bel82_importacion}).
+
+\figuraEvidencia
+    {fig:evidencia_bel82_importacion}
+    {Revisión previa de la importación de empleados}
+    {images/evidencias/fase3/sprint1/importacion-empleados.png}
+    {Filas del archivo con su resultado de validación antes de confirmar la importación. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-105: Consultar y mantener contratos laborales.}
+Los contratos de cada colaborador se consultan y registran desde su ficha (Figura~\ref{fig:evidencia_bel105_contratos}).
+
+\figuraEvidencia
+    {fig:evidencia_bel105_contratos}
+    {Contratos laborales de un empleado}
+    {images/evidencias/fase3/sprint1/contratos.png}
+    {Contratos del colaborador con su modalidad y vigencia. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_burndown_s1}
+    {\textit{Burndown} del Sprint 1}
+    {images/evidencias/burndown/burndown-s1.png}
+    {Horas pendientes esperadas y reales por día. Las 240 horas planificadas corresponden a la semana en el cronograma (Figura~\ref{fig:gantt_f345_tabla}) y se reparten entre las actividades según sus puntos de historia. Elaboración propia.}
+
+\par\medskip
+\noindent\textbf{\textit{Sprint 2: Asistencia e incidencias (8 al 15 de noviembre de 2026)}}\par
+\nobreak
+Se completaron las 16 actividades comprometidas; 12 corresponden al \textit{frontend}.
+
+\par\smallskip
+\noindent\textit{BEL-65: Implementar módulo de dashboard.}
+El \textit{dashboard} de Recursos Humanos resume los colaboradores activos, los ingresos, los ceses y la rotación del mes, 
+la asistencia de la semana, la distribución del personal por área, el avance del cierre de asistencia y los contratos por vencer 
+(Figura~\ref{fig:evidencia_bel65_dashboard}).
+
+\figuraEvidencia
+    {fig:evidencia_bel65_dashboard}
+    {\textit{Dashboard} de Recursos Humanos}
+    {images/evidencias/fase3/sprint2/dashboard-rrhh.png}
+    {Indicadores y gráficos calculados con los datos registrados en el sistema. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-73 y BEL-74: Mantenimiento de jornadas y asignación a empleados.}
+Recursos Humanos define las jornadas con sus horarios (Figura~\ref{fig:evidencia_bel73_jornadas})
+y las asigna a los colaboradores (Figura~\ref{fig:evidencia_bel74_asignacion});
+la asistencia de cada día se evalúa contra la jornada asignada.
+
+\figuraEvidencia
+    {fig:evidencia_bel73_jornadas}
+    {Mantenimiento de jornadas}
+    {images/evidencias/fase3/sprint2/jornadas.png}
+    {Jornadas registradas con su horario. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel74_asignacion}
+    {Asignación de una jornada a empleados}
+    {images/evidencias/fase3/sprint2/asignacion-jornada.png}
+    {Selección de colaboradores para asignarles una jornada. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-75: Implementar calendario laboral.}
+El calendario registra los feriados y días no laborables de la empresa (Figura~\ref{fig:evidencia_bel75_calendario}).
+
+\figuraEvidencia
+    {fig:evidencia_bel75_calendario}
+    {Calendario laboral}
+    {images/evidencias/fase3/sprint2/calendario-laboral.png}
+    {Feriados y días no laborables del periodo. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-76, BEL-77 y BEL-78: Listado, marcación web e importación de marcaciones.}
+Las marcaciones se registran desde la web (Figura~\ref{fig:evidencia_bel77_marcacion_web}) 
+o se importan desde un archivo Excel (Figura~\ref{fig:evidencia_bel78_importacion}), 
+y se consultan y filtran en un listado (Figura~\ref{fig:evidencia_bel76_listado}).
+
+\figuraEvidencia
+    {fig:evidencia_bel76_listado}
+    {Listado de marcaciones}
+    {images/evidencias/fase3/sprint2/marcaciones-listado.png}
+    {Marcaciones registradas con su origen y tipo. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel77_marcacion_web}
+    {Marcación web}
+    {images/evidencias/fase3/sprint2/marcacion-web.png}
+    {Registro de una marcación desde el navegador. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel78_importacion}
+    {Importación de marcaciones desde Excel}
+    {images/evidencias/fase3/sprint2/marcaciones-importacion.png}
+    {Carga y revisión de un archivo de marcaciones antes de confirmarlo. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-79 y BEL-80: Gestión diaria de asistencia e incidencias.}
+Con las marcaciones y la jornada asignada, el sistema arma la asistencia de cada día (Figura~\ref{fig:evidencia_bel79_asistencia})
+y detecta las incidencias del periodo, que antes se transcribían a mano (Figura~\ref{fig:evidencia_bel80_incidencias}).
+
+\figuraEvidencia
+    {fig:evidencia_bel79_asistencia}
+    {Gestión diaria de asistencia}
+    {images/evidencias/fase3/sprint2/asistencia-diaria.png}
+    {Asistencia por día de un colaborador. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel80_incidencias}
+    {Incidencias del periodo}
+    {images/evidencias/fase3/sprint2/incidencias.png}
+    {Cierre mensual con el resumen de cada colaborador: días trabajados, faltas, tardanzas, horas extras y días pendientes de revisión. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-81: Implementar bandeja de solicitudes.}
+Las solicitudes del personal llegan a una bandeja de Recursos Humanos con su tipo y estado (Figura~\ref{fig:evidencia_bel81_bandeja}).
+
+\figuraEvidencia
+    {fig:evidencia_bel81_bandeja}
+    {Bandeja de solicitudes}
+    {images/evidencias/fase3/sprint2/solicitudes-bandeja.png}
+    {Solicitudes del personal con su tipo y estado. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-83: Implementar vista de auditoría.}
+La auditoría muestra quién hizo cada cambio, a qué colaborador o registro afectó y qué cambió, con su fecha y hora (Figura~\ref{fig:evidencia_bel83_auditoria}).
+
+\figuraEvidencia
+    {fig:evidencia_bel83_auditoria}
+    {Vista de auditoría}
+    {images/evidencias/fase3/sprint2/auditoria.png}
+    {Movimientos con su acción, módulo, registro afectado, descripción del cambio y usuario que lo hizo. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-85: Implementar vista Mi perfil.}
+Cada usuario consulta sus datos y su rol desde Mi perfil (Figura~\ref{fig:evidencia_bel85_perfil}).
+
+\figuraEvidencia
+    {fig:evidencia_bel85_perfil}
+    {Vista Mi perfil}
+    {images/evidencias/fase3/sprint2/mi-perfil.png}
+    {Datos de la cuenta del usuario que inició sesión. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_burndown_s2}
+    {\textit{Burndown} del Sprint 2}
+    {images/evidencias/burndown/burndown-s2.png}
+    {Horas pendientes esperadas y reales por día sobre las 240 horas planificadas para la semana. Elaboración propia.}
+
+\par\medskip
+\noindent\textbf{\textit{Sprint 3: Consolidación RRHH (16 al 23 de noviembre de 2026)}}\par
+\nobreak
+De las 11 actividades comprometidas se completaron cinco; tres corresponden al \textit{frontend}.
+
+\par\smallskip
+\noindent\textit{BEL-46 y BEL-49: Navegación inicial y ajuste de rutas.}
+El menú lateral agrupa los módulos y resalta la ruta activa (Figura~\ref{fig:evidencia_bel46_navegacion});
+las rutas de la aplicación quedaron definidas en un solo archivo, que usan el enrutador y el control de acceso (Figura~\ref{fig:evidencia_bel49_codigo}).
+
+\figuraEvidencia
+    {fig:evidencia_bel46_navegacion}
+    {Menú lateral de la aplicación}
+    {images/evidencias/fase3/sprint3/navegacion.png}
+    {Menú lateral con el grupo Asistencia desplegado y la ruta activa resaltada. Elaboración propia.}
+
+\figuraEvidencia
+    {fig:evidencia_bel49_codigo}
+    {Rutas de la aplicación}
+    {images/evidencias/fase3/sprint3/codigo-bel49-rutas.png}
+    {Captura de \texttt{path.ts} en \texttt{bella-planillas-frontend}. Elaboración propia.}
+
+\par\smallskip
+\noindent\textit{BEL-107: Revisar y evaluar solicitudes de RRHH.}
+Recursos Humanos abre cada solicitud, revisa su sustento y la aprueba o rechaza;
+el rechazo exige una observación (Figura~\ref{fig:evidencia_bel107_revision}).
+
+\figuraEvidencia
+    {fig:evidencia_bel107_revision}
+    {Revisión y evaluación de una solicitud}
+    {images/evidencias/fase3/sprint3/solicitud-revision.png}
+    {Detalle de una solicitud en revisión con sus datos, su historial y las acciones para aprobarla o rechazarla. Elaboración propia.}
+
+\par\smallskip
+Del \textit{frontend} pasaron al Sprint~4 los componentes reutilizables (BEL-67) y el mantenimiento de cargos (BEL-72), 
+cuya pantalla se integró con datos reales el 23 de noviembre.
+
+\figuraEvidencia
+    {fig:evidencia_burndown_s3}
+    {\textit{Burndown} del Sprint 3}
+    {images/evidencias/burndown/burndown-s3.png}
+    {Horas pendientes esperadas y reales por día sobre las 240 horas planificadas para la semana.
+    La línea real termina por encima de cero por las seis actividades que pasaron al Sprint~4. Elaboración propia.}
+
+% CONTADOR: aquí van los Sprints 4 a 6 del perfil Contador.
+
+\par\medskip
+\noindent\textbf{Fase 4: Integraciones con n8n (octubre – diciembre de 2026)}\par
+\nobreak
+
+\par\medskip
+\noindent\textbf{Fase 5: Despliegue y entrega del MVP (diciembre de 2026)}\par
 \nobreak

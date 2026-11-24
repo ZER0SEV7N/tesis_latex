@@ -130,33 +130,33 @@ sobre la rentabilidad del modelo SaaS multiempresa en gestión de capital humano
 En correspondencia con el objetivo general y los seis objetivos específicos planteados en el apartado~2.2, se concluye lo siguiente:
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Centralización de la información laboral:} Se consolidaron los datos personales, contractuales, 
+    \item Se consolidaron los datos personales, contractuales, 
     financieros y de derechohabientes en una base de datos relacional única en PostgreSQL, 
     alcanzando un cumplimiento del 100 \% en centralización y reduciendo en un 80.0 \% y 86.7 \% 
     los tiempos de gestión de colaboradores y contratos, respectivamente.
 
-    \item \textbf{Agilización mediante cargas masivas validadas:} La incorporación de validaciones con Zod y procesamiento asíncrono mediante BullMQ 
+    \item La incorporación de validaciones con Zod y procesamiento asíncrono mediante BullMQ 
     permitió automatizar la importación masiva de colaboradores y marcaciones desde Excel, 
     evitando registros duplicados y errores de formato sin bloquear la interfaz de usuario.
 
-    \item \textbf{Automatización del cálculo masivo de planillas:} El motor de nómina centralizó los parámetros legales vigentes y 
+    \item El motor de nómina centralizó los parámetros legales vigentes y 
     automatizó el cómputo paralelo de remuneraciones, horas extras, tardanzas, inasistencias, descuentos previsionales, 
     renta de quinta categoría y aportes, logrando una reducción del 97.5 \% en el tiempo de cálculo por lote.
 
-    \item \textbf{Control de acceso y auditoría administrativa:} Se implementó autenticación JWT, autorización por roles
+    \item Se implementó autenticación JWT, autorización por roles
      (\texttt{ADMIN}, \texttt{RRHH}, \texttt{CONTADOR} y colaborador), 
      cifrado AES-256-GCM para cuentas bancarias y una estrategia dual de auditoría en \texttt{audit\_log}, 
      alcanzando un 100 \% de trazabilidad sobre quién realizó cada modificación, 
      desde qué dirección IP y qué valores fueron alterados.
 
-    \item \textbf{Integración con n8n y exportaciones normativas:} El sistema integró la generación de archivos normativos y 
+    \item El sistema integró la generación de archivos normativos y 
     bancarios (PLAME, AFPnet y BCP Haberes) junto con flujos firmados en n8n para despachar boletas electrónicas en PDF y 
     notificaciones operativas, reduciendo en un 95.0 \% el tiempo de distribución por lote.
 
-    \item \textbf{Base técnica escalable para la etapa comercial:} El sistema se estructuró como un monolito modular pragmático sobre NestJS~11, 
+    \item El sistema se estructuró como un monolito modular pragmático sobre NestJS~11, 
     Fastify~5 y Prisma ORM bajo los criterios de referencia de la norma ISO/IEC~25010, alcanzando una reducción promedio simple del 91.4 \% 
     en las actividades cronometradas. Al haber dejado definidos y validados en este \textit{MVP} los núcleos de mayor complejidad técnica y 
-    carga de desarrollo —el cálculo de nómina, el control de asistencias y la gestión de solicitudes—, 
+    carga de desarrollo (el cálculo de nómina, el control de asistencias y la gestión de solicitudes), 
     la incorporación de futuras actualizaciones resulta considerablemente más ágil, 
     reduciendo el esfuerzo previo a la comercialización a completar las vistas, \textit{endpoints} y reglas de negocio complementarias.
     

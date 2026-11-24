@@ -73,11 +73,11 @@
 % Formato numérico para el nivel 4 (ej. 2.5.1.1)
 \renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
 
-% Alias para que puedas usar directamente \subsubsubsection en tu documento
+% Alias \subsubsubsection para el nivel 4
 \newcommand{\subsubsubsection}{\paragraph}
 \makeatother
 
-% IMPORTANTE: Cambiar de 3 a 4 para que LaTeX numere el nivel 2.5.1.1
+% Numerar e incluir en el índice hasta el nivel 4 (2.5.1.1)
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
@@ -188,6 +188,28 @@
         \end{minipage}%
     }%
     \finBloqueAPA
+}
+
+% Figura de evidencia: si la imagen aún no existe, deja un recuadro con la ruta esperada.
+\newcommand{\figuraEvidencia}[4]{%
+    \IfFileExists{#3}{\figuraEnTexto{#1}{#2}{#3}{#4}}{%
+        \espacioAntesBloque
+        \noindent\begin{minipage}{\linewidth}
+            \linespread{1}\footnotesize
+            \refstepcounter{figure}%
+            \label{#1}%
+            \addcontentsline{lof}{figure}{%
+                Figura~\thefigure. #2}%
+            {\bfseries Figura~\thefigure}\par
+            {\itshape #2}\par
+            \fbox{\parbox[c][3.5cm][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+                \centering\textbf{Imagen pendiente}\par\smallskip
+                \texttt{\detokenize{#3}}}}\par
+            \vspace{2pt}
+            \textit{Nota.} #4\par
+        \end{minipage}%
+        \finBloqueAPA
+    }%
 }
 
 \DeclareCaptionFont{interlineadoSimple}{\linespread{1}\selectfont}
