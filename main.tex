@@ -212,6 +212,38 @@
     }%
 }
 
+% =================================================
+% Figura de evidencia compacta: si la imagen aún no existe, deja un recuadro con la ruta esperada.
+% =================================================
+
+\newcommand{\figuraEvidenciaCompacta}[4]{%
+    \espacioAntesBloque
+    \sbox{\cajaFigura}{\includegraphics[
+        width=0.85\linewidth,
+        height=0.36\textheight,
+        keepaspectratio
+    ]{#3}}%
+    \setlength{\anchoFigura}{\wd\cajaFigura}%
+    \ifdim\anchoFigura<0.5\linewidth
+        \setlength{\anchoFigura}{0.5\linewidth}%
+    \fi
+    \noindent\makebox[\linewidth][c]{%
+        \begin{minipage}{\anchoFigura}
+            \linespread{1}\footnotesize
+            \refstepcounter{figure}%
+            \label{#1}%
+            \addcontentsline{lof}{figure}{%
+                Figura~\thefigure. #2}%
+            {\bfseries Figura~\thefigure}\par
+            {\itshape #2}\par
+            \makebox[\linewidth][c]{\usebox{\cajaFigura}}\par
+            \vspace{2pt}
+            \textit{Nota.} #4\par
+        \end{minipage}%
+    }%
+    \finBloqueAPA
+}
+
 % ============================
 % Configuración de leyendas de tablas y figuras
 % ============================

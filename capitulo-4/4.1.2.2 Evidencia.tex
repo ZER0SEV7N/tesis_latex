@@ -281,7 +281,7 @@ Las capturas de pantalla usan datos de demostración.
 \par\medskip
 \noindent\textbf{\textit{Sprint 1: Acceso y legajos (1 al 8 de noviembre de 2026)}}\par
 \nobreak
-Se completaron las nueve actividades comprometidas; siete corresponden al \textit{frontend}.
+Se completaron las nueve actividades comprometidas (Figura~\ref{fig:evidencia_burndown_s1}); siete corresponden al \textit{frontend}.
 
 \figuraEvidencia
     {fig:evidencia_burndown_s1}
@@ -294,13 +294,13 @@ Se completaron las nueve actividades comprometidas; siete corresponden al \texti
 Para cada ruta se indica qué roles pueden abrirla, y una ruta sin configurar queda cerrada para todos (Figura~\ref{fig:evidencia_bel44_codigo}).
 Al entrar, Recursos Humanos solo ve los módulos que su rol puede abrir (Figura~\ref{fig:evidencia_bel44_menu_rrhh}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel44_codigo}
     {Control de acceso a las rutas según el rol}
     {images/evidencias/fase3/sprint1/codigo-bel44-acceso-por-rol.png}
     {Captura de \texttt{routeAccess.config.ts} y \texttt{RoleRoute.tsx} en \texttt{bella-planillas-frontend}. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel44_menu_rrhh}
     {Menú de la aplicación para el rol de Recursos Humanos}
     {images/evidencias/fase3/sprint1/menu-rrhh.png}
@@ -312,13 +312,13 @@ Recursos Humanos busca y filtra a los colaboradores (Figura~\ref{fig:evidencia_b
 y abre la ficha de cada uno, que reúne en pestañas sus contratos, datos financieros, derechohabientes y asistencia
 (Figura~\ref{fig:evidencia_bel45_ficha}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel45_listado}
     {Listado de empleados con filtros}
     {images/evidencias/fase3/sprint1/empleados-listado.png}
     {Listado paginado de colaboradores con un filtro aplicado. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel45_ficha}
     {Ficha del empleado}
     {images/evidencias/fase3/sprint1/ficha-empleado.png}
@@ -330,7 +330,7 @@ Todas las consultas a la API pasan por un cliente HTTP que agrega el token de la
 Si el \textit{backend} responde 401, el cliente renueva el token una sola vez y repite la petición;
 si la renovación también falla, cierra la sesión (Figura~\ref{fig:evidencia_bel48_codigo}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel48_codigo}
     {Cliente HTTP con renovación del token de sesión}
     {images/evidencias/fase3/sprint1/codigo-bel48-cliente-http.png}
@@ -341,13 +341,13 @@ si la renovación también falla, cierra la sesión (Figura~\ref{fig:evidencia_b
 El registro de un colaborador (Figura~\ref{fig:evidencia_bel50_registro}) y su edición posterior
 (Figura~\ref{fig:evidencia_bel50_edicion}) validan los datos antes de enviarlos a la API.
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel50_registro}
     {Formulario de registro de un empleado}
     {images/evidencias/fase3/sprint1/empleado-registro.png}
     {Formulario de nuevo colaborador con datos de ejemplo. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel50_edicion}
     {Formulario de edición de un empleado}
     {images/evidencias/fase3/sprint1/empleado-edicion.png}
@@ -357,18 +357,19 @@ El registro de un colaborador (Figura~\ref{fig:evidencia_bel50_registro}) y su e
 \noindent\textit{BEL-71: Implementar mantenimiento de áreas.}
 Recursos Humanos registra, edita y desactiva las áreas de la empresa (Figura~\ref{fig:evidencia_bel71_areas}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel71_areas}
     {Mantenimiento de áreas}
     {images/evidencias/fase3/sprint1/areas.png}
     {Listado de áreas con sus acciones. Elaboración propia.}
 
+\clearpage
 \par\smallskip
 \noindent\textit{BEL-82: Importar empleados con prevalidación.}
 Al cargar un archivo Excel o CSV, el sistema revisa cada fila y marca los errores antes de registrar a los colaboradores,
 de modo que Recursos Humanos corrige el archivo sin dejar registros a medias (Figura~\ref{fig:evidencia_bel82_importacion}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel82_importacion}
     {Revisión previa de la importación de empleados}
     {images/evidencias/fase3/sprint1/importacion-empleados.png}
@@ -378,7 +379,7 @@ de modo que Recursos Humanos corrige el archivo sin dejar registros a medias (Fi
 \noindent\textit{BEL-105: Consultar y mantener contratos laborales.}
 Los contratos de cada colaborador se consultan y registran desde su ficha (Figura~\ref{fig:evidencia_bel105_contratos}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel105_contratos}
     {Contratos laborales de un empleado}
     {images/evidencias/fase3/sprint1/contratos.png}
@@ -388,7 +389,7 @@ Los contratos de cada colaborador se consultan y registran desde su ficha (Figur
 \par\medskip
 \noindent\textbf{\textit{Sprint 2: Asistencia e incidencias (8 al 15 de noviembre de 2026)}}\par
 \nobreak
-Se completaron las 16 actividades comprometidas; 12 corresponden al \textit{frontend}.
+Se completaron las 16 actividades comprometidas (Figura~\ref{fig:evidencia_burndown_s2}); 12 corresponden al \textit{frontend}.
 
 \figuraEvidencia
     {fig:evidencia_burndown_s2}
@@ -402,7 +403,7 @@ El \textit{dashboard} de Recursos Humanos resume los colaboradores activos, los 
 la asistencia de la semana, la distribución del personal por área, el avance del cierre de asistencia y los contratos por vencer 
 (Figura~\ref{fig:evidencia_bel65_dashboard}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel65_dashboard}
     {\textit{Dashboard} de Recursos Humanos}
     {images/evidencias/fase3/sprint2/dashboard-rrhh.png}
@@ -414,13 +415,13 @@ Recursos Humanos define las jornadas con sus horarios (Figura~\ref{fig:evidencia
 y las asigna a los colaboradores (Figura~\ref{fig:evidencia_bel74_asignacion});
 la asistencia de cada día se evalúa contra la jornada asignada.
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel73_jornadas}
     {Mantenimiento de jornadas}
     {images/evidencias/fase3/sprint2/jornadas.png}
     {Jornadas registradas con su horario. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel74_asignacion}
     {Asignación de una jornada a empleados}
     {images/evidencias/fase3/sprint2/asignacion-jornada.png}
@@ -430,31 +431,32 @@ la asistencia de cada día se evalúa contra la jornada asignada.
 \noindent\textit{BEL-75: Implementar calendario laboral.}
 El calendario registra los feriados y días no laborables de la empresa (Figura~\ref{fig:evidencia_bel75_calendario}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel75_calendario}
     {Calendario laboral}
     {images/evidencias/fase3/sprint2/calendario-laboral.png}
     {Feriados y días no laborables del periodo. Elaboración propia.}
 
+\clearpage
 \par\smallskip
 \noindent\textit{BEL-76, BEL-77 y BEL-78: Listado, marcación web e importación de marcaciones.}
 Las marcaciones se registran desde la web (Figura~\ref{fig:evidencia_bel77_marcacion_web}) 
 o se importan desde un archivo Excel (Figura~\ref{fig:evidencia_bel78_importacion}), 
 y se consultan y filtran en un listado (Figura~\ref{fig:evidencia_bel76_listado}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel76_listado}
     {Listado de marcaciones}
     {images/evidencias/fase3/sprint2/marcaciones-listado.png}
     {Marcaciones registradas con su origen y tipo. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel77_marcacion_web}
     {Marcación web}
     {images/evidencias/fase3/sprint2/marcacion-web.png}
     {Registro de una marcación desde el navegador. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel78_importacion}
     {Importación de marcaciones desde Excel}
     {images/evidencias/fase3/sprint2/marcaciones-importacion.png}
@@ -465,13 +467,13 @@ y se consultan y filtran en un listado (Figura~\ref{fig:evidencia_bel76_listado}
 Con las marcaciones y la jornada asignada, el sistema arma la asistencia de cada día (Figura~\ref{fig:evidencia_bel79_asistencia})
 y detecta las incidencias del periodo, que antes se transcribían a mano (Figura~\ref{fig:evidencia_bel80_incidencias}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel79_asistencia}
     {Gestión diaria de asistencia}
     {images/evidencias/fase3/sprint2/asistencia-diaria.png}
     {Asistencia por día de un colaborador. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel80_incidencias}
     {Incidencias del periodo}
     {images/evidencias/fase3/sprint2/incidencias.png}
@@ -481,17 +483,18 @@ y detecta las incidencias del periodo, que antes se transcribían a mano (Figura
 \noindent\textit{BEL-81: Implementar bandeja de solicitudes.}
 Las solicitudes del personal llegan a una bandeja de Recursos Humanos con su tipo y estado (Figura~\ref{fig:evidencia_bel81_bandeja}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel81_bandeja}
     {Bandeja de solicitudes}
     {images/evidencias/fase3/sprint2/solicitudes-bandeja.png}
     {Solicitudes del personal con su tipo y estado. Elaboración propia.}
 
+\clearpage
 \par\smallskip
 \noindent\textit{BEL-83: Implementar vista de auditoría.}
 La auditoría muestra quién hizo cada cambio, a qué colaborador o registro afectó y qué cambió, con su fecha y hora (Figura~\ref{fig:evidencia_bel83_auditoria}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel83_auditoria}
     {Vista de auditoría}
     {images/evidencias/fase3/sprint2/auditoria.png}
@@ -501,7 +504,7 @@ La auditoría muestra quién hizo cada cambio, a qué colaborador o registro afe
 \noindent\textit{BEL-85: Implementar vista Mi perfil.}
 Cada usuario consulta sus datos y su rol desde Mi perfil (Figura~\ref{fig:evidencia_bel85_perfil}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel85_perfil}
     {Vista Mi perfil}
     {images/evidencias/fase3/sprint2/mi-perfil.png}
@@ -511,7 +514,7 @@ Cada usuario consulta sus datos y su rol desde Mi perfil (Figura~\ref{fig:eviden
 \par\medskip
 \noindent\textbf{\textit{Sprint 3: Consolidación RRHH (16 al 23 de noviembre de 2026)}}\par
 \nobreak
-De las 11 actividades comprometidas se completaron cinco; tres corresponden al \textit{frontend}.
+De las 11 actividades comprometidas se completaron cinco (Figura~\ref{fig:evidencia_burndown_s3}); tres corresponden al \textit{frontend}.
 
 \figuraEvidencia
     {fig:evidencia_burndown_s3}
@@ -525,13 +528,13 @@ De las 11 actividades comprometidas se completaron cinco; tres corresponden al \
 El menú lateral agrupa los módulos y resalta la ruta activa (Figura~\ref{fig:evidencia_bel46_navegacion});
 las rutas de la aplicación quedaron definidas en un solo archivo, que usan el enrutador y el control de acceso (Figura~\ref{fig:evidencia_bel49_codigo}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel46_navegacion}
     {Menú lateral de la aplicación}
     {images/evidencias/fase3/sprint3/navegacion.png}
     {Menú lateral con el grupo Asistencia desplegado y la ruta activa resaltada. Elaboración propia.}
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel49_codigo}
     {Rutas de la aplicación}
     {images/evidencias/fase3/sprint3/codigo-bel49-rutas.png}
@@ -542,7 +545,7 @@ las rutas de la aplicación quedaron definidas en un solo archivo, que usan el e
 Recursos Humanos abre cada solicitud, revisa su sustento y la aprueba o rechaza;
 el rechazo exige una observación (Figura~\ref{fig:evidencia_bel107_revision}).
 
-\figuraEvidencia
+\figuraEvidenciaCompacta
     {fig:evidencia_bel107_revision}
     {Revisión y evaluación de una solicitud}
     {images/evidencias/fase3/sprint3/solicitud-revision.png}
@@ -555,7 +558,6 @@ cuya pantalla se integró con datos reales el 23 de noviembre.
 
 % CONTADOR: aquí van los Sprints 4 a 6 del perfil Contador.
 
-\par\medskip
-\noindent\textbf{Fase 4: Integraciones con n8n (octubre – diciembre de 2026)}\par
-\nobreak
-
+% \par\medskip
+% \noindent\textbf{Fase 4: Integraciones con n8n (octubre – diciembre de 2026)}\par
+% \nobreak
