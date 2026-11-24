@@ -204,7 +204,7 @@
 
 \makeatletter
 \def\LT@c@ption[#1]#2{%
-  \LT@makecaption#1\relax{#2}%
+  {\setlength{\parindent}{0pt}\LT@makecaption#1\relax{#2}}%
   \def\@tempa{#2}%
   \ifx\@tempa\@empty\else
      {\let\\\space
