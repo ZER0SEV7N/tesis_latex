@@ -19,12 +19,12 @@ empresariales de J\&P~Periféricos~S.A.C. y enfocado en los perfiles de Recursos
 La solución está diseñada como un monolito modular pragmático con TypeScript, NestJS~11, Fastify~5, React~19, Prisma ORM sobre PostgreSQL 
 y colas BullMQ en Redis, centralizando el legajo del personal, el control de asistencias, la gestión de incidencias y 
 el motor de cálculo salarial conforme a la normativa laboral peruana vigente. Para optimizar el cierre operativo, 
-el sistema se integra con el orquestador de flujos asíncronos \textbf{n8n}, automatizando la generación de archivos regulatorios 
+el sistema se integra con el orquestador de flujos asíncronos n8n, automatizando la generación de archivos regulatorios 
 (SUNAT PLAME, AFPnet y telecrédito bancario), así como la emisión y el envío masivo de boletas de pago electrónicas 
 en formato PDF al correo de cada colaborador.
 
 Con el propósito de garantizar la confidencialidad, integridad y disponibilidad de la información, 
 la solución incorpora autenticación segura mediante JWT, control de acceso basado en roles (RBAC), 
-cifrado simétrico \textbf{AES-256-GCM} para datos financieros sensibles y una estrategia de auditoría continua 
+cifrado simétrico AES-256-GCM para datos financieros sensibles y una estrategia de auditoría continua 
 (\textit{audit log}) que registra la trazabilidad completa de cada operación y cambio de estado en el sistema, 
 sentando las bases técnicas para su posterior comercialización bajo modalidad SaaS.

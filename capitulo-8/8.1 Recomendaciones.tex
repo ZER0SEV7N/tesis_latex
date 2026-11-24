@@ -5,19 +5,19 @@ Para garantizar la continuidad operativa, la seguridad de la información y el f
 estable del sistema en entornos productivos, se establecen las siguientes recomendaciones de operación y mantenimiento:
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Respaldo y pruebas de restauración de la base de datos:} Programar copias de seguridad automatizadas diarias 
+    \item Programar copias de seguridad automatizadas diarias 
     de PostgreSQL en almacenamiento externo cifrado, acompañadas de pruebas periódicas de restauración y 
     políticas de retención acordes con la legislación laboral vigente.
 
-    \item \textbf{Monitoreo de colas asíncronas y flujos en n8n:} Supervisar el estado de las colas de trabajo en Redis/BullMQ 
+    \item Supervisar el estado de las colas de trabajo en Redis/BullMQ 
     (cargas masivas y cálculo paralelo de planillas) así como los registros de ejecución en n8n, 
     configurando alertas tempranas ante fallos en el envío de correos electrónicos o en el despacho de lotes de boletas.
 
-    \item \textbf{Gestión de credenciales, secretos y control de accesos:} Aplicar políticas de rotación periódica para secretos JWT, 
+    \item Aplicar políticas de rotación periódica para secretos JWT, 
     certificados TLS, firmas de integración con n8n y la clave maestra de cifrado financiero (\texttt{AES-256-GCM}), 
     manteniendo el principio de menor privilegio en la asignación de roles y revisando periódicamente la bitácora \texttt{audit\_log}.
 
-    \item \textbf{Actualización normativa periódica de parámetros legales:} Mantener actualizados en el módulo correspondiente los 
+    \item Mantener actualizados en el módulo correspondiente los 
     parámetros tributarios y laborales vigentes (RMV, valor de la UIT, tasas de aportación a AFP/ONP y 
     tramos del impuesto a la renta de quinta categoría) ante cualquier disposición emitida por el Ministerio de Trabajo, la SBS o la SUNAT.
 \end{enumerate}
@@ -28,22 +28,22 @@ cuyo núcleo transaccional ya resuelve los procesos de mayor carga operativa (pl
 se proyectan las siguientes líneas de evolución técnica y funcional para completar su preparación comercial:
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Culminación de vistas, \textit{endpoints} y reglas de negocio complementarias:} Completar las interfaces de usuario 
+    \item Completar las interfaces de usuario 
     pendientes en el \textit{frontend}, cerrar los \textit{endpoints} secundarios y habilitar los flujos de evolución 
     ya previstos en el esquema de base de datos (como la gestión integral de periodos vacacionales, imputaciones de vacaciones, 
     vínculos históricos y liquidaciones de beneficios sociales) antes del lanzamiento comercial definitivo.
 
-    \item \textbf{Habilitación del rol corporativo J\&P y soporte multiempresa (\textit{multi-tenancy}):} Incorporar un panel administrativo exclusivo 
+    \item Incorporar un panel administrativo exclusivo 
     para J\&P Periféricos S.A.C. que permita comercializar el sistema bajo el modelo \textit{Software as a Service} (SaaS), 
     ampliando el esquema de base de datos con entidades de suscripción, planes tarifarios (Emprendedor, Pyme Estándar y Corporativo), 
     facturación y aislamiento lógico de datos por empresa cliente.
 
-    \item \textbf{Despliegue integral del portal de autoservicio para el empleado:} Habilitar completamente en la interfaz web las vistas de 
+    \item Habilitar completamente en la interfaz web las vistas de 
     autoservicio para los colaboradores. Apoyándose en los \textit{endpoints} base de boletas propias y 
     solicitudes ya implementados en el \textit{backend}, para que consulten su historial de pagos, registren permisos o vacaciones, 
     actualicen datos personales y visualicen resúmenes de asistencia y beneficios.
 
-    \item \textbf{Desacoplamiento progresivo ante crecimiento de demanda:} Conforme aumente la cartera de clientes empresariales y 
+    \item Conforme aumente la cartera de clientes empresariales y 
     la concurrencia en los cierres mensuales de planilla, evaluar la extracción gradual de los dominios de mayor 
     consumo computacional (cálculo masivo de nóminas, generación de reportes regulatorios y despacho de notificaciones) 
     hacia servicios independientes orquestados en contenedores para mejorar la escalabilidad horizontal.

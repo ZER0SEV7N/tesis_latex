@@ -8,20 +8,20 @@ En el diagnóstico previo se identificó que el procesamiento manual de nóminas
 sino que mantenía latente el riesgo de sanciones administrativas ante organismos fiscalizadores. La solución implementada aporta las siguientes mejoras tangibles:
 
 \begin{enumerate}[leftmargin=*]
-    \item \textbf{Prevención de multas laborales y tributarias:} La generación y entrega automática de boletas de pago cifradas con el 
+    \item La generación y entrega automática de boletas de pago cifradas con el 
     DNI del trabajador suprime el riesgo de sanciones por parte de la SUNAFIL (cuyas multas por infracciones graves vinculadas a la entrega de boletas 
     y pago oportuno de beneficios oscilan entre 0.26 y 1.57 UIT según el número de trabajadores afectados, D.S. N° 019-2006-TR). 
     De igual modo, la compilación estructurada de los archivos \texttt{.rem} y \texttt{.jor} previene infracciones tributarias 
     ante la SUNAT por datos falsos o incompletos en el PDT PLAME (Art. 176 del Código Tributario), 
     así como recargos por intereses moratorios en la plataforma AFPnet.
 
-    \item \textbf{Cálculo uniforme y eliminación de reprocesos:} La centralización de las fórmulas remunerativas y previsionales en procesos aislados (\textit{Worker Threads}) 
+    \item La centralización de las fórmulas remunerativas y previsionales en procesos aislados (\textit{Worker Threads}) 
     con precisión decimal estricta (\texttt{decimal.js}) elimina de raíz los descuadres salariales, 
     sobrepagos y deducciones erróneas derivados de la manipulación manual de celdas en hojas de cálculo.
-    \item \textbf{Centralización y consistencia en el control de asistencia:} La importación transaccional del archivo de marcaciones biométricas 
+    \item La importación transaccional del archivo de marcaciones biométricas 
     y el flujo digital de solicitudes (vacaciones, descansos y permisos) 
     reemplazan el cruce manual de listas físicas, consolidando las incidencias directamente sobre el periodo contable activo.
-    \item \textbf{Trazabilidad y seguridad de la información:} La diferenciación de accesos por roles (RBAC) y el registro inmutable en 
+    \item La diferenciación de accesos por roles (RBAC) y el registro inmutable en 
     \texttt{audit\_log} garantizan el respaldo de cada modificación efectuada, 
     resguardando los datos sensibles de los colaboradores mediante cifrado simétrico AES-256-GCM.
 
@@ -58,6 +58,8 @@ Este modelo híbrido elimina la rigidez de los cobros individuales por usuario (
 
 Con una tarifa promedio ponderada de S/ 280.00 mensuales por empresa 
 y una meta comercial conservadora de 20 empresas clientes durante el primer año, 
-J\&P asegura ingresos recurrentes de \textbf{S/ 67,200.00 anuales}. 
+J\&P asegura ingresos recurrentes de S/ 67,200.00 anuales. 
+(véase el desglose de ponderación en el \textbf{\hyperref[tab:anexo_proyeccion_saas]{Anexo 5}})
+
 Esta proyección de ingresos recurrentes mensuales (MRR) mitiga de manera directa los costos de soporte e infraestructura en la nube, 
 respaldando la rentabilidad y viabilidad financiera global del producto desde su lanzamiento.
