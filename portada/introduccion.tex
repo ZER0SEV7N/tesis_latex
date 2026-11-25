@@ -4,27 +4,34 @@
 
 \noindent{\bfseries\large Introducción} \\[0.5cm]
 
-En el entorno empresarial contemporáneo, la administración del capital humano y el procesamiento de remuneraciones constituyen 
-procesos críticos para la continuidad operativa y el cumplimiento legal de cualquier organización. No obstante, 
-una proporción significativa de pequeñas y medianas empresas continúa gestionando sus planillas mediante hojas de 
-cálculo descentralizadas y procedimientos manuales. Este enfoque tradicional demanda una inversión desmedida de tiempo 
-en la validación de asistencias, jornadas laborales, horas extras, beneficios sociales y deducciones de ley, 
-lo que incrementa el margen de error aritmético, provoca retrasos en el abono de haberes y expone a las empresas a 
-contingencias administrativas y multas ante entidades fiscalizadoras como SUNAFIL y SUNAT. Asimismo, el almacenamiento de 
-información salarial en archivos locales sin controles de acceso expone los datos personales y financieros a riesgos de alteración o filtración.
+En el entorno empresarial contemporáneo, la administración del capital humano y el procesamiento de remuneraciones 
+constituyen procesos críticos para la continuidad operativa y el cumplimiento legal de cualquier organización. No obstante, 
+una proporción significativa de pequeñas y medianas empresas continúa gestionando sus planillas mediante hojas de cálculo descentralizadas 
+y procedimientos manuales. Este enfoque tradicional demanda una inversión desmedida de tiempo en la validación de asistencias, 
+jornadas laborales, horas extras, beneficios sociales y deducciones de ley, lo que incrementa el margen de error aritmético, 
+provoca retrasos en el abono de haberes y expone a las empresas a contingencias administrativas y multas ante entidades fiscalizadoras como 
+SUNAFIL y SUNAT. Asimismo, el almacenamiento de información salarial en archivos locales sin controles de acceso expone los datos personales y financieros a riesgos de alteración o filtración.
 
-Frente a esta problemática, el presente proyecto de innovación y mejora desarrolla e implementa, 
-bajo el marco de trabajo ágil Scrum, un Producto Mínimo Viable (MVP) web orientado a los clientes 
-empresariales de J\&P~Periféricos~S.A.C. y enfocado en los perfiles de Recursos Humanos y Contador. 
-La solución está diseñada como un monolito modular pragmático con TypeScript, NestJS~11, Fastify~5, React~19, Prisma ORM sobre PostgreSQL 
-y colas BullMQ en Redis, centralizando el legajo del personal, el control de asistencias, la gestión de incidencias y 
-el motor de cálculo salarial conforme a la normativa laboral peruana vigente. Para optimizar el cierre operativo, 
-el sistema se integra con el orquestador de flujos asíncronos n8n, automatizando la generación de archivos regulatorios 
-(SUNAT PLAME, AFPnet y telecrédito bancario), así como la emisión y el envío masivo de boletas de pago electrónicas 
-en formato PDF al correo de cada colaborador.
+Frente a esta problemática, el presente proyecto de innovación y mejora desarrolla e implementa, bajo el marco de trabajo ágil Scrum, 
+un Producto Mínimo Viable (MVP) web orientado a los clientes empresariales de J\&P~Periféricos~S.A.C. y enfocado en los perfiles de Recursos Humanos y Contador. 
+La solución está diseñada como un monolito modular pragmático con TypeScript, NestJS~11, Fastify~5, React~19, Prisma~ORM sobre PostgreSQL y colas BullMQ en Redis, 
+centralizando el legajo del personal, el control de asistencias, la gestión de incidencias y el motor de cálculo salarial conforme a la normativa laboral peruana vigente. 
+Para optimizar el cierre operativo, el sistema se integra con el orquestador de flujos asíncronos n8n, automatizando la generación de archivos regulatorios 
+(SUNAT PLAME, AFPnet y telecrédito bancario), así como la emisión y el envío masivo de boletas de pago electrónicas en formato PDF al correo de cada colaborador.
 
-Con el propósito de garantizar la confidencialidad, integridad y disponibilidad de la información, 
-la solución incorpora autenticación segura mediante JWT, control de acceso basado en roles (RBAC), 
-cifrado simétrico AES-256-GCM para datos financieros sensibles y una estrategia de auditoría continua 
-(\textit{audit log}) que registra la trazabilidad completa de cada operación y cambio de estado en el sistema, 
-sentando las bases técnicas para su posterior comercialización bajo modalidad SaaS.
+Con el propósito de garantizar la confidencialidad, integridad y disponibilidad de la información, la solución incorpora autenticación segura mediante JWT, 
+control de acceso basado en roles (RBAC), cifrado simétrico AES-256-GCM para datos financieros sensibles y una estrategia de auditoría continua (\textit{audit log}) 
+que registra la trazabilidad completa de cada operación y cambio de estado en el sistema, sentando las bases técnicas para su posterior comercialización bajo modalidad SaaS.
+
+Para exponer de manera ordenada el desarrollo de la investigación, el presente documento se organiza en ocho capítulos:
+
+\begin{itemize}[leftmargin=*, topsep=4pt, itemsep=4pt]
+    \item \textbf{Capítulo 1 (Generalidades de la empresa):} presenta la reseña histórica, razón social, direccionamiento estratégico, portafolio de productos, cartera de clientes y organigrama de J\&P~Periféricos~S.A.C., junto con las entrevistas realizadas al Gerente General y al Contador de una empresa cliente.
+    \item \textbf{Capítulo 2 (Plan del proyecto de innovación):} identifica la problemática técnica a nivel local, nacional e internacional, formula el problema general y los específicos, establece los objetivos, revisa los antecedentes y desarrolla el marco teórico y normativo de la gestión de nóminas.
+    \item \textbf{Capítulo 3 (Análisis de la situación actual):} modela el proceso actual mediante diagramas BPMN, identifica y codifica las ocho causas raíz en un diagrama de Ishikawa, las prioriza con un diagrama de Pareto y cuantifica las pérdidas económicas operativas que sirven de línea base.
+    \item \textbf{Capítulo 4 (Propuesta técnica de mejora):} detalla el plan de acción bajo Scrum, la trazabilidad de requerimientos funcionales y no funcionales, la arquitectura de monolito modular, los recursos técnicos, los flujos mejorados, el cronograma de ejecución y las limitaciones identificadas.
+    \item \textbf{Capítulo 5 (Costo de implementación de la mejora):} consolida el presupuesto requerido para el desarrollo e implantación del sistema, desglosando materiales e infraestructura local, mano de obra, depreciación de equipos, licencias y servicios generales.
+    \item \textbf{Capítulo 6 (Evaluación técnica y económica):} sustenta los beneficios técnico-operativos, define el modelo comercial SaaS por tramos de colaboradores y calcula la relación beneficio/costo y el periodo de recuperación de la inversión.
+    \item \textbf{Capítulo 7 (Conclusiones):} compara las métricas operativas antes y después de la implementación, discute los hallazgos frente a los antecedentes citados y formula las conclusiones en correspondencia con los objetivos específicos.
+    \item \textbf{Capítulo 8 (Recomendaciones):} establece los lineamientos de operación, respaldo, seguridad y actualización normativa para el entorno productivo, así como las líneas de trabajo futuro hacia el despliegue comercial multiempresa.
+\end{itemize}

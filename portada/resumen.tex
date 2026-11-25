@@ -2,32 +2,27 @@
 \phantomsection
 \addcontentsline{toc}{section}{Resumen}
 
-\noindent{\bfseries\large Resumen} \\[0.5cm]
+\begin{center}
+    {\bfseries\large RESUMEN}
+\end{center}
+\vspace{0.1cm}
 
-El presente proyecto de innovación y mejora tuvo como objetivo principal desarrollar e implementar 
-un sistema web con flujos automatizados para la gestión de nóminas y procesos de recursos humanos orientado 
-a los clientes empresariales de J\&P Periféricos S.A.C. En el diagnóstico inicial se evidenció que el procesamiento mensual 
-de planillas dependía de hojas de cálculo dispersas, consolidación manual de asistencias y validaciones repetitivas, 
-lo que ocasionaba demoras prolongadas en los cierres de pago, errores en el cálculo de horas extras, bonificaciones y 
-retenciones de ley (ONP, AFP y quinta categoría), así como riesgos de incumplimiento normativo y 
-filtración de información financiera sensible.
+\noindent El presente proyecto tuvo como objetivo desarrollar e implementar un sistema web con flujos automatizados 
+para la gestión de nóminas y recursos humanos orientado a clientes empresariales de J\&P Periféricos S.A.C. 
+En el diagnóstico inicial se evidenció dependencia de hojas de cálculo dispersas, consolidación manual de asistencias 
+y validaciones repetitivas, lo que provocaba demoras en los cierres de pago, errores en horas extras, bonificaciones 
+y retenciones de ley (ONP, AFP y quinta categoría), además de riesgos normativos y de filtración de datos sensibles.
 
-Para resolver esta problemática, el proyecto se ejecutó bajo el marco ágil Scrum en iteraciones incrementales 
-alineadas con los requerimientos del negocio. A nivel tecnológico, se diseñó un monolito modular pragmático 
-por capas empleando TypeScript, NestJS 11 y Fastify 5 en el \textit{backend}, React 19 en el \textit{frontend}, 
-Prisma ORM sobre PostgreSQL como base de datos relacional y colas BullMQ en Redis para cargas masivas y 
-cálculo paralelo de nómina. Asimismo, se integró la plataforma n8n para ejecutar flujos asíncronos encargados de 
-generar archivos regulatorios (SUNAT PLAME, AFPnet y bancos) y distribuir automáticamente las boletas de pago en PDF. 
-En materia de seguridad, se implementó control de acceso basado en roles (RBAC), cifrado simétrico AES-256-GCM 
-para datos financieros y una estrategia dual de auditoría inmutable para garantizar la trazabilidad integral de las operaciones.
+Para resolverlo, el proyecto se ejecutó bajo Scrum con una arquitectura de monolito modular por capas, empleando 
+TypeScript, NestJS 11 y Fastify 5 en el \textit{backend}, React 19 en el \textit{frontend}, Prisma ORM sobre PostgreSQL 
+y colas BullMQ en Redis para cargas masivas y cálculo paralelo. Asimismo, se integró n8n para generar archivos 
+regulatorios (SUNAT PLAME, AFPnet y bancos) y distribuir boletas en PDF. En seguridad se implementó control por roles 
+(RBAC), cifrado AES-256-GCM para cuentas bancarias y una bitácora inmutable de auditoría.
 
-El documento se estructura en ocho capítulos. Los Capítulos 1 al 4 abarcan las generalidades de la empresa, 
-el planteamiento de objetivos y marco teórico normativo, el diagnóstico de la situación actual
-mediante diagramas de procesos, Ishikawa y Pareto, y el diseño e implementación de la mejora bajo Scrum. 
-En los Capítulos 5 y 6 se desarrolla la estructura de costos, con una inversión total de S/ 60,906.79, y 
-la evaluación económica y técnica, demostrando su viabilidad mediante un ahorro operativo anual de S/ 6,340.12 e 
-ingresos proyectados bajo modelo SaaS de S/ 67,200.00 (20 clientes), alcanzando un beneficio total de S/ 73,540.12, 
-una relación costo, beneficio de 1.21 y un periodo de recuperación de 9 meses y 28 días. Finalmente, los Capítulos 7 y 8 
-presentan los resultados de validación en entorno controlado, donde se logró una reducción promedio del 91.4 \% 
-en los tiempos operativos cronometrados y un 100 \% de cumplimiento en centralización, parametrización y auditoría, 
-junto con las recomendaciones de mantenimiento y las líneas de trabajo futuro hacia su despliegue comercial multiempresa.
+El documento comprende ocho capítulos desde el diagnóstico organizacional hasta la evaluación y validación técnica. 
+Frente a una inversión de S/ 60,906.79, la propuesta alcanza viabilidad financiera con un ahorro operativo anual de 
+S/ 6,340.12 e ingresos SaaS proyectados de S/ 67,200.00 (20 clientes), sumando un beneficio total de S/ 73,540.12, 
+una relación beneficio/costo de 1.21 y un retorno de 9 meses y 28 días. En pruebas controladas se obtuvo una reducción 
+promedio del 91.4 \% en tiempos operativos y un 100 \% de cumplimiento en centralización, parametrización y auditoría.
+
+\textit{Palabras clave:} sistema web, gestión de nóminas, recursos humanos, monolito modular, flujos automatizados, auditoría.
